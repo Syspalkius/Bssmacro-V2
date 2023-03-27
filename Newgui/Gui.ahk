@@ -21,27 +21,31 @@ Gui,Add,Text, gQuestbutton v1tab10 x40 yp+45 cf5c88e,Quests
 Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Images/quests.png
 Gui,Add,Text, gkeybindbutton v1tab12 x40 yp+45 cf5c88e,Keybinds
 Gui,Add,Picture, gkeybindbutton v1tab13 x7 yp+3, Images/keyboard.png
-Gui,Add,Text, gSettingsbutton v1tab14 x40 yp+37 cf5c88e,Settings
-Gui,Add,Picture, gSettingsbutton v1tab15 x5 yp-5, Images/cog.png
+Gui,Add,Text, gmemorybutton w120 v1tab14 x40 yp+37 cf5c88e +wrap,Memory - Match
+Gui,Add,Picture, gmemorybutton v1tab15 x7 yp+3, Images/memory.png
+Gui,Add,Text, gpresetbutton v1tab16 x40 yp+65 cf5c88e,Presets
+Gui,Add,Picture, gpresetbutton v1tab17 x5 yp+3, Images/robopass.png
+Gui,Add,Text, gSettingsbutton v1tab18 x40 yp+37 cf5c88e,Settings
+Gui,Add,Picture, gSettingsbutton v1tab19 x5 yp-5, Images/cog.png
 Gui,Font,s12 Bold
-Gui,Add,Text, v1tab16 x205 y40 c%updatecol%,Latest Update : 03/24/2023
+Gui,Add,Text, v1tab20 x205 y40 c%updatecol%,Latest Update : 03/24/2023
 Gui,Font,s15 Bold
-Gui,Add,Text, v1tab17 x225 yp+25 cwhite,New in This version
+Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
 Gui,Font,s9
-Gui,Add,Text, v1tab18 x200 yp+40 w250 cwhite,1.
-Gui,Add,Text, v1tab19 xp yp+25 w250 cwhite,2.
-Gui,Add,Text, v1tab20 xp yp+25 w250 cwhite,3.
-Gui,Add,Text, v1tab21 xp yp+25 w250 cwhite,4.
-Gui,Add,Text, v1tab22 xp yp+25 w250 cwhite,5.
-Gui,Add,Text, v1tab23 xp yp+25 w250 cwhite,6.
-Gui,Add,Text, v1tab24 xp yp+25 w250 cwhite,7.
+Gui,Add,Text, v1tab22 x200 yp+40 w250 cwhite,1.
+Gui,Add,Text, v1tab23 xp yp+25 w250 cwhite,2.
+Gui,Add,Text, v1tab24 xp yp+25 w250 cwhite,3.
+Gui,Add,Text, v1tab25 xp yp+25 w250 cwhite,4.
+Gui,Add,Text, v1tab26 xp yp+25 w250 cwhite,5.
+Gui,Add,Text, v1tab27 xp yp+25 w250 cwhite,6.
+Gui,Add,Text, v1tab28 xp yp+25 w250 cwhite,7.
 Gui,Font,s15 Bold
-Gui,Add,Text, v1tab25 x285 y280 cwhite,About
+Gui,Add,Text, v1tab29 x285 y280 cwhite,About
 Gui,Font,s9
-Gui,Add,Text, v1tab26 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
+Gui,Add,Text, v1tab30 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
 Gui,Font,s12 Bold
-Gui,Add,Link, v1tab27 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
-Gui,Add,Link, v1tab28 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
+Gui,Add,Link, v1tab31 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
+Gui,Add,Link, v1tab32 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
 
 Gui,Font,s9
 Gui,Add,DropDownList, v2tab1 x20 y75 w95 h200 ,%farmfield1%||None|bugrun&polar|Plant 1|Plant 2|Plant 3|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
@@ -119,30 +123,30 @@ Gui,Add,Edit, v5tab11 number xp+120 yp-5 w100,
 Gui,Add,Checkbox, v5tab12 x20 yp+30 cwhite ,hotbar slot 7
 Gui,Add,Edit, v5tab13 number xp+120 yp-5 w100,
 
-Gui,Add,Text, v8tab1 x75 y50 cWhite,character speed
-Gui,Add,Edit, v8tab2 x20 yp number w50
-Gui,Add,UpDown, v8tab3 Range10-50, %haststatus%
-Gui,Add,Groupbox, v8tab4 x20 yp+35 w390 h140 cwhite,Webhooks
-Gui,Add,Text, v8tab5 x210 yp+35 cwhite,Events webhook
-Gui,Add,Edit, v8tab6 w175 h20 x30 yp, %hookevent%
-Gui,Add,Text, v8tab7 x210 yp+35 cwhite,Errors webhook
-Gui,Add,Edit, v8tab8 w175 h20 x30 yp, %hookerror%
-Gui,Add,Text, v8tab9 x210 yp+35 cwhite,Balloon warnings webhook
-Gui,Add,Edit, v8tab10 w175 h20 x30 yp, %hookballoon%
-Gui,Add,Groupbox, v8tab11 x20 yp+50 w250 h130 cwhite,Vip Links
-Gui,Add,Text, v8tab12 x160 yp+35 cwhite,main viplink
-Gui,Add,Edit, v8tab13 w120 h20 x35 yp-5 ,%plink1%
-Gui,Add,Text, v8tab14 x160 yp+35 cwhite,backup viplink
-Gui,Add,Edit, v8tab15 w120 h20 x35 yp-5, %plink2%
-Gui,Add,Checkbox, v8tab16 x30 yp+35 cwhite %serverdata%,Force join main link
-Gui,Add,Groupbox, v8tab17 x20 yp+50 w250 h100 cwhite,Server Rebooter
-Gui,Add,Checkbox, v8tab18 x30 yp+30 cwhite %resetserverdata%,Reboot the server
-Gui,Add,Edit, v8tab19 x30 yp+30 number w50
-Gui,Add,UpDown, v8tab20 Range10-5000, %servreboottime%
-Gui,Add,Text, v8tab21 yp+2 x85 cwhite,Cooldown [Minutes]
+Gui,Add,Text, v10tab1 x75 y50 cWhite,character speed
+Gui,Add,Edit, v10tab2 x20 yp number w50
+Gui,Add,UpDown, v10tab3 Range10-50, %haststatus%
+Gui,Add,Groupbox, v10tab4 x20 yp+35 w390 h140 cwhite,Webhooks
+Gui,Add,Text, v10tab5 x210 yp+35 cwhite,Events webhook
+Gui,Add,Edit, v10tab6 w175 h20 x30 yp, %hookevent%
+Gui,Add,Text, v10tab7 x210 yp+35 cwhite,Errors webhook
+Gui,Add,Edit, v10tab8 w175 h20 x30 yp, %hookerror%
+Gui,Add,Text, v10tab9 x210 yp+35 cwhite,Balloon warnings webhook
+Gui,Add,Edit, v10tab10 w175 h20 x30 yp, %hookballoon%
+Gui,Add,Groupbox, v10tab11 x20 yp+50 w250 h130 cwhite,Vip Links
+Gui,Add,Text, v10tab12 x160 yp+35 cwhite,main viplink
+Gui,Add,Edit, v10tab13 w120 h20 x35 yp-5 ,%plink1%
+Gui,Add,Text, v10tab14 x160 yp+35 cwhite,backup viplink
+Gui,Add,Edit, v10tab15 w120 h20 x35 yp-5, %plink2%
+Gui,Add,Checkbox, v10tab16 x30 yp+35 cwhite %serverdata%,Force join main link
+Gui,Add,Groupbox, v10tab17 x20 yp+50 w250 h100 cwhite,Server Rebooter
+Gui,Add,Checkbox, v10tab18 x30 yp+30 cwhite %resetserverdata%,Reboot the server
+Gui,Add,Edit, v10tab19 x30 yp+30 number w50
+Gui,Add,UpDown, v10tab20 Range10-5000, %servreboottime%
+Gui,Add,Text, v10tab21 yp+2 x85 cwhite,Cooldown [Minutes]
 Gui,Font,s12 Bold
-Gui,Add,Text, v8tab22 x20 yp+50 c53ede5,Reset Config
-Gui,Add,Text, v8tab23 x20 yp+25 c53ede5,Reset Timers
+Gui,Add,Text, v10tab22 x20 yp+50 c53ede5,Reset Config
+Gui,Add,Text, v10tab23 x20 yp+25 c53ede5,Reset Timers
 
 
 changetab(1)
@@ -201,7 +205,17 @@ keybindbutton(){
 	GuiControl,,activetab,Keybinds
 }
 
-Settingsbutton(){
+memorybutton(){
 	changetab(8)
+	GuiControl,,activetab,Memory Match
+}
+
+presetbutton(){
+	changetab(9)
+	GuiControl,,activetab,Presets
+}
+
+Settingsbutton(){
+	changetab(10)
 	GuiControl,,activetab,Settings
 }
