@@ -23,24 +23,22 @@ Gui,Add,Text, gpresetbutton v1tab14 x40 yp+65 cf5c88e,Presets
 Gui,Add,Picture, gpresetbutton v1tab15 x5 yp+3, Images/robopass.png
 Gui,Add,Text, gkeybindbutton v1tab16 x40 yp+37 cf5c88e,Keybinds
 Gui,Add,Picture, gkeybindbutton v1tab17 x7 yp+3, Images/keyboard.png
-Gui,Add,Text, ghelpbutton v1tab18 x40 yp+37 cf5c88e,Help
-Gui,Add,Picture, ghelpbutton v1tab19 x5 yp, Images/Help.png
-Gui,Add,Text, gSettingsbutton v1tab20 x40 yp+40 cf5c88e,Settings
-Gui,Add,Picture, gSettingsbutton v1tab21 x5 yp-5, Images/cog.png
+Gui,Add,Text, gSettingsbutton v1tab18 x40 yp+40 cf5c88e,Settings
+Gui,Add,Picture, gSettingsbutton v1tab19 x5 yp-5, Images/cog.png
 Gui,Font,s12 Bold
-Gui,Add,Text, v1tab22 x205 y40 c%updatecol%,Latest Update : 03/24/2023
+Gui,Add,Text, v1tab20 x205 y40 c%updatecol%,Latest Update : 03/24/2023
 Gui,Font,s15 Bold
-Gui,Add,Text, v1tab23 x225 yp+25 cwhite,New in This version
+Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
 Gui,Font,s7
 FileRead, UpdateText, Updatelog.txt
-Gui,Add,Text, v1tab24 x200 yp+40 w250 cwhite +wrap,%UpdateText%
+Gui,Add,Text, v1tab22 x200 yp+40 w250 cwhite +wrap,%UpdateText%
 Gui,Font,s15 Bold
-Gui,Add,Text, v1tab25 x285 y280 cwhite,About
+Gui,Add,Text, v1tab23 x285 y280 cwhite,About
 Gui,Font,s9
-Gui,Add,Text, v1tab26 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
+Gui,Add,Text, v1tab24 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
 Gui,Font,s12 Bold
-Gui,Add,Link, v1tab27 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
-Gui,Add,Link, v1tab28 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
+Gui,Add,Link, v1tab25 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
+Gui,Add,Link, v1tab26 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v2tab1 x340 y10 cgreen,Farming
@@ -276,42 +274,38 @@ Gui,Add,Text, v9tab36 xp+30 yp+3 cwhite,Pause
 
 
 Gui,Font,s17 Bold
-Gui,Add,Text, v10tab1 x380 y10 cgreen,Help
+Gui,Add,Text, v10tab1 x350 y10 cgreen,Settings
 Gui,Font,s10
-
-Gui,Font,s17 Bold
-Gui,Add,Text, v11tab1 x350 y10 cgreen,Settings
-Gui,Font,s10
-Gui,Add,Text, v11tab2 x75 y50 cWhite,character speed
-Gui,Add,Edit, v11tab3 x20 yp number w50
-Gui,Add,UpDown, v11tab4 Range10-50, %haststatus%
+Gui,Add,Text, v10tab2 x75 y50 cWhite,character speed
+Gui,Add,Edit, v10tab3 x20 yp number w50
+Gui,Add,UpDown, v10tab4 Range10-50, %haststatus%
 Gui,Font,s13
-Gui,Add,Groupbox, v11tab5 x20 yp+35 w390 h140 cwhite,Webhooks
+Gui,Add,Groupbox, v10tab5 x20 yp+35 w390 h140 cwhite,Webhooks
 Gui,Font,s10
-Gui,Add,Text, v11tab6 x210 yp+35 cwhite,Events webhook
-Gui,Add,Edit, v11tab7 w175 h20 x30 yp, %hookevent%
-Gui,Add,Text, v11tab8 x210 yp+35 cwhite,Errors webhook
-Gui,Add,Edit, v11tab9 w175 h20 x30 yp, %hookerror%
-Gui,Add,Text, v11tab10 x210 yp+35 cwhite,Balloon warnings webhook
-Gui,Add,Edit, v11tab11 w175 h20 x30 yp, %hookballoon%
+Gui,Add,Text, v10tab6 x210 yp+35 cwhite,Events webhook
+Gui,Add,Edit, v10tab7 w175 h20 x30 yp, %hookevent%
+Gui,Add,Text, v10tab8 x210 yp+35 cwhite,Errors webhook
+Gui,Add,Edit, v10tab9 w175 h20 x30 yp, %hookerror%
+Gui,Add,Text, v10tab10 x210 yp+35 cwhite,Balloon warnings webhook
+Gui,Add,Edit, v10tab11 w175 h20 x30 yp, %hookballoon%
 Gui,Font,s13
 Gui,Add,Groupbox, v11tab12 x20 yp+50 w250 h130 cwhite,Vip Links
 Gui,Font,s10
-Gui,Add,Text, v11tab13 x160 yp+35 cwhite,main viplink
-Gui,Add,Edit, v11tab14 w120 h20 x35 yp-5 ,%plink1%
-Gui,Add,Text, v11tab15 x160 yp+35 cwhite,backup viplink
-Gui,Add,Edit, v11tab16 w120 h20 x35 yp-5, %plink2%
-Gui,Add,Checkbox, v11tab17 x30 yp+35 cwhite %serverdata%,Force join main link
+Gui,Add,Text, v10tab13 x160 yp+35 cwhite,main viplink
+Gui,Add,Edit, v10tab14 w120 h20 x35 yp-5 ,%plink1%
+Gui,Add,Text, v10tab15 x160 yp+35 cwhite,backup viplink
+Gui,Add,Edit, v10tab16 w120 h20 x35 yp-5, %plink2%
+Gui,Add,Checkbox, v10tab17 x30 yp+35 cwhite %serverdata%,Force join main link
 Gui,Font,s13
-Gui,Add,Groupbox, v11tab18 x20 yp+50 w250 h100 cwhite,Server Rebooter
+Gui,Add,Groupbox, v10tab18 x20 yp+50 w250 h100 cwhite,Server Rebooter
 Gui,Font,s10
-Gui,Add,Checkbox, v11tab19 x30 yp+30 cwhite %resetserverdata%,Reboot the server
-Gui,Add,Edit, v11tab20 x30 yp+30 number w50
-Gui,Add,UpDown, v11tab21 Range10-5000, %servreboottime%
-Gui,Add,Text, v11tab22 yp+2 x85 cwhite,Cooldown [Minutes]
+Gui,Add,Checkbox, v10tab19 x30 yp+30 cwhite %resetserverdata%,Reboot the server
+Gui,Add,Edit, v10tab20 x30 yp+30 number w50
+Gui,Add,UpDown, v10tab21 Range10-5000, %servreboottime%
+Gui,Add,Text, v10tab22 yp+2 x85 cwhite,Cooldown [Minutes]
 Gui,Font,s12 Bold
-Gui,Add,Text, v11tab23 x20 yp+50 c53ede5,Reset Config
-Gui,Add,Text, v11tab24 x20 yp+25 c53ede5,Reset Timers
+Gui,Add,Text, v10tab23 x20 yp+50 c53ede5,Reset Config
+Gui,Add,Text, v10tab24 x20 yp+25 c53ede5,Reset Timers
 
 
 changetab(1)
@@ -374,10 +368,6 @@ keybindbutton(){
 	changetab(9)
 }
 
-helpbutton(){
-	changetab(10)
-}
-
 Settingsbutton(){
-	changetab(11)
+	changetab(10)
 }
