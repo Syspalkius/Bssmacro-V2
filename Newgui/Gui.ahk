@@ -131,8 +131,23 @@ loop 11{
 	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,||1|2|3|4|5|6|7
 }
 
+Gui,Add,GroupBox, v3tab28 x10 yp+40 w260 h140 cwhite,Plant Looting
+Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %loot%, loot planters
+Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harvf1%, harvest plant 1 when fully grown
+Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harvf2%, harvest plant 2 when fully grown
+Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harvf3%, harvest plant 3 when fully grown
 
+Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h130 cwhite,Planter Timers
+gui,Add,Text,v3tab34 xp+70 yp+20 cwhite,harvest time
+Gui,Add,Text,v3tab35 xp-60 yp+23 cwhite, plant 1
+Gui,Add,DropDownList,v3tab36 xp+50 yp-5 w90 h140,%plant1delaydata%||30 min|1 hour|2 hours|4 hours
+Gui,Add,Text,v3tab37 xp-50 yp+30 cwhite, plant 2
+Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140,%plant2delaydata%||30 min|1 hour|2 hours|4 hours
+Gui,Add,Text,v3tab39 xp-50 yp+30 cwhite, plant 3
+Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140,%plant3delaydata%||30 min|1 hour|2 hours|4 hours
 
+Gui,Add,Button, v3tab41 x10 yp+50,Reset Settings
+Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
 
 
 Gui,Font,s17 Bold
@@ -187,10 +202,13 @@ loop 6{
 Gui,Font,s17 Bold
 Gui,Add,Text, v6tab1 x360 y10 cgreen,Quests
 Gui,Font,s10
+Gui,Add,Picture, v6tab2 x10 y200,Images/comingsoon.png
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v7tab1 x270 y10 cgreen,Memory match
 Gui,Font,s10
+Gui,Add,Picture, v7tab2 x10 y200,Images/comingsoon.png
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v8tab1 x350 y10 cgreen,Presets
@@ -248,14 +266,14 @@ changetab(tab){
 	loop 11{
 		var++
 		if not (tab = A_Index){
-			loop 40{
+			loop 45{
 				GuiControl,Hide,%var%tab%A_Index%
 			}
 		}
 	}
 	
 	
-	loop 40{
+	loop 45{
 		GuiControl,Show,%tab%tab%A_Index%
 	}
 	Tooltip,
