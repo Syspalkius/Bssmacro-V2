@@ -229,11 +229,51 @@ Gui,Add,Picture, v8tab14 x10 yp+55,Images/ticket.png
 Gui,Add,Text, v8tab15 xp+33 yp-3 c53ede5,Load ticket farmer
 
 
-
-
 Gui,Font,s17 Bold
 Gui,Add,Text, v9tab1 x330 y10 cgreen,Keybinds
 Gui,Font,s10
+
+Gui,Add,Groupbox, v9tab2 x20 yp+40 w220 h220 cwhite,Movement
+Gui,Add,Edit, v9tab3 x30 yp+20 h20 w17 limit1
+Gui,Add,Text, v9tab4 xp+20 yp+3 cwhite,Walk forwards
+Gui,Add,Edit, v9tab5 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab6 xp+20 yp+3 cwhite,Walk to the left
+Gui,Add,Edit, v9tab7 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab8 xp+20 yp+3 cwhite,Walk backwards
+Gui,Add,Edit, v9tab9 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab10 xp+20 yp+3 cwhite,Walk to the right
+Gui,Add,Edit, v9tab11 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab12 xp+20 yp+3 cwhite,Rotate camera to the left
+Gui,Add,Edit, v9tab13 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab14 xp+20 yp+3 cwhite,Rotate camera to the right
+
+Gui,Add,Groupbox, v9tab15 x20 yp+40 w150 h250 cwhite,Hotbar
+Gui,Add,Edit, v9tab16 x30 yp+20 h20 w17 limit1
+Gui,Add,Text, v9tab17 xp+20 yp+3 cwhite,Hotbar slot 1
+Gui,Add,Edit, v9tab18 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab19 xp+20 yp+3 cwhite,Hotbar slot 2
+Gui,Add,Edit, v9tab20 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab21 xp+20 yp+3 cwhite,Hotbar slot 3
+Gui,Add,Edit, v9tab22 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab23 xp+20 yp+3 cwhite,Hotbar slot 4
+Gui,Add,Edit, v9tab24 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab25 xp+20 yp+3 cwhite,Hotbar slot 5
+Gui,Add,Edit, v9tab26 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab27 xp+20 yp+3 cwhite,Hotbar slot 6
+Gui,Add,Edit, v9tab28 x30 yp+30 h20 w17 limit1
+Gui,Add,Text, v9tab29 xp+20 yp+3 cwhite,Hotbar slot 7
+
+Gui,Add,Groupbox, v9tab30 x180 y278 w100 h120 cwhite,Macro
+Gui,Add,Edit, v9tab31 x190 yp+20 h20 w27 limit2
+Gui,Add,Text, v9tab32 xp+30 yp+3 cwhite,Start
+Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2
+Gui,Add,Text, v9tab34 xp+30 yp+3 cwhite,Stop
+Gui,Add,Edit, v9tab35 x190 yp+30 h20 w27 limit2
+Gui,Add,Text, v9tab36 xp+30 yp+3 cwhite,Pause
+
+
+
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v10tab1 x380 y10 cgreen,Help
