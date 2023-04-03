@@ -212,7 +212,24 @@ Gui,Add,Picture, v7tab2 x10 y200,Images/comingsoon.png
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v8tab1 x350 y10 cgreen,Presets
-Gui,Font,s10
+Gui,Font,s15
+Gui,Add,Picture, v8tab2 x10 y50,Images/nectar.png
+Gui,Add,Text, v8tab3 xp+30 y53 c53ede5,Load blue 5 nectar preset
+Gui,Add,Picture, v8tab4 xp yp+30,Images/blue5nect.png
+Gui,Add,Picture, v8tab5 x7 yp+55,Images/honey.png
+Gui,Add,Text, v8tab6 xp+34 yp+5 c53ede5,Load Ideal blue honeymaker preset
+Gui,Add,Picture, v8tab7 x10 yp+55,Images/gumdrop.png
+Gui,Add,Text, v8tab8 xp+33 yp+2 c53ede5,Load gumdrop farmer
+Gui,Add,Picture, v8tab9 x10 yp+55,Images/jb.png
+Gui,Add,Text, v8tab10 xp+33 yp+2 c53ede5,Load Jelly bean/Stinger farmer
+Gui,Add,Picture, v8tab11 xp yp+30,Images/stingfarmer.png
+Gui,Add,Picture, v8tab12 x10 yp+55,Images/strawberry.png
+Gui,Add,Text, v8tab13 xp+33 yp+2 c53ede5,Load full fruit farmer
+Gui,Add,Picture, v8tab14 x10 yp+55,Images/ticket.png
+Gui,Add,Text, v8tab15 xp+33 yp-3 c53ede5,Load ticket farmer
+
+
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v9tab1 x330 y10 cgreen,Keybinds
