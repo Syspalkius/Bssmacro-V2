@@ -31,14 +31,16 @@ Gui,Font,s15 Bold
 Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
 Gui,Font,s7
 FileRead, UpdateText, Updatelog.txt
-Gui,Add,Text, v1tab22 x200 yp+40 w250 cwhite +wrap,%UpdateText%
+Gui,Add,Text, v1tab22 x200 yp+40 w250 h140 cwhite +wrap,%UpdateText%
+Gui,Font,s10 Bold
+Gui,Add,Button, v1tab23 x270 y250,View More
 Gui,Font,s15 Bold
-Gui,Add,Text, v1tab23 x285 y280 cwhite,About
+Gui,Add,Text, v1tab24 x285 y280 cwhite,About
 Gui,Font,s9
-Gui,Add,Text, v1tab24 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
+Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
 Gui,Font,s12 Bold
-Gui,Add,Link, v1tab25 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
-Gui,Add,Link, v1tab26 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
+Gui,Add,Link, v1tab26 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
+Gui,Add,Link, v1tab27 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v2tab1 x340 y10 cgreen,Farming
@@ -129,13 +131,16 @@ loop 11{
 	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,||1|2|3|4|5|6|7
 }
 
+Gui,Font,s13
 Gui,Add,GroupBox, v3tab28 x10 yp+40 w260 h140 cwhite,Plant Looting
+Gui,Font,s8
 Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %loot%, loot planters
 Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harvf1%, harvest plant 1 when fully grown
 Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harvf2%, harvest plant 2 when fully grown
 Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harvf3%, harvest plant 3 when fully grown
-
+Gui,Font,s13
 Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h130 cwhite,Planter Timers
+Gui,Font,s8
 gui,Add,Text,v3tab34 xp+70 yp+20 cwhite,harvest time
 Gui,Add,Text,v3tab35 xp-60 yp+23 cwhite, plant 1
 Gui,Add,DropDownList,v3tab36 xp+50 yp-5 w90 h140,%plant1delaydata%||30 min|1 hour|2 hours|4 hours
@@ -229,9 +234,10 @@ Gui,Add,Text, v8tab15 xp+33 yp-3 c53ede5,Load ticket farmer
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v9tab1 x330 y10 cgreen,Keybinds
-Gui,Font,s10
 
+Gui,Font,s13
 Gui,Add,Groupbox, v9tab2 x20 yp+40 w220 h220 cwhite,Movement
+Gui,Font,s10
 Gui,Add,Edit, v9tab3 x30 yp+20 h20 w17 limit1
 Gui,Add,Text, v9tab4 xp+20 yp+3 cwhite,Walk forwards
 Gui,Add,Edit, v9tab5 x30 yp+30 h20 w17 limit1
@@ -245,7 +251,9 @@ Gui,Add,Text, v9tab12 xp+20 yp+3 cwhite,Rotate camera to the left
 Gui,Add,Edit, v9tab13 x30 yp+30 h20 w17 limit1
 Gui,Add,Text, v9tab14 xp+20 yp+3 cwhite,Rotate camera to the right
 
+Gui,Font,s13
 Gui,Add,Groupbox, v9tab15 x20 yp+40 w150 h250 cwhite,Hotbar
+Gui,Font,s10
 Gui,Add,Edit, v9tab16 x30 yp+20 h20 w17 limit1
 Gui,Add,Text, v9tab17 xp+20 yp+3 cwhite,Hotbar slot 1
 Gui,Add,Edit, v9tab18 x30 yp+30 h20 w17 limit1
@@ -261,7 +269,9 @@ Gui,Add,Text, v9tab27 xp+20 yp+3 cwhite,Hotbar slot 6
 Gui,Add,Edit, v9tab28 x30 yp+30 h20 w17 limit1
 Gui,Add,Text, v9tab29 xp+20 yp+3 cwhite,Hotbar slot 7
 
+Gui,Font,s13
 Gui,Add,Groupbox, v9tab30 x180 y278 w100 h120 cwhite,Macro
+Gui,Font,s10
 Gui,Add,Edit, v9tab31 x190 yp+20 h20 w27 limit2
 Gui,Add,Text, v9tab32 xp+30 yp+3 cwhite,Start
 Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2
@@ -289,7 +299,7 @@ Gui,Add,Edit, v10tab9 w175 h20 x30 yp, %hookerror%
 Gui,Add,Text, v10tab10 x210 yp+35 cwhite,Balloon warnings webhook
 Gui,Add,Edit, v10tab11 w175 h20 x30 yp, %hookballoon%
 Gui,Font,s13
-Gui,Add,Groupbox, v11tab12 x20 yp+50 w250 h130 cwhite,Vip Links
+Gui,Add,Groupbox, v10tab12 x20 yp+50 w250 h130 cwhite,Vip Links
 Gui,Font,s10
 Gui,Add,Text, v10tab13 x160 yp+35 cwhite,main viplink
 Gui,Add,Edit, v10tab14 w120 h20 x35 yp-5 ,%plink1%
@@ -311,24 +321,6 @@ Gui,Add,Text, v10tab24 x20 yp+25 c53ede5,Reset Timers
 changetab(1)
 Gui,show,w450 h600,Syspalk's macro
 
-changetab(tab){
-	Tooltip,Loading tab...
-	var := 0
-	loop 11{
-		var++
-		if not (tab = A_Index){
-			loop 45{
-				GuiControl,Hide,%var%tab%A_Index%
-			}
-		}
-	}
-	
-	
-	loop 45{
-		GuiControl,Show,%tab%tab%A_Index%
-	}
-	Tooltip,
-}
 
 ;------Buttons------
 menubar(){
@@ -355,7 +347,6 @@ Questbutton(){
 	changetab(6)
 }
 
-
 memorybutton(){
 	changetab(7)
 }
@@ -370,4 +361,39 @@ keybindbutton(){
 
 Settingsbutton(){
 	changetab(10)
+}
+
+Buttonviewmore(){
+	FileRead, UpdateText, Updatelog.txt
+	popup(500,500,New in this version,UpdateText)
+}
+
+
+;------Functions------
+popup(SizeX,SizeY,Title,Text){
+	Textloc := SizeX-20
+	Gui, popup:Destroy
+	Gui, popup:color,0x2A2F32
+	Gui, popup:Font,s10,Segoe UI
+	Gui, popup:Add,Text, +wrap x10 y5 w%Textloc% cwhite,%Text%
+	Gui, popup:Show, w%SizeX% h%SizeY%,%Title%
+}
+
+changetab(tab){
+	Tooltip,Loading tab...
+	var := 0
+	loop 11{
+		var++
+		if not (tab = A_Index){
+			loop 45{
+				GuiControl,Hide,%var%tab%A_Index%
+			}
+		}
+	}
+	
+	
+	loop 45{
+		GuiControl,Show,%tab%tab%A_Index%
+	}
+	Tooltip,
 }
