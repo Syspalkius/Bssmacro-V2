@@ -1,7 +1,11 @@
-﻿global menubar := 0
+﻿menu,tray,icon,Images/logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
 global updatecol := "Green"
+global startbutton := "F1"
+global stopbutton := "F2"
+global pausebutton := "F3"
+
 
 Gui,Add,Picture, x10 y10 gmenubar, Images/menu.png
 Gui,Add,Text, xp+40 yp-5 gmenubar cwhite, Home
@@ -30,14 +34,14 @@ Gui,Add,Text, v1tab20 x205 y40 c%updatecol%,Latest Update : 03/24/2023
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
 Gui,Font,s7
-FileRead, UpdateText, Updatelog.txt
+FileRead, UpdateText, Info/New in this version.txt
 Gui,Add,Text, v1tab22 x200 yp+40 w250 h140 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
 Gui,Add,Button, v1tab23 x270 y250,View More
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab24 x285 y280 cwhite,About
 Gui,Font,s9
-Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
+Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was almost completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
 Gui,Font,s12 Bold
 Gui,Add,Link, v1tab26 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
 Gui,Add,Link, v1tab27 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
@@ -59,27 +63,35 @@ Gui,Add,Text, v2tab11 xp+75 yp+5 cwhite,Conversion type
 Gui,Add,Edit,  v2tab12 x20 yp+30 number w40
 Gui,Add,UpDown, v2tab13 Range1-60, %maxtimespentonfield%
 Gui,Add,Text, v2tab14 xp+45  yp+5 cwhite, max time on field (minutes)
-Gui,Add,Checkbox, v2tab15 x20 yp+30 %tooldata% cWhite,swing tool while farming
-Gui,Add,CheckBox, v2tab16 x20 yp+25 cwhite %sprinkleraligntoggle%,move to sprinkler
-Gui,Add,Checkbox, v2tab17 x20 yp+25 cwhite %pineconvdata%,pinetree walk convert
-Gui,Add,Checkbox, v2tab18 x20 yp+25 cwhite %shiftlockdata%,farm with shiftlock
+Gui,Add,Checkbox, v2tab15 x20 yp+30 %tooldata% cWhite,Swing tool while farming
+Gui,Add,CheckBox, v2tab16 x20 yp+25 cwhite %sprinkleraligntoggle%,Move to sprinkler
+Gui,Add,Checkbox, v2tab17 x20 yp+25 cwhite %pineconvdata%,Pinetree walk convert
+Gui,Add,Checkbox, v2tab18 x20 yp+25 cwhite %exitpop%,Don't exit the field when pop star is active
+Gui,Add,Checkbox, v2tab19 x20 yp+25 cwhite %shiftlockdata%,Farm with shiftlock
 Gui,Font,s13
-Gui,Add,GroupBox, v2tab19 x20 yp+30 w200 h130 cwhite,Shrine
+Gui,Add,GroupBox, v2tab20 x20 yp+30 w200 h130 cwhite,Shrine
 Gui,Font,s10
-Gui,Add,Checkbox, v2tab20 x25 yp+25 cwhite %shrine%,Donate to the windshrine
-Gui,Add,Edit, v2tab21 number x25 yp+30 w50 ,%donationamount%
-Gui,Add,UpDown, v2tab22 Range10-50, %haststatus%
-Gui,Add,Text, v2tab23 xp+60 yp cwhite,Amount of items
-Gui,Add,Text, v2tab24 x130 yp+40 cwhite,Item
-Gui,Add,DropDownlist,v2tab25 w100 h200 x25 yp,%itemtodonate%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
+Gui,Add,Checkbox, v2tab21 x25 yp+25 cwhite %shrine%,Donate to the windshrine
+Gui,Add,Edit, v2tab22 number x25 yp+30 w50 ,%donationamount%
+Gui,Add,UpDown, v2tab23 Range10-50, %haststatus%
+Gui,Add,Text, v2tab24 xp+60 yp cwhite,Amount of items
+Gui,Add,Text, v2tab25 x130 yp+40 cwhite,Item
+Gui,Add,DropDownlist,v2tab26 w100 h200 x25 yp,%itemtodonate%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
 Gui,Font,s13
-Gui,Add,Groupbox, v2tab26 x240 yp-95 w200 h95 cwhite,Boosters
+Gui,Add,Groupbox, v2tab27 x240 yp-95 w200 h95 cwhite,Boosters
 Gui,Font,s10
-Gui,Add,Checkbox, v2tab27 x250 yp+25 cwhite %bluebooster%,Blue Booster
-Gui,Add,Checkbox, v2tab28 x250 yp+25 cwhite %redbooster%,Red Booster
-Gui,Add,Checkbox, v2tab29 x250 yp+25 cwhite %whitebooster%,White Booster
-Gui,Add,Groupbox, v2tab30 x240 yp+10 w200 h40 cwhite,
-Gui,Add,Checkbox, v2tab31 x250 yp+15 cwhite %Reglitter%,Reglitter pinetree
+Gui,Add,Checkbox, v2tab28 x250 yp+25 cwhite %bluebooster%,Blue Booster
+Gui,Add,Checkbox, v2tab29 x250 yp+25 cwhite %redbooster%,Red Booster
+Gui,Add,Checkbox, v2tab30 x250 yp+25 cwhite %whitebooster%,White Booster
+Gui,Add,Groupbox, v2tab31 x240 yp+10 w200 h40 cwhite,
+Gui,Add,Checkbox, v2tab32 x250 yp+15 cwhite %Reglitter%,Reglitter pinetree
+Gui,Font,S12
+Starttext := "Start [" . startbutton . "]"
+StopText := "Stop [" . stopbutton . "]"
+PauseText := "Pause [" . pausebutton . "]"
+Gui,Add,Text, v2tab33 x20 y570 c53ede5,%Starttext%
+Gui,Add,Text, v2tab34 x180 y570 c53ede5,%StopText%
+Gui,Add,Text, v2tab35 x340 y570 c53ede5,%PauseText%
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v3tab1 x340 y10 cgreen,Planters
@@ -316,7 +328,8 @@ Gui,Add,Text, v10tab22 yp+2 x85 cwhite,Cooldown [Minutes]
 Gui,Font,s12 Bold
 Gui,Add,Text, v10tab23 x20 yp+50 c53ede5,Reset Config
 Gui,Add,Text, v10tab24 x20 yp+25 c53ede5,Reset Timers
-
+Gui,Font,s10 Bold
+Gui,Add,Button,v10tab25 x380 y560,credits
 
 changetab(1)
 Gui,show,w450 h600,Syspalk's macro
@@ -364,17 +377,21 @@ Settingsbutton(){
 }
 
 Buttonviewmore(){
-	FileRead, UpdateText, Updatelog.txt
-	popup(500,500,New in this version,UpdateText)
+	FileRead, UpdateText, Info/New in this version.txt
+	popup(500,500,10,"New in this version",UpdateText)
 }
 
+Buttoncredits(){
+	FileRead, CreditText, Info/Credits.txt
+	popup(200,300,12,"Credits",CreditText)
+}
 
 ;------Functions------
-popup(SizeX,SizeY,Title,Text){
+popup(SizeX,SizeY,FontSize,Title,Text){
 	Textloc := SizeX-20
 	Gui, popup:Destroy
 	Gui, popup:color,0x2A2F32
-	Gui, popup:Font,s10,Segoe UI
+	Gui, popup:Font,s%FontSize%,Segoe UI
 	Gui, popup:Add,Text, +wrap x10 y5 w%Textloc% cwhite,%Text%
 	Gui, popup:Show, w%SizeX% h%SizeY%,%Title%
 }
