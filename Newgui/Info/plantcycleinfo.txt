@@ -1,0 +1,5 @@
+This is used to create custom cycles for your planters, can be used for doing quests, farming loot or keeping up/growing your nectars.
+
+There are 3 different cycles, all of them working parallel to eachother.
+
+It works basically the same as the field farming switching between fields but instead of farming on the field it will place and take planters and switch them between the fields, this switch normally happends once an hour or you can change the timer if you like.

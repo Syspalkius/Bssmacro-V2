@@ -176,6 +176,14 @@ Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140,%plant3delaydata%||30 min|1 hou
 Gui,Add,Button, v3tab41 x10 yp+50,Reset Settings
 Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
 
+Gui,Font,s10
+Gui,Add,Text, v3tab43 x430 y68 w10 h17 c%infocol% gcycleinfo,?
+Gui,Add,Text, v3tab44 x195 y440 w10 h17 c%infocol% gharvtimeinfo,?
+
+
+
+
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v4tab1 x320 y10 cgreen,Resources
@@ -213,6 +221,13 @@ Gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %killmantis%,Kill mantises
 Gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %killwolf%,Kill werewolf
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200,%mondokilldata%||No Kill|Blessing|Loot
+
+Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
+Gui,Add,Text, v4tab29 x180 y410 w10 h17 c%infocol% gmobinfo,?
+
+
+
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v5tab1 x380 y10 cgreen,Buffs
@@ -255,10 +270,14 @@ Gui,Add,Text, v8tab13 xp+33 yp+2 c53ede5,Load full fruit farmer
 Gui,Add,Picture, v8tab14 x10 yp+55,Images/ticket.png
 Gui,Add,Text, v8tab15 xp+33 yp-3 c53ede5,Load ticket farmer
 
+Gui,Font,s10
+Gui,Add,Text, v8tab16 x335 y17 w10 h17 c%infocol% gpresetinfo,?
+
+
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v9tab1 x330 y10 cgreen,Keybinds
-
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab2 x20 yp+40 w220 h220 cwhite,Movement
 Gui,Font,s10
@@ -468,4 +487,29 @@ boosterinfo(){
 reglitterinfo(){
 	FileRead, ReglitterText, Info/reglitterinfo.txt
 	popup(400,300,12,"Reglitter info",ReglitterText)
+}
+
+cycleinfo(){
+	FileRead, CycleText, Info/plantcycleinfo.txt
+	popup(400,300,12,"Cycle info",CycleText)
+}
+
+harvtimeinfo(){
+	FileRead, HarvText, Info/harvtimeinfo.txt
+	popup(400,300,12,"Cycle info",HarvText)
+}
+
+dispenserinfo(){
+	FileRead, DispText, Info/dispenserinfo.txt
+	popup(400,300,12,"Cycle info",DispText)
+}
+
+mobinfo(){
+	FileRead, MobText, Info/mobinfo.txt
+	popup(400,300,12,"Cycle info",MobText)
+}
+
+presetinfo(){
+	FileRead, PresetText, Info/presetinfo.txt
+	popup(400,300,12,"Cycle info",PresetText)
 }

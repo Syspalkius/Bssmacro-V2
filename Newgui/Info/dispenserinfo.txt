@@ -1,0 +1,1 @@
+Will loot these things automatically on a set timer.

@@ -1,0 +1,3 @@
+With this you can change the time it takes for the macro to jump to the next plant cycle.
+
+For example : if it's on 1 hour it will place your planter in a certain field and take it back and move it to the next field an hour later, but if it's on 2 hours it will place it in a certain field and place it in the next field 2 hours later.
