@@ -1,5 +1,6 @@
-﻿SetWorkingDir,Macro Parts\GUI
-Tooltip,Loading...
+﻿Tooltip,Loading...
+SetWorkingDir,Macro Parts\GUI
+#Include Macro Parts\GUI\Buttons.ahk
 menu,tray,icon,Images/logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
@@ -48,6 +49,8 @@ Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macr
 Gui,Font,s12 Bold
 Gui,Add,Link, v1tab26 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
 Gui,Add,Link, v1tab27 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
+
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v2tab1 x340 y10 cgreen,Farming
@@ -112,8 +115,6 @@ Gui,Font,s13
 Gui,Add,Groupbox, v3tab2 x10 y50 w435 h215 cwhite,Cycle
 Gui,Font,s8
 Gui,Add,Text, v3tab3 x15 y80 cwhite,Fields`n`nPlanter`n`n`nFields`n`nPlanter`n`n`nFields`n`nPlanter
-
-
 Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4,||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 xposition := 65
 yposition := 80
@@ -134,7 +135,6 @@ loop 11{
 	}
 	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%fieldnumber%,||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 }
-
 Gui,Add,DropDownList, x65 y105 w80 h200 v3tab16,||1|2|3|4|5|6|7
 xposition := 65
 yposition := 105
@@ -155,7 +155,6 @@ loop 11{
 	}
 	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,||1|2|3|4|5|6|7
 }
-
 Gui,Font,s13
 Gui,Add,GroupBox, v3tab28 x10 yp+40 w260 h140 cwhite,Plant Looting
 Gui,Font,s8
@@ -173,16 +172,11 @@ Gui,Add,Text,v3tab37 xp-50 yp+30 cwhite, plant 2
 Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140,%plant2delaydata%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab39 xp-50 yp+30 cwhite, plant 3
 Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140,%plant3delaydata%||30 min|1 hour|2 hours|4 hours
-
 Gui,Add,Button, v3tab41 x10 yp+50,Reset Settings
 Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
-
 Gui,Font,s10
 Gui,Add,Text, v3tab43 x430 y68 w10 h17 c%infocol% gcycleinfo,?
 Gui,Add,Text, v3tab44 x195 y440 w10 h17 c%infocol% gharvtimeinfo,?
-
-
-
 
 
 
@@ -222,11 +216,8 @@ Gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %killmantis%,Kill mantises
 Gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %killwolf%,Kill werewolf
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200,%mondokilldata%||No Kill|Blessing|Loot
-
 Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
 Gui,Add,Text, v4tab29 x180 y410 w10 h17 c%infocol% gmobinfo,?
-
-
 
 
 
@@ -242,16 +233,21 @@ loop 6{
 	Gui,Add,Edit, v5tab%editnum% number xp+120 yp-5 w100 ,
 }
 
+
+
 Gui,Font,s17 Bold
 Gui,Add,Text, v6tab1 x360 y10 cgreen,Quests
 Gui,Font,s10
 Gui,Add,Picture, v6tab2 x10 y200,Images/comingsoon.png
 
 
+
 Gui,Font,s17 Bold
 Gui,Add,Text, v7tab1 x270 y10 cgreen,Memory match
 Gui,Font,s10
 Gui,Add,Picture, v7tab2 x10 y200,Images/comingsoon.png
+
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v8tab1 x350 y10 cgreen,Presets
@@ -270,10 +266,8 @@ Gui,Add,Picture, v8tab12 x10 yp+55,Images/strawberry.png
 Gui,Add,Text, v8tab13 xp+33 yp+2 c53ede5,Load full fruit farmer
 Gui,Add,Picture, v8tab14 x10 yp+55,Images/ticket.png
 Gui,Add,Text, v8tab15 xp+33 yp-3 c53ede5,Load ticket farmer
-
 Gui,Font,s10
 Gui,Add,Text, v8tab16 x335 y17 w10 h17 c%infocol% gpresetinfo,?
-
 
 
 
@@ -294,7 +288,6 @@ Gui,Add,Edit, v9tab11 x30 yp+30 h20 w17 limit1
 Gui,Add,Text, v9tab12 xp+20 yp+3 cwhite,Rotate camera to the left
 Gui,Add,Edit, v9tab13 x30 yp+30 h20 w17 limit1
 Gui,Add,Text, v9tab14 xp+20 yp+3 cwhite,Rotate camera to the right
-
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab15 x20 yp+40 w150 h250 cwhite,Hotbar
 Gui,Font,s10
@@ -312,7 +305,6 @@ Gui,Add,Edit, v9tab26 x30 yp+30 h20 w17 limit1
 Gui,Add,Text, v9tab27 xp+20 yp+3 cwhite,Hotbar slot 6
 Gui,Add,Edit, v9tab28 x30 yp+30 h20 w17 limit1
 Gui,Add,Text, v9tab29 xp+20 yp+3 cwhite,Hotbar slot 7
-
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab30 x180 y278 w100 h120 cwhite,Macro
 Gui,Font,s10
@@ -322,8 +314,6 @@ Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2
 Gui,Add,Text, v9tab34 xp+30 yp+3 cwhite,Stop
 Gui,Add,Edit, v9tab35 x190 yp+30 h20 w27 limit2
 Gui,Add,Text, v9tab36 xp+30 yp+3 cwhite,Pause
-
-
 
 
 
@@ -363,10 +353,9 @@ Gui,Add,Text, v10tab24 x20 yp+25 c53ede5,Reset Timers
 Gui,Font,s10 Bold
 Gui,Add,Button,v10tab25 x380 y560,credits
 
+
 changetab(1)
 Gui,show,w450 h600,Syspalk's macro
-
-
 ;------Functions------
 popup(SizeX,SizeY,FontSize,Title,Text){
 	Textloc := SizeX-20
@@ -394,123 +383,4 @@ changetab(tab){
 		GuiControl,Show,%tab%tab%A_Index%
 	}
 	Tooltip,
-}
-
-
-;------Buttons------
-menubar(){
-	changetab(1)
-}
-
-Farmingbutton(){
-	changetab(2)
-}
-
-Planterbutton(){
-	changetab(3)
-}
-
-Resourcesbutton(){
-	changetab(4)
-}
-
-Buffsbutton(){
-	changetab(5)
-}
-
-Questbutton(){
-	changetab(6)
-}
-
-memorybutton(){
-	changetab(7)
-}
-
-presetbutton(){
-	changetab(8)
-}
-
-keybindbutton(){
-	changetab(9)
-}
-
-Settingsbutton(){
-	changetab(10)
-}
-
-Buttonviewmore(){
-	FileRead, UpdateText, Info/New in this version.txt
-	popup(500,500,10,"New in this version",UpdateText)
-}
-
-Buttoncredits(){
-	FileRead, CreditText, Info/Credits.txt
-	popup(200,300,12,"Credits",CreditText)
-}
-
-;------Info buttons------
-
-farminfo(){
-	FileRead, FarmingText, Info/farminginfo.txt
-	popup(400,300,12,"Farming info",FarmingText)
-}
-
-patterninfo(){
-	FileRead, PatternText, Info/patterninfo.txt
-	popup(400,300,12,"Pattern info",PatternText)
-}
-
-convertinfo(){
-	FileRead, ConvertText, Info/convertinfo.txt
-	popup(400,300,12,"Convert info",ConvertText)
-}
-
-maxtimeinfo(){
-	FileRead, MaxText, Info/Maxfieldinfo.txt
-	popup(400,300,12,"Max time on field info",MaxText)
-}
-
-sprinklerinfo(){
-	FileRead, SprinklerText, Info/sprinklerinfo.txt
-	popup(400,300,12,"Move to sprinkler info",SprinklerText)
-}
-
-walkpineinfo(){
-	FileRead, WalkpineText, Info/walkpineinfo.txt
-	popup(400,300,12,"Pinetree walk convert info",WalkpineText)
-}
-
-boosterinfo(){
-	FileRead, BoosterText, Info/boosterinfo.txt
-	popup(400,300,12,"Booster info",BoosterText)
-}
-
-reglitterinfo(){
-	FileRead, ReglitterText, Info/reglitterinfo.txt
-	popup(400,300,12,"Reglitter info",ReglitterText)
-}
-
-cycleinfo(){
-	FileRead, CycleText, Info/plantcycleinfo.txt
-	popup(400,300,12,"Cycle info",CycleText)
-}
-
-harvtimeinfo(){
-	FileRead, HarvText, Info/harvtimeinfo.txt
-	popup(400,300,12,"Cycle info",HarvText)
-}
-
-dispenserinfo(){
-	FileRead, DispText, Info/dispenserinfo.txt
-	popup(400,300,12,"Cycle info",DispText)
-}
-
-mobinfo(){
-	FileRead, MobText, Info/mobinfo.txt
-	popup(400,300,12,"Cycle info",MobText)
-}
-
-presetinfo(){
-	FileRead, PresetText, Info/presetinfo.txt
-	popup(400,300,12,"Cycle info",PresetText)
 }
