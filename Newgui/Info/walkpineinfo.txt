@@ -1,0 +1,3 @@
+This will let you walk back to the hive instead of rejoining or resetting when you're farming in pinetree.
+
+This is useful because it is around the same speed as resetting but you keep the pollen that's in your bag so it will slightly increase macro honey if you're macroing in pinetree as a blue hive.

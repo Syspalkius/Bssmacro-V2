@@ -1,7 +1,9 @@
-﻿menu,tray,icon,Images/logo.ico
+﻿Tooltip,Loading...
+menu,tray,icon,Images/logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
 global updatecol := "Green"
+global infocol := "53ede5"
 global startbutton := "F1"
 global stopbutton := "F2"
 global pausebutton := "F3"
@@ -54,44 +56,54 @@ Gui,Add,DropDownList, v2tab3 xp+100 yp w95 h200 ,%farmfield2%||None|bugrun&polar
 Gui,Add,DropDownList, v2tab4 xp+100 yp w95 h200 ,%farmfield3%||None|bugrun&polar|Plant 1|Plant 2|Plant 3|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 Gui,Add,DropDownList, v2tab5 xp+100 yp w95 h200 ,%farmfield4%||None|bugrun&polar|Plant 1|Plant 2|Plant 3|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 Gui,Font,s10
-Gui,Add,Text, v2tab6 x40 y50 cwhite ,Field 1             Field 2             Field 3             Field 4
-Gui,Add,DropDownList, v2tab7 x20 y135 w90 h200,%fieldpatern%||None|zigzag|squares|zigzag++
-Gui,Add,Text, v2tab8 xp+15 yp-20 cwhite,Pattern                               Size
-Gui,Add,Slider, v2tab9 xp+115 yp+25 range200-800,500
-Gui,Add,DropDownlist, v2tab10 yp+35 x20 w70 h200,%convsetting%||None|Reset|Rejoin
-Gui,Add,Text, v2tab11 xp+75 yp+5 cwhite,Conversion type
-Gui,Add,Edit,  v2tab12 x20 yp+30 number w40
-Gui,Add,UpDown, v2tab13 Range1-60, %maxtimespentonfield%
-Gui,Add,Text, v2tab14 xp+45  yp+5 cwhite, max time on field (minutes)
-Gui,Add,Checkbox, v2tab15 x20 yp+30 %tooldata% cWhite,Swing tool while farming
-Gui,Add,CheckBox, v2tab16 x20 yp+25 cwhite %sprinkleraligntoggle%,Move to sprinkler
-Gui,Add,Checkbox, v2tab17 x20 yp+25 cwhite %pineconvdata%,Pinetree walk convert
-Gui,Add,Checkbox, v2tab18 x20 yp+25 cwhite %exitpop%,Don't exit the field when pop star is active
-Gui,Add,Checkbox, v2tab19 x20 yp+25 cwhite %shiftlockdata%,Farm with shiftlock
+Gui,Add,Text, v2tab6 xp+105 yp w10 h17 c%infocol% gfarminfo,?
+Gui,Add,Text, v2tab7 x40 y50 cwhite ,Field 1             Field 2             Field 3             Field 4
+Gui,Add,DropDownList, v2tab8 x20 y135 w90 h200,%fieldpatern%||None|zigzag|squares|zigzag++
+Gui,Add,Text, v2tab9 xp+15 yp-20 cwhite,Pattern                               Size
+Gui,Add,Slider, v2tab10 xp+115 yp+25 range200-800,500
+Gui,Add,Text, v2tab11 xp+155 yp w10 h17 c%infocol% gpatterninfo,?
+Gui,Add,DropDownlist, v2tab12 yp+35 x20 w70 h200,%convsetting%||None|Reset|Rejoin
+Gui,Add,Text, v2tab13 xp+75 yp+5 cwhite,Conversion type
+Gui,Add,Text, v2tab14 xp+120 yp w10 h17 c%infocol% gconvertinfo,?
+Gui,Add,Edit,  v2tab15 x20 yp+30 number w40
+Gui,Add,UpDown, v2tab16 Range1-60, %maxtimespentonfield%
+Gui,Add,Text, v2tab17 xp+45  yp+5 cwhite, max time on field (minutes)
+Gui,Add,Text, v2tab18 xp+195 yp w10 h17 c%infocol% gmaxtimeinfo,?
+Gui,Add,Checkbox, v2tab19 x20 yp+30 %tooldata% cWhite,Swing tool while farming
+Gui,Add,CheckBox, v2tab20 x20 yp+25 cwhite %sprinkleraligntoggle%,Move to sprinkler
+Gui,Add,Text, v2tab21 xp+145 yp w10 h17 c%infocol% gsprinklerinfo,?
+Gui,Add,Checkbox, v2tab22 x20 yp+25 cwhite %pineconvdata%,Pinetree walk convert
+Gui,Add,Text, v2tab23 xp+175 yp w10 h17 c%infocol% gwalkpineinfo,?
+Gui,Add,Checkbox, v2tab24 x20 yp+25 cwhite %exitpop%,Don't exit the field when pop star is active
+Gui,Add,Checkbox, v2tab25 x20 yp+25 cwhite %shiftlockdata%,Farm with shiftlock
 Gui,Font,s13
-Gui,Add,GroupBox, v2tab20 x20 yp+30 w200 h130 cwhite,Shrine
+Gui,Add,GroupBox, v2tab26 x20 yp+30 w200 h130 cwhite,Shrine
 Gui,Font,s10
-Gui,Add,Checkbox, v2tab21 x25 yp+25 cwhite %shrine%,Donate to the windshrine
-Gui,Add,Edit, v2tab22 number x25 yp+30 w50 ,%donationamount%
-Gui,Add,UpDown, v2tab23 Range10-50, %haststatus%
-Gui,Add,Text, v2tab24 xp+60 yp cwhite,Amount of items
-Gui,Add,Text, v2tab25 x130 yp+40 cwhite,Item
-Gui,Add,DropDownlist,v2tab26 w100 h200 x25 yp,%itemtodonate%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
+Gui,Add,Checkbox, v2tab27 x25 yp+25 cwhite %shrine%,Donate to the windshrine
+Gui,Add,Edit, v2tab28 number x25 yp+30 w50 ,%donationamount%
+Gui,Add,UpDown, v2tab29 Range10-50, %haststatus%
+Gui,Add,Text, v2tab30 xp+60 yp cwhite,Amount of items
+Gui,Add,Text, v2tab31 x130 yp+40 cwhite,Item
+Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp,%itemtodonate%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
 Gui,Font,s13
-Gui,Add,Groupbox, v2tab27 x240 yp-95 w200 h95 cwhite,Boosters
+Gui,Add,Groupbox, v2tab33 x240 yp-95 w200 h95 cwhite,Boosters
 Gui,Font,s10
-Gui,Add,Checkbox, v2tab28 x250 yp+25 cwhite %bluebooster%,Blue Booster
-Gui,Add,Checkbox, v2tab29 x250 yp+25 cwhite %redbooster%,Red Booster
-Gui,Add,Checkbox, v2tab30 x250 yp+25 cwhite %whitebooster%,White Booster
-Gui,Add,Groupbox, v2tab31 x240 yp+10 w200 h40 cwhite,
-Gui,Add,Checkbox, v2tab32 x250 yp+15 cwhite %Reglitter%,Reglitter pinetree
+Gui,Add,Text, v2tab34 xp+180 yp+20 w10 h17 c%infocol% gboosterinfo,?
+Gui,Add,Checkbox, v2tab35 x250 yp+5 cwhite %bluebooster%,Blue Booster
+Gui,Add,Checkbox, v2tab36 x250 yp+25 cwhite %redbooster%,Red Booster
+Gui,Add,Checkbox, v2tab37 x250 yp+25 cwhite %whitebooster%,White Booster
+Gui,Add,Groupbox, v2tab38 x240 yp+10 w200 h40 cwhite,
+Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %Reglitter%,Reglitter pinetree
+Gui,Add,Text, v2tab40 xp+170 yp w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
 Starttext := "Start [" . startbutton . "]"
 StopText := "Stop [" . stopbutton . "]"
 PauseText := "Pause [" . pausebutton . "]"
-Gui,Add,Text, v2tab33 x20 y570 c53ede5,%Starttext%
-Gui,Add,Text, v2tab34 x180 y570 c53ede5,%StopText%
-Gui,Add,Text, v2tab35 x340 y570 c53ede5,%PauseText%
+Gui,Add,Text, v2tab41 x20 y570 c53ede5,%Starttext%
+Gui,Add,Text, v2tab42 x180 y570 c53ede5,%StopText%
+Gui,Add,Text, v2tab43 x340 y570 c53ede5,%PauseText%
+
+
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v3tab1 x340 y10 cgreen,Planters
@@ -335,6 +347,36 @@ changetab(1)
 Gui,show,w450 h600,Syspalk's macro
 
 
+;------Functions------
+popup(SizeX,SizeY,FontSize,Title,Text){
+	Textloc := SizeX-20
+	Gui, popup:Destroy
+	Gui, popup:color,0x2A2F32
+	Gui, popup:Font,s%FontSize%,Segoe UI
+	Gui, popup:Add,Text, +wrap x10 y5 w%Textloc% cwhite,%Text%
+	Gui, popup:Show, w%SizeX% h%SizeY%,%Title%
+}
+
+changetab(tab){
+	Tooltip,Loading tab...
+	var := 0
+	loop 11{
+		var++
+		if not (tab = A_Index){
+			loop 45{
+				GuiControl,Hide,%var%tab%A_Index%
+			}
+		}
+	}
+	
+	
+	loop 45{
+		GuiControl,Show,%tab%tab%A_Index%
+	}
+	Tooltip,
+}
+
+
 ;------Buttons------
 menubar(){
 	changetab(1)
@@ -386,31 +428,44 @@ Buttoncredits(){
 	popup(200,300,12,"Credits",CreditText)
 }
 
-;------Functions------
-popup(SizeX,SizeY,FontSize,Title,Text){
-	Textloc := SizeX-20
-	Gui, popup:Destroy
-	Gui, popup:color,0x2A2F32
-	Gui, popup:Font,s%FontSize%,Segoe UI
-	Gui, popup:Add,Text, +wrap x10 y5 w%Textloc% cwhite,%Text%
-	Gui, popup:Show, w%SizeX% h%SizeY%,%Title%
+;------Info buttons------
+
+farminfo(){
+	FileRead, FarmingText, Info/farminginfo.txt
+	popup(400,300,12,"Farming info",FarmingText)
 }
 
-changetab(tab){
-	Tooltip,Loading tab...
-	var := 0
-	loop 11{
-		var++
-		if not (tab = A_Index){
-			loop 45{
-				GuiControl,Hide,%var%tab%A_Index%
-			}
-		}
-	}
-	
-	
-	loop 45{
-		GuiControl,Show,%tab%tab%A_Index%
-	}
-	Tooltip,
+patterninfo(){
+	FileRead, PatternText, Info/patterninfo.txt
+	popup(400,300,12,"Pattern info",PatternText)
+}
+
+convertinfo(){
+	FileRead, ConvertText, Info/convertinfo.txt
+	popup(400,300,12,"Convert info",ConvertText)
+}
+
+maxtimeinfo(){
+	FileRead, MaxText, Info/Maxfieldinfo.txt
+	popup(400,300,12,"Max time on field info",MaxText)
+}
+
+sprinklerinfo(){
+	FileRead, SprinklerText, Info/sprinklerinfo.txt
+	popup(400,300,12,"Move to sprinkler info",SprinklerText)
+}
+
+walkpineinfo(){
+	FileRead, WalkpineText, Info/walkpineinfo.txt
+	popup(400,300,12,"Pinetree walk convert info",WalkpineText)
+}
+
+boosterinfo(){
+	FileRead, BoosterText, Info/boosterinfo.txt
+	popup(400,300,12,"Booster info",BoosterText)
+}
+
+reglitterinfo(){
+	FileRead, ReglitterText, Info/reglitterinfo.txt
+	popup(400,300,12,"Reglitter info",ReglitterText)
 }
