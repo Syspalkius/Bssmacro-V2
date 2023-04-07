@@ -1,4 +1,5 @@
-﻿Tooltip,Loading...
+﻿SetWorkingDir,Macro Parts\GUI
+Tooltip,Loading...
 menu,tray,icon,Images/logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
