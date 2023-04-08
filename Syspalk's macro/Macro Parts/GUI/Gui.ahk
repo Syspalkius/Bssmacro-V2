@@ -1,7 +1,5 @@
-﻿Tooltip,Loading...
-SetWorkingDir,Macro Parts\GUI
-#Include Macro Parts\GUI\Buttons.ahk
-menu,tray,icon,Images/logo.ico
+﻿#Include Macro Parts\GUI\Buttons.ahk
+menu,tray,icon,Macro Parts\GUI\Images/logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
 global updatecol := "Green"
@@ -11,34 +9,34 @@ global stopbutton := "F2"
 global pausebutton := "F3"
 
 
-Gui,Add,Picture, x10 y10 gmenubar, Images/menu.png
+Gui,Add,Picture, x10 y10 gmenubar, Macro Parts\GUI\Images/menu.png
 Gui,Add,Text, xp+40 yp-5 gmenubar cwhite, Home
 
 Gui,Add,Groupbox, v1tab1 x0 y-10 w180 h605
 Gui,Add,Text, gFarmingbutton v1tab2 x40 yp+50 cf5c88e,Farming
-Gui,Add,Picture, gFarmingbutton v1tab3 x5 yp-5, Images/honey.png
+Gui,Add,Picture, gFarmingbutton v1tab3 x5 yp-5, Macro Parts\GUI\Images/honey.png
 Gui,Add,Text, gPlanterbutton v1tab4 x40 yp+45 cf5c88e,Planters
-Gui,Add,Picture, gPlanterbutton v1tab5 x5 yp-5, Images/planter.png
+Gui,Add,Picture, gPlanterbutton v1tab5 x5 yp-5, Macro Parts\GUI\Images/planter.png
 Gui,Add,Text, gResourcesbutton v1tab6 x40 yp+45 cf5c88e,Resources
-Gui,Add,Picture, gResourcesbutton v1tab7 x5 yp-5, Images/resources.png
+Gui,Add,Picture, gResourcesbutton v1tab7 x5 yp-5, Macro Parts\GUI\Images/resources.png
 Gui,Add,Text, gBuffsbutton v1tab8 x40 yp+45 cf5c88e,Buffs
-Gui,Add,Picture, gBuffsbutton v1tab9 x5 yp-5, Images/extract.png
+Gui,Add,Picture, gBuffsbutton v1tab9 x5 yp-5, Macro Parts\GUI\Images/extract.png
 Gui,Add,Text, gQuestbutton v1tab10 x40 yp+45 cf5c88e,Quests
-Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Images/quests.png
+Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Macro Parts\GUI\Images/quests.png
 Gui,Add,Text, gmemorybutton w120 v1tab12 x40 yp+37 cf5c88e +wrap,Memory - Match
-Gui,Add,Picture, gmemorybutton v1tab13 x7 yp+3, Images/memory.png
+Gui,Add,Picture, gmemorybutton v1tab13 x7 yp+3, Macro Parts\GUI\Images/memory.png
 Gui,Add,Text, gpresetbutton v1tab14 x40 yp+65 cf5c88e,Presets
-Gui,Add,Picture, gpresetbutton v1tab15 x5 yp+3, Images/robopass.png
+Gui,Add,Picture, gpresetbutton v1tab15 x5 yp+3, Macro Parts\GUI\Images/robopass.png
 Gui,Add,Text, gkeybindbutton v1tab16 x40 yp+37 cf5c88e,Keybinds
-Gui,Add,Picture, gkeybindbutton v1tab17 x7 yp+3, Images/keyboard.png
+Gui,Add,Picture, gkeybindbutton v1tab17 x7 yp+3, Macro Parts\GUI\Images/keyboard.png
 Gui,Add,Text, gSettingsbutton v1tab18 x40 yp+40 cf5c88e,Settings
-Gui,Add,Picture, gSettingsbutton v1tab19 x5 yp-5, Images/cog.png
+Gui,Add,Picture, gSettingsbutton v1tab19 x5 yp-5, Macro Parts\GUI\Images/cog.png
 Gui,Font,s12 Bold
 Gui,Add,Text, v1tab20 x205 y40 c%updatecol%,Latest Update : 03/24/2023
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
 Gui,Font,s7
-FileRead, UpdateText, Info/New in this version.txt
+FileRead, UpdateText, Macro Parts\GUI\Info/New in this version.txt
 Gui,Add,Text, v1tab22 x200 yp+40 w250 h140 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
 Gui,Add,Button, v1tab23 x270 y250,View More
@@ -62,33 +60,33 @@ Gui,Add,DropDownList, v2tab5 xp+100 yp w95 h200 ,%farmfield4%||None|bugrun&polar
 Gui,Font,s10
 Gui,Add,Text, v2tab6 xp+105 yp w10 h17 c%infocol% gfarminfo,?
 Gui,Add,Text, v2tab7 x40 y50 cwhite ,Field 1             Field 2             Field 3             Field 4
-Gui,Add,DropDownList, v2tab8 x20 y135 w90 h200,%fieldpatern%||None|zigzag|squares|zigzag++
+Gui,Add,DropDownList, v2tab8 x20 y135 w90 h200,%farmpattern%||None|zigzag|squares|zigzag++
 Gui,Add,Text, v2tab9 xp+15 yp-20 cwhite,Pattern                               Size
-Gui,Add,Slider, v2tab10 xp+115 yp+25 range200-800,500
+Gui,Add,Slider, v2tab10 xp+115 yp+25 range0-100,%patternsize%
 Gui,Add,Text, v2tab11 xp+155 yp w10 h17 c%infocol% gpatterninfo,?
 Gui,Add,DropDownlist, v2tab12 yp+35 x20 w70 h200,%convsetting%||None|Reset|Rejoin
 Gui,Add,Text, v2tab13 xp+75 yp+5 cwhite,Conversion type
 Gui,Add,Text, v2tab14 xp+120 yp w10 h17 c%infocol% gconvertinfo,?
 Gui,Add,Edit,  v2tab15 x20 yp+30 number w40
-Gui,Add,UpDown, v2tab16 Range1-60, %maxtimespentonfield%
+Gui,Add,UpDown, v2tab16 Range0-60,%maxtimeonfield%
 Gui,Add,Text, v2tab17 xp+45  yp+5 cwhite, max time on field (minutes)
 Gui,Add,Text, v2tab18 xp+195 yp w10 h17 c%infocol% gmaxtimeinfo,?
-Gui,Add,Checkbox, v2tab19 x20 yp+30 %tooldata% cWhite,Swing tool while farming
-Gui,Add,CheckBox, v2tab20 x20 yp+25 cwhite %sprinkleraligntoggle%,Move to sprinkler
+Gui,Add,Checkbox, v2tab19 x20 yp+30 %swingtool% cWhite,Swing tool while farming
+Gui,Add,CheckBox, v2tab20 x20 yp+25 cwhite %sprinkleralign%,Move to sprinkler
 Gui,Add,Text, v2tab21 xp+145 yp w10 h17 c%infocol% gsprinklerinfo,?
-Gui,Add,Checkbox, v2tab22 x20 yp+25 cwhite %pineconvdata%,Pinetree walk convert
+Gui,Add,Checkbox, v2tab22 x20 yp+25 cwhite %pinewalkconv%,Pinetree walk convert
 Gui,Add,Text, v2tab23 xp+175 yp w10 h17 c%infocol% gwalkpineinfo,?
-Gui,Add,Checkbox, v2tab24 x20 yp+25 cwhite %exitpop%,Don't exit the field when pop star is active
-Gui,Add,Checkbox, v2tab25 x20 yp+25 cwhite %shiftlockdata%,Farm with shiftlock
+Gui,Add,Checkbox, v2tab24 x20 yp+25 cwhite %waitforpop%,Don't exit the field when pop star is active
+Gui,Add,Checkbox, v2tab25 x20 yp+25 cwhite %shiftlock%,Farm with shiftlock
 Gui,Font,s13
 Gui,Add,GroupBox, v2tab26 x20 yp+30 w200 h130 cwhite,Shrine
 Gui,Font,s10
 Gui,Add,Checkbox, v2tab27 x25 yp+25 cwhite %shrine%,Donate to the windshrine
-Gui,Add,Edit, v2tab28 number x25 yp+30 w50 ,%donationamount%
-Gui,Add,UpDown, v2tab29 Range10-50, %haststatus%
+Gui,Add,Edit, v2tab28 number x25 yp+30 w50
+Gui,Add,UpDown, v2tab29 Range1-100,%donationamount%
 Gui,Add,Text, v2tab30 xp+60 yp cwhite,Amount of items
 Gui,Add,Text, v2tab31 x130 yp+40 cwhite,Item
-Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp,%itemtodonate%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
+Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp,%donationitem%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
 Gui,Font,s13
 Gui,Add,Groupbox, v2tab33 x240 yp-95 w200 h95 cwhite,Boosters
 Gui,Font,s10
@@ -97,7 +95,7 @@ Gui,Add,Checkbox, v2tab35 x250 yp+5 cwhite %bluebooster%,Blue Booster
 Gui,Add,Checkbox, v2tab36 x250 yp+25 cwhite %redbooster%,Red Booster
 Gui,Add,Checkbox, v2tab37 x250 yp+25 cwhite %whitebooster%,White Booster
 Gui,Add,Groupbox, v2tab38 x240 yp+10 w200 h40 cwhite,
-Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %Reglitter%,Reglitter pinetree
+Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %reglitter%,Reglitter pinetree
 Gui,Add,Text, v2tab40 xp+170 yp w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
 Starttext := "Start [" . startbutton . "]"
@@ -238,33 +236,33 @@ loop 6{
 Gui,Font,s17 Bold
 Gui,Add,Text, v6tab1 x360 y10 cgreen,Quests
 Gui,Font,s10
-Gui,Add,Picture, v6tab2 x10 y200,Images/comingsoon.png
+Gui,Add,Picture, v6tab2 x10 y200,Macro Parts\GUI\Images/comingsoon.png
 
 
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v7tab1 x270 y10 cgreen,Memory match
 Gui,Font,s10
-Gui,Add,Picture, v7tab2 x10 y200,Images/comingsoon.png
+Gui,Add,Picture, v7tab2 x10 y200,Macro Parts\GUI\Images/comingsoon.png
 
 
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v8tab1 x350 y10 cgreen,Presets
 Gui,Font,s15
-Gui,Add,Picture, v8tab2 x10 y50,Images/nectar.png
+Gui,Add,Picture, v8tab2 x10 y50,Macro Parts\GUI\Images/nectar.png
 Gui,Add,Text, v8tab3 xp+30 y53 c53ede5,Load blue 5 nectar preset
-Gui,Add,Picture, v8tab4 xp yp+30,Images/blue5nect.png
-Gui,Add,Picture, v8tab5 x7 yp+55,Images/honey.png
+Gui,Add,Picture, v8tab4 xp yp+30,Macro Parts\GUI\Images/blue5nect.png
+Gui,Add,Picture, v8tab5 x7 yp+55,Macro Parts\GUI\Images/honey.png
 Gui,Add,Text, v8tab6 xp+34 yp+5 c53ede5,Load Ideal blue honeymaker preset
-Gui,Add,Picture, v8tab7 x10 yp+55,Images/gumdrop.png
+Gui,Add,Picture, v8tab7 x10 yp+55,Macro Parts\GUI\Images/gumdrop.png
 Gui,Add,Text, v8tab8 xp+33 yp+2 c53ede5,Load gumdrop farmer
-Gui,Add,Picture, v8tab9 x10 yp+55,Images/jb.png
+Gui,Add,Picture, v8tab9 x10 yp+55,Macro Parts\GUI\Images/jb.png
 Gui,Add,Text, v8tab10 xp+33 yp+2 c53ede5,Load Jelly bean/Stinger farmer
-Gui,Add,Picture, v8tab11 xp yp+30,Images/stingfarmer.png
-Gui,Add,Picture, v8tab12 x10 yp+55,Images/strawberry.png
+Gui,Add,Picture, v8tab11 xp yp+30,Macro Parts\GUI\Images/stingfarmer.png
+Gui,Add,Picture, v8tab12 x10 yp+55,Macro Parts\GUI\Images/strawberry.png
 Gui,Add,Text, v8tab13 xp+33 yp+2 c53ede5,Load full fruit farmer
-Gui,Add,Picture, v8tab14 x10 yp+55,Images/ticket.png
+Gui,Add,Picture, v8tab14 x10 yp+55,Macro Parts\GUI\Images/ticket.png
 Gui,Add,Text, v8tab15 xp+33 yp-3 c53ede5,Load ticket farmer
 Gui,Font,s10
 Gui,Add,Text, v8tab16 x335 y17 w10 h17 c%infocol% gpresetinfo,?

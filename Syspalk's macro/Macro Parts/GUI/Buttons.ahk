@@ -40,78 +40,78 @@ Settingsbutton(){
 }
 
 Buttonviewmore(){
-	FileRead, UpdateText, Info/New in this version.txt
+	FileRead, UpdateText, Macro Parts\GUI\Info/New in this version.txt
 	popup(500,500,10,"New in this version",UpdateText)
 }
 
 Buttoncredits(){
-	FileRead, CreditText, Info/Credits.txt
+	FileRead, CreditText, Macro Parts\GUI\Info/Credits.txt
 	popup(200,300,12,"Credits",CreditText)
 }
 
 ;------Info buttons------
 
 farminfo(){
-	FileRead, FarmingText, Info/farminginfo.txt
+	FileRead, FarmingText, Macro Parts\GUI\Info/farminginfo.txt
 	popup(400,300,12,"Farming info",FarmingText)
 }
 
 patterninfo(){
-	FileRead, PatternText, Info/patterninfo.txt
+	FileRead, PatternText, Macro Parts\GUI\Info/patterninfo.txt
 	popup(400,300,12,"Pattern info",PatternText)
 }
 
 convertinfo(){
-	FileRead, ConvertText, Info/convertinfo.txt
+	FileRead, ConvertText, Macro Parts\GUI\Info/convertinfo.txt
 	popup(400,300,12,"Convert info",ConvertText)
 }
 
 maxtimeinfo(){
-	FileRead, MaxText, Info/Maxfieldinfo.txt
+	FileRead, MaxText, Macro Parts\GUI\Info/Maxfieldinfo.txt
 	popup(400,300,12,"Max time on field info",MaxText)
 }
 
 sprinklerinfo(){
-	FileRead, SprinklerText, Info/sprinklerinfo.txt
+	FileRead, SprinklerText, Macro Parts\GUI\Info/sprinklerinfo.txt
 	popup(400,300,12,"Move to sprinkler info",SprinklerText)
 }
 
 walkpineinfo(){
-	FileRead, WalkpineText, Info/walkpineinfo.txt
+	FileRead, WalkpineText, Macro Parts\GUI\Info/walkpineinfo.txt
 	popup(400,300,12,"Pinetree walk convert info",WalkpineText)
 }
 
 boosterinfo(){
-	FileRead, BoosterText, Info/boosterinfo.txt
+	FileRead, BoosterText, Macro Parts\GUI\Info/boosterinfo.txt
 	popup(400,300,12,"Booster info",BoosterText)
 }
 
 reglitterinfo(){
-	FileRead, ReglitterText, Info/reglitterinfo.txt
+	FileRead, ReglitterText, Macro Parts\GUI\Info/reglitterinfo.txt
 	popup(400,300,12,"Reglitter info",ReglitterText)
 }
 
 cycleinfo(){
-	FileRead, CycleText, Info/plantcycleinfo.txt
+	FileRead, CycleText, Macro Parts\GUI\Info/plantcycleinfo.txt
 	popup(400,300,12,"Cycle info",CycleText)
 }
 
 harvtimeinfo(){
-	FileRead, HarvText, Info/harvtimeinfo.txt
+	FileRead, HarvText, Macro Parts\GUI\Info/harvtimeinfo.txt
 	popup(400,300,12,"Cycle info",HarvText)
 }
 
 dispenserinfo(){
-	FileRead, DispText, Info/dispenserinfo.txt
+	FileRead, DispText, Macro Parts\GUI\Info/dispenserinfo.txt
 	popup(400,300,12,"Cycle info",DispText)
 }
 
 mobinfo(){
-	FileRead, MobText, Info/mobinfo.txt
+	FileRead, MobText, Macro Parts\GUI\Info/mobinfo.txt
 	popup(400,300,12,"Cycle info",MobText)
 }
 
 presetinfo(){
-	FileRead, PresetText, Info/presetinfo.txt
+	FileRead, PresetText, Macro Parts\GUI\Info/presetinfo.txt
 	popup(400,300,12,"Cycle info",PresetText)
 }

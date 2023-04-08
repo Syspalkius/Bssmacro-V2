@@ -1,1 +1,8 @@
-﻿#Include Macro Parts\GUI\GUI.ahk
+﻿Tooltip,Loading...
+#Include Macro Parts\Data Handler.ahk
+readini()
+#Include Macro Parts\GUI\GUI.ahk
+
+F1::
+readini()
+return
