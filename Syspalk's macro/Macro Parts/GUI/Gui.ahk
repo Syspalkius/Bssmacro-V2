@@ -113,12 +113,14 @@ Gui,Font,s13
 Gui,Add,Groupbox, v3tab2 x10 y50 w435 h215 cwhite,Cycle
 Gui,Font,s8
 Gui,Add,Text, v3tab3 x15 y80 cwhite,Fields`n`nPlanter`n`n`nFields`n`nPlanter`n`n`nFields`n`nPlanter
-Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4,||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
+Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4,%plantfield1%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 xposition := 65
 yposition := 80
 checkline2 := true
 checkline3 := true
 loop 11{
+	indexp1 := A_Index+1
+	plantfield := plantfield%indexp1%
 	fieldnumber := A_Index+4
 	xposition := xposition+90
 	if(A_Index > 3 && checkline2){
@@ -131,14 +133,16 @@ loop 11{
 		yposition := 206
 		checkline3 := false
 	}
-	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%fieldnumber%,||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
+	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%fieldnumber%,%plantfield%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 }
-Gui,Add,DropDownList, x65 y105 w80 h200 v3tab16,||1|2|3|4|5|6|7
+Gui,Add,DropDownList, x65 y105 w80 h200 v3tab16,%planter1%||1|2|3|4|5|6|7
 xposition := 65
 yposition := 105
 checkline2 := true
 checkline3 := true
 loop 11{
+	indexp1 := A_Index+1
+	planter := planter%indexp1%
 	planternumber := A_Index+16
 	xposition := xposition+90
 	if(A_Index > 3 && checkline2){
@@ -151,25 +155,25 @@ loop 11{
 		yposition := 232
 		checkline3 := false
 	}
-	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,||1|2|3|4|5|6|7
+	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,%planter%||1|2|3|4|5|6|7
 }
 Gui,Font,s13
 Gui,Add,GroupBox, v3tab28 x10 yp+40 w260 h140 cwhite,Plant Looting
 Gui,Font,s8
-Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %loot%, loot planters
-Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harvf1%, harvest plant 1 when fully grown
-Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harvf2%, harvest plant 2 when fully grown
-Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harvf3%, harvest plant 3 when fully grown
+Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %lootplanters%, loot planters
+Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harviffull1%, harvest plant 1 when fully grown
+Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2%, harvest plant 2 when fully grown
+Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3%, harvest plant 3 when fully grown
 Gui,Font,s13
 Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h130 cwhite,Planter Timers
 Gui,Font,s8
 gui,Add,Text,v3tab34 xp+70 yp+20 cwhite,harvest time
 Gui,Add,Text,v3tab35 xp-60 yp+23 cwhite, plant 1
-Gui,Add,DropDownList,v3tab36 xp+50 yp-5 w90 h140,%plant1delaydata%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab36 xp+50 yp-5 w90 h140,%plantdelay1%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab37 xp-50 yp+30 cwhite, plant 2
-Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140,%plant2delaydata%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140,%plantdelay2%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab39 xp-50 yp+30 cwhite, plant 3
-Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140,%plant3delaydata%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140,%plantdelay3%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Button, v3tab41 x10 yp+50,Reset Settings
 Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
 Gui,Font,s10
