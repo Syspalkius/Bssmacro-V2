@@ -179,47 +179,48 @@ Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
 Gui,Font,s10
 Gui,Add,Text, v3tab43 x430 y68 w10 h17 c%infocol% gcycleinfo,?
 Gui,Add,Text, v3tab44 x195 y440 w10 h17 c%infocol% gharvtimeinfo,?
-
+Gui,Add,Text, v3tab45 x110 y560 w10 h17 c%infocol% gresetsettingsinfo,?
+Gui,Add,Text, v3tab46 x255 y560 w10 h17 c%infocol% gresetcycleinfo,?
 
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v4tab1 x320 y10 cgreen,Resources
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab2 x20 y40 w230 h165 cwhite,Dispensers
+Gui,Add,Groupbox, v4tab2 x20 y40 w230 h125 cwhite,Dispensers
 Gui,Font,s10
 gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock%,Use wealthclock
 gui,Add,Checkbox, v4tab4 x30 yp+20 cwhite %gluedisp%,Use glue dispenser
 gui,Add,Checkbox, v4tab5 x30 yp+20 cwhite %strawdisp%,Use Strawberry dispenser
-gui,Add,Checkbox, v4tab6 x30 yp+20 cwhite %bluedisp%,Use blueberry dispenser
+gui,Add,Checkbox, v4tab6 x30 yp+20 cwhite %bluebdisp%,Use blueberry dispenser
 gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp%,Use coconut dispenser
-gui,Add,Checkbox, v4tab8 x30 yp+20 cwhite %killtb%,Kill tunnelbear
-gui,Add,Checkbox, v4tab9 x30 yp+20 cwhite %killkb%,Kill kingbeetle
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab10 x20 yp+35 w300 h90 cwhite,Ant challange
+Gui,Add,Groupbox, v4tab8 x20 yp+35 w300 h90 cwhite,Ant challenge
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab11 xp+5 yp+20 cwhite %antsetting%, claim free ant pass
-Gui,Add,Checkbox, v4tab12 xp yp+20 cwhite %antcheck%, use free pass to play ant
-Gui,Add,Checkbox, v4tab13 xp yp+20 cwhite %buyplayant%, buy and use ant pass every
-Gui,Add,DropDownlist, v4tab14 xp+215 yp w60 h200 ,%whenplayantdata%||30 min|1 hour|2 hours|4 hours
+Gui,Add,Checkbox, v4tab9 xp+5 yp+20 cwhite %ant%, claim free ant pass
+Gui,Add,Checkbox, v4tab10 xp yp+20 cwhite %freeant%, use free pass to play ant
+Gui,Add,Checkbox, v4tab11 xp yp+20 cwhite %buyant%, buy and use ant pass every
+Gui,Add,DropDownlist, v4tab12 xp+215 yp w60 h200 ,%playtimer%||30 min|1 hour|2 hours|4 hours
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab15 x20 yp+35 w300 h75 cwhite,kill vicious
+Gui,Add,Groupbox, v4tab13 x20 yp+35 w300 h75 cwhite,kill vicious
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab16 xp+10 yp+25 cwhite %killviccheck%,kill vicious bee when night is detected
-Gui,Add,Text, v4tab17 x85 yp+25 cwhite,maximum combat time [Seconds]
-Gui,Add,Edit, v4tab18 number x30 yp-2 w50,%fighttimedata%
+Gui,Add,Checkbox, v4tab14 xp+10 yp+25 cwhite %vicious%,kill vicious bee when night is detected
+Gui,Add,Text, v4tab15 x85 yp+25 cwhite,maximum combat time [Seconds]
+Gui,Add,Edit, v4tab16 number x30 yp-2 w50,%maxcombattime%
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab19 x20 yp+35 w180 h145 cwhite,Mobs
+Gui,Add,Groupbox, v4tab17 x20 yp+35 w180 h185 cwhite,Mobs
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab20 x30 yp+20 cwhite %killlady%,Kill ladybugs
-Gui,Add,Checkbox, v4tab21 x30 yp+20 cwhite %killrhino%,Kill rhino beetles
-Gui,Add,Checkbox, v4tab22 x30 yp+20 cwhite %killspider%,Kill spider
-Gui,Add,Checkbox, v4tab23 x30 yp+20 cwhite %killscorp%,Kill scorpions
-Gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %killmantis%,Kill mantises
-Gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %killwolf%,Kill werewolf
+Gui,Add,Checkbox, v4tab18 x30 yp+20 cwhite %lady%,Kill ladybugs
+Gui,Add,Checkbox, v4tab19 x30 yp+20 cwhite %rhino%,Kill rhino beetles
+Gui,Add,Checkbox, v4tab20 x30 yp+20 cwhite %spider%,Kill spider
+Gui,Add,Checkbox, v4tab21 x30 yp+20 cwhite %scorpion%,Kill scorpions
+Gui,Add,Checkbox, v4tab22 x30 yp+20 cwhite %mantis%,Kill mantises
+Gui,Add,Checkbox, v4tab23 x30 yp+20 cwhite %wolf%,Kill werewolf
+gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel%,Kill tunnelbear
+gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle%,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
-Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200,%mondokilldata%||No Kill|Blessing|Loot
+Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200,%mondo%||No Kill|Blessing|Loot
 Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
-Gui,Add,Text, v4tab29 x180 y410 w10 h17 c%infocol% gmobinfo,?
+Gui,Add,Text, v4tab29 x180 y370 w10 h17 c%infocol% gmobinfo,?
 
 
 
@@ -229,10 +230,12 @@ Gui,Font,s10
 Gui,Add,Text, v5tab2 x155 y40 cwhite, [Seconds]
 loop 6{
 	checkboxnum := A_Index+2
-	editnum := checkboxnum+6
 	checkboxtext := A_Index+1
-	Gui,Add,Checkbox, v5tab%checkboxnum% x20 yp+30 cwhite ,hotbar slot %checkboxtext%
-	Gui,Add,Edit, v5tab%editnum% number xp+120 yp-5 w100 ,
+	data := buff%checkboxtext%
+	time := buff%checkboxtext%time
+	editnum := checkboxnum+6
+	Gui,Add,Checkbox, v5tab%checkboxnum% x20 yp+30 cwhite %data%,hotbar slot %checkboxtext%
+	Gui,Add,Edit, v5tab%editnum% number xp+120 yp-5 w100 ,%time%
 }
 
 
@@ -374,14 +377,14 @@ changetab(tab){
 	loop 11{
 		var++
 		if not (tab = A_Index){
-			loop 45{
+			loop 46{
 				GuiControl,Hide,%var%tab%A_Index%
 			}
 		}
 	}
 	
 	
-	loop 45{
+	loop 46{
 		GuiControl,Show,%tab%tab%A_Index%
 	}
 	Tooltip,

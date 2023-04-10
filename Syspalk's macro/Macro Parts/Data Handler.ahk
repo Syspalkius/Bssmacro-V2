@@ -50,6 +50,38 @@
 	global plantdelay1
 	global plantdelay2
 	global plantdelay3
+	global clock
+	global gluedisp
+	global strawdisp
+	global bluebdisp
+	global cocodisp
+	global tunnel
+	global kingbeetle
+	global ant
+	global freeant
+	global buyant
+	global playtimer
+	global vicious
+	global maxcombattime
+	global lady
+	global rhino
+	global scorpion
+	global spider
+	global wolf
+	global mantis
+	global mondo
+	global buff2
+	global buff3
+	global buff4
+	global buff5
+	global buff6
+	global buff7
+	global buff2time
+	global buff3time
+	global buff4time
+	global buff5time
+	global buff6time
+	global buff7time
 	
 	
 	IniRead,farmfield1,Macro Parts/configs/Data.ini,farming,farmfield1
@@ -103,6 +135,39 @@
 	IniRead,plantdelay1,Macro Parts/configs/Data.ini,planters,plantdelay1
 	IniRead,plantdelay2,Macro Parts/configs/Data.ini,planters,plantdelay2
 	IniRead,plantdelay3,Macro Parts/configs/Data.ini,planters,plantdelay3
+	IniRead,clock,Macro Parts/configs/Data.ini,resources,clock
+	IniRead,gluedisp,Macro Parts/configs/Data.ini,resources,gluedisp
+	IniRead,strawdisp,Macro Parts/configs/Data.ini,resources,strawdisp
+	IniRead,bluebdisp,Macro Parts/configs/Data.ini,resources,bluebdisp
+	IniRead,cocodisp,Macro Parts/configs/Data.ini,resources,cocodisp
+	IniRead,tunnel,Macro Parts/configs/Data.ini,resources,tunnel
+	IniRead,kingbeetle,Macro Parts/configs/Data.ini,resources,kingbeetle
+	IniRead,ant,Macro Parts/configs/Data.ini,resources,ant
+	IniRead,freeant,Macro Parts/configs/Data.ini,resources,freeant
+	IniRead,buyant,Macro Parts/configs/Data.ini,resources,buyant
+	IniRead,playtimer,Macro Parts/configs/Data.ini,resources,playtimer
+	IniRead,vicious,Macro Parts/configs/Data.ini,resources,vicious
+	IniRead,maxcombattime,Macro Parts/configs/Data.ini,resources,maxcombattime
+	IniRead,lady,Macro Parts/configs/Data.ini,resources,lady
+	IniRead,rhino,Macro Parts/configs/Data.ini,resources,rhino
+	IniRead,spider,Macro Parts/configs/Data.ini,resources,spider
+	IniRead,scorpion,Macro Parts/configs/Data.ini,resources,scorpion
+	IniRead,mantis,Macro Parts/configs/Data.ini,resources,mantis
+	IniRead,wolf,Macro Parts/configs/Data.ini,resources,wolf
+	IniRead,mondo,Macro Parts/configs/Data.ini,resources,mondo
+	IniRead,buff2,Macro Parts/configs/Data.ini,buffs,buff2
+	IniRead,buff3,Macro Parts/configs/Data.ini,buffs,buff3
+	IniRead,buff4,Macro Parts/configs/Data.ini,buffs,buff4
+	IniRead,buff5,Macro Parts/configs/Data.ini,buffs,buff5
+	IniRead,buff6,Macro Parts/configs/Data.ini,buffs,buff6
+	IniRead,buff7,Macro Parts/configs/Data.ini,buffs,buff7
+	IniRead,buff2time,Macro Parts/configs/Data.ini,buffs,buff2time
+	IniRead,buff3time,Macro Parts/configs/Data.ini,buffs,buff3time
+	IniRead,buff4time,Macro Parts/configs/Data.ini,buffs,buff4time
+	IniRead,buff5time,Macro Parts/configs/Data.ini,buffs,buff5time
+	IniRead,buff6time,Macro Parts/configs/Data.ini,buffs,buff6time
+	IniRead,buff7time,Macro Parts/configs/Data.ini,buffs,buff7time
+	
 	
 	if (swingtool){
 		global swingtool := "Checked"
@@ -145,6 +210,75 @@
 	}
 	if (harviffull3){
 		global harviffull3 := "Checked"
+	}
+	if (clock){
+		global clock := "Checked"
+	}
+	if (gluedisp){
+		global gluedisp := "Checked"
+	}
+	if (strawdisp){
+		global strawdisp := "Checked"
+	}
+	if (bluebdisp){
+		global bluebdisp := "Checked"
+	}
+	if (cocodisp){
+		global cocodisp := "Checked"
+	}
+	if (tunnel){
+		global tunnel := "Checked"
+	}
+	if (kingbeetle){
+		global kingbeetle := "Checked"
+	}
+	if (ant){
+		global ant := "Checked"
+	}
+	if (freeant){
+		global freeant := "Checked"
+	}
+	if (buyant){
+		global buyant := "Checked"
+	}
+	if (vicious){
+		global vicious := "Checked"
+	}
+	if (lady){
+		global lady := "Checked"
+	}
+	if (rhino){
+		global rhino := "Checked"
+	}
+	if (spider){
+		global spider := "Checked"
+	}
+	if (mantis){
+		global mantis := "Checked"
+	}
+	if (scorpion){
+		global scorpion := "Checked"
+	}
+	if (wolf){
+		global wolf := "Checked"
+	}
+	if (buff2){
+		global buff2 := "Checked"
+	}
+	if (buff3){
+		global buff3 := "Checked"
+	}
+	if (buff4){
+		global buff4 := "Checked"
+	}
+	if (buff5){
+		global buff5 := "Checked"
+	}
+	if (buff6){
+		global buff6 := "Checked"
+	}
+	if (buff7){
+		global buff7 := "Checked"
 	}
 }
 

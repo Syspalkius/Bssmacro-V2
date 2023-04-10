@@ -1,0 +1,1 @@
+Will set all the settings that you've sellected in the cycle back no "None" and it will also reset the timers back to default.
