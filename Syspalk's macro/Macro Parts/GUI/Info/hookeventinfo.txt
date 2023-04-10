@@ -1,0 +1,1 @@
+This well send general events to a discord webhook.

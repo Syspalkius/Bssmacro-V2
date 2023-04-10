@@ -1,0 +1,3 @@
+Here you will enter the movespeed that you have in bee swarm simulator, with this the macro will have to know how long to walk to  get to certain positions.
+
+You can get your player movespeed from the bee swarm settings tab.

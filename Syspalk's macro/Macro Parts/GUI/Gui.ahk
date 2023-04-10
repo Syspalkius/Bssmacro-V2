@@ -332,11 +332,11 @@ Gui,Font,s13
 Gui,Add,Groupbox, v10tab5 x20 yp+35 w390 h140 cwhite,Webhooks
 Gui,Font,s10
 Gui,Add,Text, v10tab6 x210 yp+35 cwhite,Events webhook
-Gui,Add,Edit, v10tab7 w175 h20 x30 yp, %hookevent%
+Gui,Add,Edit, v10tab7 w175 h20 x50 yp, %hookevent%
 Gui,Add,Text, v10tab8 x210 yp+35 cwhite,Errors webhook
-Gui,Add,Edit, v10tab9 w175 h20 x30 yp, %hookerror%
+Gui,Add,Edit, v10tab9 w175 h20 x50 yp, %hookerror%
 Gui,Add,Text, v10tab10 x210 yp+35 cwhite,Balloon warnings webhook
-Gui,Add,Edit, v10tab11 w175 h20 x30 yp, %hookballoon%
+Gui,Add,Edit, v10tab11 w175 h20 x50 yp, %hookballoon%
 Gui,Font,s13
 Gui,Add,Groupbox, v10tab12 x20 yp+50 w250 h130 cwhite,Vip Links
 Gui,Font,s10
@@ -357,6 +357,11 @@ Gui,Add,Text, v10tab23 x20 yp+50 c53ede5,Reset Config
 Gui,Add,Text, v10tab24 x20 yp+25 c53ede5,Reset Timers
 Gui,Font,s10 Bold
 Gui,Add,Button,v10tab25 x380 y560,credits
+Gui,Add,Text, v10tab26 x200 y52 w10 h17 c%infocol% gmovespeedinfo,?
+Gui,Add,Text, v10tab27 x30 y120 w10 h17 c%infocol% ghookeventinfo,?
+Gui,Add,Text, v10tab28 x30 y155 w10 h17 c%infocol% ghookerrorinfo,?
+Gui,Add,Text, v10tab29 x30 y190 w10 h17 c%infocol% ghookballooninfo,?
+Gui,Add,Text, v10tab30 x250 y400 w10 h17 c%infocol% grebootinfo,?
 
 
 changetab(1)
