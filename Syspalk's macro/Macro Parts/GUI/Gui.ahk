@@ -281,43 +281,43 @@ Gui,Add,Text, v9tab1 x330 y10 cgreen,Keybinds
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab2 x20 yp+40 w220 h220 cwhite,Movement
 Gui,Font,s10
-Gui,Add,Edit, v9tab3 x30 yp+20 h20 w17 limit1
+Gui,Add,Edit, v9tab3 x30 yp+20 h20 w17 limit1,%forward%
 Gui,Add,Text, v9tab4 xp+20 yp+3 cwhite,Walk forwards
-Gui,Add,Edit, v9tab5 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab5 x30 yp+30 h20 w17 limit1,%left%
 Gui,Add,Text, v9tab6 xp+20 yp+3 cwhite,Walk to the left
-Gui,Add,Edit, v9tab7 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab7 x30 yp+30 h20 w17 limit1,%backwards%
 Gui,Add,Text, v9tab8 xp+20 yp+3 cwhite,Walk backwards
-Gui,Add,Edit, v9tab9 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab9 x30 yp+30 h20 w17 limit1,%right%
 Gui,Add,Text, v9tab10 xp+20 yp+3 cwhite,Walk to the right
-Gui,Add,Edit, v9tab11 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab11 x30 yp+30 h20 w17 limit1,%camleft%
 Gui,Add,Text, v9tab12 xp+20 yp+3 cwhite,Rotate camera to the left
-Gui,Add,Edit, v9tab13 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab13 x30 yp+30 h20 w17 limit1,%camright%
 Gui,Add,Text, v9tab14 xp+20 yp+3 cwhite,Rotate camera to the right
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab15 x20 yp+40 w150 h250 cwhite,Hotbar
 Gui,Font,s10
-Gui,Add,Edit, v9tab16 x30 yp+20 h20 w17 limit1
+Gui,Add,Edit, v9tab16 x30 yp+20 h20 w17 limit1,%hotbar1%
 Gui,Add,Text, v9tab17 xp+20 yp+3 cwhite,Hotbar slot 1
-Gui,Add,Edit, v9tab18 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab18 x30 yp+30 h20 w17 limit1,%hotbar2%
 Gui,Add,Text, v9tab19 xp+20 yp+3 cwhite,Hotbar slot 2
-Gui,Add,Edit, v9tab20 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab20 x30 yp+30 h20 w17 limit1,%hotbar3%
 Gui,Add,Text, v9tab21 xp+20 yp+3 cwhite,Hotbar slot 3
-Gui,Add,Edit, v9tab22 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab22 x30 yp+30 h20 w17 limit1,%hotbar4%
 Gui,Add,Text, v9tab23 xp+20 yp+3 cwhite,Hotbar slot 4
-Gui,Add,Edit, v9tab24 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab24 x30 yp+30 h20 w17 limit1,%hotbar5%
 Gui,Add,Text, v9tab25 xp+20 yp+3 cwhite,Hotbar slot 5
-Gui,Add,Edit, v9tab26 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab26 x30 yp+30 h20 w17 limit1,%hotbar6%
 Gui,Add,Text, v9tab27 xp+20 yp+3 cwhite,Hotbar slot 6
-Gui,Add,Edit, v9tab28 x30 yp+30 h20 w17 limit1
+Gui,Add,Edit, v9tab28 x30 yp+30 h20 w17 limit1,%hotbar7%
 Gui,Add,Text, v9tab29 xp+20 yp+3 cwhite,Hotbar slot 7
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab30 x180 y278 w100 h120 cwhite,Macro
 Gui,Font,s10
-Gui,Add,Edit, v9tab31 x190 yp+20 h20 w27 limit2
+Gui,Add,Edit, v9tab31 x190 yp+20 h20 w27 limit2,%Startkey%
 Gui,Add,Text, v9tab32 xp+30 yp+3 cwhite,Start
-Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2
+Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2,%Stopkey%
 Gui,Add,Text, v9tab34 xp+30 yp+3 cwhite,Stop
-Gui,Add,Edit, v9tab35 x190 yp+30 h20 w27 limit2
+Gui,Add,Edit, v9tab35 x190 yp+30 h20 w27 limit2,%Pausekey%
 Gui,Add,Text, v9tab36 xp+30 yp+3 cwhite,Pause
 
 
@@ -327,7 +327,7 @@ Gui,Add,Text, v10tab1 x350 y10 cgreen,Settings
 Gui,Font,s10
 Gui,Add,Text, v10tab2 x75 y50 cWhite,character speed
 Gui,Add,Edit, v10tab3 x20 yp number w50
-Gui,Add,UpDown, v10tab4 Range10-50, %haststatus%
+Gui,Add,UpDown, v10tab4 Range10-50, %speed%
 Gui,Font,s13
 Gui,Add,Groupbox, v10tab5 x20 yp+35 w390 h140 cwhite,Webhooks
 Gui,Font,s10
@@ -341,16 +341,16 @@ Gui,Font,s13
 Gui,Add,Groupbox, v10tab12 x20 yp+50 w250 h130 cwhite,Vip Links
 Gui,Font,s10
 Gui,Add,Text, v10tab13 x160 yp+35 cwhite,main viplink
-Gui,Add,Edit, v10tab14 w120 h20 x35 yp-5 ,%plink1%
+Gui,Add,Edit, v10tab14 w120 h20 x35 yp-5 , %main%
 Gui,Add,Text, v10tab15 x160 yp+35 cwhite,backup viplink
-Gui,Add,Edit, v10tab16 w120 h20 x35 yp-5, %plink2%
-Gui,Add,Checkbox, v10tab17 x30 yp+35 cwhite %serverdata%,Force join main link
+Gui,Add,Edit, v10tab16 w120 h20 x35 yp-5, %alt%
+Gui,Add,Checkbox, v10tab17 x30 yp+35 cwhite %joinmain%,Force join main link
 Gui,Font,s13
 Gui,Add,Groupbox, v10tab18 x20 yp+50 w250 h100 cwhite,Server Rebooter
 Gui,Font,s10
-Gui,Add,Checkbox, v10tab19 x30 yp+30 cwhite %resetserverdata%,Reboot the server
+Gui,Add,Checkbox, v10tab19 x30 yp+30 cwhite %rebootserver%,Reboot the server
 Gui,Add,Edit, v10tab20 x30 yp+30 number w50
-Gui,Add,UpDown, v10tab21 Range10-5000, %servreboottime%
+Gui,Add,UpDown, v10tab21 Range10-5000, %reboottime%
 Gui,Add,Text, v10tab22 yp+2 x85 cwhite,Cooldown [Minutes]
 Gui,Font,s12 Bold
 Gui,Add,Text, v10tab23 x20 yp+50 c53ede5,Reset Config

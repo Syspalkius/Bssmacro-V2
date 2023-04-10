@@ -82,7 +82,31 @@
 	global buff5time
 	global buff6time
 	global buff7time
-	
+	global forward
+	global left
+	global right
+	global backwards
+	global camleft
+	global camright
+	global hotbar1
+	global hotbar2
+	global hotbar3
+	global hotbar4
+	global hotbar5
+	global hotbar6
+	global hotbar7
+	global Startkey
+	global Stopkey
+	global Pausekey
+	global speed
+	global joinmain
+	global rebootserver
+	global reboottime
+	global hookevent
+	global hookerror
+	global hookballoon
+	global main
+	global alt
 	
 	IniRead,farmfield1,Macro Parts/configs/Data.ini,farming,farmfield1
 	IniRead,farmfield2,Macro Parts/configs/Data.ini,farming,farmfield2
@@ -167,7 +191,31 @@
 	IniRead,buff5time,Macro Parts/configs/Data.ini,buffs,buff5time
 	IniRead,buff6time,Macro Parts/configs/Data.ini,buffs,buff6time
 	IniRead,buff7time,Macro Parts/configs/Data.ini,buffs,buff7time
-	
+	IniRead,forward,Macro Parts/configs/Data.ini,keybinds,forward
+	IniRead,left,Macro Parts/configs/Data.ini,keybinds,left
+	IniRead,right,Macro Parts/configs/Data.ini,keybinds,right
+	IniRead,backwards,Macro Parts/configs/Data.ini,keybinds,backwards
+	IniRead,camleft,Macro Parts/configs/Data.ini,keybinds,camleft
+	IniRead,camright,Macro Parts/configs/Data.ini,keybinds,camright
+	IniRead,hotbar1,Macro Parts/configs/Data.ini,keybinds,hotbar1
+	IniRead,hotbar2,Macro Parts/configs/Data.ini,keybinds,hotbar2
+	IniRead,hotbar3,Macro Parts/configs/Data.ini,keybinds,hotbar3
+	IniRead,hotbar4,Macro Parts/configs/Data.ini,keybinds,hotbar4
+	IniRead,hotbar5,Macro Parts/configs/Data.ini,keybinds,hotbar5
+	IniRead,hotbar6,Macro Parts/configs/Data.ini,keybinds,hotbar6
+	IniRead,hotbar7,Macro Parts/configs/Data.ini,keybinds,hotbar7
+	IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
+	IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
+	IniRead,Pausekey,Macro Parts/configs/Data.ini,keybinds,Pausekey
+	IniRead,speed,Macro Parts/configs/Data.ini,settings,speed
+	IniRead,joinmain,Macro Parts/configs/Data.ini,settings,joinmain
+	IniRead,rebootserver,Macro Parts/configs/Data.ini,settings,rebootserver
+	IniRead,reboottime,Macro Parts/configs/Data.ini,settings,reboottime
+	IniRead,hookevent,Macro Parts/configs/Links.ini,webhooks,hookevent
+	IniRead,hookerror,Macro Parts/configs/Links.ini,webhooks,hookerror
+	IniRead,hookballoon,Macro Parts/configs/Links.ini,webhooks,hookballoon
+	IniRead,main,Macro Parts/configs/Links.ini,private servers,main
+	IniRead,alt,Macro Parts/configs/Links.ini,private servers,alt
 	
 	if (swingtool){
 		global swingtool := "Checked"
@@ -279,6 +327,12 @@
 	}
 	if (buff7){
 		global buff7 := "Checked"
+	}
+	if (joinmain){
+		global joinmain := "Checked"
+	}
+	if (rebootserver){
+		global rebootserver := "Checked"
 	}
 }
 
