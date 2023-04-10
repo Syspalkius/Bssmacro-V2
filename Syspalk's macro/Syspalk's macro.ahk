@@ -4,5 +4,5 @@ readini()
 #Include Macro Parts\GUI\GUI.ahk
 
 F1::
-readini()
+savedata()
 return

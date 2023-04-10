@@ -1,113 +1,116 @@
-﻿readini(){ ;reads all the data from the ini file
-	global farmfield1
-	global farmfield2
-	global farmfield3
-	global farmfield4
-	global farmpattern
-	global patternsize
-	global convsetting
-	global maxtimeonfield
-	global swingtool
-	global sprinkleralign
-	global pinewalkconv
-	global waitforpop
-	global shiftlock
-	global shrine
-	global donationamount
-	global donationitem
-	global bluebooster
-	global redbooster
-	global whitebooster
-	global reglitter
-	global plantfield1
-	global plantfield2
-	global plantfield3
-	global plantfield4
-	global plantfield5
-	global plantfield6
-	global plantfield7
-	global plantfield8
-	global plantfield9
-	global plantfield10
-	global plantfield11
-	global plantfield12
-	global planter1
-	global planter2
-	global planter3
-	global planter4
-	global planter5
-	global planter6
-	global planter7
-	global planter8
-	global planter9
-	global planter10
-	global planter11
-	global planter12
-	global lootplanters
-	global harviffull1
-	global harviffull2
-	global harviffull3
-	global plantdelay1
-	global plantdelay2
-	global plantdelay3
-	global clock
-	global gluedisp
-	global strawdisp
-	global bluebdisp
-	global cocodisp
-	global tunnel
-	global kingbeetle
-	global ant
-	global freeant
-	global buyant
-	global playtimer
-	global vicious
-	global maxcombattime
-	global lady
-	global rhino
-	global scorpion
-	global spider
-	global wolf
-	global mantis
-	global mondo
-	global buff2
-	global buff3
-	global buff4
-	global buff5
-	global buff6
-	global buff7
-	global buff2time
-	global buff3time
-	global buff4time
-	global buff5time
-	global buff6time
-	global buff7time
-	global forward
-	global left
-	global right
-	global backwards
-	global camleft
-	global camright
-	global hotbar1
-	global hotbar2
-	global hotbar3
-	global hotbar4
-	global hotbar5
-	global hotbar6
-	global hotbar7
-	global Startkey
-	global Stopkey
-	global Pausekey
-	global speed
-	global joinmain
-	global rebootserver
-	global reboottime
-	global hookevent
-	global hookerror
-	global hookballoon
-	global main
-	global alt
-	
+﻿global farmfield1
+global farmfield2
+global farmfield3
+global farmfield4
+global farmpattern
+global patternsize
+global convsetting
+global maxtimeonfield
+global swingtool
+global sprinkleralign
+global pinewalkconv
+global waitforpop
+global shiftlock
+global shrine
+global donationamount
+global donationitem
+global bluebooster
+global redbooster
+global whitebooster
+global reglitter
+global plantfield1
+global plantfield2
+global plantfield3
+global plantfield4
+global plantfield5
+global plantfield6
+global plantfield7
+global plantfield8
+global plantfield9
+global plantfield10
+global plantfield11
+global plantfield12
+global planter1
+global planter2
+global planter3
+global planter4
+global planter5
+global planter6
+global planter7
+global planter8
+global planter9
+global planter10
+global planter11
+global planter12
+global lootplanters
+global harviffull1
+global harviffull2
+global harviffull3
+global plantdelay1
+global plantdelay2
+global plantdelay3
+global clock
+global gluedisp
+global strawdisp
+global bluebdisp
+global cocodisp
+global tunnel
+global kingbeetle
+global ant
+global freeant
+global buyant
+global playtimer
+global vicious
+global maxcombattime
+global lady
+global rhino
+global scorpion
+global spider
+global wolf
+global mantis
+global mondo
+global buff2
+global buff3
+global buff4
+global buff5
+global buff6
+global buff7
+global buff2time
+global buff3time
+global buff4time
+global buff5time
+global buff6time
+global buff7time
+global forward
+global left
+global right
+global backwards
+global camleft
+global camright
+global hotbar1
+global hotbar2
+global hotbar3
+global hotbar4
+global hotbar5
+global hotbar6
+global hotbar7
+global Startkey
+global Stopkey
+global Pausekey
+global speed
+global joinmain
+global rebootserver
+global reboottime
+global hookevent
+global hookerror
+global hookballoon
+global main
+global alt
+
+
+
+
+readini(){ ;reads all the data from the ini file
 	IniRead,farmfield1,Macro Parts/configs/Data.ini,farming,farmfield1
 	IniRead,farmfield2,Macro Parts/configs/Data.ini,farming,farmfield2
 	IniRead,farmfield3,Macro Parts/configs/Data.ini,farming,farmfield3
@@ -337,9 +340,48 @@
 }
 
 readgui(){ ;reads all the data from the gui
-	
+	Guicontrolget,farmfield1,,2tab2
+	Guicontrolget,farmfield2,,2tab3
+	Guicontrolget,farmfield3,,2tab4
+	Guicontrolget,farmfield4,,2tab5
+	Guicontrolget,farmpattern,,2tab8
+	Guicontrolget,patternsize,,2tab10
+	Guicontrolget,convsetting,,2tab12
+	Guicontrolget,maxtimeonfield,,2tab16
+	Guicontrolget,swingtool,,2tab19
+	Guicontrolget,sprinkleralign,,2tab20
+	Guicontrolget,pinewalkconv,,2tab22
+	Guicontrolget,waitforpop,,2tab24
+	Guicontrolget,shiftlock,,2tab25
+	Guicontrolget,shrine,,2tab27
+	Guicontrolget,donationamount,,2tab29
+	Guicontrolget,donationitem,,2tab32
+	Guicontrolget,bluebooster,,2tab35
+	Guicontrolget,redbooster,,2tab36
+	Guicontrolget,whitebooster,,2tab37
+	Guicontrolget,reglitter,,2tab39
 }
 
 savedata(){ ;saves all the data
-	
+	readgui()
+	IniWrite,%farmfield1%,Macro Parts/configs/Data.ini,farming,farmfield1
+	IniWrite,%farmfield2%,Macro Parts/configs/Data.ini,farming,farmfield2
+	IniWrite,%farmfield3%,Macro Parts/configs/Data.ini,farming,farmfield3
+	IniWrite,%farmfield4%,Macro Parts/configs/Data.ini,farming,farmfield4
+	IniWrite,%farmpattern%,Macro Parts/configs/Data.ini,farming,farmpattern
+	IniWrite,%patternsize%,Macro Parts/configs/Data.ini,farming,patternsize
+	IniWrite,%convsetting%,Macro Parts/configs/Data.ini,farming,convsetting
+	IniWrite,%maxtimeonfield%,Macro Parts/configs/Data.ini,farming,maxtimeonfield
+	IniWrite,%swingtool%,Macro Parts/configs/Data.ini,farming,swingtool
+	IniWrite,%sprinkleralign%,Macro Parts/configs/Data.ini,farming,sprinkleralign
+	IniWrite,%pinewalkconv%,Macro Parts/configs/Data.ini,farming,pinewalkconv
+	IniWrite,%waitforpop%,Macro Parts/configs/Data.ini,farming,waitforpop
+	IniWrite,%shiftlock%,Macro Parts/configs/Data.ini,farming,shiftlock
+	IniWrite,%shrine%,Macro Parts/configs/Data.ini,farming,shrine
+	IniWrite,%donationamount%,Macro Parts/configs/Data.ini,farming,donationamount
+	IniWrite,%donationitem%,Macro Parts/configs/Data.ini,farming,donationitem
+	IniWrite,%bluebooster%,Macro Parts/configs/Data.ini,farming,bluebooster
+	IniWrite,%redbooster%,Macro Parts/configs/Data.ini,farming,redbooster
+	IniWrite,%whitebooster%,Macro Parts/configs/Data.ini,farming,whitebooster
+	IniWrite,%reglitter%,Macro Parts/configs/Data.ini,farming,reglitter
 }

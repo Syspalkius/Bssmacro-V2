@@ -120,3 +120,9 @@ rebootinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/rebootinfo.txt
 	popup(400,300,12,"Server rebooter info",Text)
 }
+
+;------Macro buttons------
+/*
+Guiclose:
+savedata()
+ExitApp
