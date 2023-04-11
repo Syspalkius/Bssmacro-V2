@@ -392,6 +392,26 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,plantdelay1,,3tab36
 	GuiControlget,plantdelay2,,3tab38
 	GuiControlget,plantdelay3,,3tab40
+	GuiControlget,clock,,4tab3
+	GuiControlget,gluedisp,,4tab4
+	GuiControlget,strawdisp,,4tab5
+	GuiControlget,bluebdisp,,4tab6
+	GuiControlget,cocodisp,,4tab7
+	GuiControlget,tunnel,,4tab24
+	GuiControlget,kingbeetle,,4tab25
+	GuiControlget,ant,,4tab9
+	GuiControlget,freeant,,4tab10
+	GuiControlget,buyant,,4tab11
+	GuiControlget,playtimer,,4tab12
+	GuiControlget,vicious,,4tab14
+	GuiControlget,maxcombattime,,4tab16
+	GuiControlget,mondo,,4tab27
+	GuiControlget,lady,,4tab18
+	GuiControlget,rhino,,4tab19
+	GuiControlget,spider,,4tab20
+	GuiControlget,scorpion,,4tab21
+	GuiControlget,mantis,,4tab22
+	GuiControlget,wolf,,4tab23
 }
 
 
@@ -450,6 +470,26 @@ savedata(){ ;saves all the data
 	IniWrite,%plantdelay1%,Macro Parts/configs/Data.ini,planters,plantdelay1
 	IniWrite,%plantdelay2%,Macro Parts/configs/Data.ini,planters,plantdelay2
 	IniWrite,%plantdelay3%,Macro Parts/configs/Data.ini,planters,plantdelay3
+	IniWrite,%clock%,Macro Parts/configs/Data.ini,resources,clock
+	IniWrite,%gluedisp%,Macro Parts/configs/Data.ini,resources,gluedisp
+	IniWrite,%strawdisp%,Macro Parts/configs/Data.ini,resources,strawdisp
+	IniWrite,%bluebdisp%,Macro Parts/configs/Data.ini,resources,bluebdisp
+	IniWrite,%cocodisp%,Macro Parts/configs/Data.ini,resources,cocodisp
+	IniWrite,%tunnel%,Macro Parts/configs/Data.ini,resources,tunnel
+	IniWrite,%kingbeetle%,Macro Parts/configs/Data.ini,resources,kingbeetle
+	IniWrite,%ant%,Macro Parts/configs/Data.ini,resources,ant
+	IniWrite,%freeant%,Macro Parts/configs/Data.ini,resources,freeant
+	IniWrite,%buyant%,Macro Parts/configs/Data.ini,resources,buyant
+	IniWrite,%playtimer%,Macro Parts/configs/Data.ini,resources,playtimer
+	IniWrite,%vicious%,Macro Parts/configs/Data.ini,resources,vicious
+	IniWrite,%maxcombattime%,Macro Parts/configs/Data.ini,resources,maxcombattime
+	IniWrite,%lady%,Macro Parts/configs/Data.ini,resources,lady
+	IniWrite,%rhino%,Macro Parts/configs/Data.ini,resources,rhino
+	IniWrite,%spider%,Macro Parts/configs/Data.ini,resources,spider
+	IniWrite,%scorpion%,Macro Parts/configs/Data.ini,resources,scorpion
+	IniWrite,%mantis%,Macro Parts/configs/Data.ini,resources,mantis
+	IniWrite,%wolf%,Macro Parts/configs/Data.ini,resources,wolf
+	IniWrite,%mondo%,Macro Parts/configs/Data.ini,resources,mondo
 }
 
 

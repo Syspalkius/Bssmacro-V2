@@ -5,8 +5,10 @@ readini()
 startmacrokeys()
 return
 
+GuiClose: ;when gui closes will save data and close the macro.
+savedata()
+ExitApp
 
-
-start:
+start: ;when the start hotkey is pressed it will jump here.
 msgbox,start
 return
