@@ -433,6 +433,7 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,hookballoon,,10tab11
 	GuiControlget,main,,10tab14
 	GuiControlget,alt,,10tab16
+	getkeyinfo()
 }
 
 
@@ -537,23 +538,7 @@ savedata(){ ;saves all the data
 
 
 savehotkeys(){
-	GuiControlget,forward,,9tab3
-	GuiControlget,left,,9tab5
-	GuiControlget,right,,9tab9
-	GuiControlget,backwards,,9tab7
-	GuiControlget,camleft,,9tab11
-	GuiControlget,camright,,9tab13
-	GuiControlget,hotbar1,,9tab16
-	GuiControlget,hotbar2,,9tab18
-	GuiControlget,hotbar3,,9tab20
-	GuiControlget,hotbar4,,9tab22
-	GuiControlget,hotbar5,,9tab24
-	GuiControlget,hotbar6,,9tab26
-	GuiControlget,hotbar7,,9tab28
-	GuiControlget,Startkey,,9tab31
-	GuiControlget,Stopkey,,9tab33
-	GuiControlget,Pausekey,,9tab35
-	
+	getkeyinfo()
 	IniWrite,%forward%,Macro Parts/configs/Data.ini,keybinds,forward
 	IniWrite,%left%,Macro Parts/configs/Data.ini,keybinds,left
 	IniWrite,%right%,Macro Parts/configs/Data.ini,keybinds,right
@@ -570,4 +555,25 @@ savehotkeys(){
 	IniWrite,%Startkey%,Macro Parts/configs/Data.ini,keybinds,Startkey
 	IniWrite,%Stopkey%,Macro Parts/configs/Data.ini,keybinds,Stopkey
 	IniWrite,%Pausekey%,Macro Parts/configs/Data.ini,keybinds,Pausekey
+}
+
+
+
+getkeyinfo(){
+	GuiControlget,forward,,9tab3
+	GuiControlget,left,,9tab5
+	GuiControlget,right,,9tab9
+	GuiControlget,backwards,,9tab7
+	GuiControlget,camleft,,9tab11
+	GuiControlget,camright,,9tab13
+	GuiControlget,hotbar1,,9tab16
+	GuiControlget,hotbar2,,9tab18
+	GuiControlget,hotbar3,,9tab20
+	GuiControlget,hotbar4,,9tab22
+	GuiControlget,hotbar5,,9tab24
+	GuiControlget,hotbar6,,9tab26
+	GuiControlget,hotbar7,,9tab28
+	GuiControlget,Startkey,,9tab31
+	GuiControlget,Stopkey,,9tab33
+	GuiControlget,Pausekey,,9tab35
 }

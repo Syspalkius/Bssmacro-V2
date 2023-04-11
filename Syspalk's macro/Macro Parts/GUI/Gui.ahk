@@ -36,7 +36,7 @@ Gui,Add,Text, v1tab20 x205 y40 c%updatecol%,Latest Update : 03/24/2023
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
 Gui,Font,s7
-FileRead, UpdateText, Macro Parts\GUI\Info/New in this version.txt
+FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
 Gui,Add,Text, v1tab22 x200 yp+40 w250 h140 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
 Gui,Add,Button, v1tab23 x270 y250,View More
@@ -368,7 +368,8 @@ Gui,Add,Text, v10tab30 x250 y400 w10 h17 c%infocol% grebootinfo,?
 
 
 changetab(1)
-Gui,show,w450 h600,Syspalk's macro
+Fileread,version,Macro Parts\GUI\version.txt
+Gui,show,w450 h600,Syspalk's macro %version%
 ;------Functions------
 popup(SizeX,SizeY,FontSize,Title,Text){
 	Textloc := SizeX-20

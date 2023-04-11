@@ -30,7 +30,7 @@ Settingsbutton(){
 	changetab(10)
 }
 Buttonviewmore(){
-	FileRead, UpdateText, Macro Parts\GUI\Info/New in this version.txt
+	FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
 	popup(500,500,10,"New in this version",UpdateText)
 }
 Buttoncredits(){
