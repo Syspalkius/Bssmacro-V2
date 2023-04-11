@@ -1,6 +1,7 @@
 ﻿Tooltip,Loading...
 #Include Macro Parts\Data Handler.ahk
 readini()
+#Include Macro Parts\Version checker.ahk
 #Include Macro Parts\GUI\GUI.ahk
 startmacrokeys()
 return

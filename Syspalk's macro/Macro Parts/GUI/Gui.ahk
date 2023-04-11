@@ -2,7 +2,6 @@
 menu,tray,icon,Macro Parts\GUI\Images/logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
-global updatecol := "Green"
 global infocol := "53ede5"
 global startbutton := "F1"
 global stopbutton := "F2"
