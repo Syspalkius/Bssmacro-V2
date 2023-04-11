@@ -424,6 +424,15 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,buff5time,,5tab12
 	GuiControlget,buff6time,,5tab13
 	GuiControlget,buff7time,,5tab14
+	GuiControlget,speed,,10tab4
+	GuiControlget,joinmain,,10tab17
+	GuiControlget,rebootserver,,10tab19
+	GuiControlget,reboottime,,10tab21
+	GuiControlget,hookevent,,10tab7
+	GuiControlget,hookerror,,10tab9
+	GuiControlget,hookballoon,,10tab11
+	GuiControlget,main,,10tab14
+	GuiControlget,alt,,10tab16
 }
 
 
@@ -514,6 +523,15 @@ savedata(){ ;saves all the data
 	IniWrite,%buff5time%,Macro Parts/configs/Data.ini,buffs,buff5time
 	IniWrite,%buff6time%,Macro Parts/configs/Data.ini,buffs,buff6time
 	IniWrite,%buff7time%,Macro Parts/configs/Data.ini,buffs,buff7time
+	IniWrite,%speed%,Macro Parts/configs/Data.ini,settings,speed
+	IniWrite,%joinmain%,Macro Parts/configs/Data.ini,settings,joinmain
+	IniWrite,%rebootserver%,Macro Parts/configs/Data.ini,settings,rebootserver
+	IniWrite,%reboottime%,Macro Parts/configs/Data.ini,settings,reboottime
+	IniWrite,%hookevent%,Macro Parts/configs/Links.ini,webhooks,hookevent
+	IniWrite,%hookerror%,Macro Parts/configs/Links.ini,webhooks,hookerror
+	IniWrite,%hookballoon%,Macro Parts/configs/Links.ini,webhooks,hookballoon
+	IniWrite,%main%,Macro Parts/configs/Links.ini,private servers,main
+	IniWrite,%alt%,Macro Parts/configs/Links.ini,private servers,alt
 }
 
 

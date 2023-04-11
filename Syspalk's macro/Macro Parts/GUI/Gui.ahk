@@ -332,13 +332,13 @@ Gui,Add,Text, v10tab2 x75 y50 cWhite,character speed
 Gui,Add,Edit, v10tab3 x20 yp number w50
 Gui,Add,UpDown, v10tab4 Range10-50, %speed%
 Gui,Font,s13
-Gui,Add,Groupbox, v10tab5 x20 yp+35 w390 h140 cwhite,Webhooks
+Gui,Add,Groupbox, v10tab5 x20 yp+35 w410 h140 cwhite,Webhooks
 Gui,Font,s10
-Gui,Add,Text, v10tab6 x210 yp+35 cwhite,Events webhook
+Gui,Add,Text, v10tab6 x230 yp+35 cwhite,Events webhook
 Gui,Add,Edit, v10tab7 w175 h20 x50 yp, %hookevent%
-Gui,Add,Text, v10tab8 x210 yp+35 cwhite,Errors webhook
+Gui,Add,Text, v10tab8 x230 yp+35 cwhite,Errors webhook
 Gui,Add,Edit, v10tab9 w175 h20 x50 yp, %hookerror%
-Gui,Add,Text, v10tab10 x210 yp+35 cwhite,Balloon warnings webhook
+Gui,Add,Text, v10tab10 x230 yp+35 cwhite,Balloon warnings webhook
 Gui,Add,Edit, v10tab11 w175 h20 x50 yp, %hookballoon%
 Gui,Font,s13
 Gui,Add,Groupbox, v10tab12 x20 yp+50 w250 h130 cwhite,Vip Links
