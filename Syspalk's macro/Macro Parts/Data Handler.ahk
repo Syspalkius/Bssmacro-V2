@@ -361,19 +361,37 @@ readgui(){ ;reads all the data from the gui
 	Guicontrolget,redbooster,,2tab36
 	Guicontrolget,whitebooster,,2tab37
 	Guicontrolget,reglitter,,2tab39
-	GuiControlget,farmfield1,,v3tab4
-	GuiControlget,farmfield2,,v3tab5
-	GuiControlget,farmfield3,,v3tab6
-	GuiControlget,farmfield4,,v3tab7
-	GuiControlget,farmfield5,,v3tab8
-	GuiControlget,farmfield6,,v3tab9
-	GuiControlget,farmfield7,,v3tab10
-	GuiControlget,farmfield8,,v3tab11
-	GuiControlget,farmfield9,,v3tab12
-	GuiControlget,farmfield10,,v3tab13
-	GuiControlget,farmfield11,,v3tab14
-	GuiControlget,farmfield12,,v3tab15
-	
+	GuiControlget,plantfield1,,3tab4
+	GuiControlget,plantfield2,,3tab5
+	GuiControlget,plantfield3,,3tab6
+	GuiControlget,plantfield4,,3tab7
+	GuiControlget,plantfield5,,3tab8
+	GuiControlget,plantfield6,,3tab9
+	GuiControlget,plantfield7,,3tab10
+	GuiControlget,plantfield8,,3tab11
+	GuiControlget,plantfield9,,3tab12
+	GuiControlget,plantfield10,,3tab13
+	GuiControlget,plantfield11,,3tab14
+	GuiControlget,plantfield12,,3tab15
+	GuiControlget,planter1,,3tab16
+	GuiControlget,planter2,,3tab17
+	GuiControlget,planter3,,3tab18
+	GuiControlget,planter4,,3tab19
+	GuiControlget,planter5,,3tab20
+	GuiControlget,planter6,,3tab21
+	GuiControlget,planter7,,3tab22
+	GuiControlget,planter8,,3tab23
+	GuiControlget,planter9,,3tab24
+	GuiControlget,planter10,,3tab25
+	GuiControlget,planter11,,3tab26
+	GuiControlget,planter12,,3tab27
+	GuiControlget,lootplanters,,3tab29
+	GuiControlget,harviffull1,,3tab30
+	GuiControlget,harviffull2,,3tab31
+	GuiControlget,harviffull3,,3tab32
+	GuiControlget,plantdelay1,,3tab36
+	GuiControlget,plantdelay2,,3tab38
+	GuiControlget,plantdelay3,,3tab40
 }
 
 
