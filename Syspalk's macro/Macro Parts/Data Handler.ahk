@@ -412,6 +412,18 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,scorpion,,4tab21
 	GuiControlget,mantis,,4tab22
 	GuiControlget,wolf,,4tab23
+	GuiControlget,buff2,,5tab3
+	GuiControlget,buff3,,5tab4
+	GuiControlget,buff4,,5tab5
+	GuiControlget,buff5,,5tab6
+	GuiControlget,buff6,,5tab7
+	GuiControlget,buff7,,5tab8
+	GuiControlget,buff2time,,5tab9
+	GuiControlget,buff3time,,5tab10
+	GuiControlget,buff4time,,5tab11
+	GuiControlget,buff5time,,5tab12
+	GuiControlget,buff6time,,5tab13
+	GuiControlget,buff7time,,5tab14
 }
 
 
@@ -490,6 +502,18 @@ savedata(){ ;saves all the data
 	IniWrite,%mantis%,Macro Parts/configs/Data.ini,resources,mantis
 	IniWrite,%wolf%,Macro Parts/configs/Data.ini,resources,wolf
 	IniWrite,%mondo%,Macro Parts/configs/Data.ini,resources,mondo
+	IniWrite,%buff2%,Macro Parts/configs/Data.ini,buffs,buff2
+	IniWrite,%buff3%,Macro Parts/configs/Data.ini,buffs,buff3
+	IniWrite,%buff4%,Macro Parts/configs/Data.ini,buffs,buff4
+	IniWrite,%buff5%,Macro Parts/configs/Data.ini,buffs,buff5
+	IniWrite,%buff6%,Macro Parts/configs/Data.ini,buffs,buff6
+	IniWrite,%buff7%,Macro Parts/configs/Data.ini,buffs,buff7
+	IniWrite,%buff2time%,Macro Parts/configs/Data.ini,buffs,buff2time
+	IniWrite,%buff3time%,Macro Parts/configs/Data.ini,buffs,buff3time
+	IniWrite,%buff4time%,Macro Parts/configs/Data.ini,buffs,buff4time
+	IniWrite,%buff5time%,Macro Parts/configs/Data.ini,buffs,buff5time
+	IniWrite,%buff6time%,Macro Parts/configs/Data.ini,buffs,buff6time
+	IniWrite,%buff7time%,Macro Parts/configs/Data.ini,buffs,buff7time
 }
 
 

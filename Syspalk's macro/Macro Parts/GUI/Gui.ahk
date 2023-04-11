@@ -233,10 +233,10 @@ Gui,Font,s10
 Gui,Add,Text, v5tab2 x155 y40 cwhite, [Seconds]
 loop 6{
 	checkboxnum := A_Index+2
+	editnum := checkboxnum+6
 	checkboxtext := A_Index+1
 	data := buff%checkboxtext%
 	time := buff%checkboxtext%time
-	editnum := checkboxnum+6
 	Gui,Add,Checkbox, v5tab%checkboxnum% x20 yp+30 cwhite %data%,hotbar slot %checkboxtext%
 	Gui,Add,Edit, v5tab%editnum% number xp+120 yp-5 w100 ,%time%
 }
