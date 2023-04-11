@@ -37,6 +37,10 @@ Buttoncredits(){
 	FileRead, CreditText, Macro Parts\GUI\Info/Credits.txt
 	popup(200,300,12,"Credits",CreditText)
 }
+ButtonApplyChanges(){
+	savedata()
+	reload
+}
 
 ;------Info buttons------
 farminfo(){
@@ -123,7 +127,7 @@ rebootinfo(){
 
 ;------Macro buttons------
 
-updatemacrokeys(){
+startmacrokeys(){
 	IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
 	IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
 	IniRead,Pausekey,Macro Parts/configs/Data.ini,keybinds,Pausekey
@@ -131,12 +135,6 @@ updatemacrokeys(){
 	Hotkey,%Stopkey%,stop
 	Hotkey,%Pausekey%,Pause
 	
-	StartText := "Start [" . Startkey . "]"
-	StopText := "Stop [" . Stopkey . "]"
-	PauseText := "Pause [" . Pausekey . "]"
-	GuiControl,,2tab41,%StartText%
-	GuiControl,,2tab42,%StopText%
-	GuiControl,,2tab43,%PauseText%
 }
 
 if (0){

@@ -361,6 +361,19 @@ readgui(){ ;reads all the data from the gui
 	Guicontrolget,redbooster,,2tab36
 	Guicontrolget,whitebooster,,2tab37
 	Guicontrolget,reglitter,,2tab39
+	GuiControlget,farmfield1,,v3tab4
+	GuiControlget,farmfield2,,v3tab5
+	GuiControlget,farmfield3,,v3tab6
+	GuiControlget,farmfield4,,v3tab7
+	GuiControlget,farmfield5,,v3tab8
+	GuiControlget,farmfield6,,v3tab9
+	GuiControlget,farmfield7,,v3tab10
+	GuiControlget,farmfield8,,v3tab11
+	GuiControlget,farmfield9,,v3tab12
+	GuiControlget,farmfield10,,v3tab13
+	GuiControlget,farmfield11,,v3tab14
+	GuiControlget,farmfield12,,v3tab15
+	
 }
 
 
@@ -388,6 +401,37 @@ savedata(){ ;saves all the data
 	IniWrite,%redbooster%,Macro Parts/configs/Data.ini,farming,redbooster
 	IniWrite,%whitebooster%,Macro Parts/configs/Data.ini,farming,whitebooster
 	IniWrite,%reglitter%,Macro Parts/configs/Data.ini,farming,reglitter
+	IniWrite,%plantfield1%,Macro Parts/configs/Data.ini,planters,plantfield1
+	IniWrite,%plantfield2%,Macro Parts/configs/Data.ini,planters,plantfield2
+	IniWrite,%plantfield3%,Macro Parts/configs/Data.ini,planters,plantfield3
+	IniWrite,%plantfield4%,Macro Parts/configs/Data.ini,planters,plantfield4
+	IniWrite,%plantfield5%,Macro Parts/configs/Data.ini,planters,plantfield5
+	IniWrite,%plantfield6%,Macro Parts/configs/Data.ini,planters,plantfield6
+	IniWrite,%plantfield7%,Macro Parts/configs/Data.ini,planters,plantfield7
+	IniWrite,%plantfield8%,Macro Parts/configs/Data.ini,planters,plantfield8
+	IniWrite,%plantfield9%,Macro Parts/configs/Data.ini,planters,plantfield9
+	IniWrite,%plantfield10%,Macro Parts/configs/Data.ini,planters,plantfield10
+	IniWrite,%plantfield11%,Macro Parts/configs/Data.ini,planters,plantfield11
+	IniWrite,%plantfield12%,Macro Parts/configs/Data.ini,planters,plantfield12
+	IniWrite,%planter1%,Macro Parts/configs/Data.ini,planters,planter1
+	IniWrite,%planter2%,Macro Parts/configs/Data.ini,planters,planter2
+	IniWrite,%planter3%,Macro Parts/configs/Data.ini,planters,planter3
+	IniWrite,%planter4%,Macro Parts/configs/Data.ini,planters,planter4
+	IniWrite,%planter5%,Macro Parts/configs/Data.ini,planters,planter5
+	IniWrite,%planter6%,Macro Parts/configs/Data.ini,planters,planter6
+	IniWrite,%planter7%,Macro Parts/configs/Data.ini,planters,planter7
+	IniWrite,%planter8%,Macro Parts/configs/Data.ini,planters,planter8
+	IniWrite,%planter9%,Macro Parts/configs/Data.ini,planters,planter9
+	IniWrite,%planter10%,Macro Parts/configs/Data.ini,planters,planter10
+	IniWrite,%planter11%,Macro Parts/configs/Data.ini,planters,planter11
+	IniWrite,%planter12%,Macro Parts/configs/Data.ini,planters,planter12
+	IniWrite,%lootplanters%,Macro Parts/configs/Data.ini,planters,lootplanters
+	IniWrite,%harviffull1%,Macro Parts/configs/Data.ini,planters,harviffull1
+	IniWrite,%harviffull2%,Macro Parts/configs/Data.ini,planters,harviffull2
+	IniWrite,%harviffull3%,Macro Parts/configs/Data.ini,planters,harviffull3
+	IniWrite,%plantdelay1%,Macro Parts/configs/Data.ini,planters,plantdelay1
+	IniWrite,%plantdelay2%,Macro Parts/configs/Data.ini,planters,plantdelay2
+	IniWrite,%plantdelay3%,Macro Parts/configs/Data.ini,planters,plantdelay3
 }
 
 
@@ -426,5 +470,4 @@ savehotkeys(){
 	IniWrite,%Startkey%,Macro Parts/configs/Data.ini,keybinds,Startkey
 	IniWrite,%Stopkey%,Macro Parts/configs/Data.ini,keybinds,Stopkey
 	IniWrite,%Pausekey%,Macro Parts/configs/Data.ini,keybinds,Pausekey
-	updatemacrokeys()
 }

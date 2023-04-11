@@ -322,7 +322,7 @@ Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2 gsavehotkeys,%Stopkey%
 Gui,Add,Text, v9tab34 xp+30 yp+3 cwhite,Stop
 Gui,Add,Edit, v9tab35 x190 yp+30 h20 w27 limit2 gsavehotkeys,%Pausekey%
 Gui,Add,Text, v9tab36 xp+30 yp+3 cwhite,Pause
-
+Gui,Add,Button, v9tab37 x20 y550 ,Apply Changes
 
 
 Gui,Font,s17 Bold
