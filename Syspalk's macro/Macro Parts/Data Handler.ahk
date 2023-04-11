@@ -109,7 +109,6 @@ global alt
 
 
 
-
 readini(){ ;reads all the data from the ini file
 	IniRead,farmfield1,Macro Parts/configs/Data.ini,farming,farmfield1
 	IniRead,farmfield2,Macro Parts/configs/Data.ini,farming,farmfield2
@@ -339,6 +338,8 @@ readini(){ ;reads all the data from the ini file
 	}
 }
 
+
+
 readgui(){ ;reads all the data from the gui
 	Guicontrolget,farmfield1,,2tab2
 	Guicontrolget,farmfield2,,2tab3
@@ -362,8 +363,11 @@ readgui(){ ;reads all the data from the gui
 	Guicontrolget,reglitter,,2tab39
 }
 
+
+
 savedata(){ ;saves all the data
 	readgui()
+	savehotkeys()
 	IniWrite,%farmfield1%,Macro Parts/configs/Data.ini,farming,farmfield1
 	IniWrite,%farmfield2%,Macro Parts/configs/Data.ini,farming,farmfield2
 	IniWrite,%farmfield3%,Macro Parts/configs/Data.ini,farming,farmfield3
@@ -384,4 +388,43 @@ savedata(){ ;saves all the data
 	IniWrite,%redbooster%,Macro Parts/configs/Data.ini,farming,redbooster
 	IniWrite,%whitebooster%,Macro Parts/configs/Data.ini,farming,whitebooster
 	IniWrite,%reglitter%,Macro Parts/configs/Data.ini,farming,reglitter
+}
+
+
+
+savehotkeys(){
+	GuiControlget,forward,,9tab3
+	GuiControlget,left,,9tab5
+	GuiControlget,right,,9tab9
+	GuiControlget,backwards,,9tab7
+	GuiControlget,camleft,,9tab11
+	GuiControlget,camright,,9tab13
+	GuiControlget,hotbar1,,9tab16
+	GuiControlget,hotbar2,,9tab18
+	GuiControlget,hotbar3,,9tab20
+	GuiControlget,hotbar4,,9tab22
+	GuiControlget,hotbar5,,9tab24
+	GuiControlget,hotbar6,,9tab26
+	GuiControlget,hotbar7,,9tab28
+	GuiControlget,Startkey,,9tab31
+	GuiControlget,Stopkey,,9tab33
+	GuiControlget,Pausekey,,9tab35
+	
+	IniWrite,%forward%,Macro Parts/configs/Data.ini,keybinds,forward
+	IniWrite,%left%,Macro Parts/configs/Data.ini,keybinds,left
+	IniWrite,%right%,Macro Parts/configs/Data.ini,keybinds,right
+	IniWrite,%backwards%,Macro Parts/configs/Data.ini,keybinds,backwards
+	IniWrite,%camleft%,Macro Parts/configs/Data.ini,keybinds,camleft
+	IniWrite,%camright%,Macro Parts/configs/Data.ini,keybinds,camright
+	IniWrite,%hotbar1%,Macro Parts/configs/Data.ini,keybinds,hotbar1
+	IniWrite,%hotbar2%,Macro Parts/configs/Data.ini,keybinds,hotbar2
+	IniWrite,%hotbar3%,Macro Parts/configs/Data.ini,keybinds,hotbar3
+	IniWrite,%hotbar4%,Macro Parts/configs/Data.ini,keybinds,hotbar4
+	IniWrite,%hotbar5%,Macro Parts/configs/Data.ini,keybinds,hotbar5
+	IniWrite,%hotbar6%,Macro Parts/configs/Data.ini,keybinds,hotbar6
+	IniWrite,%hotbar7%,Macro Parts/configs/Data.ini,keybinds,hotbar7
+	IniWrite,%Startkey%,Macro Parts/configs/Data.ini,keybinds,Startkey
+	IniWrite,%Stopkey%,Macro Parts/configs/Data.ini,keybinds,Stopkey
+	IniWrite,%Pausekey%,Macro Parts/configs/Data.ini,keybinds,Pausekey
+	updatemacrokeys()
 }

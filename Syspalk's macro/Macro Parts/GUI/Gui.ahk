@@ -98,12 +98,15 @@ Gui,Add,Groupbox, v2tab38 x240 yp+10 w200 h40 cwhite,
 Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %reglitter%,Reglitter pinetree
 Gui,Add,Text, v2tab40 xp+170 yp w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
-Starttext := "Start [" . startbutton . "]"
-StopText := "Stop [" . stopbutton . "]"
-PauseText := "Pause [" . pausebutton . "]"
-Gui,Add,Text, v2tab41 x20 y570 c53ede5,%Starttext%
-Gui,Add,Text, v2tab42 x180 y570 c53ede5,%StopText%
-Gui,Add,Text, v2tab43 x340 y570 c53ede5,%PauseText%
+IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
+IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
+IniRead,Pausekey,Macro Parts/configs/Data.ini,keybinds,Pausekey
+StartText := "Start [" . Startkey . "]"
+StopText := "Stop [" . Stopkey . "]"
+PauseText := "Pause [" . Pausekey . "]"
+Gui,Add,Text, v2tab41 x20 y570 c53ede5 ,%StartText%
+Gui,Add,Text, v2tab42 x180 y570 c53ede5 ,%StopText%
+Gui,Add,Text, v2tab43 x340 y570 c53ede5 ,%PauseText%
 
 
 
@@ -281,43 +284,43 @@ Gui,Add,Text, v9tab1 x330 y10 cgreen,Keybinds
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab2 x20 yp+40 w220 h220 cwhite,Movement
 Gui,Font,s10
-Gui,Add,Edit, v9tab3 x30 yp+20 h20 w17 limit1,%forward%
+Gui,Add,Edit, v9tab3 x30 yp+20 h20 w17 limit1 gsavehotkeys,%forward%
 Gui,Add,Text, v9tab4 xp+20 yp+3 cwhite,Walk forwards
-Gui,Add,Edit, v9tab5 x30 yp+30 h20 w17 limit1,%left%
+Gui,Add,Edit, v9tab5 x30 yp+30 h20 w17 limit1 gsavehotkeys,%left%
 Gui,Add,Text, v9tab6 xp+20 yp+3 cwhite,Walk to the left
-Gui,Add,Edit, v9tab7 x30 yp+30 h20 w17 limit1,%backwards%
+Gui,Add,Edit, v9tab7 x30 yp+30 h20 w17 limit1 gsavehotkeys,%backwards%
 Gui,Add,Text, v9tab8 xp+20 yp+3 cwhite,Walk backwards
-Gui,Add,Edit, v9tab9 x30 yp+30 h20 w17 limit1,%right%
+Gui,Add,Edit, v9tab9 x30 yp+30 h20 w17 limit1 gsavehotkeys,%right%
 Gui,Add,Text, v9tab10 xp+20 yp+3 cwhite,Walk to the right
-Gui,Add,Edit, v9tab11 x30 yp+30 h20 w17 limit1,%camleft%
+Gui,Add,Edit, v9tab11 x30 yp+30 h20 w17 limit1 gsavehotkeys,%camleft%
 Gui,Add,Text, v9tab12 xp+20 yp+3 cwhite,Rotate camera to the left
-Gui,Add,Edit, v9tab13 x30 yp+30 h20 w17 limit1,%camright%
+Gui,Add,Edit, v9tab13 x30 yp+30 h20 w17 limit1 gsavehotkeys,%camright%
 Gui,Add,Text, v9tab14 xp+20 yp+3 cwhite,Rotate camera to the right
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab15 x20 yp+40 w150 h250 cwhite,Hotbar
 Gui,Font,s10
-Gui,Add,Edit, v9tab16 x30 yp+20 h20 w17 limit1,%hotbar1%
+Gui,Add,Edit, v9tab16 x30 yp+20 h20 w17 limit1 gsavehotkeys,%hotbar1%
 Gui,Add,Text, v9tab17 xp+20 yp+3 cwhite,Hotbar slot 1
-Gui,Add,Edit, v9tab18 x30 yp+30 h20 w17 limit1,%hotbar2%
+Gui,Add,Edit, v9tab18 x30 yp+30 h20 w17 limit1 gsavehotkeys,%hotbar2%
 Gui,Add,Text, v9tab19 xp+20 yp+3 cwhite,Hotbar slot 2
-Gui,Add,Edit, v9tab20 x30 yp+30 h20 w17 limit1,%hotbar3%
+Gui,Add,Edit, v9tab20 x30 yp+30 h20 w17 limit1 gsavehotkeys,%hotbar3%
 Gui,Add,Text, v9tab21 xp+20 yp+3 cwhite,Hotbar slot 3
-Gui,Add,Edit, v9tab22 x30 yp+30 h20 w17 limit1,%hotbar4%
+Gui,Add,Edit, v9tab22 x30 yp+30 h20 w17 limit1 gsavehotkeys,%hotbar4%
 Gui,Add,Text, v9tab23 xp+20 yp+3 cwhite,Hotbar slot 4
-Gui,Add,Edit, v9tab24 x30 yp+30 h20 w17 limit1,%hotbar5%
+Gui,Add,Edit, v9tab24 x30 yp+30 h20 w17 limit1 gsavehotkeys,%hotbar5%
 Gui,Add,Text, v9tab25 xp+20 yp+3 cwhite,Hotbar slot 5
-Gui,Add,Edit, v9tab26 x30 yp+30 h20 w17 limit1,%hotbar6%
+Gui,Add,Edit, v9tab26 x30 yp+30 h20 w17 limit1 gsavehotkeys,%hotbar6%
 Gui,Add,Text, v9tab27 xp+20 yp+3 cwhite,Hotbar slot 6
-Gui,Add,Edit, v9tab28 x30 yp+30 h20 w17 limit1,%hotbar7%
+Gui,Add,Edit, v9tab28 x30 yp+30 h20 w17 limit1 gsavehotkeys,%hotbar7%
 Gui,Add,Text, v9tab29 xp+20 yp+3 cwhite,Hotbar slot 7
 Gui,Font,s13
 Gui,Add,Groupbox, v9tab30 x180 y278 w100 h120 cwhite,Macro
 Gui,Font,s10
-Gui,Add,Edit, v9tab31 x190 yp+20 h20 w27 limit2,%Startkey%
+Gui,Add,Edit, v9tab31 x190 yp+20 h20 w27 limit2 gsavehotkeys,%Startkey%
 Gui,Add,Text, v9tab32 xp+30 yp+3 cwhite,Start
-Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2,%Stopkey%
+Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2 gsavehotkeys,%Stopkey%
 Gui,Add,Text, v9tab34 xp+30 yp+3 cwhite,Stop
-Gui,Add,Edit, v9tab35 x190 yp+30 h20 w27 limit2,%Pausekey%
+Gui,Add,Edit, v9tab35 x190 yp+30 h20 w27 limit2 gsavehotkeys,%Pausekey%
 Gui,Add,Text, v9tab36 xp+30 yp+3 cwhite,Pause
 
 

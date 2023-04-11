@@ -122,7 +122,29 @@ rebootinfo(){
 }
 
 ;------Macro buttons------
-/*
-Guiclose:
-savedata()
-ExitApp
+
+updatemacrokeys(){
+	IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
+	IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
+	IniRead,Pausekey,Macro Parts/configs/Data.ini,keybinds,Pausekey
+	Hotkey,%Startkey%,start
+	Hotkey,%Stopkey%,stop
+	Hotkey,%Pausekey%,Pause
+	
+	StartText := "Start [" . Startkey . "]"
+	StopText := "Stop [" . Stopkey . "]"
+	PauseText := "Pause [" . Pausekey . "]"
+	GuiControl,,2tab41,%StartText%
+	GuiControl,,2tab42,%StopText%
+	GuiControl,,2tab43,%PauseText%
+}
+
+if (0){
+	stop:
+	savedata()
+	reload
+	return
+	pause:
+	pause
+	return
+}

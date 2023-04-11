@@ -2,7 +2,11 @@
 #Include Macro Parts\Data Handler.ahk
 readini()
 #Include Macro Parts\GUI\GUI.ahk
+updatemacrokeys()
+return
 
-F1::
-savedata()
+
+
+start:
+msgbox,start
 return
