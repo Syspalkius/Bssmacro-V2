@@ -17,8 +17,10 @@ Gui,Add,Text, gResourcesbutton v1tab6 x40 yp+45 cf5c88e,Resources
 Gui,Add,Picture, gResourcesbutton v1tab7 x5 yp-5, Macro Parts\GUI\Images/resources.png
 Gui,Add,Text, gBuffsbutton v1tab8 x40 yp+45 cf5c88e,Buffs
 Gui,Add,Picture, gBuffsbutton v1tab9 x5 yp-5, Macro Parts\GUI\Images/extract.png
+/*
 Gui,Add,Text, gQuestbutton v1tab10 x40 yp+45 cf5c88e,Quests
 Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Macro Parts\GUI\Images/quests.png
+*/
 Gui,Add,Text, gmemorybutton w120 v1tab12 x40 yp+37 cf5c88e +wrap,Memory - Match
 Gui,Add,Picture, gmemorybutton v1tab13 x7 yp+3, Macro Parts\GUI\Images/memory.png
 Gui,Add,Text, gpresetbutton v1tab14 x40 yp+65 cf5c88e,Presets
