@@ -1,4 +1,4 @@
-This is the pattern that you will farm in while on the field.
+This is the pattern that you will farm in while you're on the field.
 
 I would always recommend zigzag++ as it's the most efficient at picking up tokens.
 

@@ -1,1 +1,1 @@
-With this you can change the maximum amount of time you're allowed to farm on the field for, after this amount of time has passed you will go back to the hive and back to the field, this is an important failsafe.
+With this you can change the maximum amount of time you're allowed to farm on the field for, after this amount of time has passed you will go back to the hive and then back to the field, this is an important failsafe.

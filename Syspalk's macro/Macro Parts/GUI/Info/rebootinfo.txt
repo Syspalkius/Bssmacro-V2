@@ -1,3 +1,3 @@
 This will shut down the server if you're the owner of the server.
 
-Note : It will shut down the top server in your serverlist.
+Note : It will shut down the top server on your serverlist.

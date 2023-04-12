@@ -1,4 +1,4 @@
-This is used to create custom cycles for your planters, can be used for doing quests, farming loot or keeping up/growing your nectars.
+This is used to create custom cycles for your planters, this can be used for : doing quests, farming loot or keeping up/growing your nectars.
 
 There are 3 different cycles, all of them working parallel to eachother.
 

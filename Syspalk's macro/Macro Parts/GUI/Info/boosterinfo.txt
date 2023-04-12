@@ -1,3 +1,3 @@
-When sellecting these it will simply use the booster hourly.
+When selecting these it will simply use the booster hourly.
 
 This is useful because you can make some extra honey while macroing.

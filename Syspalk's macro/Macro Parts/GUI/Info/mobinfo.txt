@@ -1,1 +1,1 @@
-Will kill these mobs as soon as they respown, this can be useful for quests/resources.
+This will kill these mobs as soon as they respown, this can be useful for quests/resources.

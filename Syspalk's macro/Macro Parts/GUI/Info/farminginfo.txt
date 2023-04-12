@@ -1,3 +1,3 @@
-This is used to sellect which field you want to farm, If you sellect multiple then then it will cycle between them.
+This is used to select the field in which you want to farm in, If you select multiple fields then it will cycle between them.
 
-Example : if you have pinetree on the first field and strawberry on the second field, it will first farm in pinetree and after it is done it will farm in strawberry the next run and after it's done with strawberry it will then go back to pinetree and so on.
+Example : if you have pinetree on the first field and strawberry on the second field, it will first farm in pinetree and after it is done it will farm in strawberry the next run, after it's done with strawberry it will then go back to pinetree and so on.

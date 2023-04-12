@@ -1,3 +1,3 @@
-On this tab you can load in settings for the macro that were already premade by me, I do not advice just clicking on one and keeping it default as there are some things that you should probably change yourself like things that you want to add/remove.
+On this tab you can load in settings for the macro that were already premade by me, I do not advice just clicking on one and keeping it default as there are some things that you should probably change yourself.
 
 You can use these as a great base for whatever you're trying to macro.

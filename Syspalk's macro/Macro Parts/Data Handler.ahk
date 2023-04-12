@@ -662,7 +662,7 @@ resetconfig(){
 	IniWrite,0,Macro Parts/configs/Data.ini,resources,scorpion
 	IniWrite,0,Macro Parts/configs/Data.ini,resources,mantis
 	IniWrite,0,Macro Parts/configs/Data.ini,resources,wolf
-	IniWrite,No Kill,Macro Parts/configs/Data.ini,resources,mondo
+	IniWrite,None,Macro Parts/configs/Data.ini,resources,mondo
 	
 	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff2
 	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff3
@@ -826,18 +826,25 @@ loadgumdropfarmer(){
 
 
 
-loadjbstingfarmer(){
-	
-}
-
-
-
 loadfruitfarmer(){
-	
+	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,farming,farmfield1
+	IniWrite,Pineapple,Macro Parts/configs/Data.ini,farming,farmfield2
+	IniWrite,Strawberry,Macro Parts/configs/Data.ini,farming,farmfield3
+	IniWrite,Sunflower,Macro Parts/configs/Data.ini,farming,farmfield4
+	IniWrite,zigzag++,Macro Parts/configs/Data.ini,farming,farmpattern
+	IniWrite,50,Macro Parts/configs/Data.ini,farming,patternsize
+	reload
 }
 
 
 
 loadticketfarmer(){
-	
+	IniWrite,bugrun&polar,Macro Parts/configs/Data.ini,farming,farmfield1
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield2
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield3
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield4
+	IniWrite,1,Macro Parts/configs/Data.ini,resources,clock
+	IniWrite,1,Macro Parts/configs/Data.ini,resources,tunnel
+	IniWrite,1,Macro Parts/configs/Data.ini,resources,kingbeetle
+	reload
 }

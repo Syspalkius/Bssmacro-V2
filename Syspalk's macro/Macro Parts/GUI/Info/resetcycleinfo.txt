@@ -1,1 +1,1 @@
-This will make the macro forget where the plant is currently located and will go back to cycle number 1.
+This will make the macro forget where the planter is currently located and all cycles will go back to cycle number 1.

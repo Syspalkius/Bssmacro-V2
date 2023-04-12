@@ -18,8 +18,8 @@ Gui,Add,Picture, gResourcesbutton v1tab7 x5 yp-5, Macro Parts\GUI\Images/resourc
 Gui,Add,Text, gBuffsbutton v1tab8 x40 yp+45 cf5c88e,Buffs
 Gui,Add,Picture, gBuffsbutton v1tab9 x5 yp-5, Macro Parts\GUI\Images/extract.png
 /*
-Gui,Add,Text, gQuestbutton v1tab10 x40 yp+45 cf5c88e,Quests
-Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Macro Parts\GUI\Images/quests.png
+	Gui,Add,Text, gQuestbutton v1tab10 x40 yp+45 cf5c88e,Quests
+	Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Macro Parts\GUI\Images/quests.png
 */
 Gui,Add,Text, gmemorybutton w120 v1tab12 x40 yp+37 cf5c88e +wrap,Memory - Match
 Gui,Add,Picture, gmemorybutton v1tab13 x7 yp+3, Macro Parts\GUI\Images/memory.png
@@ -93,7 +93,7 @@ Gui,Add,Checkbox, v2tab35 x250 yp+5 cwhite %bluebooster%,Blue Booster
 Gui,Add,Checkbox, v2tab36 x250 yp+25 cwhite %redbooster%,Red Booster
 Gui,Add,Checkbox, v2tab37 x250 yp+25 cwhite %whitebooster%,White Booster
 Gui,Add,Groupbox, v2tab38 x240 yp+10 w200 h40 cwhite,
-Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %reglitter%,Reglitter pinetree
+Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %reglitter%,Re-glitter pinetree
 Gui,Add,Text, v2tab40 xp+170 yp w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
 IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
@@ -166,7 +166,7 @@ Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harviffull1%, harvest plant 1 when fu
 Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2%, harvest plant 2 when fully grown
 Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3%, harvest plant 3 when fully grown
 Gui,Font,s13
-Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h120 cwhite,Planter Timers
+Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h120 cwhite,Plant Timers
 Gui,Font,s8
 gui,Add,Text,v3tab34 xp+70 yp+20 cwhite,harvest time
 Gui,Add,Text,v3tab35 xp-60 yp+23 cwhite, plant 1
@@ -197,15 +197,15 @@ gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp%,Use coconut dispenser
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab8 x20 yp+35 w300 h90 cwhite,Ant challenge
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab9 xp+5 yp+20 cwhite %ant%, claim free ant pass
-Gui,Add,Checkbox, v4tab10 xp yp+20 cwhite %freeant%, use free pass to play ant
-Gui,Add,Checkbox, v4tab11 xp yp+20 cwhite %buyant%, buy and use ant pass every
+Gui,Add,Checkbox, v4tab9 xp+5 yp+20 cwhite %ant%, Claim free ant pass
+Gui,Add,Checkbox, v4tab10 xp yp+20 cwhite %freeant%, Use free pass to play ant
+Gui,Add,Checkbox, v4tab11 xp yp+20 cwhite %buyant%, Buy and use ant pass every
 Gui,Add,DropDownlist, v4tab12 xp+215 yp w60 h200 ,%playtimer%||30 min|1 hour|2 hours|4 hours
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab13 x20 yp+35 w300 h75 cwhite,kill vicious
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab14 xp+10 yp+25 cwhite %vicious%,kill vicious bee when night is detected
-Gui,Add,Text, v4tab15 x85 yp+25 cwhite,maximum combat time [Seconds]
+Gui,Add,Checkbox, v4tab14 xp+10 yp+25 cwhite %vicious%,Kill vicious bee when night is detected
+Gui,Add,Text, v4tab15 x85 yp+25 cwhite,Maximum combat time [Seconds]
 Gui,Add,Edit, v4tab16 number x30 yp-2 w50,%maxcombattime%
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab17 x20 yp+35 w180 h185 cwhite,Mobs
@@ -219,7 +219,7 @@ Gui,Add,Checkbox, v4tab23 x30 yp+20 cwhite %wolf%,Kill werewolf
 gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel%,Kill tunnelbear
 gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle%,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
-Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200,%mondo%||No Kill|Blessing|Loot
+Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200,%mondo%||None|Blessing|Loot
 Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
 Gui,Add,Text, v4tab29 x180 y370 w10 h17 c%infocol% gmobinfo,?
 
@@ -266,13 +266,10 @@ Gui,Add,Text, v8tab6 xp+34 yp+5 c53ede5 gloadidealblue,Load Ideal blue honeymake
 Gui,Add,Picture, v8tab7 xp yp+30 gloadidealblue,Macro Parts\GUI\Images/idealhotbar.png
 Gui,Add,Picture, v8tab8 x10 yp+55 gloadgumdropfarmer,Macro Parts\GUI\Images/gumdrop.png
 Gui,Add,Text, v8tab9 xp+33 yp+2 c53ede5 gloadgumdropfarmer,Load gumdrop farmer
-Gui,Add,Picture, v8tab10 x10 yp+55,Macro Parts\GUI\Images/jb.png
-Gui,Add,Text, v8tab11 xp+33 yp+2 c53ede5,Load Jelly bean/Stinger farmer
-Gui,Add,Picture, v8tab12 xp yp+30,Macro Parts\GUI\Images/stingfarmer.png
-Gui,Add,Picture, v8tab13 x10 yp+55,Macro Parts\GUI\Images/strawberry.png
-Gui,Add,Text, v8tab14 xp+33 yp+2 c53ede5,Load full fruit farmer
-Gui,Add,Picture, v8tab15 x10 yp+55,Macro Parts\GUI\Images/ticket.png
-Gui,Add,Text, v8tab16 xp+33 yp-3 c53ede5,Load ticket farmer
+Gui,Add,Picture, v8tab13 x10 yp+55 gloadfruitfarmer,Macro Parts\GUI\Images/strawberry.png
+Gui,Add,Text, v8tab14 xp+33 yp+2 c53ede5 gloadfruitfarmer,Load full fruit farmer
+Gui,Add,Picture, v8tab15 x10 yp+55 gloadticketfarmer,Macro Parts\GUI\Images/ticket.png
+Gui,Add,Text, v8tab16 xp+33 yp-3 c53ede5 gloadticketfarmer,Load ticket farmer
 Gui,Font,s10
 Gui,Add,Text, v8tab17 x335 y17 w10 h17 c%infocol% gpresetinfo,?
 
@@ -363,7 +360,7 @@ Gui,Add,Text, v10tab26 x200 y52 w10 h17 c%infocol% gmovespeedinfo,?
 Gui,Add,Text, v10tab27 x30 y120 w10 h17 c%infocol% ghookeventinfo,?
 Gui,Add,Text, v10tab28 x30 y155 w10 h17 c%infocol% ghookerrorinfo,?
 Gui,Add,Text, v10tab29 x30 y190 w10 h17 c%infocol% ghookballooninfo,?
-Gui,Add,Text, v10tab30 x250 y400 w10 h17 c%infocol% grebootinfo,?
+Gui,Add,Text, v10tab30 x255 y400 w10 h17 c%infocol% grebootinfo,?
 
 var := 0
 loop 11{
@@ -380,7 +377,9 @@ Gui,show,w450 h600,Syspalk's macro %version%
 ;------Functions------
 popup(SizeX,SizeY,FontSize,Title,Text){
 	Textloc := SizeX-20
+	borderheight := SizeY + 7
 	Gui, popup:Destroy
+	Gui, popup:Add,groupbox,x0 y-7 w%SizeX% h%borderheight%
 	Gui, popup:color,0x2A2F32
 	Gui, popup:Font,s%FontSize%,Segoe UI
 	Gui, popup:Add,Text, +wrap x10 y5 w%Textloc% cwhite,%Text%
@@ -389,8 +388,10 @@ popup(SizeX,SizeY,FontSize,Title,Text){
 
 changetab(tab){
 	Tooltip,Loading tab...
-	loop 46{
-		GuiControl,Hide,%prevtab%tab%A_Index%
+	if not (prevtab = tab){
+		loop 46{
+			GuiControl,Hide,%prevtab%tab%A_Index%
+		}
 	}
 	
 	loop 46{
