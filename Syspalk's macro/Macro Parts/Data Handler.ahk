@@ -113,6 +113,7 @@ global 4htimer
 global 22htimer
 global 24htimer
 global reboottimer
+global prevtab
 
 
 
@@ -599,8 +600,7 @@ savehotkeys(){
 
 
 
-resettimers(){
-	Tooltip,The timers have been reset!
+resettimers(tooltip := 1){
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,30mtimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,1htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,2htimer
@@ -608,8 +608,129 @@ resettimers(){
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,22htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,24htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,reboottimer
-	sleep 2000
-	Tooltip,
+	if (tooltip){
+		Tooltip,The timers have been reset!
+		sleep 2000
+		Tooltip,
+	}
 }
 
 
+
+resetconfig(){
+	resettimers(false)
+	ButtonResetCycleData(false)
+	ButtonResetSettings(false)
+	
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield1
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield2
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield3
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield4
+	IniWrite,zigzag++,Macro Parts/configs/Data.ini,farming,farmpattern
+	IniWrite,50,Macro Parts/configs/Data.ini,farming,patternsize
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,convsetting
+	IniWrite,10,Macro Parts/configs/Data.ini,farming,maxtimeonfield
+	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinewalkconv
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,waitforpop
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,shiftlock
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,shrine
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,donationamount
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,donationitem
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,bluebooster
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,redbooster
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,whitebooster
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,reglitter
+	
+	IniWrite,1,Macro Parts/configs/Data.ini,resources,clock
+	IniWrite,1,Macro Parts/configs/Data.ini,resources,gluedisp
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,strawdisp
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,bluebdisp
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,cocodisp
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,tunnel
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,kingbeetle
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,ant
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,freeant
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,buyant
+	IniWrite,1 hour,Macro Parts/configs/Data.ini,resources,playtimer
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,vicious
+	IniWrite,60,Macro Parts/configs/Data.ini,resources,maxcombattime
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,lady
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,rhino
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,spider
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,scorpion
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,mantis
+	IniWrite,0,Macro Parts/configs/Data.ini,resources,wolf
+	IniWrite,No Kill,Macro Parts/configs/Data.ini,resources,mondo
+	reload
+}
+
+
+
+ButtonResetCycleData(tooltip := 1){
+	IniWrite,1,Macro Parts/configs/Data.ini,planters,plantcycle1
+	IniWrite,1,Macro Parts/configs/Data.ini,planters,plantcycle2
+	IniWrite,1,Macro Parts/configs/Data.ini,planters,plantcycle3
+	if (tooltip){
+		Tooltip,Successfully reset the cycle data!
+		sleep 2000
+		Tooltip,
+	}
+}
+
+
+
+ButtonResetSettings(reload){
+	if (reload){
+		savedata()
+	}
+	loop 12{
+		IniWrite,None,Macro Parts/configs/Data.ini,planters,plantfield%A_Index%
+		IniWrite,None,Macro Parts/configs/Data.ini,planters,planter%A_Index%
+	}
+	IniWrite,0,Macro Parts/configs/Data.ini,planters,lootplanters
+	loop 3{
+		IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull%A_Index%
+		IniWrite,1 Hour,Macro Parts/configs/Data.ini,planters,plantdelay%A_Index%
+	}
+	if (reload){
+		reload
+	}
+}
+
+
+
+loadblue5nectar(){
+	
+}
+
+
+
+loadidealbluefarm(){
+	
+}
+
+
+
+loadgumdropfarmer(){
+	
+}
+
+
+
+loadjbstingfarmer(){
+	
+}
+
+
+
+loadfruitfarmer(){
+	
+}
+
+
+
+loadticketfarmer(){
+	
+}

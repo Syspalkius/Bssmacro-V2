@@ -164,7 +164,7 @@ Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harviffull1%, harvest plant 1 when fu
 Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2%, harvest plant 2 when fully grown
 Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3%, harvest plant 3 when fully grown
 Gui,Font,s13
-Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h130 cwhite,Planter Timers
+Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h120 cwhite,Planter Timers
 Gui,Font,s8
 gui,Add,Text,v3tab34 xp+70 yp+20 cwhite,harvest time
 Gui,Add,Text,v3tab35 xp-60 yp+23 cwhite, plant 1
@@ -352,8 +352,8 @@ Gui,Add,Edit, v10tab20 x30 yp+30 number w50
 Gui,Add,UpDown, v10tab21 Range10-5000, %reboottime%
 Gui,Add,Text, v10tab22 yp+2 x85 cwhite,Cooldown [Minutes]
 Gui,Font,s12 Bold
-Gui,Add,Text, v10tab23 x20 yp+50 c53ede5,Reset Config
-Gui,Add,Text, v10tab24 x20 yp+25 c53ede5 gresettimers ,Reset Timers
+Gui,Add,Text, v10tab23 x20 yp+50 c53ede5 gresetconfig,Reset Config
+Gui,Add,Text, v10tab24 x20 yp+25 c53ede5 gresettimers,Reset Timers
 Gui,Font,s10 Bold
 Gui,Add,Button,v10tab25 x380 y560,credits
 Gui,Add,Text, v10tab26 x200 y52 w10 h17 c%infocol% gmovespeedinfo,?
@@ -362,7 +362,15 @@ Gui,Add,Text, v10tab28 x30 y155 w10 h17 c%infocol% ghookerrorinfo,?
 Gui,Add,Text, v10tab29 x30 y190 w10 h17 c%infocol% ghookballooninfo,?
 Gui,Add,Text, v10tab30 x250 y400 w10 h17 c%infocol% grebootinfo,?
 
-
+var := 0
+loop 11{
+	var++
+	if not (tab = A_Index){
+		loop 46{
+			GuiControl,Hide,%var%tab%A_Index%
+		}
+	}
+}
 changetab(1)
 Fileread,version,Macro Parts\GUI\version.txt
 Gui,show,w450 h600,Syspalk's macro %version%
@@ -378,19 +386,13 @@ popup(SizeX,SizeY,FontSize,Title,Text){
 
 changetab(tab){
 	Tooltip,Loading tab...
-	var := 0
-	loop 11{
-		var++
-		if not (tab = A_Index){
-			loop 46{
-				GuiControl,Hide,%var%tab%A_Index%
-			}
-		}
+	loop 46{
+		GuiControl,Hide,%prevtab%tab%A_Index%
 	}
-	
 	
 	loop 46{
 		GuiControl,Show,%tab%tab%A_Index%
 	}
+	global prevtab := tab
 	Tooltip,
 }
