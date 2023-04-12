@@ -106,6 +106,13 @@ global hookerror
 global hookballoon
 global main
 global alt
+global 30mtimer
+global 1htimer
+global 2htimer
+global 4htimer
+global 22htimer
+global 24htimer
+global reboottimer
 
 
 
@@ -438,6 +445,39 @@ readgui(){ ;reads all the data from the gui
 
 
 
+getkeyinfo(){
+	GuiControlget,forward,,9tab3
+	GuiControlget,left,,9tab5
+	GuiControlget,right,,9tab9
+	GuiControlget,backwards,,9tab7
+	GuiControlget,camleft,,9tab11
+	GuiControlget,camright,,9tab13
+	GuiControlget,hotbar1,,9tab16
+	GuiControlget,hotbar2,,9tab18
+	GuiControlget,hotbar3,,9tab20
+	GuiControlget,hotbar4,,9tab22
+	GuiControlget,hotbar5,,9tab24
+	GuiControlget,hotbar6,,9tab26
+	GuiControlget,hotbar7,,9tab28
+	GuiControlget,Startkey,,9tab31
+	GuiControlget,Stopkey,,9tab33
+	GuiControlget,Pausekey,,9tab35
+}
+
+
+
+gettimers(){
+	IniRead,30mtimer,Macro Parts/configs/Timers.ini,timers,30mtimer
+	IniRead,1htimer,Macro Parts/configs/Timers.ini,timers,1htimer
+	IniRead,2htimer,Macro Parts/configs/Timers.ini,timers,2htimer
+	IniRead,4htimer,Macro Parts/configs/Timers.ini,timers,4htimer
+	IniRead,22htimer,Macro Parts/configs/Timers.ini,timers,22htimer
+	IniRead,24htimer,Macro Parts/configs/Timers.ini,timers,24htimer
+	IniRead,reboottimer,Macro Parts/configs/Timers.ini,timers,reboottimer
+}
+
+
+
 savedata(){ ;saves all the data
 	readgui()
 	savehotkeys()
@@ -559,21 +599,17 @@ savehotkeys(){
 
 
 
-getkeyinfo(){
-	GuiControlget,forward,,9tab3
-	GuiControlget,left,,9tab5
-	GuiControlget,right,,9tab9
-	GuiControlget,backwards,,9tab7
-	GuiControlget,camleft,,9tab11
-	GuiControlget,camright,,9tab13
-	GuiControlget,hotbar1,,9tab16
-	GuiControlget,hotbar2,,9tab18
-	GuiControlget,hotbar3,,9tab20
-	GuiControlget,hotbar4,,9tab22
-	GuiControlget,hotbar5,,9tab24
-	GuiControlget,hotbar6,,9tab26
-	GuiControlget,hotbar7,,9tab28
-	GuiControlget,Startkey,,9tab31
-	GuiControlget,Stopkey,,9tab33
-	GuiControlget,Pausekey,,9tab35
+resettimers(){
+	Tooltip,The timers have been reset!
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,30mtimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,1htimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,2htimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,4htimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,22htimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,24htimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,reboottimer
+	sleep 2000
+	Tooltip,
 }
+
+

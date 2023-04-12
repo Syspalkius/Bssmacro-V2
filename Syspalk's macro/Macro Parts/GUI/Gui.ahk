@@ -3,9 +3,6 @@ menu,tray,icon,Macro Parts\GUI\Images/logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
 global infocol := "53ede5"
-global startbutton := "F1"
-global stopbutton := "F2"
-global pausebutton := "F3"
 
 
 Gui,Add,Picture, x10 y10 gmenubar, Macro Parts\GUI\Images/menu.png
@@ -31,12 +28,12 @@ Gui,Add,Picture, gkeybindbutton v1tab17 x7 yp+3, Macro Parts\GUI\Images/keyboard
 Gui,Add,Text, gSettingsbutton v1tab18 x40 yp+40 cf5c88e,Settings
 Gui,Add,Picture, gSettingsbutton v1tab19 x5 yp-5, Macro Parts\GUI\Images/cog.png
 Gui,Font,s12 Bold
-Gui,Add,Text, v1tab20 x205 y40 c%updatecol%,Latest Update : 03/24/2023
+Gui,Add,Text, v1tab20 x205 y15 c%updatecol%,Latest Update : 03/24/2023
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
 Gui,Font,s7
 FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
-Gui,Add,Text, v1tab22 x200 yp+40 w250 h140 cwhite +wrap,%UpdateText%
+Gui,Add,Text, v1tab22 x200 yp+40 w250 h165 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
 Gui,Add,Button, v1tab23 x270 y250,View More
 Gui,Font,s15 Bold
@@ -356,7 +353,7 @@ Gui,Add,UpDown, v10tab21 Range10-5000, %reboottime%
 Gui,Add,Text, v10tab22 yp+2 x85 cwhite,Cooldown [Minutes]
 Gui,Font,s12 Bold
 Gui,Add,Text, v10tab23 x20 yp+50 c53ede5,Reset Config
-Gui,Add,Text, v10tab24 x20 yp+25 c53ede5,Reset Timers
+Gui,Add,Text, v10tab24 x20 yp+25 c53ede5 gresettimers ,Reset Timers
 Gui,Font,s10 Bold
 Gui,Add,Button,v10tab25 x380 y560,credits
 Gui,Add,Text, v10tab26 x200 y52 w10 h17 c%infocol% gmovespeedinfo,?

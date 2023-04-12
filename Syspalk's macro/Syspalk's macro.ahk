@@ -11,5 +11,6 @@ savedata()
 ExitApp
 
 start: ;when the start hotkey is pressed it will jump here.
-msgbox,start
-return
+while(1){
+	
+}
