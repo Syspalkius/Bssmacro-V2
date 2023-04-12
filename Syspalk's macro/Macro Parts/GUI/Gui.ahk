@@ -258,22 +258,23 @@ Gui,Add,Picture, v7tab2 x10 y200,Macro Parts\GUI\Images/comingsoon.png
 Gui,Font,s17 Bold
 Gui,Add,Text, v8tab1 x350 y10 cgreen,Presets
 Gui,Font,s15
-Gui,Add,Picture, v8tab2 x10 y50,Macro Parts\GUI\Images/nectar.png
-Gui,Add,Text, v8tab3 xp+30 y53 c53ede5,Load blue 5 nectar preset
-Gui,Add,Picture, v8tab4 xp yp+30,Macro Parts\GUI\Images/blue5nect.png
-Gui,Add,Picture, v8tab5 x7 yp+55,Macro Parts\GUI\Images/honey.png
-Gui,Add,Text, v8tab6 xp+34 yp+5 c53ede5,Load Ideal blue honeymaker preset
-Gui,Add,Picture, v8tab7 x10 yp+55,Macro Parts\GUI\Images/gumdrop.png
-Gui,Add,Text, v8tab8 xp+33 yp+2 c53ede5,Load gumdrop farmer
-Gui,Add,Picture, v8tab9 x10 yp+55,Macro Parts\GUI\Images/jb.png
-Gui,Add,Text, v8tab10 xp+33 yp+2 c53ede5,Load Jelly bean/Stinger farmer
-Gui,Add,Picture, v8tab11 xp yp+30,Macro Parts\GUI\Images/stingfarmer.png
-Gui,Add,Picture, v8tab12 x10 yp+55,Macro Parts\GUI\Images/strawberry.png
-Gui,Add,Text, v8tab13 xp+33 yp+2 c53ede5,Load full fruit farmer
-Gui,Add,Picture, v8tab14 x10 yp+55,Macro Parts\GUI\Images/ticket.png
-Gui,Add,Text, v8tab15 xp+33 yp-3 c53ede5,Load ticket farmer
+Gui,Add,Picture, v8tab2 x10 y50 gloadblue5nectar,Macro Parts\GUI\Images/nectar.png
+Gui,Add,Text, v8tab3 xp+30 y53 c53ede5 gloadblue5nectar,Load blue 5 nectar preset
+Gui,Add,Picture, v8tab4 xp yp+30 gloadblue5nectar,Macro Parts\GUI\Images/blue5nect.png
+Gui,Add,Picture, v8tab5 x7 yp+55 gloadidealblue,Macro Parts\GUI\Images/honey.png
+Gui,Add,Text, v8tab6 xp+34 yp+5 c53ede5 gloadidealblue,Load Ideal blue honeymaker preset
+Gui,Add,Picture, v8tab7 xp yp+30 gloadidealblue,Macro Parts\GUI\Images/idealhotbar.png
+Gui,Add,Picture, v8tab8 x10 yp+55 gloadgumdropfarmer,Macro Parts\GUI\Images/gumdrop.png
+Gui,Add,Text, v8tab9 xp+33 yp+2 c53ede5 gloadgumdropfarmer,Load gumdrop farmer
+Gui,Add,Picture, v8tab10 x10 yp+55,Macro Parts\GUI\Images/jb.png
+Gui,Add,Text, v8tab11 xp+33 yp+2 c53ede5,Load Jelly bean/Stinger farmer
+Gui,Add,Picture, v8tab12 xp yp+30,Macro Parts\GUI\Images/stingfarmer.png
+Gui,Add,Picture, v8tab13 x10 yp+55,Macro Parts\GUI\Images/strawberry.png
+Gui,Add,Text, v8tab14 xp+33 yp+2 c53ede5,Load full fruit farmer
+Gui,Add,Picture, v8tab15 x10 yp+55,Macro Parts\GUI\Images/ticket.png
+Gui,Add,Text, v8tab16 xp+33 yp-3 c53ede5,Load ticket farmer
 Gui,Font,s10
-Gui,Add,Text, v8tab16 x335 y17 w10 h17 c%infocol% gpresetinfo,?
+Gui,Add,Text, v8tab17 x335 y17 w10 h17 c%infocol% gpresetinfo,?
 
 
 

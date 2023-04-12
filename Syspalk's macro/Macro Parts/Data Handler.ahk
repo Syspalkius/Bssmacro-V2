@@ -742,20 +742,86 @@ ButtonResetSettings(reload){
 
 
 
-loadblue5nectar(){
-	
+loadblue5nectar(reload := 0){
+	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,planters,plantfield1
+	IniWrite,Pineapple,Macro Parts/configs/Data.ini,planters,plantfield2
+	IniWrite,Coconut,Macro Parts/configs/Data.ini,planters,plantfield3
+	IniWrite,Sunflower,Macro Parts/configs/Data.ini,planters,plantfield4
+	IniWrite,Spider,Macro Parts/configs/Data.ini,planters,plantfield5
+	IniWrite,Strawberry,Macro Parts/configs/Data.ini,planters,plantfield6
+	IniWrite,Rose,Macro Parts/configs/Data.ini,planters,plantfield7
+	IniWrite,Mushroom,Macro Parts/configs/Data.ini,planters,plantfield8
+	IniWrite,Blue Flower,Macro Parts/configs/Data.ini,planters,plantfield9
+	IniWrite,Mountain,Macro Parts/configs/Data.ini,planters,plantfield10
+	IniWrite,Pepper,Macro Parts/configs/Data.ini,planters,plantfield11
+	IniWrite,Cactus,Macro Parts/configs/Data.ini,planters,plantfield12
+	if (reload){
+		reload
+	}
 }
 
 
 
-loadidealbluefarm(){
-	
+loadidealblue(){
+	loadblue5nectar(false)
+	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,farming,farmfield1
+	IniWrite,Reset,Macro Parts/configs/Data.ini,farming,convsetting
+	IniWrite,10,Macro Parts/configs/Data.ini,farming,maxtimeonfield
+	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign
+	IniWrite,1,Macro Parts/configs/Data.ini,farming,pinewalkconv
+	IniWrite,1,Macro Parts/configs/Data.ini,farming,waitforpop
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,shiftlock
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,shrine
+	IniWrite,1,Macro Parts/configs/Data.ini,farming,bluebooster
+	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter1
+	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter2
+	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter3
+	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter4
+	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter5
+	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter6
+	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter7
+	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter8
+	IniWrite,4,Macro Parts/configs/Data.ini,planters,planter9
+	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter10
+	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter11
+	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter12
+	IniWrite,0,Macro Parts/configs/Data.ini,planters,lootplanters
+	IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull1
+	IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull2
+	IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull3
+	IniWrite,1 hour,Macro Parts/configs/Data.ini,planters,plantdelay1
+	IniWrite,1 hour,Macro Parts/configs/Data.ini,planters,plantdelay2
+	IniWrite,1 hour,Macro Parts/configs/Data.ini,planters,plantdelay3
+	IniWrite,1,Macro Parts/configs/Data.ini,buffs,buff2
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff3
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff4
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff5
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff6
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff7
+	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff2time
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff3time
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff4time
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff5time
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff6time
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff7time
+	reload
 }
 
 
 
 loadgumdropfarmer(){
-	
+	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,farming,farmfield1
+	IniWrite,Pineapple,Macro Parts/configs/Data.ini,farming,farmfield2
+	IniWrite,Strawberry,Macro Parts/configs/Data.ini,farming,farmfield3
+	IniWrite,None,Macro Parts/configs/Data.ini,farming,convsetting
+	IniWrite,10,Macro Parts/configs/Data.ini,farming,maxtimeonfield
+	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinewalkconv
+	IniWrite,zigzag++,Macro Parts/configs/Data.ini,farming,farmpattern
+	IniWrite,50,Macro Parts/configs/Data.ini,farming,patternsize
+	reload
 }
 
 
