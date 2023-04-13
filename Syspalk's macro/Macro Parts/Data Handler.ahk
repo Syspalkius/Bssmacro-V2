@@ -114,7 +114,7 @@ global 22htimer
 global 24htimer
 global reboottimer
 global prevtab
-
+global allowconvert
 
 
 readini(){ ;reads all the data from the ini file
