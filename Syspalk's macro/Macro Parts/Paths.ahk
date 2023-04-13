@@ -577,6 +577,8 @@ clover(nectar){
 	}
 }
 
+/*
+
 bluebooster(){
 	EventLog("Going to claim blue booster")
 	bluf(false)

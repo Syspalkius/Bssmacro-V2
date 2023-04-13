@@ -182,3 +182,40 @@ SearchFunction(image,variation){ ;imagesearch in function so it's nicer to use.
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *%variation% Macro Parts\images\%image%
 	return [ErrorLevel,FoundX,FoundY]
 } 
+
+
+GOField(field,nectar := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
+	if (field = "Bamboo"){
+		bamboo(nectar)
+	}else if (field = "Blue Flower"){
+		bluf(nectar)
+	}else if (field = "Cactus"){
+		cactus(nectar)
+	}else if (field = "Coconut"){
+		coco(nectar)
+	}else if (field = "Dandelion"){
+		dande(nectar)
+	}else if (field = "Mountain"){
+		mountain(nectar)
+	}else if (field = "Mushroom"){
+		mush(nectar)
+	}else if (field = "Pepper"){
+		pep(nectar)
+	}else if (field = "Pine Tree"){
+		pinetree(nectar)
+	}else if (field = "Pineapple"){
+		pineapple(nectar)
+	}else if (field = "Pumpkin"){
+		pump(nectar)
+	}else if (field = "Rose"){
+		rose(nectar)
+	}else if (field = "Spider"){
+		spider(nectar)
+	}else if (field = "Strawberry"){
+		straw(nectar)
+	}else if (field = "Stump"){
+		stump(nectar)
+	}else if (field = "Sunflower"){
+		sunf(nectar)
+	}
+}
