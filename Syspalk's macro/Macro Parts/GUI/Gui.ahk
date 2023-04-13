@@ -7,8 +7,9 @@ global infocol := "53ede5"
 
 Gui,Add,Picture, x10 y10 gmenubar, Macro Parts\GUI\Images/menu.png
 Gui,Add,Text, xp+40 yp-5 gmenubar cwhite, Home
+;Gui,Add,Groupbox,x0 y-14 w450 h615
 
-Gui,Add,Groupbox, v1tab1 x0 y-10 w180 h605
+Gui,Add,Groupbox, v1tab1 x0 y-14 w180 h615
 Gui,Add,Text, gFarmingbutton v1tab2 x40 yp+50 cf5c88e,Farming
 Gui,Add,Picture, gFarmingbutton v1tab3 x5 yp-5, Macro Parts\GUI\Images/honey.png
 Gui,Add,Text, gPlanterbutton v1tab4 x40 yp+45 cf5c88e,Planters
@@ -35,7 +36,7 @@ Gui,Font,s15 Bold
 Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
 Gui,Font,s7
 FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
-Gui,Add,Text, v1tab22 x200 yp+40 w250 h165 cwhite +wrap,%UpdateText%
+Gui,Add,Text, v1tab22 x200 yp+40 w245 h165 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
 Gui,Add,Button, v1tab23 x270 y250,View More
 Gui,Font,s15 Bold

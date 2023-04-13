@@ -31,11 +31,11 @@ Settingsbutton(){
 }
 Buttonviewmore(){
 	FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
-	popup(500,500,10,"New in this version",UpdateText)
+	popup(500,285,10,"New in this version",UpdateText)
 }
 Buttoncredits(){
 	FileRead, CreditText, Macro Parts\GUI\Info/Credits.txt
-	popup(200,300,12,"Credits",CreditText)
+	popup(200,140,12,"Credits",CreditText)
 }
 ButtonApplyChanges(){
 	savedata()
@@ -138,6 +138,11 @@ startmacrokeys(){
 
 if (0){
 	stop:
+	walkhold("f","Up")
+	walkhold("l","Up")
+	walkhold("b","Up")
+	walkhold("r","Up")
+	Send {Space Up}
 	savedata()
 	reload
 	return
