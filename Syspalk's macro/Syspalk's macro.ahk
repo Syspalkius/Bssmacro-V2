@@ -18,3 +18,11 @@ while(1){
 	readgui()
 	pattern()
 }
+
+
+
+F5::
+camrotate(2,"r")
+sleep 500
+camrotate(2,"l")
+return
