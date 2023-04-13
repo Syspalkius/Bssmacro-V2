@@ -116,6 +116,8 @@ global reboottimer
 global prevtab
 global allowconvert
 global reconnectedcannon
+global reconnected
+
 
 
 readini(){ ;reads all the data from the ini file

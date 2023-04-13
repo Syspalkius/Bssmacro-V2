@@ -217,5 +217,49 @@ GOField(field,nectar := false){ ;function that takes input and turns it in to an
 		stump(nectar)
 	}else if (field = "Sunflower"){
 		sunf(nectar)
+	}else if (field = "Clover"){
+		clover(nectar)
+	}
+}
+
+GoFarm(field){ ;function for farming.
+	gofarmstart:
+	;timerchecks()
+	readgui()
+	GoField(field)
+	if (field = "Pine Tree"){
+		pinetree := true
+	}else{
+		pinetree := false
+	}
+	breaktimer := A_TickCount
+	maxtimeonfield := maxtimeonfield * 60000
+	Send ooooooo
+	Sendhotbar(1)
+	;checkbufftimer()
+	while(1){
+		
+		loop 3{
+			readgui()
+			pattern(pinetree)
+			Send oooooooo
+			if (sprinktoggle && patternsize < 10){
+				;movetosat(10)
+			}
+			
+			if (A_TickCount - breaktimer > maxtimeonfield){
+				return
+			}
+			;if (bagcheck() = 1){
+			;	return
+			;}
+		}
+		
+		;checkbufftimer()
+		;safetycheck()
+		if(reconnected = true){
+			global reconnected := false
+			return
+		}
 	}
 }

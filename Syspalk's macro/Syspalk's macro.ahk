@@ -14,9 +14,21 @@ savedata()
 ExitApp
 
 start: ;when the start hotkey is pressed it will jump here.
+tooltip,
 while(1){
 	readgui()
-	GoField(farmfield1)
+	;safetycheck()
+	;timerchecks
+	while (A_Index < 5){
+		if (farmfield%A_Index% != "None"){
+			GOFarm(farmfield%A_Index%)
+		}
+		;safetycheck
+		;timerchecks()
+	}
+	if (farmfield1 = "None" && farmfield2 = "None" && farmfield3 = "None" && farmfield4 = "None"){
+		pattern()
+	}
 }
 
 
