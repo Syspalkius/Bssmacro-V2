@@ -102,9 +102,9 @@ IniRead,Pausekey,Macro Parts/configs/Data.ini,keybinds,Pausekey
 StartText := "Start [" . Startkey . "]"
 StopText := "Stop [" . Stopkey . "]"
 PauseText := "Pause [" . Pausekey . "]"
-Gui,Add,Text, v2tab41 x20 y570 c53ede5 ,%StartText%
-Gui,Add,Text, v2tab42 x180 y570 c53ede5 ,%StopText%
-Gui,Add,Text, v2tab43 x340 y570 c53ede5 ,%PauseText%
+Gui,Add,Text, v2tab41 x20 y570 c53ede5 gstart,%StartText%
+Gui,Add,Text, v2tab42 x180 y570 c53ede5 gstop,%StopText%
+Gui,Add,Text, v2tab43 x340 y570 c53ede5 gpause,%PauseText%
 
 
 

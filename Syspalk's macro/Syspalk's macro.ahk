@@ -17,7 +17,9 @@ savedata()
 ExitApp
 
 start: ;when the start hotkey is pressed it will jump here.
-tooltip,
+tooltip, ;remove potential tooltip
+Gui, -AlwaysOnTop
+WinActivate, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe ;activate roblox window
 while(1){
 	readgui()
 	;safetycheck()
