@@ -237,6 +237,7 @@ GoFarm(field){ ;function for farming.
 	Send ooooooo
 	Sendhotbar(1)
 	;checkbufftimer()
+	toggleshiftlock()
 	while(1){
 		
 		loop 3{
@@ -248,10 +249,12 @@ GoFarm(field){ ;function for farming.
 			}
 			
 			if (A_TickCount - breaktimer > maxfieldtime){
+				toggleshiftlock()
 				return
 			}
 			
 			if (bagcheck() = 1){
+				toggleshiftlock()
 				return
 			}
 		}
@@ -314,4 +317,11 @@ SpecificPixelSearchFunction(color,variation,x1,y1,x2,y2){ ;pixelsearch in a func
 	mousemove,A_ScreenWidth/2,A_ScreenHeight/2 ;move mouse to 0,0
 	PixelSearch, FoundX, FoundY,%x1%,%y1%,%x2%,%y2%,%color%, *%variation%,fast
 	return [ErrorLevel,FoundX,FoundY]
+}
+
+toggleshiftlock(){
+	readgui()
+	if (shiftlock){
+		Send Shift
+	}
 }
