@@ -233,7 +233,7 @@ GoFarm(field){ ;function for farming.
 		pinetree := false
 	}
 	breaktimer := A_TickCount
-	maxtimeonfield := maxtimeonfield * 60000
+	maxfieldtime := maxtimeonfield * 60000
 	Send ooooooo
 	Sendhotbar(1)
 	;checkbufftimer()
@@ -243,16 +243,17 @@ GoFarm(field){ ;function for farming.
 			readgui()
 			pattern(pinetree)
 			Send oooooooo
-			if (sprinktoggle && patternsize < 10){
-				;movetosat(10)
+			if (sprinkleralign && patternsize > 10){
+				movetosat(10)
 			}
 			
-			if (A_TickCount - breaktimer > maxtimeonfield){
+			if (A_TickCount - breaktimer > maxfieldtime){
 				return
 			}
-			;if (bagcheck() = 1){
-			;	return
-			;}
+			
+			if (bagcheck() = 1){
+				return
+			}
 		}
 		
 		;checkbufftimer()
@@ -262,4 +263,55 @@ GoFarm(field){ ;function for farming.
 			return
 		}
 	}
+}
+
+bagcheck(){ ;checks if the bag is full I should have done this with a return but at the time I didn't know how that stuff worked but this works too I guess.
+	if (SpecificPixelSearchFunction(0x1700F7,2,0,0,A_ScreenWidth,150)[1] = 0){
+		return true
+	}
+}
+
+movetosat(var){
+	winUp := A_ScreenHeight / 2.1
+	winDown := A_ScreenHeight / 1.9
+	winLeft := A_ScreenWidth / 2.1
+	winRight := A_ScreenWidth /1.9
+	
+	if (SearchFunction("sprinkler.png",25)[2] < WinLeft && SearchFunction("sprinkler.png",25)[1] = 0){
+		walk(100,"l")
+		loop %var%{
+			if (SearchFunction("sprinkler.png",25)[2] < WinLeft && SearchFunction("sprinkler.png",25)[1] = 0){
+				walk(100,"l")
+			}
+		}
+	}else if (SearchFunction("sprinkler.png",25)[2] > WinRight && SearchFunction("sprinkler.png",25)[1] = 0){
+		walk(100,"r")
+		loop %var%{
+			if (SearchFunction("sprinkler.png",25)[2] > WinRight && SearchFunction("sprinkler.png",25)[1] = 0){
+				walk(100,"r")
+			}
+		}
+	}
+	
+	if (SearchFunction("sprinkler.png",25)[3] < WinDown && SearchFunction("sprinkler.png",25)[1] = 0){
+		walk(100,"f")
+		loop %var%{
+			if (SearchFunction("sprinkler.png",25)[3] < WinDown && SearchFunction("sprinkler.png",25)[1] = 0){
+				walk(100,"f")
+			}
+		}
+	}else if (SearchFunction("sprinkler.png",25)[3] > WinUp && SearchFunction("sprinkler.png",25)[1] = 0){
+		walk(100,"b")
+		loop %var%{
+			if (SearchFunction("sprinkler.png",25)[3] > WinUp && SearchFunction("sprinkler.png",25)[1] = 0){
+				walk(100,"b")
+			}
+		}
+	}
+}
+
+SpecificPixelSearchFunction(color,variation,x1,y1,x2,y2){ ;pixelsearch in a function.
+	mousemove,A_ScreenWidth/2,A_ScreenHeight/2 ;move mouse to 0,0
+	PixelSearch, FoundX, FoundY,%x1%,%y1%,%x2%,%y2%,%color%, *%variation%,fast
+	return [ErrorLevel,FoundX,FoundY]
 }

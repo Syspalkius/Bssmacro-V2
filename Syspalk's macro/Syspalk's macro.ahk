@@ -1,4 +1,7 @@
 ﻿Tooltip,Loading...
+SetBatchLines, -1
+SendMode Input
+SetMouseDelay, -1
 #Include Macro Parts\Data Handler.ahk
 readini()
 #Include Macro Parts\Version checker.ahk
@@ -30,10 +33,3 @@ while(1){
 		pattern()
 	}
 }
-
-
-
-F5::
-Reset()
-walktocannon()
-return

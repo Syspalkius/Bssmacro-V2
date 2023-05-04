@@ -4,10 +4,9 @@ Gui,Font,s17 Bold
 Gui,color,0x2A2F32
 global infocol := "53ede5"
 
-
 Gui,Add,Picture, x10 y10 gmenubar, Macro Parts\GUI\Images/menu.png
 Gui,Add,Text, xp+40 yp-5 gmenubar cwhite, Home
-;Gui,Add,Groupbox,x0 y-14 w450 h615
+;Gui,Add,Groupbox,x0 y-14 w450 h615    ;outline for the gui
 
 Gui,Add,Groupbox, v1tab1 x0 y-14 w180 h615
 Gui,Add,Text, gFarmingbutton v1tab2 x40 yp+50 cf5c88e,Farming
@@ -18,7 +17,7 @@ Gui,Add,Text, gResourcesbutton v1tab6 x40 yp+45 cf5c88e,Resources
 Gui,Add,Picture, gResourcesbutton v1tab7 x5 yp-5, Macro Parts\GUI\Images/resources.png
 Gui,Add,Text, gBuffsbutton v1tab8 x40 yp+45 cf5c88e,Buffs
 Gui,Add,Picture, gBuffsbutton v1tab9 x5 yp-5, Macro Parts\GUI\Images/extract.png
-/*
+/* ;QUESTS TAB
 	Gui,Add,Text, gQuestbutton v1tab10 x40 yp+45 cf5c88e,Quests
 	Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Macro Parts\GUI\Images/quests.png
 */
@@ -374,7 +373,7 @@ loop 11{
 }
 changetab(1)
 Fileread,version,Macro Parts\GUI\version.txt
-Gui,show,w450 h600,Syspalk's macro %version%
+Gui,show,w450 h600 ,Syspalk's macro %version%
 ;------Functions------
 popup(SizeX,SizeY,FontSize,Title,Text){
 	Textloc := SizeX-20
@@ -389,15 +388,17 @@ popup(SizeX,SizeY,FontSize,Title,Text){
 
 changetab(tab){
 	Tooltip,Loading tab...
+	;time1 := A_TickCount ;save start time before loading
 	if not (prevtab = tab){
 		loop 46{
 			GuiControl,Hide,%prevtab%tab%A_Index%
 		}
 	}
-	
 	loop 46{
 		GuiControl,Show,%tab%tab%A_Index%
 	}
+	passedtime := A_TickCount-time1
+	;msgbox % passedtime ;shows time it took to switch tabs [performance test]
 	global prevtab := tab
 	Tooltip,
 }
