@@ -140,7 +140,7 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 		if (SearchFunction("hive.png",30)[1] = 0 || SearchFunction("hiven.png",30)[1] = 0){ ;look for hive image
 			global Fails := 0
 			camrotate(4,"l")
-			Send ooooooooo
+			zoomout()
 			break
 		}
 		else{
@@ -160,7 +160,7 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 			}
 		}
 	}
-	Send ooooooooo
+	zoomout()
 	breaktimer := A_TickCount
 	if (convsetting = "Reset" && allowconvert && SearchFunction("e.png",10)[1] = 0){ ;convert balloon if reset convert is sellected
 		Send e
@@ -234,7 +234,7 @@ GoFarm(field){ ;function for farming.
 	}
 	breaktimer := A_TickCount
 	maxfieldtime := maxtimeonfield * 60000
-	Send ooooooo
+	zoomout()
 	Sendhotbar(1)
 	;checkbufftimer()
 	toggleshiftlock()
@@ -243,7 +243,7 @@ GoFarm(field){ ;function for farming.
 		loop 3{
 			readgui()
 			pattern(pinetree)
-			Send oooooooo
+			zoomout()
 			if (sprinkleralign && patternsize > 10){
 				movetosat(10)
 			}
@@ -325,5 +325,12 @@ toggleshiftlock(){
 	readgui()
 	if (shiftlock){
 		Send Shift
+	}
+}
+
+zoomout(){
+	loop 10{
+		Send o
+		sleep 1
 	}
 }

@@ -453,7 +453,7 @@ stump(nectar){
 		camrotate(5,"l")
 		Send {Shift}
 		camrotate(4,"r")
-		Send oooooooo
+		zoomout()
 		walk(500,"b")
 		SendSpace()
 		walk(500,"b")
@@ -491,7 +491,7 @@ pep(nectar){
 	Send {Shift}
 	walk(75,"f")
 	camrotate(4,"r")
-	Send ooooo
+	zoomout()
 	sleep 50
 	Send {Shift}
 	SendSpace()
@@ -616,7 +616,7 @@ pinewalktohive(pinetree){
 			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*10 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("l","Up")
-				Send ooooooooo
+				zoomout()
 				loopbreak := A_TickCount
 				if (convert = true){
 					Send e
@@ -645,7 +645,7 @@ pinewalktohive(pinetree){
 			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*10 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("r","Up")
-				Send ooooooooo
+				zoomout()
 				loopbreak := A_TickCount
 				if (convert = true){
 					Send e
