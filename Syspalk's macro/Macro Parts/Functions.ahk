@@ -250,11 +250,13 @@ GoFarm(field){ ;function for farming.
 			
 			if (A_TickCount - breaktimer > maxfieldtime){
 				toggleshiftlock()
+				pinewalktohive(pinetree)
 				return
 			}
 			
 			if (bagcheck() = 1){
 				toggleshiftlock()
+				pinewalktohive(pinetree)
 				return
 			}
 		}

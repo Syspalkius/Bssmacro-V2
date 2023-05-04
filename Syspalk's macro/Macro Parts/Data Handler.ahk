@@ -117,6 +117,8 @@ global prevtab
 global allowconvert
 global reconnectedcannon
 global reconnected
+global firstrun := true
+global convert := true
 
 
 
