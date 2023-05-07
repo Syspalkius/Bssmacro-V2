@@ -114,7 +114,7 @@ global 22htimer
 global 24htimer
 global reboottimer
 global prevtab
-global allowconvert
+global allowconvert := true
 global reconnectedcannon
 global reconnected
 global firstrun := true

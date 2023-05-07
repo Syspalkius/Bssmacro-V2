@@ -162,7 +162,7 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 	}
 	zoomout()
 	breaktimer := A_TickCount
-	if (convsetting = "Reset" && allowconvert && SearchFunction("e.png",10)[1] = 0){ ;convert balloon if reset convert is sellected
+	if (convsetting && allowconvert && SearchFunction("e.png",10)[1] = 0){ ;convert balloon if reset convert is sellected
 		Send e
 		while (1){
 			if (SearchFunction("e.png",40)[1] != 0){
