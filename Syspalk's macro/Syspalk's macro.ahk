@@ -35,3 +35,10 @@ while(1){
 		pattern()
 	}
 }
+
+F4::
+loop{
+	sleep 10
+	checkbufftimer()
+}
+return

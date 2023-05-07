@@ -81,6 +81,12 @@ global buff4time
 global buff5time
 global buff6time
 global buff7time
+global buff2timer
+global buff3timer
+global buff4timer
+global buff5timer
+global buff6timer
+global buff7timer
 global forward
 global left
 global right
@@ -475,7 +481,7 @@ getkeyinfo(){
 
 
 
-gettimers(){
+readtimers(){
 	IniRead,30mtimer,Macro Parts/configs/Timers.ini,timers,30mtimer
 	IniRead,1htimer,Macro Parts/configs/Timers.ini,timers,1htimer
 	IniRead,2htimer,Macro Parts/configs/Timers.ini,timers,2htimer
@@ -483,6 +489,12 @@ gettimers(){
 	IniRead,22htimer,Macro Parts/configs/Timers.ini,timers,22htimer
 	IniRead,24htimer,Macro Parts/configs/Timers.ini,timers,24htimer
 	IniRead,reboottimer,Macro Parts/configs/Timers.ini,timers,reboottimer
+	IniRead,buff2timer,Macro Parts/configs/Timers.ini,buffs,buff2timer
+	IniRead,buff3timer,Macro Parts/configs/Timers.ini,buffs,buff3timer
+	IniRead,buff4timer,Macro Parts/configs/Timers.ini,buffs,buff4timer
+	IniRead,buff5timer,Macro Parts/configs/Timers.ini,buffs,buff5timer
+	IniRead,buff6timer,Macro Parts/configs/Timers.ini,buffs,buff6timer
+	IniRead,buff7timer,Macro Parts/configs/Timers.ini,buffs,buff7timer
 }
 
 
@@ -616,6 +628,12 @@ resettimers(tooltip := 1){
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,22htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,24htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,reboottimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff2timer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff3timer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff4timer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff5timer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff6timer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff7timer
 	if (tooltip){
 		Tooltip,The timers have been reset!
 		sleep 2000

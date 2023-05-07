@@ -270,7 +270,7 @@ GoFarm(field){ ;function for farming.
 			}
 		}
 		
-		;checkbufftimer()
+		checkbufftimer()
 		;safetycheck()
 		if(reconnected = true){
 			global reconnected := false
@@ -341,5 +341,18 @@ zoomout(){
 	loop 10{
 		Send o
 		sleep 1
+	}
+}
+
+checkbufftimer(){ ;checks the timers for the hotbar buffs.
+	readgui()
+	readtimers()
+	while (A_Index < 8){
+		if (buff%A_Index%){
+			if (A_TickCount - buff%A_Index%timer > buff%A_Index%time*1000){
+				SendHotbar(A_Index)
+				IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,buffs,buff%A_Index%timer
+			}
+		}
 	}
 }
