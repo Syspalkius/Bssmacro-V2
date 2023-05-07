@@ -62,14 +62,12 @@ Gui,Add,DropDownList, v2tab8 x20 y135 w90 h200,%farmpattern%||None|zigzag|square
 Gui,Add,Text, v2tab9 xp+15 yp-20 cwhite,Pattern                               Size
 Gui,Add,Slider, v2tab10 xp+115 yp+25 range0-100,%patternsize%
 Gui,Add,Text, v2tab11 xp+155 yp w10 h17 c%infocol% gpatterninfo,?
-Gui,Add,DropDownlist, v2tab12 yp+35 x20 w70 h200,%convsetting%||None|Reset|Rejoin
-Gui,Add,Text, v2tab13 xp+75 yp+5 cwhite,Conversion type
-Gui,Add,Text, v2tab14 xp+120 yp w10 h17 c%infocol% gconvertinfo,?
 Gui,Add,Edit,  v2tab15 x20 yp+30 number w40
 Gui,Add,UpDown, v2tab16 Range0-60,%maxtimeonfield%
 Gui,Add,Text, v2tab17 xp+45  yp+5 cwhite, max time on field (minutes)
 Gui,Add,Text, v2tab18 xp+195 yp w10 h17 c%infocol% gmaxtimeinfo,?
-Gui,Add,Checkbox, v2tab19 x20 yp+30 %swingtool% cWhite,Swing tool while farming
+Gui,Add,Checkbox, v2tab12 x20 yp+30 %convsetting% cWhite,Convert balloon
+Gui,Add,Checkbox, v2tab19 x20 yp+25 %swingtool% cWhite,Swing tool while farming
 Gui,Add,CheckBox, v2tab20 x20 yp+25 cwhite %sprinkleralign%,Move to sprinkler
 Gui,Add,Text, v2tab21 xp+145 yp w10 h17 c%infocol% gsprinklerinfo,?
 Gui,Add,Checkbox, v2tab22 x20 yp+25 cwhite %pinewalkconv%,Pinetree walk convert

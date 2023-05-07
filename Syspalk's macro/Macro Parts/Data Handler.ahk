@@ -232,6 +232,9 @@ readini(){ ;reads all the data from the ini file
 	IniRead,main,Macro Parts/configs/Links.ini,private servers,main
 	IniRead,alt,Macro Parts/configs/Links.ini,private servers,alt
 	
+	if (convsetting){
+		global convsetting := "Checked"
+	}
 	if (swingtool){
 		global swingtool := "Checked"
 	}
@@ -633,7 +636,7 @@ resetconfig(){
 	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield4
 	IniWrite,zigzag++,Macro Parts/configs/Data.ini,farming,farmpattern
 	IniWrite,50,Macro Parts/configs/Data.ini,farming,patternsize
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,convsetting
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,convsetting
 	IniWrite,10,Macro Parts/configs/Data.ini,farming,maxtimeonfield
 	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign

@@ -1,3 +1,0 @@
-This is for converting your bag/balloon, if you select reset it will convert your balloon after you reset and are at the hive again, if you select rejoin then it will rejoin and then convert which will keep the pollen in your bag but is a lot slower than just reset convert.
-
-If you keep it on none then it will not convert at all.

@@ -51,10 +51,6 @@ patterninfo(){
 	FileRead, Text, Macro Parts\GUI\Info/patterninfo.txt
 	popup(400,170,12,"Pattern info",Text)
 }
-convertinfo(){
-	FileRead, Text, Macro Parts\GUI\Info/convertinfo.txt
-	popup(400,165,12,"Convert info",Text)
-}
 maxtimeinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/Maxfieldinfo.txt
 	popup(400,100,12,"Max time on field info",Text)
