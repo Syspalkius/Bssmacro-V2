@@ -238,6 +238,8 @@ GoFarm(field){ ;function for farming.
 	Sendhotbar(1)
 	;checkbufftimer()
 	toggleshiftlock()
+	poptimer := 99999999999999999999999999999999999999
+	firstpop := true
 	while(1){
 		
 		loop 3{
@@ -249,9 +251,16 @@ GoFarm(field){ ;function for farming.
 			}
 			
 			if (A_TickCount - breaktimer > maxfieldtime){
-				toggleshiftlock()
-				pinewalktohive(pinetree)
-				return
+				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000){
+					if (firstpop){
+						firstpop := false
+						poptimer := A_TickCount
+					}
+				}else{
+					toggleshiftlock()
+					pinewalktohive(pinetree)
+					return
+				}
 			}
 			
 			if (bagcheck() = 1){
