@@ -103,7 +103,7 @@ walktocannon(){ ;makes the character walk to the cannon.
 		}
 		if (A_Tickcount - btimer > 5000){
 			if (attempts > 2){
-				;ErrorLog("Reconnected (Cause : E button for cannon wasn't detected after too many tries)")
+				ErrorLog("Reconnected (Issue : E button for cannon wasn't detected after too many tries)")
 				walkhold("r","Up")
 				;Reconnect()
 				global reconnectedcannon := true
@@ -147,10 +147,10 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 			camrotate(4,"l")
 		}
 		if (A_TickCount - breaktimer > 15000){
-			;ErrorLog("Failed to detect hive image")
+			ErrorLog("Failed to detect hive image")
 			if (Fails = 1){
 				global Fails := 0
-				;ErrorLog("Reconnected (Cause : Hive image wasn't found too many times in a row)")
+				ErrorLog("Reconnected (Issue : Hive image wasn't found too many times in a row)")
 				;Reconnect()
 				goto,Retryy
 			}
