@@ -369,11 +369,26 @@ checktimers(){
 	}
 	if (A_TickCount - 1htimer > hours(1)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
+		readgui()
+		if (clock){
 
+		}
+		if (redbooster){
+
+		}
+		if (whitebooster){
+
+		}
+		if (shrine){
+
+		}
+		if (bluebooster){
+
+		}
 	}
 	if (A_TickCount - 2htimer > hours(2)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
-
+		
 	}
 	if (A_TickCount - 4htimer > hours(4)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
