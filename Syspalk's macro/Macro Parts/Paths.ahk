@@ -767,7 +767,7 @@ bluebooster(){
 }
 
 whitebooster(){
-	EventLog("Going to mountain booster")
+	;EventLog("Going to mountain booster")
 	Reset()
 	walktocannon()
 	Send e
@@ -775,7 +775,7 @@ whitebooster(){
 	walk(7000,"r")
 	sleep 1000
 	if (SearchFunction("e.png",10)[1] = 1){
-		ErrorLog("Failed to grab mountain booster")
+		;ErrorLog("Failed to grab mountain booster")
 	}
 	sleep 1000
 	Send e

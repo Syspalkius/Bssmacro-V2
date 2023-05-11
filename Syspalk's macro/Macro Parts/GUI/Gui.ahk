@@ -77,12 +77,12 @@ Gui,Add,Checkbox, v2tab25 x20 yp+25 cwhite %shiftlock%,Farm with shiftlock
 Gui,Font,s13
 Gui,Add,GroupBox, v2tab26 x20 yp+30 w200 h130 cwhite,Shrine
 Gui,Font,s10
-Gui,Add,Checkbox, v2tab27 x25 yp+25 cwhite %shrine%,Donate to the windshrine
+Gui,Add,Checkbox, v2tab27 x25 yp+25 cwhite +disabled %shrine%,Donate to the windshrine
 Gui,Add,Edit, v2tab28 number x25 yp+30 w50
-Gui,Add,UpDown, v2tab29 Range1-100,%donationamount%
+Gui,Add,UpDown, v2tab29 Range1-100 +disabled ,%donationamount%
 Gui,Add,Text, v2tab30 xp+60 yp cwhite,Amount of items
 Gui,Add,Text, v2tab31 x130 yp+40 cwhite,Item
-Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp,%donationitem%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
+Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp +disabled ,%donationitem%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
 Gui,Font,s13
 Gui,Add,Groupbox, v2tab33 x240 yp-95 w200 h95 cwhite,Boosters
 Gui,Font,s10
@@ -91,7 +91,7 @@ Gui,Add,Checkbox, v2tab35 x250 yp+5 cwhite %bluebooster%,Blue Booster
 Gui,Add,Checkbox, v2tab36 x250 yp+25 cwhite %redbooster%,Red Booster
 Gui,Add,Checkbox, v2tab37 x250 yp+25 cwhite %whitebooster%,White Booster
 Gui,Add,Groupbox, v2tab38 x240 yp+10 w200 h40 cwhite,
-Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %reglitter%,Re-glitter pinetree
+Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %reglitter% +disabled,Re-glitter pinetree
 Gui,Add,Text, v2tab40 xp+170 yp w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
 IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
@@ -112,7 +112,7 @@ Gui,Font,s13
 Gui,Add,Groupbox, v3tab2 x10 y50 w435 h215 cwhite,Cycle
 Gui,Font,s8
 Gui,Add,Text, v3tab3 x15 y80 cwhite,Fields`n`nPlanter`n`n`nFields`n`nPlanter`n`n`nFields`n`nPlanter
-Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4,%plantfield1%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
+Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4 +disabled,%plantfield1%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 xposition := 65
 yposition := 80
 checkline2 := true
@@ -132,9 +132,9 @@ loop 11{
 		yposition := 206
 		checkline3 := false
 	}
-	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%fieldnumber%,%plantfield%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
+	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%fieldnumber% +disabled,%plantfield%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 }
-Gui,Add,DropDownList, x65 y105 w80 h200 v3tab16,%planter1%||1|2|3|4|5|6|7
+Gui,Add,DropDownList, x65 y105 w80 h200 v3tab16 +disabled,%planter1%||1|2|3|4|5|6|7
 xposition := 65
 yposition := 105
 checkline2 := true
@@ -154,25 +154,25 @@ loop 11{
 		yposition := 232
 		checkline3 := false
 	}
-	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,%planter%||1|2|3|4|5|6|7
+	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber% +disabled,%planter%||1|2|3|4|5|6|7
 }
 Gui,Font,s13
 Gui,Add,GroupBox, v3tab28 x10 yp+40 w260 h140 cwhite,Plant Looting
 Gui,Font,s8
-Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %lootplanters%, loot planters
-Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harviffull1%, harvest plant 1 when fully grown
-Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2%, harvest plant 2 when fully grown
-Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3%, harvest plant 3 when fully grown
+Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %lootplanters% +disabled, loot planters
+Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harviffull1% +disabled, harvest plant 1 when fully grown
+Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2% +disabled, harvest plant 2 when fully grown
+Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3% +disabled, harvest plant 3 when fully grown
 Gui,Font,s13
 Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h120 cwhite,Plant Timers
 Gui,Font,s8
 gui,Add,Text,v3tab34 xp+70 yp+20 cwhite,harvest time
 Gui,Add,Text,v3tab35 xp-60 yp+23 cwhite, plant 1
-Gui,Add,DropDownList,v3tab36 xp+50 yp-5 w90 h140,%plantdelay1%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab36 xp+50 yp-5 w90 h140 +disabled,%plantdelay1%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab37 xp-50 yp+30 cwhite, plant 2
-Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140,%plantdelay2%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140 +disabled,%plantdelay2%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab39 xp-50 yp+30 cwhite, plant 3
-Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140,%plantdelay3%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140 +disabled,%plantdelay3%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Button, v3tab41 x10 yp+50,Reset Settings
 Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
 Gui,Font,s10
@@ -187,37 +187,37 @@ Gui,Add,Text, v4tab1 x320 y10 cgreen,Resources
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab2 x20 y40 w230 h125 cwhite,Dispensers
 Gui,Font,s10
-gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock%,Use wealthclock
-gui,Add,Checkbox, v4tab4 x30 yp+20 cwhite %gluedisp%,Use glue dispenser
-gui,Add,Checkbox, v4tab5 x30 yp+20 cwhite %strawdisp%,Use Strawberry dispenser
-gui,Add,Checkbox, v4tab6 x30 yp+20 cwhite %bluebdisp%,Use blueberry dispenser
-gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp%,Use coconut dispenser
+gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock% +disabled,Use wealthclock
+gui,Add,Checkbox, v4tab4 x30 yp+20 cwhite %gluedisp% +disabled,Use glue dispenser
+gui,Add,Checkbox, v4tab5 x30 yp+20 cwhite %strawdisp% +disabled,Use Strawberry dispenser
+gui,Add,Checkbox, v4tab6 x30 yp+20 cwhite %bluebdisp% +disabled,Use blueberry dispenser
+gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp% +disabled,Use coconut dispenser
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab8 x20 yp+35 w300 h90 cwhite,Ant challenge
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab9 xp+5 yp+20 cwhite %ant%, Claim free ant pass
-Gui,Add,Checkbox, v4tab10 xp yp+20 cwhite %freeant%, Use free pass to play ant
-Gui,Add,Checkbox, v4tab11 xp yp+20 cwhite %buyant%, Buy and use ant pass every
-Gui,Add,DropDownlist, v4tab12 xp+215 yp w60 h200 ,%playtimer%||30 min|1 hour|2 hours|4 hours
+Gui,Add,Checkbox, v4tab9 xp+5 yp+20 cwhite %ant% +disabled, Claim free ant pass
+Gui,Add,Checkbox, v4tab10 xp yp+20 cwhite %freeant% +disabled, Use free pass to play ant
+Gui,Add,Checkbox, v4tab11 xp yp+20 cwhite %buyant% +disabled, Buy and use ant pass every
+Gui,Add,DropDownlist, v4tab12 xp+215 yp w60 h200 +disabled,%playtimer%||30 min|1 hour|2 hours|4 hours
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab13 x20 yp+35 w300 h75 cwhite,kill vicious
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab14 xp+10 yp+25 cwhite %vicious%,Kill vicious bee when night is detected
+Gui,Add,Checkbox, v4tab14 xp+10 yp+25 cwhite %vicious% +disabled,Kill vicious bee when night is detected
 Gui,Add,Text, v4tab15 x85 yp+25 cwhite,Maximum combat time [Seconds]
-Gui,Add,Edit, v4tab16 number x30 yp-2 w50,%maxcombattime%
+Gui,Add,Edit, v4tab16 number x30 yp-2 w50 +disabled,%maxcombattime%
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab17 x20 yp+35 w180 h185 cwhite,Mobs
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab18 x30 yp+20 cwhite %lady%,Kill ladybugs
-Gui,Add,Checkbox, v4tab19 x30 yp+20 cwhite %rhino%,Kill rhino beetles
-Gui,Add,Checkbox, v4tab20 x30 yp+20 cwhite %spider%,Kill spider
-Gui,Add,Checkbox, v4tab21 x30 yp+20 cwhite %scorpion%,Kill scorpions
-Gui,Add,Checkbox, v4tab22 x30 yp+20 cwhite %mantis%,Kill mantises
-Gui,Add,Checkbox, v4tab23 x30 yp+20 cwhite %wolf%,Kill werewolf
-gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel%,Kill tunnelbear
-gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle%,Kill kingbeetle
+Gui,Add,Checkbox, v4tab18 x30 yp+20 cwhite %lady% +disabled,Kill ladybugs
+Gui,Add,Checkbox, v4tab19 x30 yp+20 cwhite %rhino% +disabled,Kill rhino beetles
+Gui,Add,Checkbox, v4tab20 x30 yp+20 cwhite %spider% +disabled,Kill spider
+Gui,Add,Checkbox, v4tab21 x30 yp+20 cwhite %scorpion% +disabled,Kill scorpions
+Gui,Add,Checkbox, v4tab22 x30 yp+20 cwhite %mantis% +disabled,Kill mantises
+Gui,Add,Checkbox, v4tab23 x30 yp+20 cwhite %wolf% +disabled,Kill werewolf
+gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel% +disabled,Kill tunnelbear
+gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% +disabled,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
-Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200,%mondo%||None|Blessing|Loot
+Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 +disabled,%mondo%||None|Blessing|Loot
 Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
 Gui,Add,Text, v4tab29 x180 y370 w10 h17 c%infocol% gmobinfo,?
 
