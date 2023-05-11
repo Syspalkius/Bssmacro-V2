@@ -371,19 +371,19 @@ checktimers(){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
 		readgui()
 		if (clock){
-
+			Clock()
 		}
 		if (redbooster){
-
+			redbooster()
 		}
 		if (whitebooster){
-
+			whitebooster()
 		}
 		if (shrine){
 
 		}
 		if (bluebooster){
-
+			bluebooster()
 		}
 	}
 	if (A_TickCount - 2htimer > hours(2)){

@@ -672,3 +672,112 @@ pinewalktohive(pinetree){
 	;Errorlog("Couldn't find E button to convert at hive")
 	Reset()
 }
+
+Clock(){
+	Reset()
+	walktocannon()
+	;EventLog("Going To WealthClock")
+	camrotate(1,"l")
+	send e
+	sleep 1425
+	send {Shift}
+	sendSpace()
+	sendSpace()
+	sleep 200
+	send {Shift}
+	sleep 7800
+	camrotate(1,"l")
+	walk(3000,"r")
+	walk(3000,"f")
+	Send {Shift}
+	SendSpace()
+	Send {Shift}
+	Send {w up}
+	Send {z up}
+	walk(3000,"l")
+	sleep 100
+	Send {a up}
+	Send {q up}
+	SendSpace()
+	walk(500,"b")
+	walk(150,"l")
+	sleep 1000
+	if (SearchFunction("e.png",10)[1] = 1){
+		;ErrorLog("Failed to grab Wealth Clock")
+	}
+	sleep 1000
+	Send e
+	sleep 1000
+}
+
+redbooster(){
+	;EventLog("Going to claim red booster")
+	sunf(false)
+	walk(4000,"r")
+	walk(5000,"f")
+	SendSpace()
+	walk(4000,"r")
+	walk(2000,"b")
+	walk(500,"l")
+	walk(500,"b")
+	walk(2000,"r")
+	walk(3000,"f")
+	walk(50,"b")
+	walk(2000,"l")
+	sleep 1000
+	if (SearchFunction("e.png",10)[1] = 1){
+		;ErrorLog("Failed to grab red booster")
+	}
+	sleep 1000
+	Send e
+	sleep 1000
+}
+
+bluebooster(){
+	;EventLog("Going to claim blue booster")
+	bluf(false)
+	walk(5500,"r")
+	walk(5000,"f")
+	walk(1500,"l")
+	walk(300,"b")
+	walk(400,"l")
+	walk(4500,"f")
+	SendSpace()
+	walkhold("f","Down")
+	sleep 3000
+	camrotate(2,"r")
+	sleep 4000
+	camrotate(2,"r")
+	sleep 5000
+	Send {Shift}
+	camrotate(4,"r")
+	SendSpace()
+	Send {Shift}
+	sleep 175
+	camrotate(2,"l")
+	sleep 5000
+	walkhold("f","Up")
+	sleep 1000
+	if (SearchFunction("e.png",10)[1] = 1){
+		;ErrorLog("Failed to grab blue booster")
+	}
+	sleep 1000
+	Send e
+	sleep 1000
+}
+
+whitebooster(){
+	EventLog("Going to mountain booster")
+	Reset()
+	walktocannon()
+	Send e
+	sleep 6000
+	walk(7000,"r")
+	sleep 1000
+	if (SearchFunction("e.png",10)[1] = 1){
+		ErrorLog("Failed to grab mountain booster")
+	}
+	sleep 1000
+	Send e
+	sleep 1000
+}
