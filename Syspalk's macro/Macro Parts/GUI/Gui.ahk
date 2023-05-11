@@ -187,7 +187,7 @@ Gui,Add,Text, v4tab1 x320 y10 cgreen,Resources
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab2 x20 y40 w230 h125 cwhite,Dispensers
 Gui,Font,s10
-gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock% +disabled,Use wealthclock
+gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock% ,Use wealthclock
 gui,Add,Checkbox, v4tab4 x30 yp+20 cwhite %gluedisp% +disabled,Use glue dispenser
 gui,Add,Checkbox, v4tab5 x30 yp+20 cwhite %strawdisp% +disabled,Use Strawberry dispenser
 gui,Add,Checkbox, v4tab6 x30 yp+20 cwhite %bluebdisp% +disabled,Use blueberry dispenser
