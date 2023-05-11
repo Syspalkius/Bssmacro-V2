@@ -403,3 +403,39 @@ checktimers(){
 
 	}
 }
+
+EventLog(Event){ ;saves what it does and when it does it in a text file for debugging
+	FormatTime,Time, hh:mm:ss
+	FileAppend,%Time% %Event% `n,Macro Parts\logs\EventLog.txt
+	try{
+		IniRead,url,Macro Parts/configs/Links.ini,webhooks,hookevent
+		postdata=
+		(
+		{
+		"content": "[EVENT] %Event%"
+		}
+		)
+		WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+		WebRequest.Open("POST", url, false)
+		WebRequest.SetRequestHeader("Content-Type", "application/json")
+		WebRequest.Send(postdata) 
+	}
+}
+
+ErrorLog(ErrorMessage){ ;same thing as eventlog but this time it logs errors in a seperate file xd
+	FormatTime,Time, hh:mm:ss
+	FileAppend,%Time% %ErrorMessage%  `n,Macro Parts\logs\ErrorLog.txt
+	try{
+		IniRead,url,Macro Parts/configs/Links.ini,webhooks,hookerror
+		postdata=
+		(
+		{
+		"content": "[ERROR] %ErrorMessage%"
+		}
+		)
+		WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+		WebRequest.Open("POST", url, false)
+		WebRequest.SetRequestHeader("Content-Type", "application/json")
+		WebRequest.Send(postdata) 
+	}
+} 

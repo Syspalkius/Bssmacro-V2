@@ -128,7 +128,7 @@ startmacrokeys(){
 	
 }
 
-if (0){
+if (0){ ;in order to make sure it doesn't get stuck here when doing #Include
 	stop:
 	walkhold("f","Up")
 	walkhold("l","Up")
