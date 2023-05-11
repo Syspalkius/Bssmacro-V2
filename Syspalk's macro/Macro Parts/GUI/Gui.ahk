@@ -343,12 +343,6 @@ Gui,Add,Text, v10tab15 x160 yp+35 cwhite,backup viplink
 Gui,Add,Edit, v10tab16 w120 h20 x35 yp-5, %alt%
 Gui,Add,Checkbox, v10tab17 x30 yp+35 cwhite %joinmain%,Force join main link
 Gui,Font,s13
-Gui,Add,Groupbox, v10tab18 x20 yp+50 w250 h100 cwhite,Server Rebooter
-Gui,Font,s10
-Gui,Add,Checkbox, v10tab19 x30 yp+30 cwhite %rebootserver%,Reboot the server
-Gui,Add,Edit, v10tab20 x30 yp+30 number w50
-Gui,Add,UpDown, v10tab21 Range10-5000, %reboottime%
-Gui,Add,Text, v10tab22 yp+2 x85 cwhite,Cooldown [Minutes]
 Gui,Font,s12 Bold
 Gui,Add,Text, v10tab23 x20 yp+50 c53ede5 gresetconfig,Reset Config
 Gui,Add,Text, v10tab24 x20 yp+25 c53ede5 gresettimers,Reset Timers
@@ -358,7 +352,6 @@ Gui,Add,Text, v10tab26 x200 y52 w10 h17 c%infocol% gmovespeedinfo,?
 Gui,Add,Text, v10tab27 x30 y120 w10 h17 c%infocol% ghookeventinfo,?
 Gui,Add,Text, v10tab28 x30 y155 w10 h17 c%infocol% ghookerrorinfo,?
 Gui,Add,Text, v10tab29 x30 y190 w10 h17 c%infocol% ghookballooninfo,?
-Gui,Add,Text, v10tab30 x255 y400 w10 h17 c%infocol% grebootinfo,?
 
 var := 0
 loop 11{

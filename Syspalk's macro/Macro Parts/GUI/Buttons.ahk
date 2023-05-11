@@ -115,10 +115,6 @@ hookballooninfo(){
 	FileRead, Text, Macro Parts\GUI\Info/hookballooninfo.txt
 	popup(400,55,12,"Balloon webhook info",Text)
 }
-rebootinfo(){
-	FileRead, Text, Macro Parts\GUI\Info/rebootinfo.txt
-	popup(400,120,12,"Server rebooter info",Text)
-}
 
 ;------Macro buttons------
 

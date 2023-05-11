@@ -118,7 +118,6 @@ global 2htimer
 global 4htimer
 global 22htimer
 global 24htimer
-global reboottimer
 global prevtab
 global allowconvert := true
 global reconnectedcannon
@@ -488,7 +487,6 @@ readtimers(){
 	IniRead,4htimer,Macro Parts/configs/Timers.ini,timers,4htimer
 	IniRead,22htimer,Macro Parts/configs/Timers.ini,timers,22htimer
 	IniRead,24htimer,Macro Parts/configs/Timers.ini,timers,24htimer
-	IniRead,reboottimer,Macro Parts/configs/Timers.ini,timers,reboottimer
 	IniRead,buff2timer,Macro Parts/configs/Timers.ini,buffs,buff2timer
 	IniRead,buff3timer,Macro Parts/configs/Timers.ini,buffs,buff3timer
 	IniRead,buff4timer,Macro Parts/configs/Timers.ini,buffs,buff4timer
@@ -627,7 +625,6 @@ resettimers(tooltip := 1){
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,4htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,22htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,24htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,reboottimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff2timer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff3timer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff4timer

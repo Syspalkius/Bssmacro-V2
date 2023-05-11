@@ -356,3 +356,35 @@ checkbufftimer(){ ;checks the timers for the hotbar buffs.
 		}
 	}
 }
+
+hours(time){
+	return time*3600000
+}
+
+checktimers(){
+	readtimers()
+	if (A_TickCount - 30mtimer > hours(0.5)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer
+
+	}
+	if (A_TickCount - 1htimer > hours(1)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
+
+	}
+	if (A_TickCount - 2htimer > hours(2)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
+
+	}
+	if (A_TickCount - 4htimer > hours(4)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
+
+	}
+	if (A_TickCount - 22htimer > hours(22)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,22htimer
+
+	}
+	if (A_TickCount - 24htimer > hours(24)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,24htimer
+
+	}
+}
