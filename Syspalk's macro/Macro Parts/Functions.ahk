@@ -372,12 +372,12 @@ checktimers(){
 	if (A_TickCount - 30mtimer > hours(0.5)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer
-
+		checkforpaidant("30 min")
 	}
 	if (A_TickCount - 1htimer > hours(1)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
-		readgui()
+		checkforpaidant("1 hour")
 		if (clock){
 			Clock()
 		}
@@ -397,11 +397,18 @@ checktimers(){
 	if (A_TickCount - 2htimer > hours(2)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
-		
+		checkforpaidant("2 hours")
+		if (ant){
+			ant()
+			if (freeant){
+				GoDoAnt()
+			}
+		}
 	}
 	if (A_TickCount - 4htimer > hours(4)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
+		checkforpaidant("4 hours")
 		if (cocodisp){
 			cocodisp()
 		}
@@ -640,5 +647,14 @@ useitemfrominv(item,closeafter){
 	}else{
 		Errorlog("Failed to find ticket.png")
 		return
+	}
+}
+
+checkforpaidant(timestamp){
+	readgui()
+	if (buyant){
+		if (timestamp = playtimer){
+			buyplayant()
+		}
 	}
 }

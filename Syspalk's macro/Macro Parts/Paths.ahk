@@ -1112,3 +1112,113 @@ cocodisp(){
 	}
 	ErrorLog("Failed to collect coconut dispensor")
 }
+
+GoDoAnt(){
+	walk(5000,"f")
+	walk(400,"b")
+	WinGetPos , windowX, windowY, windowWidth, windowY, Roblox
+	winUp := windowY/3
+	loop 23{
+		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*20 Macro parts/images/e.png 
+		if (errorlevel = 0){
+			EventLog("succesfully did ant")
+			Send e
+			mousemove,A_ScreenWidth/2,A_ScreenHeight/2
+			Send {Click Left Down}
+			sleep 2000
+			walk(3000,"b")
+			walk(300,"f")
+			SendHotbar(1)
+			breakytimer := A_TickCount
+			while (1){
+				if (SearchFunction("keepold.png",20)[1] = 0){
+					Send {Click Left Up}
+					sleep 1000
+					mouseMove,SearchFunction("keepold.png",20)[2],SearchFunction("keepold.png",20)[3]
+					sleep 1000
+					Send {click Left}
+					return
+				}
+				if (A_TickCount - breakytimer > 330000){
+					Reconnect()
+					if (tier = 1){
+						GuiControlGet,pineconvhive
+						if (pineconvhive){
+							Reset()
+						}
+					}
+					ErrorLog("[RECONNECT] Reconnected (Cause : Still hasn't died in ant after 5 and a half minutes)")
+					return
+				}
+				
+			}
+			Send {Click Left Up}
+			Reconnect()
+			if (tier = 1){
+				GuiControlGet,pineconvhive
+				if (pineconvhive){
+					Reset()
+				}
+			}
+			return
+		}
+		else{
+			walk(75,"r")
+		}
+	}
+	ErrorLog("failed to play ant")
+}
+
+ant(){
+	Reset()
+	walktocannon()
+	EventLog("Going To AntPass")
+	Send e
+	Send {Shift}
+	SendSpace()
+	sleep 800
+	Send {Shift}
+	sleep 600
+	SendSpace()
+	sleep 7200
+	SendSpace()
+	sleep 3000
+	walk(2000,"f")
+	walk(7000,"l")
+	walk(1000,"b")
+	walk(750,"r")
+	sleep 1000
+	if (SearchFunction("e.png",10)[1] = 1){
+		ErrorLog("Failed to grab ant pass")
+	}
+	sleep 1000
+	Send e
+	sleep 1000
+}
+
+buyplayant(){
+	Reset()
+	walktocannon()
+	EventLog("Going To AntPass")
+	Send e
+	Send {Shift}
+	SendSpace()
+	sleep 200
+	Send {Shift}
+	sleep 1200
+	SendSpace()
+	sleep 7200
+	SendSpace()
+	sleep 3000
+	walk(2000,"f")
+	walk(7000,"l")
+	walk(500,"f")
+	sleep 1000
+	if (SearchFunction("e.png",10)[1] = 1){
+		ErrorLog("Failed to purchase ant pass")
+	}
+	sleep 1000
+	Send e
+	sleep 1000
+	GoDoAnt()
+}

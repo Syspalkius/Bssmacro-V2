@@ -193,10 +193,10 @@ gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp% ,Use coconut dispenser
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab8 x20 yp+35 w300 h90 cwhite,Ant challenge
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab9 xp+5 yp+20 cwhite %ant% +disabled, Claim free ant pass
-Gui,Add,Checkbox, v4tab10 xp yp+20 cwhite %freeant% +disabled, Use free pass to play ant
-Gui,Add,Checkbox, v4tab11 xp yp+20 cwhite %buyant% +disabled, Buy and use ant pass every
-Gui,Add,DropDownlist, v4tab12 xp+215 yp w60 h200 +disabled,%playtimer%||30 min|1 hour|2 hours|4 hours
+Gui,Add,Checkbox, v4tab9 xp+5 yp+20 cwhite %ant% , Claim free ant pass
+Gui,Add,Checkbox, v4tab10 xp yp+20 cwhite %freeant% , Use free pass to play ant
+Gui,Add,Checkbox, v4tab11 xp yp+20 cwhite %buyant% , Buy and use ant pass every
+Gui,Add,DropDownlist, v4tab12 xp+215 yp w60 h200 ,%playtimer%||30 min|1 hour|2 hours|4 hours
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab13 x20 yp+35 w300 h75 cwhite,kill vicious
 Gui,Font,s10
