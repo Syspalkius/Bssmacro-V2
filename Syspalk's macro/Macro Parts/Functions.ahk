@@ -380,7 +380,7 @@ checktimers(){
 			whitebooster()
 		}
 		if (shrine){
-
+			shrine()
 		}
 		if (bluebooster){
 			bluebooster()
@@ -438,4 +438,28 @@ ErrorLog(ErrorMessage){ ;same thing as eventlog but this time it logs errors in 
 		WebRequest.SetRequestHeader("Content-Type", "application/json")
 		WebRequest.Send(postdata) 
 	}
-} 
+}
+
+cub(searchfor){
+	loop 2{
+		mousemove,140,125
+		Send {click}
+		sleep 10
+	}
+	mousemove,250,125
+	sleep 10
+	Send {Click}
+	sleep 500
+	if (SearchFunction("cub.png",10)[1] = 0){
+		mousemove,SearchFunction("cub.png",10)[2],SearchFunction("cub.png",10)[3]
+		sleep 200
+		Send {Click}
+		sleep 500
+		if (SearchFunction(searchfor,10)[1] = 0){
+			mousemove,SearchFunction(searchfor,10)[2],SearchFunction(searchfor,10)[3]
+			sleep 200
+			Send {Click}
+			sleep 500
+		}
+	}
+}

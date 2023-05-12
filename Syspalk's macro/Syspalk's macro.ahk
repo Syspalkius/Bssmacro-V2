@@ -23,13 +23,13 @@ WinActivate, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe ;activate robl
 while(1){
 	readgui()
 	;safetycheck()
-	;timerchecks
+	;checktimers()
 	while (A_Index < 5){
 		if (farmfield%A_Index% != "None"){
 			GOFarm(farmfield%A_Index%)
 		}
 		;safetycheck
-		;timerchecks()
+		;checktimers()
 	}
 	if (farmfield1 = "None" && farmfield2 = "None" && farmfield3 = "None" && farmfield4 = "None"){
 		pattern()
@@ -37,8 +37,6 @@ while(1){
 }
 
 F4::
-loop{
-	sleep 10
-	checkbufftimer()
-}
+resettimers(false)
+checktimers()
 return

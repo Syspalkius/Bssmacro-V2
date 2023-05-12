@@ -77,12 +77,12 @@ Gui,Add,Checkbox, v2tab25 x20 yp+25 cwhite %shiftlock%,Farm with shiftlock
 Gui,Font,s13
 Gui,Add,GroupBox, v2tab26 x20 yp+30 w200 h130 cwhite,Shrine
 Gui,Font,s10
-Gui,Add,Checkbox, v2tab27 x25 yp+25 cwhite +disabled %shrine%,Donate to the windshrine
+Gui,Add,Checkbox, v2tab27 x25 yp+25 cwhite %shrine%,Donate to the windshrine
 Gui,Add,Edit, v2tab28 number x25 yp+30 w50
-Gui,Add,UpDown, v2tab29 Range1-100 +disabled ,%donationamount%
+Gui,Add,UpDown, v2tab29 Range1-100 ,%donationamount%
 Gui,Add,Text, v2tab30 xp+60 yp cwhite,Amount of items
 Gui,Add,Text, v2tab31 x130 yp+40 cwhite,Item
-Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp +disabled ,%donationitem%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
+Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp ,%donationitem%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
 Gui,Font,s13
 Gui,Add,Groupbox, v2tab33 x240 yp-95 w200 h95 cwhite,Boosters
 Gui,Font,s10

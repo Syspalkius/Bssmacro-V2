@@ -799,3 +799,155 @@ whitebooster(){
 	Send e
 	sleep 1000
 }
+
+shrine(){
+	readgui()
+	EventLog("Going to do shrine")
+	item := "Shrine" . donationitem . ".png"
+	clicks := donationamount - 1
+	cub("off.png")
+	
+	r(true)
+	Reset()
+	walktocannon()
+	walkhold("r","Down")
+	sleep 4000
+	SendSpace()
+	sleep 1500
+	walkhold("r","Up")
+	walkhold("f","Down")
+	sleep 2000
+	SendSpace()
+	sleep 3000
+	SendSpace()
+	sleep 1000
+	SendSpace()
+	sleep 4000
+	walkhold("f","up")
+	camrotate(4,"r")
+	Send {Shift}
+	walk(75,"f")
+	camrotate(4,"r")
+	Send ooooo
+	sleep 50
+	Send {Shift}
+	SendSpace()
+	walk(4000,"f")
+	walk(1000,"r")
+	walk(100,"b")
+	SendSpace()
+	walkhold("r","Down")
+	walk(6000,"f")
+	sleep 1700
+	
+	
+	walkhold("r","Up")
+	Send {Shift}
+	camrotate(3,"l")
+	walk(75,"f")
+	sleep 50
+	Send {Shift}
+	camrotate(3,"l")
+	walkhold("r","Down")
+	sleep 1200
+	camrotate(2,"l")
+	SendSpace()
+	sleep 600
+	walkhold("r","Up")
+	walk(800,"r")
+	walk(1100,"b")
+	camrotate(2,"r")
+	
+	
+	walk(5000,"r")
+	camrotate(2,"l")
+	Send {Shift}
+	SendSpace()
+	sleep 400
+	walk(150,"f")
+	Send {Shift}
+	camrotate(2,"r")
+	sleep 300
+	SendSpace()
+	walk(500,"r")
+	breaktime := A_TickCount
+	while (1){
+		if (SearchFunction("e.png",10)[1] = 0){
+			break
+		}else{
+			walk(50,"r")
+		}
+		if (A_TickCount - breaktime > 10000){
+			ErrorLog("Failed to do shrine /// Cause : Failed to arrive at donation pad")
+			;Reconnect()
+			cub("on.png")
+			return
+		}
+	}
+	sleep 250
+	Send e
+	sleep 2000
+	mouseMove,A_ScreenWidth/2,A_ScreenHeight/1.3
+	sleep 250
+	Send {Click Left}
+	maxshrinetrytime := A_TickCount
+	while (1){
+		sleep 500
+		if (SearchFunction(item,10)[1] = 0){
+			sleep 1000
+			if (SearchFunction(item,10)[1] = 0){
+				sleep 500
+				mousemove,SearchFunction("ShrineAdd.png",10)[2],SearchFunction("ShrineAdd.png",10)[3]
+				sleep 250
+				loop %clicks%{
+					Send {Click Left}
+					sleep 5
+				}
+				break
+			}
+		}else{
+			mousemove,SearchFunction("ShrineArrow.png",10)[2],SearchFunction("ShrineArrow.png",10)[3]
+			sleep 250
+			Send {Click Left}
+		}
+		if (A_TickCount - maxshrinetrytime > 60000){
+			ErrorLog("Failed to do shrine /// Cause : Failed to find donation item")
+			;Reconnect()
+			cub("on.png")
+			return
+		}
+	}
+	maxdonatebuttonsearchtime := A_TickCount
+	while (1){
+		if (SearchFunction("ShrineDonate.png",10)[1] = 0){
+			mousemove,SearchFunction("ShrineDonate.png",10)[2],SearchFunction("ShrineDonate.png",10)[3]
+			sleep 250
+			Send {Click Left}
+			break
+		}
+		if (A_TickCount - maxdonatebuttonsearchtime > 5000){
+			Errorlog("Failed to do shrine /// cause : Failed to find donate button")
+			;Reconnect()
+			cub("on.png")
+			return
+		}
+	}
+	sleep 2000
+	mouseMove,A_ScreenWidth/2,A_ScreenHeight/1.3
+	sleep 250
+	loop 20{
+		Send {Click Left}
+		sleep 5
+	}
+	sleep 2500
+	walk(500,"f")
+	walk(1000,"l")
+	loop 4{
+		walk(2000,"r")
+		walk(250,"b")
+		walk(2000,"l")
+		walk(250,"b")
+	}
+	cub("on.png")
+	EventLog("Succesfully donated to shrine")
+}
