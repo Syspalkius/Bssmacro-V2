@@ -402,7 +402,9 @@ checktimers(){
 	if (A_TickCount - 4htimer > hours(4)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
-
+		if (cocodisp){
+			cocodisp()
+		}
 	}
 	if (A_TickCount - 22htimer > hours(22)){
 		safetycheck()

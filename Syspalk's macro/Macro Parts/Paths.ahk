@@ -1080,3 +1080,35 @@ gluedisp(){
 		Errorlog("Failed to do glue dispensor after 3 attempts")
 	}
 }
+
+cocodisp(){
+	Eventlog("Running coco disp")
+	coco(false)
+	walk(3000,"f")
+	Send {Shift}
+	camrotate(2,"l")
+	sleep 100
+	Send {Shift}
+	camrotate(2,"r")
+	walk(7000,"l")
+	Send {Shift}
+	walk(3000,"f")
+	Send {Shift}
+	walk(3000,"r")
+	camrotate(2,"r")
+	WinGetPos , windowX, windowY, windowWidth, windowY, Roblox
+	WindowY := windowY/3
+	xd := false
+	starttime := A_TickCount
+	while (A_TickCount - starttime < 2000){
+		if (SearchFunction("e.png",10)[1] = 0){
+			sleep 300
+			Send e
+			return
+		}else{
+			walk(25,"r")
+			sleep 5
+		}
+	}
+	ErrorLog("Failed to collect coconut dispensor")
+}

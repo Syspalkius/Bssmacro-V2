@@ -184,8 +184,6 @@ readini(){ ;reads all the data from the ini file
 	IniRead,plantdelay3,Macro Parts/configs/Data.ini,planters,plantdelay3
 	IniRead,clock,Macro Parts/configs/Data.ini,resources,clock
 	IniRead,gluedisp,Macro Parts/configs/Data.ini,resources,gluedisp
-	IniRead,strawdisp,Macro Parts/configs/Data.ini,resources,strawdisp
-	IniRead,bluebdisp,Macro Parts/configs/Data.ini,resources,bluebdisp
 	IniRead,cocodisp,Macro Parts/configs/Data.ini,resources,cocodisp
 	IniRead,tunnel,Macro Parts/configs/Data.ini,resources,tunnel
 	IniRead,kingbeetle,Macro Parts/configs/Data.ini,resources,kingbeetle
@@ -418,8 +416,6 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,plantdelay3,,3tab40
 	GuiControlget,clock,,4tab3
 	GuiControlget,gluedisp,,4tab4
-	GuiControlget,strawdisp,,4tab5
-	GuiControlget,bluebdisp,,4tab6
 	GuiControlget,cocodisp,,4tab7
 	GuiControlget,tunnel,,4tab24
 	GuiControlget,kingbeetle,,4tab25
@@ -450,11 +446,8 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,buff7time,,5tab14
 	GuiControlget,speed,,10tab4
 	GuiControlget,joinmain,,10tab17
-	GuiControlget,rebootserver,,10tab19
-	GuiControlget,reboottime,,10tab21
 	GuiControlget,hookevent,,10tab7
 	GuiControlget,hookerror,,10tab9
-	GuiControlget,hookballoon,,10tab11
 	GuiControlget,main,,10tab14
 	GuiControlget,alt,,10tab16
 	getkeyinfo()
@@ -556,8 +549,6 @@ savedata(){ ;saves all the data
 	IniWrite,%plantdelay3%,Macro Parts/configs/Data.ini,planters,plantdelay3
 	IniWrite,%clock%,Macro Parts/configs/Data.ini,resources,clock
 	IniWrite,%gluedisp%,Macro Parts/configs/Data.ini,resources,gluedisp
-	IniWrite,%strawdisp%,Macro Parts/configs/Data.ini,resources,strawdisp
-	IniWrite,%bluebdisp%,Macro Parts/configs/Data.ini,resources,bluebdisp
 	IniWrite,%cocodisp%,Macro Parts/configs/Data.ini,resources,cocodisp
 	IniWrite,%tunnel%,Macro Parts/configs/Data.ini,resources,tunnel
 	IniWrite,%kingbeetle%,Macro Parts/configs/Data.ini,resources,kingbeetle
@@ -668,8 +659,6 @@ resetconfig(){
 	
 	IniWrite,1,Macro Parts/configs/Data.ini,resources,clock
 	IniWrite,1,Macro Parts/configs/Data.ini,resources,gluedisp
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,strawdisp
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,bluebdisp
 	IniWrite,0,Macro Parts/configs/Data.ini,resources,cocodisp
 	IniWrite,0,Macro Parts/configs/Data.ini,resources,tunnel
 	IniWrite,0,Macro Parts/configs/Data.ini,resources,kingbeetle

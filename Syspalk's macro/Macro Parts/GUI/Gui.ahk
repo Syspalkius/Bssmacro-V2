@@ -185,13 +185,11 @@ Gui,Add,Text, v3tab46 x255 y560 w10 h17 c%infocol% gresetcycleinfo,?
 Gui,Font,s17 Bold
 Gui,Add,Text, v4tab1 x320 y10 cgreen,Resources
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab2 x20 y40 w230 h125 cwhite,Dispensers
+Gui,Add,Groupbox, v4tab2 x20 y40 w230 h85 cwhite,Dispensers
 Gui,Font,s10
 gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock% ,Use wealthclock
 gui,Add,Checkbox, v4tab4 x30 yp+20 cwhite %gluedisp% ,Use glue dispenser
-gui,Add,Checkbox, v4tab5 x30 yp+20 cwhite %strawdisp% +disabled,Use Strawberry dispenser
-gui,Add,Checkbox, v4tab6 x30 yp+20 cwhite %bluebdisp% +disabled,Use blueberry dispenser
-gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp% +disabled,Use coconut dispenser
+gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp% ,Use coconut dispenser
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab8 x20 yp+35 w300 h90 cwhite,Ant challenge
 Gui,Font,s10
