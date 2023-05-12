@@ -463,3 +463,95 @@ cub(searchfor){
 		}
 	}
 }
+
+Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
+	savedata()
+	while (1){
+		attempt := 1
+		retry:
+		WinClose, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
+		WinClose, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
+		IniRead,plink1,Macro Parts/configs/Links.ini,private servers,main
+		IniRead,plink2,Macro Parts/configs/Links.ini,private servers,alt
+		WinClose, ahk_exe chrome.exe
+		sleep 1000
+		if (plink1 && serverjoinstatus){
+			run, %plink1%
+			attempt := 2
+		}else if (plink1 && attempt = 1){
+			run, %plink1%
+			attempt := 2
+		}else if (plink2 && serverjoinstatus != true && attempt = 2){
+			run, %plink2%
+			attempt := 3
+		}else if (serverjoinstatus != true){
+			run, https://www.roblox.com/games/2000343487?privateServerLinkCode=67181684702561561812873405717919
+			if (plink1){
+				attempt := 1
+			}else{
+				attempt := 2
+			}
+		}
+		gloobgloobtime := A_TickCount
+		while (1){
+			WinActivate, Roblox ahk_class MAINDIALOG ahk_exe RobloxPlayerLauncher.exe
+			IfWinActive, Roblox ahk_class MAINDIALOG ahk_exe RobloxPlayerLauncher.exe
+			{
+				Break
+			}
+			WinActivate, Roblox ahk_class MAINDIALOG ahk_exe RobloxPlayerLauncher.exe
+			if (A_TickCount - gloobgloobtime > 15000){
+				WinClose, ahk_exe chrome.exe
+				Send w
+				SendInput {Enter}
+				goto,retry
+			}
+			
+		}
+		looptime := A_TickCount
+		while(1){ ;search for the loading screen if loading screen found wait for loading screen to go away and then claim the hive, if the loading screen is there for longer than 60 seconds something must have gone wrong and it will exit the loop
+			if (SearchFunction("LoadingScreen.png",20)[1] = 0){
+				breaktimerr := A_TickCount
+				while (1){
+					if (SearchFunction("LoadingScreen.png",20)[1] = 1){
+						goto, claimhive
+					}
+					if (A_TickCount - breaktimerr > 90000){
+						ErrorLog("[RECONNECT] LoadingScreen Detected For 90 Seconds, will retry")
+						break
+					}
+				}
+			}
+			if (A_TickCount - looptime > 120000){ ;if it has been in the infinite while loop for more than 120 seconds something must have gone wrong so get out of the loop
+				Errorlog("[RECONNCT] Loadingscreen hasn't been detected after 3 minutes, will retry")
+				goto,retry
+			}
+		}
+		WinClose, ahk_exe chrome.exe
+		SendInput {Enter}
+	}
+	
+	
+	
+	claimhive:
+	SendInput {Enter}
+	global previousreconnect := A_TickCount
+	WinClose, ahk_class Chrome_WidgetWin_1 ahk_exe chrome.exe
+	sleep 5000
+	mouseMove, 100, 100,
+	
+	if (rejoinclaim){
+		walk(8000,"f")
+		walk(6000,"r")
+		walk(650,"b")
+		walkhold("l","Down")
+		loopbreak := A_TickCount
+		while (1){
+			Send e
+			if (A_TickCount - loopbreak > 8000){
+				break
+			}
+		}
+		walkhold("l","Up")
+	}
+} 

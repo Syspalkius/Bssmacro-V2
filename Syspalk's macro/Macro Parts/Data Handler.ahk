@@ -124,6 +124,7 @@ global reconnectedcannon
 global reconnected
 global firstrun := true
 global convert := true
+global rejoinclaim := true
 
 
 
