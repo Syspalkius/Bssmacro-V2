@@ -111,10 +111,6 @@ hookerrorinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/hookerrorinfo.txt
 	popup(400,35,12,"Error webhook info",Text)
 }
-hookballooninfo(){
-	FileRead, Text, Macro Parts\GUI\Info/hookballooninfo.txt
-	popup(400,55,12,"Balloon webhook info",Text)
-}
 
 ;------Macro buttons------
 

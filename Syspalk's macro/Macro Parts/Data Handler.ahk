@@ -588,7 +588,6 @@ savedata(){ ;saves all the data
 	IniWrite,%joinmain%,Macro Parts/configs/Data.ini,settings,joinmain
 	IniWrite,%hookevent%,Macro Parts/configs/Links.ini,webhooks,hookevent
 	IniWrite,%hookerror%,Macro Parts/configs/Links.ini,webhooks,hookerror
-	IniWrite,%hookballoon%,Macro Parts/configs/Links.ini,webhooks,hookballoon
 	IniWrite,%main%,Macro Parts/configs/Links.ini,private servers,main
 	IniWrite,%alt%,Macro Parts/configs/Links.ini,private servers,alt
 }
@@ -719,11 +718,8 @@ resetconfig(){
 	
 	IniWrite,28,Macro Parts/configs/Data.ini,settings,speed
 	IniWrite,0,Macro Parts/configs/Data.ini,settings,joinmain
-	IniWrite,0,Macro Parts/configs/Data.ini,settings,rebootserver
-	IniWrite,0,Macro Parts/configs/Data.ini,settings,reboottime
 	IniWrite,Insert Link,Macro Parts/configs/Links.ini,webhooks,hookevent
 	IniWrite,Insert Link,Macro Parts/configs/Links.ini,webhooks,hookerror
-	IniWrite,Insert Link,Macro Parts/configs/Links.ini,webhooks,hookballoon
 	IniWrite,Insert Link,Macro Parts/configs/Links.ini,private servers,main
 	IniWrite,Insert Link,Macro Parts/configs/Links.ini,private servers,alt
 	reload

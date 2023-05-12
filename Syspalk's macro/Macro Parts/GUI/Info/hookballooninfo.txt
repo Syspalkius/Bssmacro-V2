@@ -1,1 +1,0 @@
-This will warn you whenever your balloon hasn't been converted for 30 minutes.
