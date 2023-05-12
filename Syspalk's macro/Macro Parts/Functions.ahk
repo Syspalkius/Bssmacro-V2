@@ -407,7 +407,9 @@ checktimers(){
 	if (A_TickCount - 22htimer > hours(22)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,22htimer
-
+		if (gluedisp){
+			gluedisp()
+		}
 	}
 	if (A_TickCount - 24htimer > hours(24)){
 		safetycheck()

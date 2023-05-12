@@ -37,5 +37,6 @@ while(1){
 }
 
 F4::
-useitemfrominv("glit.png",true)
+resettimers(false)
+checktimers()
 return
