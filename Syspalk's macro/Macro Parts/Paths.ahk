@@ -646,7 +646,7 @@ pinewalktohive(pinetree){
 						if (A_TickCount - loopbreak > 360000){
 							break
 						}
-						;safetycheck()
+						safetycheck()
 					}	
 				}
 				walk(750,"f")
@@ -675,7 +675,7 @@ pinewalktohive(pinetree){
 						if (A_TickCount - loopbreak > 360000){
 							break
 						}
-						;safetycheck()
+						safetycheck()
 					}	
 				}
 				walk(750,"f")
@@ -879,7 +879,7 @@ shrine(){
 		}
 		if (A_TickCount - breaktime > 10000){
 			ErrorLog("Failed to do shrine /// Cause : Failed to arrive at donation pad")
-			;Reconnect()
+			Reconnect()
 			cub("on.png")
 			return
 		}
@@ -912,7 +912,7 @@ shrine(){
 		}
 		if (A_TickCount - maxshrinetrytime > 60000){
 			ErrorLog("Failed to do shrine /// Cause : Failed to find donation item")
-			;Reconnect()
+			Reconnect()
 			cub("on.png")
 			return
 		}
@@ -927,7 +927,7 @@ shrine(){
 		}
 		if (A_TickCount - maxdonatebuttonsearchtime > 5000){
 			Errorlog("Failed to do shrine /// cause : Failed to find donate button")
-			;Reconnect()
+			Reconnect()
 			cub("on.png")
 			return
 		}

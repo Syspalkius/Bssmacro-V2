@@ -105,7 +105,7 @@ walktocannon(){ ;makes the character walk to the cannon.
 			if (attempts > 2){
 				ErrorLog("Reconnected (Issue : E button for cannon wasn't detected after too many tries)")
 				walkhold("r","Up")
-				;Reconnect()
+				Reconnect()
 				global reconnectedcannon := true
 				return
 			}else{
@@ -151,7 +151,7 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 			if (Fails = 1){
 				global Fails := 0
 				ErrorLog("Reconnected (Issue : Hive image wasn't found too many times in a row)")
-				;Reconnect()
+				Reconnect()
 				goto,Retryy
 			}
 			else{
@@ -172,7 +172,7 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 			if (A_TickCount - breaktimer > 360000){
 				break
 			}
-			;safetycheck()
+			safetycheck()
 		}	
 	}
 }
@@ -271,7 +271,7 @@ GoFarm(field){ ;function for farming.
 		}
 		
 		checkbufftimer()
-		;safetycheck()
+		safetycheck()
 		if(reconnected = true){
 			global reconnected := false
 			return
@@ -364,10 +364,12 @@ hours(time){
 checktimers(){
 	readtimers()
 	if (A_TickCount - 30mtimer > hours(0.5)){
+		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer
 
 	}
 	if (A_TickCount - 1htimer > hours(1)){
+		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
 		readgui()
 		if (clock){
@@ -387,18 +389,22 @@ checktimers(){
 		}
 	}
 	if (A_TickCount - 2htimer > hours(2)){
+		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
 		
 	}
 	if (A_TickCount - 4htimer > hours(4)){
+		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
 
 	}
 	if (A_TickCount - 22htimer > hours(22)){
+		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,22htimer
 
 	}
 	if (A_TickCount - 24htimer > hours(24)){
+		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,24htimer
 
 	}
@@ -554,4 +560,21 @@ Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
 		}
 		walkhold("l","Up")
 	}
-} 
+}
+
+safetycheck(){ ;this will make sure that you stay in the game
+	ImageSearch,founx,foundy,A_ScreenWidth/4,A_ScreenHeight/4,A_ScreenWidth/1.5,A_ScreenHeight/1.5,*10 Macro Parts/Images/Disconnected.PNG
+	if (errorlevel = 0){
+		global reconnected := true
+		ErrorLog("Reconnected (Issue : Disconnected.png was found)")
+		Reconnect()
+	}
+	WinActivate, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
+	IfWinActive, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
+	{
+	}else{
+		global reconnected := true
+		ErrorLog("Reconnected (Issue : Roblox Window Wasn't Detected)")
+		Reconnect()
+	}
+}

@@ -586,8 +586,6 @@ savedata(){ ;saves all the data
 	IniWrite,%buff7time%,Macro Parts/configs/Data.ini,buffs,buff7time
 	IniWrite,%speed%,Macro Parts/configs/Data.ini,settings,speed
 	IniWrite,%joinmain%,Macro Parts/configs/Data.ini,settings,joinmain
-	IniWrite,%rebootserver%,Macro Parts/configs/Data.ini,settings,rebootserver
-	IniWrite,%reboottime%,Macro Parts/configs/Data.ini,settings,reboottime
 	IniWrite,%hookevent%,Macro Parts/configs/Links.ini,webhooks,hookevent
 	IniWrite,%hookerror%,Macro Parts/configs/Links.ini,webhooks,hookerror
 	IniWrite,%hookballoon%,Macro Parts/configs/Links.ini,webhooks,hookballoon
