@@ -249,6 +249,12 @@ GoFarm(field){ ;function for farming.
 			if (sprinkleralign && patternsize > 10){
 				movetosat(10)
 			}
+			if (reglitter){
+				if (A_Tickcount - pinereglittime < 540000 && glitterpine){
+					global glitterpine := False
+					useitemfrominv("glit.png",true)
+				}
+			}
 			
 			if (A_TickCount - breaktimer > maxfieldtime){
 				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000){
@@ -576,5 +582,59 @@ safetycheck(){ ;this will make sure that you stay in the game
 		global reconnected := true
 		ErrorLog("Reconnected (Issue : Roblox Window Wasn't Detected)")
 		Reconnect()
+	}
+}
+
+useitemfrominv(item,closeafter){
+	loop 2{
+		mousemove,140,125
+		sleep 80
+		Send {click}
+	}
+	mousemove,40,125
+	sleep 200
+	Send {Click}
+	sleep 80
+	mousemove,40,200
+	loop 120{
+		Send {WheelUp}
+		sleep 20
+	}
+	sleep 500
+	if (SearchFunction("ticket.png",10)[1] = 0){
+		loop 30{
+			if (SearchFunction(item,20)[1] = 0){
+				sleep 500
+				mousemove,SearchFUnction(item,20)[2],SearchFUnction(item,20)[3]
+				sleep 250
+				Send {Click Left Down}
+				mousemove,A_ScreenWidth/2,A_ScreenHeight/2
+				sleep 250
+				Send {Click Left Up}
+				if (closeafter = true){
+					mousemove,40,140
+					sleep 100
+					Send {Click Left}
+				}
+				return
+			}
+			mousemove,40,200
+			sleep 250
+			Send {WheelDown}
+			sleep 10
+			Send {WheelDown}
+			sleep 10
+		}
+		itemerror := "Failed to find " . item 
+		Errorlog(itemerror)
+		if (closeafter = true){
+			mousemove,40,140
+			sleep 100
+			Send {Click Left}
+		}
+		return
+	}else{
+		Errorlog("Failed to find ticket.png")
+		return
 	}
 }

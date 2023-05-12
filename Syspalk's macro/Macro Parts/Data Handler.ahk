@@ -125,6 +125,8 @@ global reconnected
 global firstrun := true
 global convert := true
 global rejoinclaim := true
+global glitterpine := false
+global pinereglittime
 
 
 

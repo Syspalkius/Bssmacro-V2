@@ -91,7 +91,7 @@ Gui,Add,Checkbox, v2tab35 x250 yp+5 cwhite %bluebooster%,Blue Booster
 Gui,Add,Checkbox, v2tab36 x250 yp+25 cwhite %redbooster%,Red Booster
 Gui,Add,Checkbox, v2tab37 x250 yp+25 cwhite %whitebooster%,White Booster
 Gui,Add,Groupbox, v2tab38 x240 yp+10 w200 h40 cwhite,
-Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %reglitter% +disabled,Re-glitter pinetree
+Gui,Add,Checkbox, v2tab39 x250 yp+15 cwhite %reglitter% ,Re-glitter pinetree
 Gui,Add,Text, v2tab40 xp+170 yp w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
 IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey

@@ -781,7 +781,16 @@ bluebooster(){
 	}
 	sleep 1000
 	Send e
-	sleep 1000
+	readgui()
+	if (reglitter){
+		starttime := A_TickCount
+		while (A_TickCount - starttime < 3000){
+			if (SearchFunction("pine0.png",10)[1] = 0 || SearchFunction("pine1.png",10)[1] = 0){
+				global glitterpine := true
+				global pinereglittime := A_TickCount
+			}
+		}
+	}
 }
 
 whitebooster(){
