@@ -200,9 +200,9 @@ Gui,Add,DropDownlist, v4tab12 xp+215 yp w60 h200 ,%playtimer%||30 min|1 hour|2 h
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab13 x20 yp+35 w300 h75 cwhite,kill vicious
 Gui,Font,s10
-Gui,Add,Checkbox, v4tab14 xp+10 yp+25 cwhite %vicious% +disabled,Kill vicious bee when night is detected
+Gui,Add,Checkbox, v4tab14 xp+10 yp+25 cwhite %vicious% ,Kill vicious bee when night is detected
 Gui,Add,Text, v4tab15 x85 yp+25 cwhite,Maximum combat time [Seconds]
-Gui,Add,Edit, v4tab16 number x30 yp-2 w50 +disabled,%maxcombattime%
+Gui,Add,Edit, v4tab16 number x30 yp-2 w50 ,%maxcombattime%
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab17 x20 yp+35 w180 h185 cwhite,Mobs
 Gui,Font,s10

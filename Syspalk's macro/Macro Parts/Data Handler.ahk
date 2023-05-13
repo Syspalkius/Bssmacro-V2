@@ -128,6 +128,9 @@ global rejoinclaim := true
 global glitterpine := false
 global pinereglittime
 global allowmondo := true
+global currentfield
+global lastvickill := -9999999
+global vicfield
 
 
 

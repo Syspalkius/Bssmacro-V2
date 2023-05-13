@@ -1284,4 +1284,157 @@ mondo(){
 			}
 		}
 	}
-} 
+}
+
+stingerrun(){
+	global vicfield := ""
+	EventLog("Running Stinger Run")
+	;pepper start
+	pep(false)
+	walk(2500,"r")
+	walk(1500,"f")
+	walk(2500,"l")
+	walk(900,"b")
+	walk(1500,"r")
+	if (fightcheck()[1] = true){
+		Eventlog("Killed a vicious bee in pepper")
+		return
+	}
+	;mountain start
+	global vicfield := "mountain"
+	mountain(true)
+	walk(350,"b")
+	walk(750,"l")
+	walk(2500,"f")
+	walk(900,"r")
+	walk(2500,"b")
+	walk(900,"r")
+	walk(2500,"f")
+	if (fightcheck()[1] = true){
+		Eventlog("Killed a vicious bee in mountain")
+		return
+	}
+	;rose start
+	global vicfield := "rose"
+	Reset()
+	walk(7000,"r")
+	SendSpace()
+	walk(100,"r")
+	sleep 100
+	walk(1000,"r")
+	walk(5250,"b")
+	walk(2250,"r")
+	SendSpace()
+	walk(2000,"r")
+	walk(1000,"f")
+	camrotate(2,"r")
+	walk(1750,"r")
+	walk(2750,"f")
+	walk(1250,"r")
+	walk(2750,"b")
+	if (fightcheck()[1] = true){
+		Eventlog("Killed a vicious bee in rose")
+		return
+	}
+	global vicfield := ""
+	;cactus start
+	camrotate(2,"r")
+	walk(1500,"r")
+	Send {Shift}
+	walk(2500,"b")
+	Send {Shift}
+	walk(150,"r")
+	walk(7000,"f")
+	walk(100,"l")
+	walk(500,"b")
+	Send {Shift}
+	walk(2250,"l")
+	camrotate(2,"r")
+	Send {Shift}
+	walk(125,"f")
+	camrotate(2,"l")
+	Send {Shift}
+	walk(3900,"f")
+	walk(1500,"r")
+	walk(2000,"b")
+	walk(2500,"f")
+	walk(250,"r")
+	walk(2000,"b")
+	walk(2000,"r")
+	Send {Shift}
+	camrotate(2,"r")
+	walk(1000,"l")
+	walk(75,"f")
+	walk(1000,"r")
+	walk(200,"l")
+	walk(6000,"f")
+	Send {Shift}
+	camrotate(2,"l")
+	walk(1500,"f")
+	camrotate(2,"l")
+	walk(500,"f")
+	walk(500,"r")
+	camrotate(4,"r")
+	walk(1000,"f")
+	walk(1000,"r")
+	camrotate(4,"r")
+	Send {Shift}
+	camrotate(4,"r")
+	walk(4000,"b")
+	walk(555,"r")
+	walk(1500,"f")
+	if (fightcheck()[1] = true){
+		Eventlog("Killed a vicious bee in cactus")
+		return
+	}
+	;spider start
+	walk(5000,"f")
+	walk(1000,"l")
+	Send {Shift}
+	camrotate(2,"r")
+	sleep 100
+	Send {Shift}
+	camrotate(2,"l")
+	walk(1750,"r")
+	sleep 750
+	walk(1500,"l")
+	walk(1000,"f")
+	walk(750,"b")
+	walk(1000,"r")
+	walk(3000,"f")
+	walk(1750,"r")
+	walk(2500,"b")
+	walk(825,"l")
+	walk(1500,"f")
+	if (fightcheck()[1] = true){
+		Eventlog("Killed a vicious bee in spider")
+		return
+	}
+	;clover start
+	global vicfield := "clover"
+	Reset()
+	walk(750,"f")
+	Send {Shift}
+	walk(8000,"l")
+	camrotate(2,"l")
+	walk(4000,"l")
+	walk(75,"r")
+	SendSpace()
+	walk(1000,"l")
+	Send {Shift}
+	walk(3000,"f")
+	SendSpace()
+	walk(2000,"f")
+	walk(2000,"r")
+	walk(1000,"l")
+	SendSpace()
+	walk(3000,"f")
+	walk(1000,"l")
+	walk(2000,"b")
+	walk(1000,"l")
+	walk(2000,"f")
+	if (fightcheck()[1] = true){
+		Eventlog("Killed a vicious bee in clover")
+		return
+	}
+}

@@ -227,6 +227,7 @@ GoFarm(field){ ;function for farming.
 	;timerchecks()
 	readgui()
 	GoField(field)
+	global currentfield := field
 	if (field = "Pine Tree"){
 		pinetree := true
 	}else{
@@ -255,7 +256,10 @@ GoFarm(field){ ;function for farming.
 					useitemfrominv("glit.png",true)
 				}
 			}
-			
+			if (checkforvic() = true){
+				pinewalktohive(pinetree)
+				return
+			}
 			if (A_TickCount - breaktimer > maxfieldtime){
 				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000){
 					if (firstpop){
@@ -346,6 +350,13 @@ toggleshiftlock(){
 zoomout(){
 	loop 10{
 		Send o
+		sleep 1
+	}
+}
+
+zoomin(){
+	loop 10{
+		Send i
 		sleep 1
 	}
 }
@@ -663,4 +674,132 @@ checkforpaidant(timestamp){
 			buyplayant()
 		}
 	}
+}
+
+checkforvic(){
+	readgui()
+	if (vicious){
+		if (currentfield = "Pineapple"){
+			zoomin()
+			sleep 500
+			if (viccheck(false) = true){
+				return true
+			}
+			zoomout()
+		}
+		if (currentfield = "Spider"){
+			camrotate(4,"r")
+			zoomout()
+			sleep 500
+			if (viccheck(true) = true){
+				return true
+			}
+			camrotate(4,"r")
+		}
+		if (currentfield = "Strawberry"){
+			camrotate(2,"l")
+			zoomout()
+			sleep 500
+			if (viccheck(false) = true){
+				return true
+			}
+			camrotate(2,"r")
+		}
+		if (currentfield = "Mushroom"){
+			camrotate(2,"r")
+			zoomin()
+			sleep 500
+			if (viccheck(false) = true){
+				return true
+			}
+			camrotate(2,"l")
+			zoomout()
+		}
+		else{
+			if (viccheck(false) = true){
+				return true
+			}
+		}
+		return false
+	}
+}
+
+viccheck(changecam){ ;check for nighttime.
+	if (A_Tickcount - lastvickill < 360000){
+		return false
+	}
+	if (changecam){
+		zoomin()
+		loop 10{
+			Send {PGDN}
+			sleep 20
+		}
+		loop 5{
+			Send {PGUP}
+			sleep 20
+		}
+		sleep 100
+	}
+	ImageSearch,Ox,OY,0,0,A_ScreenWidth,150, Macro Parts\images\night.png
+	if (ErrorLevel = 0){
+		global allowconvert := false
+		global lastvickill := A_Tickcount
+		stingerrun()
+		global allowconvert := true
+		return true
+	}
+	if (changecam){
+		zoomout()
+		sleep 20
+		Send {PGUP}
+		sleep 20
+		Send {PGUP}
+	}
+	return false
+}
+
+fightcheck(){ ;checks if a vicious bee is present.
+	savedata()
+	status := false
+	sleep 500
+	Send /
+	sleep 500
+	SendInput {Enter}
+	sleep 250
+	if (keyboardtype = "azerty"){
+		Send {Shift}
+		sleep 259
+		camrotate(1,"l")
+	}
+	if (SearchFunction("vicattacking.png",40)[1] = 0 || SearchFunction("vicattacking1.png",40)[1] = 0){
+		status := true
+		starty := A_TickCount
+		if (vicfield = "mountain"){
+			walk(1000,"l")
+			walk(1500,"b")
+			global vicfield := "false"
+		}else if (vicfield = "rose"){
+			camrotate(2,"r")
+			walk(500,"b")
+			walk(1500,"l")
+			global vicfield := "false"
+		}else if (vicfield = "clover"){
+			walk(1250,"b")
+			walk(1250,"r")
+			global vicfield := "false"
+		}
+		while(1){
+			walk(1000,"f")
+			walk(1000,"l")
+			walk(1000,"b")
+			walk(1000,"r")
+			if (SearchFunction("deadvic.png",20)[1] = 0){
+				break
+			}
+			if (A_TickCount - starty > fightvictime*1000 || A_TickCount - starty > 300000){
+				break
+			}
+		}
+	}
+	return [status]
 }
