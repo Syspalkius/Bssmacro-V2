@@ -131,6 +131,9 @@ global allowmondo := true
 global currentfield
 global lastvickill := -9999999
 global vicfield
+global cycle1
+global cycle2
+global cycle3
 
 
 
@@ -860,4 +863,10 @@ loadticketfarmer(){
 	IniWrite,1,Macro Parts/configs/Data.ini,resources,tunnel
 	IniWrite,1,Macro Parts/configs/Data.ini,resources,kingbeetle
 	reload
+}
+
+readplantdata(){
+	IniRead,cycle1,Macro Parts/configs/Data.ini,plantdata,cycle1
+	IniRead,cycle2,Macro Parts/configs/Data.ini,plantdata,cycle2
+	IniRead,cycle3,Macro Parts/configs/Data.ini,plantdata,cycle3
 }

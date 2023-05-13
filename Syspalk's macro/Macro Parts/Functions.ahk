@@ -803,3 +803,34 @@ fightcheck(){ ;checks if a vicious bee is present.
 	}
 	return [status]
 }
+
+planters(){
+	readgui()
+	readplantdata()
+	loop 3{
+		y := (4*A_Index - 4)+cycle%A_Index%
+		field := plantfield%y%
+	}
+	loop 3{
+		backs := 0
+		back:
+		backs++
+		if (backs > 4){
+			break
+		}
+		cycle%A_Index% := cycle%A_Index% + 1
+		cyclius := cycle%A_Index%
+		IniWrite,%cyclius%,Macro Parts/configs/Data.ini,plantdata,cycle%A_Index%
+		y := (4*A_Index - 4)+cycle%A_Index%
+		field := plantfield%y%
+		msgbox % field
+		msgbox % cycle%A_Index%
+		if (cycle%A_Index% > 4){
+			cycle%A_Index% := 0
+			goto,back
+		}
+		if (field = "None"){
+			goto,back
+		}
+	}
+}
