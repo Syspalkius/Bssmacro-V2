@@ -127,6 +127,7 @@ global convert := true
 global rejoinclaim := true
 global glitterpine := false
 global pinereglittime
+global allowmondo := true
 
 
 

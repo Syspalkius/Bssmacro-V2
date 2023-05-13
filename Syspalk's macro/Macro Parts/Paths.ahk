@@ -1222,3 +1222,66 @@ buyplayant(){
 	sleep 1000
 	GoDoAnt()
 }
+
+mondo(){
+	readgui()
+	if (mondo = "None"){
+		return
+	}
+	EventLog("Going to Mondo")
+	Reset()
+	walktocannon()
+	camrotate(2,"r")
+	send e
+	sleep 1900
+	send {Shift}
+	sendSpace()
+	sendSpace()
+	sleep 250
+	send {Shift}
+	sendSpace()
+	sleep 2000
+	walk(250,"f")
+	walk(300,"b")
+	if (mondo = "Blessing"){
+		sleep 60000
+		return
+	}
+	if (mondo = "Loot"){
+		walk(500,"f")
+		walk(2400,"l")
+		walk(1000,"r")
+		camrotate(2,"r")
+		walk(250,"b")
+		walk(4500,"r")
+		walk(1000,"f")
+		walk(250,"l")
+		walk(500,"f")
+		walk(250,"r")
+		walk(2000,"l")
+		timer := A_TickCount
+		while (1){
+			if (SearchFunction("DeadMondo.png",10)[1] = 0){
+				walk(2000,"r")
+				walk(3250,"f")
+				loop 5{
+					walk(200,"l")
+					walk(2500,"b")
+					walk(200,"l")
+					walk(2500,"f")
+				}loop 5{
+					walk(200,"r")
+					walk(2500,"b")
+					walk(200,"r")
+					walk(2500,"f")
+				}
+				Eventlog("Succesfully looted mondo 👍")
+				return
+			}
+			if (A_TickCount - timer > 300000){
+				Errorlog("Failed to loot mondo because couldn't find dead mondo image after 5 minutes")
+				return
+			}
+		}
+	}
+} 

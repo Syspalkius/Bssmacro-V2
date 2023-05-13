@@ -369,6 +369,12 @@ hours(time){
 
 checktimers(){
 	readtimers()
+	if (A_Min < 13 && A_Min > 00 && allowmondo){
+		mondo()
+		allowmondo := false
+	}else{
+		allowmondo := true
+	}
 	if (A_TickCount - 30mtimer > hours(0.5)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer

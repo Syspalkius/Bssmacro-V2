@@ -215,7 +215,7 @@ Gui,Add,Checkbox, v4tab23 x30 yp+20 cwhite %wolf% +disabled,Kill werewolf
 gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel% +disabled,Kill tunnelbear
 gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% +disabled,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
-Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 +disabled,%mondo%||None|Blessing|Loot
+Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
 Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
 Gui,Add,Text, v4tab29 x180 y370 w10 h17 c%infocol% gmobinfo,?
 
