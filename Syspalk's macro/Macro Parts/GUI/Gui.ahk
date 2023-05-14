@@ -154,25 +154,25 @@ loop 11{
 		yposition := 232
 		checkline3 := false
 	}
-	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber% +disabled,%planter%||1|2|3|4|5|6|7
+	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber% ,%planter%||1|2|3|4|5|6|7
 }
 Gui,Font,s13
 Gui,Add,GroupBox, v3tab28 x10 yp+40 w260 h140 cwhite,Plant Looting
 Gui,Font,s8
-Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %lootplanters% +disabled, loot planters
-Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harviffull1% +disabled, harvest plant 1 when fully grown
-Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2% +disabled, harvest plant 2 when fully grown
-Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3% +disabled, harvest plant 3 when fully grown
+Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %lootplanters% , loot planters
+Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harviffull1% , harvest plant 1 when fully grown
+Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2% , harvest plant 2 when fully grown
+Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3% , harvest plant 3 when fully grown
 Gui,Font,s13
 Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h120 cwhite,Plant Timers
 Gui,Font,s8
 gui,Add,Text,v3tab34 xp+70 yp+20 cwhite,harvest time
 Gui,Add,Text,v3tab35 xp-60 yp+23 cwhite, plant 1
-Gui,Add,DropDownList,v3tab36 xp+50 yp-5 w90 h140 +disabled,%plantdelay1%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab36 xp+50 yp-5 w90 h140 ,%plantdelay1%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab37 xp-50 yp+30 cwhite, plant 2
-Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140 +disabled,%plantdelay2%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140 ,%plantdelay2%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab39 xp-50 yp+30 cwhite, plant 3
-Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140 +disabled,%plantdelay3%||30 min|1 hour|2 hours|4 hours
+Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140 ,%plantdelay3%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Button, v3tab41 x10 yp+50,Reset Settings
 Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
 Gui,Font,s10
@@ -217,7 +217,7 @@ gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% +disabled,Kill kingbeetl
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
 Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
-Gui,Add,Text, v4tab29 x180 y370 w10 h17 c%infocol% gmobinfo,?
+Gui,Add,Text, v4tab29 x180 y330 w10 h17 c%infocol% gmobinfo,?
 
 
 

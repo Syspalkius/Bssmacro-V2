@@ -1438,3 +1438,12 @@ stingerrun(){
 		return
 	}
 }
+
+lootplanter(){
+	sleep 2000
+	walk(300,"l")
+	walk(300,"b")
+	zigzag(800,false)
+	zigzag(800,false)
+	zigzag(800,false)
+}

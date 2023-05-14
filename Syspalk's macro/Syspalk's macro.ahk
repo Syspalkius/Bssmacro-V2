@@ -37,5 +37,5 @@ while(1){
 }
 
 F4::
-planters()
+planters("1 hour")
 return

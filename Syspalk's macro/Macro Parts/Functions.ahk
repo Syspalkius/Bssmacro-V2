@@ -1,4 +1,111 @@
-﻿walk(time,dir){ ;makes the character do walking and stuff like that.
+﻿planters(time){
+	readgui()
+	readplantdata()
+	loop 3{
+		safetycheck()
+		if (time = plantdelay%A_Index%){
+			y := (4*A_Index - 4)+cycle%A_Index%
+			field := plantfield%y%
+			GoField(field,true)
+			PlantAction("take")
+		}
+	}
+	loop 3{
+		safetycheck()
+		if (time = plantdelay%A_Index%){
+			backs := 0
+			back:
+			backs++
+			if (backs > 4){
+				break
+			}
+			cycle%A_Index% := cycle%A_Index% + 1
+			cyclius := cycle%A_Index%
+			IniWrite,%cyclius%,Macro Parts/configs/Data.ini,plantdata,cycle%A_Index%
+			y := (4*A_Index - 4)+cycle%A_Index%
+			field := plantfield%y%
+			key := planter%y%
+			if (cycle%A_Index% > 4){
+				cycle%A_Index% := 0
+				goto,back
+			}
+			if (field = "None"){
+				goto,back
+			}
+			GoField(field,true)
+			PlantAction("place",key,harviffull%A_Index%)
+		}
+	}	
+}
+
+GoFarm(field){ ;function for farming.
+	gofarmstart:
+	;timerchecks()
+	readgui()
+	GoField(field)
+	global currentfield := field
+	if (field = "Pine Tree"){
+		pinetree := true
+	}else{
+		pinetree := false
+	}
+	breaktimer := A_TickCount
+	maxfieldtime := maxtimeonfield * 60000
+	zoomout()
+	Sendhotbar(1)
+	;checkbufftimer()
+	toggleshiftlock()
+	poptimer := 99999999999999999999999999999999999999
+	firstpop := true
+	while(1){
+		
+		loop 3{
+			readgui()
+			pattern(pinetree)
+			zoomout()
+			if (sprinkleralign && patternsize > 10){
+				movetosat(10)
+			}
+			if (reglitter){
+				if (A_Tickcount - pinereglittime < 540000 && glitterpine){
+					global glitterpine := False
+					useitemfrominv("glit.png",true)
+				}
+			}
+			if (checkforvic() = true){
+				pinewalktohive(pinetree)
+				return
+			}
+			if (A_TickCount - breaktimer > maxfieldtime){
+				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000){
+					if (firstpop){
+						firstpop := false
+						poptimer := A_TickCount
+					}
+				}else{
+					toggleshiftlock()
+					pinewalktohive(pinetree)
+					return
+				}
+			}
+			
+			if (bagcheck() = 1){
+				toggleshiftlock()
+				pinewalktohive(pinetree)
+				return
+			}
+		}
+		
+		checkbufftimer()
+		safetycheck()
+		if(reconnected = true){
+			global reconnected := false
+			return
+		}
+	}
+}
+
+walk(time,dir){ ;makes the character do walking and stuff like that.
 	readgui()
 	distance := (time/speed)*28
 	if (dir = "f"){
@@ -222,73 +329,6 @@ GOField(field,nectar := false){ ;function that takes input and turns it in to an
 	}
 }
 
-GoFarm(field){ ;function for farming.
-	gofarmstart:
-	;timerchecks()
-	readgui()
-	GoField(field)
-	global currentfield := field
-	if (field = "Pine Tree"){
-		pinetree := true
-	}else{
-		pinetree := false
-	}
-	breaktimer := A_TickCount
-	maxfieldtime := maxtimeonfield * 60000
-	zoomout()
-	Sendhotbar(1)
-	;checkbufftimer()
-	toggleshiftlock()
-	poptimer := 99999999999999999999999999999999999999
-	firstpop := true
-	while(1){
-		
-		loop 3{
-			readgui()
-			pattern(pinetree)
-			zoomout()
-			if (sprinkleralign && patternsize > 10){
-				movetosat(10)
-			}
-			if (reglitter){
-				if (A_Tickcount - pinereglittime < 540000 && glitterpine){
-					global glitterpine := False
-					useitemfrominv("glit.png",true)
-				}
-			}
-			if (checkforvic() = true){
-				pinewalktohive(pinetree)
-				return
-			}
-			if (A_TickCount - breaktimer > maxfieldtime){
-				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000){
-					if (firstpop){
-						firstpop := false
-						poptimer := A_TickCount
-					}
-				}else{
-					toggleshiftlock()
-					pinewalktohive(pinetree)
-					return
-				}
-			}
-			
-			if (bagcheck() = 1){
-				toggleshiftlock()
-				pinewalktohive(pinetree)
-				return
-			}
-		}
-		
-		checkbufftimer()
-		safetycheck()
-		if(reconnected = true){
-			global reconnected := false
-			return
-		}
-	}
-}
-
 bagcheck(){ ;checks if the bag is full I should have done this with a return but at the time I didn't know how that stuff worked but this works too I guess.
 	if (SpecificPixelSearchFunction(0x1700F7,2,0,0,A_ScreenWidth,150)[1] = 0){
 		return true
@@ -390,11 +430,13 @@ checktimers(){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer
 		checkforpaidant("30 min")
+		planters("30 min")
 	}
 	if (A_TickCount - 1htimer > hours(1)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
 		checkforpaidant("1 hour")
+		planters("1 hour")
 		if (clock){
 			Clock()
 		}
@@ -415,6 +457,7 @@ checktimers(){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
 		checkforpaidant("2 hours")
+		planters("2 hours")
 		if (ant){
 			ant()
 			if (freeant){
@@ -426,6 +469,7 @@ checktimers(){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
 		checkforpaidant("4 hours")
+		planters("4 hours")
 		if (cocodisp){
 			cocodisp()
 		}
@@ -804,33 +848,40 @@ fightcheck(){ ;checks if a vicious bee is present.
 	return [status]
 }
 
-planters(){
+PlantAction(option,key:=0,harvfull:=0){
 	readgui()
-	readplantdata()
-	loop 3{
-		y := (4*A_Index - 4)+cycle%A_Index%
-		field := plantfield%y%
+	if (option = "place"){
+		SendHotbar(key)
+		sleep 1000
+		return
 	}
-	loop 3{
-		backs := 0
-		back:
-		backs++
-		if (backs > 4){
-			break
+	if (option = "take"){
+		sleep 500
+		Send e
+		starttime := A_TickCount
+		while (A_TickCount - starttime < 5000){
+			if (SearchFunction("Harvest_Planter.png",20)[1] = 0){
+				if (harvfull){
+					if (SearchFunction("no.png",20)[1] = 0){
+						mousemove,SearchFunction("no.png",20)[2],SearchFunction("no.png",20)[2]
+						sleep 100
+						Send {Click Left}
+						lootplanter()
+						return true
+					}
+				}else{
+					if (SearchFunction("Yes.png",20)[1] = 0){
+						mousemove,SearchFunction("Yes.png",20)[2],SearchFunction("Yes.png",20)[2]
+						sleep 100
+						Send {Click Left}
+						if (lootplanters){
+							lootplanter()
+						}
+						return true
+					}
+				}
+			}
 		}
-		cycle%A_Index% := cycle%A_Index% + 1
-		cyclius := cycle%A_Index%
-		IniWrite,%cyclius%,Macro Parts/configs/Data.ini,plantdata,cycle%A_Index%
-		y := (4*A_Index - 4)+cycle%A_Index%
-		field := plantfield%y%
-		msgbox % field
-		msgbox % cycle%A_Index%
-		if (cycle%A_Index% > 4){
-			cycle%A_Index% := 0
-			goto,back
-		}
-		if (field = "None"){
-			goto,back
-		}
+		return false
 	}
 }
