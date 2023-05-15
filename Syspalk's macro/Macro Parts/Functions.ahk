@@ -6,8 +6,12 @@
 		if (time = plantdelay%A_Index%){
 			y := (4*A_Index - 4)+cycle%A_Index%
 			field := plantfield%y%
-			GoField(field,true)
-			PlantAction("take")
+			loop 3{
+				GoField(field,true)
+				if (PlantAction("take") = true){
+					break
+				}
+			}
 		}
 	}
 	loop 3{
