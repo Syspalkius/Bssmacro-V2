@@ -44,7 +44,7 @@
 
 GoFarm(field){ ;function for farming.
 	gofarmstart:
-	;timerchecks()
+	checktimers()
 	readgui()
 	GoField(field)
 	global currentfield := field
@@ -57,7 +57,10 @@ GoFarm(field){ ;function for farming.
 	maxfieldtime := maxtimeonfield * 60000
 	zoomout()
 	Sendhotbar(1)
-	;checkbufftimer()
+	if (SearchFuntion("nosprinkler.png",20)[1] = 1){
+		return
+	}
+	checkbufftimer()
 	toggleshiftlock()
 	poptimer := 99999999999999999999999999999999999999
 	firstpop := true
