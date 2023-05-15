@@ -57,7 +57,7 @@ GoFarm(field){ ;function for farming.
 	maxfieldtime := maxtimeonfield * 60000
 	zoomout()
 	Sendhotbar(1)
-	if (SearchFuntion("nosprinkler.png",20)[1] = 1){
+	if (SearchFunction("nosprinkler.png",20)[1] = 1){
 		return
 	}
 	checkbufftimer()
