@@ -115,28 +115,34 @@ GoFarm(field){ ;function for farming.
 checkmobtimers(){
 	readtimers()
 	if (A_TickCount - mob_5mtimer > minutes(6)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_5mtimer
 		;ladybug
 		;rhino beetle
 	}
 	readtimers()
 	if (A_TickCount - mob_20mtimer > minutes(22)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_20mtimer
 		;scorpion
 		;mantis
 	}
 	readtimers()
 	if (A_TickCount - mob_30mtimer > minutes(32)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_30mtimer
 		;spider
 	}
 	readtimers()
 	if (A_TickCount - mob_1htimer > hours(1.05)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_1htimer
 		;werewolf
 	}
 	readtimers()
 	if (A_TickCount - mob_24htimer > hours(24.1)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_24htimer
 		;king beetle
 	}
 	readtimers()
 	if (A_TickCount - mob_48htimer > hours(48.1)){
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_48htimer
 		;tunnel bear
 	}
 }

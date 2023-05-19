@@ -484,12 +484,20 @@ getkeyinfo(){
 
 
 readtimers(){
+	IniRead,mob_5mtimer,Macro Parts/configs/Timers.ini,mobs,mob_5mtimer
+	IniRead,mob_20mtimer,Macro Parts/configs/Timers.ini,mobs,mob_20mtimer
+	IniRead,mob_30mtimer,Macro Parts/configs/Timers.ini,mobs,mob_30mtimer
+	IniRead,mob_1htimer,Macro Parts/configs/Timers.ini,mobs,mob_1htimer
+	IniRead,mob_24htimer,Macro Parts/configs/Timers.ini,mobs,mob_24htimer
+	IniRead,mob_48htimer,Macro Parts/configs/Timers.ini,mobs,mob_48htimer
+
 	IniRead,30mtimer,Macro Parts/configs/Timers.ini,timers,30mtimer
 	IniRead,1htimer,Macro Parts/configs/Timers.ini,timers,1htimer
 	IniRead,2htimer,Macro Parts/configs/Timers.ini,timers,2htimer
 	IniRead,4htimer,Macro Parts/configs/Timers.ini,timers,4htimer
 	IniRead,22htimer,Macro Parts/configs/Timers.ini,timers,22htimer
 	IniRead,24htimer,Macro Parts/configs/Timers.ini,timers,24htimer
+
 	IniRead,buff2timer,Macro Parts/configs/Timers.ini,buffs,buff2timer
 	IniRead,buff3timer,Macro Parts/configs/Timers.ini,buffs,buff3timer
 	IniRead,buff4timer,Macro Parts/configs/Timers.ini,buffs,buff4timer
@@ -617,6 +625,12 @@ savehotkeys(){
 
 
 resettimers(tooltip := 1){
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_5mtimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_20mtimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_30mtimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_1htimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_24htimer
+	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_48htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,30mtimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,1htimer
 	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,2htimer
