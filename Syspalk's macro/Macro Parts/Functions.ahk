@@ -427,7 +427,7 @@ SearchFunction(image,variation){ ;imagesearch in function so it's nicer to use.
 } 
 
 
-GOField(field,nectar := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
+GOField(field,nectar := false,lootmob := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
 	if (field = "Bamboo"){
 		bamboo(nectar)
 	}else if (field = "Blue Flower"){
@@ -462,6 +462,10 @@ GOField(field,nectar := false){ ;function that takes input and turns it in to an
 		sunf(nectar)
 	}else if (field = "Clover"){
 		clover(nectar)
+	}
+	if (lootmob){
+		squares(200,false)
+		squares(200,false)
 	}
 }
 
@@ -959,10 +963,16 @@ PlantAction(option,key:=0,harvfull:=0){
 killmob(mob){
 	if (mob = "ladybug"){
 		Eventlog("killing the ladybugs")
-
+		GoField("Strawberry",,true)
+		GoField("Mushroom",,true)
+		GoField("Clover",,true)
 	}else if (mob = "beetle"){
 		Eventlog("killing the rhino beetles")
-
+		readgui()
+		if not (lady){
+			GoField("Clover",,true)
+		}
+		GoField("Bamboo",,true)
 	}else if (mob = "scorpion"){
 		Eventlog("killing the scorpions")
 
