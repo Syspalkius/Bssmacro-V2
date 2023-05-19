@@ -134,6 +134,12 @@ global vicfield
 global cycle1
 global cycle2
 global cycle3
+global mob_5mtimer
+global mob_20mtimer
+global mob_30mtimer
+global mob_1htimer
+global mob_24htimer
+global mob_48htimer
 
 
 
