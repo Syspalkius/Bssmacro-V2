@@ -973,18 +973,19 @@ killmob(mob){
 			GoField("Clover",,true)
 		}
 		GoField("Bamboo",,true)
+		GoField("Pineapple",,true)
 	}else if (mob = "scorpion"){
 		Eventlog("killing the scorpions")
-
+		GoField("Rose",,true)
 	}else if (mob = "mantis"){
 		Eventlog("killing the mantisses")
-
+		GoField("Pine Tree",,true)
 	}else if (mob = "spider"){
 		Eventlog("killing the spider")
-
+		GoField("Spider",,true)
 	}else if (mob = "wolf"){
 		Eventlog("killing werewolf")
-
+		GoField("Pine Tree",,true)
 	}else if (mob = "kb"){
 		Eventlog("killing the king beetle")
 

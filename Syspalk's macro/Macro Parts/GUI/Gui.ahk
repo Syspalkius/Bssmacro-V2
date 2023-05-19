@@ -212,8 +212,8 @@ Gui,Add,Checkbox, v4tab20 x30 yp+20 cwhite %spider% ,Kill spider
 Gui,Add,Checkbox, v4tab21 x30 yp+20 cwhite %scorpion% ,Kill scorpions
 Gui,Add,Checkbox, v4tab22 x30 yp+20 cwhite %mantis% ,Kill mantises
 Gui,Add,Checkbox, v4tab23 x30 yp+20 cwhite %wolf% ,Kill werewolf
-gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel% ,Kill tunnelbear
-gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% ,Kill kingbeetle
+gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel% +disabled,Kill tunnelbear
+gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% +disabled,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
 Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
