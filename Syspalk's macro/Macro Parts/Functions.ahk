@@ -464,8 +464,8 @@ GOField(field,nectar := false,lootmob := false){ ;function that takes input and 
 		clover(nectar)
 	}
 	if (lootmob){
-		squares(200,false)
-		squares(200,false)
+		squares(100,false)
+		squares(100,false)
 	}
 }
 
@@ -980,6 +980,7 @@ killmob(mob){
 	}else if (mob = "mantis"){
 		Eventlog("killing the mantisses")
 		GoField("Pine Tree",,true)
+		GoField("Pineapple",,true)
 	}else if (mob = "spider"){
 		Eventlog("killing the spider")
 		GoField("Spider",,true)
