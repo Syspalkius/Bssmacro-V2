@@ -114,36 +114,58 @@ GoFarm(field){ ;function for farming.
 
 checkmobtimers(){
 	readtimers()
+	readgui()
 	if (A_TickCount - mob_5mtimer > minutes(6)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_5mtimer
-		;ladybug
-		;rhino beetle
+		if (lady){
+			killmob("ladybug")
+		}
+		if (rhino){
+			killmob("beetle")
+		}
 	}
 	readtimers()
+	readgui()
 	if (A_TickCount - mob_20mtimer > minutes(22)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_20mtimer
-		;scorpion
-		;mantis
+		if (scorpion){
+			killmob("scorpion")
+		}
+		if (mantis){
+			killmob("mantis")
+		}
 	}
 	readtimers()
+	readgui()
 	if (A_TickCount - mob_30mtimer > minutes(32)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_30mtimer
-		;spider
+		if (spider){
+			killmob("spider")
+		}
 	}
 	readtimers()
+	readgui()
 	if (A_TickCount - mob_1htimer > hours(1.05)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_1htimer
-		;werewolf
+		if (wolf){
+			killmob("wolf")
+		}
 	}
 	readtimers()
+	readgui()
 	if (A_TickCount - mob_24htimer > hours(24.1)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_24htimer
-		;king beetle
+		if (kingbeetle){
+			killmob("kb")
+		}
 	}
 	readtimers()
+	readgui()
 	if (A_TickCount - mob_48htimer > hours(48.1)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_48htimer
-		;tunnel bear
+		if (tunnel){
+			killmob("tb")
+		}
 	}
 }
 
@@ -934,3 +956,30 @@ PlantAction(option,key:=0,harvfull:=0){
 	}
 }
 
+killmob(mob){
+	if (mob = "ladybug"){
+		Eventlog("killing the ladybugs")
+
+	}else if (mob = "beetle"){
+		Eventlog("killing the rhino beetles")
+
+	}else if (mob = "scorpion"){
+		Eventlog("killing the scorpions")
+
+	}else if (mob = "mantis"){
+		Eventlog("killing the mantisses")
+
+	}else if (mob = "spider"){
+		Eventlog("killing the spider")
+
+	}else if (mob = "wolf"){
+		Eventlog("killing werewolf")
+
+	}else if (mob = "kb"){
+		Eventlog("killing the king beetle")
+
+	}else if (mob = "tb"){
+		Eventlog("killing the tunnel bear")
+
+	}
+}
