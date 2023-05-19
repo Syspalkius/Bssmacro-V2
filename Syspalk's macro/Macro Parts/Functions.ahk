@@ -112,6 +112,107 @@ GoFarm(field){ ;function for farming.
 	}
 }
 
+checkmobtimers(){
+	readtimers()
+	if (A_TickCount - mob_5mtimer > minutes(6)){
+		;ladybug
+		;rhino beetle
+	}
+	readtimers()
+	if (A_TickCount - mob_20mtimer > minutes(22)){
+		;scorpion
+		;mantis
+	}
+	readtimers()
+	if (A_TickCount - mob_30mtimer > minutes(32)){
+		;spider
+	}
+	readtimers()
+	if (A_TickCount - mob_1htimer > hours(1.05)){
+		;werewolf
+	}
+	readtimers()
+	if (A_TickCount - mob_24htimer > hours(24.1)){
+		;king beetle
+	}
+	readtimers()
+	if (A_TickCount - mob_48htimer > hours(48.1)){
+		;tunnel bear
+	}
+}
+
+
+checktimers(){
+	checkmobtimers()
+	readtimers()
+	if (A_Min < 13 && A_Min > 00 && allowmondo){
+		mondo()
+		allowmondo := false
+	}else{
+		allowmondo := true
+	}
+	if (A_TickCount - 30mtimer > hours(0.5)){
+		safetycheck()
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer
+		checkforpaidant("30 min")
+		planters("30 min")
+	}
+	readtimers()
+	if (A_TickCount - 1htimer > hours(1)){
+		safetycheck()
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
+		checkforpaidant("1 hour")
+		planters("1 hour")
+		if (clock){
+			Clock()
+		}
+		if (redbooster){
+			redbooster()
+		}
+		if (whitebooster){
+			whitebooster()
+		}
+		if (shrine){
+			shrine()
+		}
+		if (bluebooster){
+			bluebooster()
+		}
+	}
+	readtimers()
+	if (A_TickCount - 2htimer > hours(2)){
+		safetycheck()
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
+		checkforpaidant("2 hours")
+		planters("2 hours")
+		if (ant){
+			ant()
+			if (freeant){
+				GoDoAnt()
+			}
+		}
+	}
+	readtimers()
+	if (A_TickCount - 4htimer > hours(4)){
+		safetycheck()
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
+		checkforpaidant("4 hours")
+		planters("4 hours")
+		if (cocodisp){
+			cocodisp()
+		}
+	}
+	readtimers()
+	if (A_TickCount - 22htimer > hours(22)){
+		safetycheck()
+		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,22htimer
+		if (gluedisp){
+			gluedisp()
+		}
+	}
+}
+
+
 walk(time,dir){ ;makes the character do walking and stuff like that.
 	readgui()
 	distance := (time/speed)*28
@@ -425,74 +526,8 @@ hours(time){
 	return time*3600000
 }
 
-checktimers(){
-	readtimers()
-	if (A_Min < 13 && A_Min > 00 && allowmondo){
-		mondo()
-		allowmondo := false
-	}else{
-		allowmondo := true
-	}
-	if (A_TickCount - 30mtimer > hours(0.5)){
-		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer
-		checkforpaidant("30 min")
-		planters("30 min")
-	}
-	if (A_TickCount - 1htimer > hours(1)){
-		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
-		checkforpaidant("1 hour")
-		planters("1 hour")
-		if (clock){
-			Clock()
-		}
-		if (redbooster){
-			redbooster()
-		}
-		if (whitebooster){
-			whitebooster()
-		}
-		if (shrine){
-			shrine()
-		}
-		if (bluebooster){
-			bluebooster()
-		}
-	}
-	if (A_TickCount - 2htimer > hours(2)){
-		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
-		checkforpaidant("2 hours")
-		planters("2 hours")
-		if (ant){
-			ant()
-			if (freeant){
-				GoDoAnt()
-			}
-		}
-	}
-	if (A_TickCount - 4htimer > hours(4)){
-		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
-		checkforpaidant("4 hours")
-		planters("4 hours")
-		if (cocodisp){
-			cocodisp()
-		}
-	}
-	if (A_TickCount - 22htimer > hours(22)){
-		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,22htimer
-		if (gluedisp){
-			gluedisp()
-		}
-	}
-	if (A_TickCount - 24htimer > hours(24)){
-		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,24htimer
-
-	}
+minutes(time){
+	return time*60000
 }
 
 EventLog(Event){ ;saves what it does and when it does it in a text file for debugging
@@ -892,3 +927,4 @@ PlantAction(option,key:=0,harvfull:=0){
 		return false
 	}
 }
+
