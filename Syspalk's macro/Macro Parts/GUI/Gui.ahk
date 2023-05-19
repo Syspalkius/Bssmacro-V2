@@ -29,22 +29,20 @@ Gui,Add,Text, gkeybindbutton v1tab16 x40 yp+37 cf5c88e,Keybinds
 Gui,Add,Picture, gkeybindbutton v1tab17 x7 yp+3, Macro Parts\GUI\Images/keyboard.png
 Gui,Add,Text, gSettingsbutton v1tab18 x40 yp+40 cf5c88e,Settings
 Gui,Add,Picture, gSettingsbutton v1tab19 x5 yp-5, Macro Parts\GUI\Images/cog.png
-Gui,Font,s12 Bold
-Gui,Add,Text, v1tab20 x205 y15 c%updatecol%,Latest Update : 03/24/2023
 Gui,Font,s15 Bold
-Gui,Add,Text, v1tab21 x225 yp+25 cwhite,New in This version
+Gui,Add,Text, v1tab21 x225 y15 cgreen,New in This version
 Gui,Font,s7
 FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
-Gui,Add,Text, v1tab22 x200 yp+40 w245 h165 cwhite +wrap,%UpdateText%
+Gui,Add,Text, v1tab22 x200 yp+30 w245 h190 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
 Gui,Add,Button, v1tab23 x270 y250,View More
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab24 x285 y280 cwhite,About
 Gui,Font,s9
-Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was almost completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955] or you can join my discord server and report it there.`n`nLicensed with a GNU LGPL v2.1 license.
+Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was almost completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955].`n`nLicensed with a GNU LGPL v2.1 license.
 Gui,Font,s12 Bold
 Gui,Add,Link, v1tab26 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
-Gui,Add,Link, v1tab27 xp yp+20,<a href="https://github.com/Syspalkius/bssmacro">Goto Github</a>
+Gui,Add,Link, v1tab27 xp yp+20,<a href="https://github.com/Syspalkius/Bssmacro-V2">Goto Github</a>
 
 
 
