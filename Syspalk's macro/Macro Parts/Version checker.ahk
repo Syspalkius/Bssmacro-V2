@@ -1,5 +1,4 @@
-﻿global updatecol := "Green"
-global currentversion
+﻿global currentversion
 Fileread,currentversion,Macro Parts\GUI\version.txt
 try{
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")

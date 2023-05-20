@@ -559,7 +559,7 @@ clover(nectar){
 	Send {Shift}
 	sleep 100
 	SendSpace()
-	sleep 200
+	sleep 300
 	Send {Shift}
 	SendSpace()
 	sleep 4000

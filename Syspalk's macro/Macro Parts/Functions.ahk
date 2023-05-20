@@ -83,7 +83,7 @@ GoFarm(field){ ;function for farming.
 				return
 			}
 			if (A_TickCount - breaktimer > maxfieldtime){
-				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000){
+				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000 && waitforpop){
 					if (firstpop){
 						firstpop := false
 						poptimer := A_TickCount
