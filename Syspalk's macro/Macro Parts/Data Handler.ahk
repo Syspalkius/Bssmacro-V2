@@ -653,6 +653,8 @@ resettimers(tooltip := 1){
 		Tooltip,The timers have been reset!
 		sleep 2000
 		Tooltip,
+		savedata()
+		reload
 	}
 }
 
