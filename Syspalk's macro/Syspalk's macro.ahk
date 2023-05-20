@@ -1,7 +1,7 @@
 ﻿Tooltip,Loading...
 SetBatchLines, -1
 SendMode Input
-SetMouseDelay, -1
+SetMouseDelay, 2
 #Include Macro Parts\Data Handler.ahk
 readini() ;gets all the data from the ini file.
 #Include Macro Parts\Version checker.ahk

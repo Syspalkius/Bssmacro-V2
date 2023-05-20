@@ -84,6 +84,7 @@ GoFarm(field){ ;function for farming.
 				pinewalktohive(pinetree)
 				return
 			}
+			toggleshiftlock()
 			if (A_TickCount - breaktimer > maxfieldtime){
 				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000 && waitforpop){
 					if (firstpop){
