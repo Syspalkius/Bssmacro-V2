@@ -1,4 +1,5 @@
 ﻿planters(time){
+	return
 	readgui()
 	readplantdata()
 	loop 3{

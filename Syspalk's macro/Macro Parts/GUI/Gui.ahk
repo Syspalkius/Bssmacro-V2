@@ -110,7 +110,7 @@ Gui,Font,s13
 Gui,Add,Groupbox, v3tab2 x10 y50 w435 h215 cwhite,Cycle
 Gui,Font,s8
 Gui,Add,Text, v3tab3 x15 y80 cwhite,Fields`n`nPlanter`n`n`nFields`n`nPlanter`n`n`nFields`n`nPlanter
-Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4,%plantfield1%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
+Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4 +disabled,%plantfield1%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 xposition := 65
 yposition := 80
 checkline2 := true
@@ -130,9 +130,9 @@ loop 11{
 		yposition := 206
 		checkline3 := false
 	}
-	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%fieldnumber% ,%plantfield%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
+	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%fieldnumber% +disabled,%plantfield%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 }
-Gui,Add,DropDownList, x65 y105 w80 h200 v3tab16 ,%planter1%||1|2|3|4|5|6|7
+Gui,Add,DropDownList, x65 y105 w80 h200 v3tab16 +disabled,%planter1%||1|2|3|4|5|6|7
 xposition := 65
 yposition := 105
 checkline2 := true
@@ -152,7 +152,7 @@ loop 11{
 		yposition := 232
 		checkline3 := false
 	}
-	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber% ,%planter%||1|2|3|4|5|6|7
+	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber% +disabled,%planter%||1|2|3|4|5|6|7
 }
 Gui,Font,s13
 Gui,Add,GroupBox, v3tab28 x10 yp+40 w260 h140 cwhite,Plant Looting
@@ -345,6 +345,7 @@ Gui,Add,Button,v10tab25 x380 y560,credits
 Gui,Add,Text, v10tab26 x200 y52 w10 h17 c%infocol% gmovespeedinfo,?
 Gui,Add,Text, v10tab27 x30 y120 w10 h17 c%infocol% ghookeventinfo,?
 Gui,Add,Text, v10tab28 x30 y155 w10 h17 c%infocol% ghookerrorinfo,?
+
 
 var := 0
 loop 11{
