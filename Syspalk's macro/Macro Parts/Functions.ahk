@@ -290,6 +290,7 @@ camrotate(amount,dir){ ;just rotates the damn camera
 	}
 	loop %amount%{
 		Send %dir%
+		sleep 5
 	}
 }
 

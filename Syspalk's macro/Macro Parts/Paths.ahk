@@ -109,7 +109,7 @@ pump(nectar){
 	camrotate(1,"r")
 	SendSpace()
 	sleep 2000
-	walk(1000,"f")
+	walk(1300,"f")
 	if (nectar = true){
 		walk(4000,"f")
 		sleep 100
@@ -346,7 +346,7 @@ mush(nectar){
 	sleep 300
 	Send {shift}
 	Sendspace()
-	sleep 666
+	sleep 750
 	SendSpace()
 	sleep 3000
 	camrotate(2,"l")
@@ -360,8 +360,7 @@ mush(nectar){
 		walk(100,"b")
 	}
 	else{
-		walk(2250,"f")
-		walk(500,"l")
+		walk(3000,"f")
 	}
 }
 
@@ -599,6 +598,7 @@ clover(nectar){
 }
 
 pinewalktohive(pinetree){
+	readgui()
 	if (pinewalkconv && pinetree){
 		eventlog("Walking back to the hive")
 		sleep 100
@@ -683,12 +683,12 @@ pinewalktohive(pinetree){
 				return
 			}else if (A_TickCount - starttimer > 4000){
 				walkhold("r","Up")
-				break
+				Errorlog("Couldn't find E button to convert at hive")
+				Reset()
+				return
 			}
 		}
 	}
-	Errorlog("Couldn't find E button to convert at hive")
-	Reset()
 }
 
 Clock(){
