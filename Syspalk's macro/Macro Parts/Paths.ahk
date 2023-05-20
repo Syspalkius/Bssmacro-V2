@@ -1180,7 +1180,7 @@ ant(){
 	Send {Shift}
 	sleep 600
 	SendSpace()
-	sleep 7200
+	sleep 7000
 	SendSpace()
 	sleep 3000
 	walk(2000,"f")

@@ -35,7 +35,3 @@ while(1){
 		pattern()
 	}
 }
-
-F4::
-planters("1 hour")
-return
