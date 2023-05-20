@@ -389,7 +389,7 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 		else{
 			camrotate(4,"l")
 		}
-		if (A_TickCount - breaktimer > 15000){
+		if (A_TickCount - breaktimer > 10000){
 			ErrorLog("Failed to detect hive image")
 			if (Fails = 1){
 				global Fails := 0
@@ -633,14 +633,20 @@ Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
 		IniRead,plink2,Macro Parts/configs/Links.ini,private servers,alt
 		WinClose, ahk_exe chrome.exe
 		sleep 1000
-		if (plink1 && serverjoinstatus){
-			run, %plink1%
+		if (plink1 != "Insert Link" && serverjoinstatus){
+			try{
+				run, %plink1%
+			}
 			attempt := 2
-		}else if (plink1 && attempt = 1){
-			run, %plink1%
+		}else if (plink1 != "Insert Link" && attempt = 1){
+			try{
+				run, %plink1%
+			}
 			attempt := 2
-		}else if (plink2 && serverjoinstatus != true && attempt = 2){
-			run, %plink2%
+		}else if (plink2 != "Insert Link" && serverjoinstatus != true && attempt = 2){
+			try{
+				run, %plink2%
+			}
 			attempt := 3
 		}else if (serverjoinstatus != true){
 			run, https://www.roblox.com/games/2000343487?privateServerLinkCode=67181684702561561812873405717919
