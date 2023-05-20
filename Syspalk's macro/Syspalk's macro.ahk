@@ -3,13 +3,13 @@ SetBatchLines, -1
 SendMode Input
 SetMouseDelay, -1
 #Include Macro Parts\Data Handler.ahk
-readini()
+readini() ;gets all the data from the ini file.
 #Include Macro Parts\Version checker.ahk
 #Include Macro Parts\GUI\GUI.ahk
 #Include Macro Parts\functions.ahk
 #Include Macro Parts\paths.ahk
 #Include Macro Parts\Patterns.ahk
-startmacrokeys()
+startmacrokeys() ;activates the start/stop/pause keys
 return
 
 GuiClose: ;when gui closes will save data and close the macro.

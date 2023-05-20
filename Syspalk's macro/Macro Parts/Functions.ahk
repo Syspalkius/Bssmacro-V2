@@ -78,7 +78,9 @@ GoFarm(field){ ;function for farming.
 					useitemfrominv("glit.png",true)
 				}
 			}
+			toggleshiftlock()
 			if (checkforvic() = true){
+				toggleshiftlock()
 				pinewalktohive(pinetree)
 				return
 			}

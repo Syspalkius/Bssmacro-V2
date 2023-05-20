@@ -1118,9 +1118,12 @@ GoDoAnt(){
 	walk(400,"b")
 	WinGetPos , windowX, windowY, windowWidth, windowY, Roblox
 	winUp := windowY/3
-	loop 23{
+	starttime := A_TickCount
+	walkhold("r","Down")
+	while (A_Tickcount - starttime < 2000){
 		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*20 Macro parts/images/e.png 
 		if (errorlevel = 0){
+			walkhold("r","Up")
 			EventLog("succesfully did ant")
 			Send e
 			mousemove,A_ScreenWidth/2,A_ScreenHeight/2
@@ -1137,16 +1140,11 @@ GoDoAnt(){
 					mouseMove,SearchFunction("keepold.png",20)[2],SearchFunction("keepold.png",20)[3]
 					sleep 1000
 					Send {click Left}
+					sleep 100
 					return
 				}
 				if (A_TickCount - breakytimer > 330000){
 					Reconnect()
-					if (tier = 1){
-						GuiControlGet,pineconvhive
-						if (pineconvhive){
-							Reset()
-						}
-					}
 					ErrorLog("[RECONNECT] Reconnected (Cause : Still hasn't died in ant after 5 and a half minutes)")
 					return
 				}
@@ -1154,18 +1152,11 @@ GoDoAnt(){
 			}
 			Send {Click Left Up}
 			Reconnect()
-			if (tier = 1){
-				GuiControlGet,pineconvhive
-				if (pineconvhive){
-					Reset()
-				}
-			}
 			return
 		}
-		else{
-			walk(75,"r")
-		}
+		sleep 10
 	}
+	walkhold("r","Up")
 	ErrorLog("failed to play ant")
 }
 
@@ -1180,7 +1171,7 @@ ant(){
 	Send {Shift}
 	sleep 600
 	SendSpace()
-	sleep 7000
+	sleep 6850
 	SendSpace()
 	sleep 3000
 	walk(2000,"f")
@@ -1207,7 +1198,7 @@ buyplayant(){
 	Send {Shift}
 	sleep 1200
 	SendSpace()
-	sleep 7200
+	sleep 6850
 	SendSpace()
 	sleep 3000
 	walk(2000,"f")

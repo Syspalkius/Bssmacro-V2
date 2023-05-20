@@ -1,15 +1,1 @@
-1. Made a new Reconnect
-2. Changed the walk to cannon to now reconnect after 3 fails instead of 1
-3. Changed candles path to be more reliable
-4. Changed mushroom nectar path to be more reliable
-5. Changed bluf nectar path to be more reliable
-6. Changed bamboo nectar path to be more reliable
-7. Split up the macro in to multiple files
-8. Cleaned up the code and rewrote huge sections of it
-9. If you want to change the patterns, you'll find them in patterns.ahk
-10. Made a new image for the e button, this should fix standing still at hive and not doing anything and some other issues connected to the e button
-11. pine walk convert now converts the balloon even if convert type is on none
-12. Fixed a bunch of minor bugs
-13. Added a webhook feature for basic events that take place
-14. Added a webhook feature for errors
-15. Added a 5 nectar preset for blue hives (pinetree farming)
+1. Chagned the ant thing.
