@@ -1475,7 +1475,7 @@ tunnelbear(){
 	walk(3100,"b")
 	loop 20{
 		sleep 2000
-		walk(550,"b")
+		walk(525,"b")
 	}
 }
 
