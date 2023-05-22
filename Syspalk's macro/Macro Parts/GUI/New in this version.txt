@@ -1,4 +1,4 @@
-1. Changed the ant thing.
+1. Fixed an issue with the planters, they're now ready for testing.
 2.
 3.
 4.

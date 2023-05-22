@@ -1,25 +1,25 @@
 ﻿planters(time){
-	return
 	readgui()
 	readplantdata()
 	loop 3{
-		safetycheck()
 		if (time = plantdelay%A_Index%){
+			safetycheck()
 			y := (4*A_Index - 4)+cycle%A_Index%
 			field := plantfield%y%
 			loop 3{
-				GoField(field,true)
-				if (PlantAction("take") = true){
-					break
+				if (GoField(field,true) != true){
+					if (PlantAction("take") = true){
+						break
+					}
 				}
 			}
 		}
 	}
 	loop 3{
-		safetycheck()
 		if (time = plantdelay%A_Index%){
 			backs := 0
 			back:
+			safetycheck()
 			backs++
 			if (backs > 4){
 				break
@@ -432,7 +432,9 @@ SearchFunction(image,variation){ ;imagesearch in function so it's nicer to use.
 
 
 GOField(field,nectar := false,lootmob := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
-	if (field = "Bamboo"){
+	if (field = "None"){
+		return true
+	}else if (field = "Bamboo"){
 		bamboo(nectar)
 	}else if (field = "Blue Flower"){
 		bluf(nectar)
@@ -731,8 +733,7 @@ safetycheck(){ ;this will make sure that you stay in the game
 		ErrorLog("Reconnected (Issue : Disconnected.png was found)")
 		Reconnect()
 	}
-	WinActivate, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
-	IfWinActive, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
+	IfWinExist, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
 	{
 	}else{
 		global reconnected := true
@@ -999,9 +1000,9 @@ killmob(mob){
 		GoField("Pine Tree",,true)
 	}else if (mob = "kb"){
 		Eventlog("killing the king beetle")
-
+		kingbeetle()
 	}else if (mob = "tb"){
 		Eventlog("killing the tunnel bear")
-
+		tunnelbear()
 	}
 }
