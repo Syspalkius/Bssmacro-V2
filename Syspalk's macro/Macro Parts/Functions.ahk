@@ -7,7 +7,7 @@
 			y := (4*A_Index - 4)+cycle%A_Index%
 			field := plantfield%y%
 			loop 3{
-				if (GoField(field,true) != true){
+				if (GoField(field,true) != true && cycle != 0){
 					if (PlantAction("take") = true){
 						break
 					}
@@ -21,7 +21,7 @@
 			back:
 			safetycheck()
 			backs++
-			if (backs > 4){
+			if (backs > 5){
 				break
 			}
 			cycle%A_Index% := cycle%A_Index% + 1

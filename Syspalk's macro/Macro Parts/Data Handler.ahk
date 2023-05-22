@@ -746,9 +746,9 @@ resetconfig(){
 
 
 ButtonResetCycleData(tooltip := 1){
-	IniWrite,1,Macro Parts/configs/Data.ini,planters,plantcycle1
-	IniWrite,1,Macro Parts/configs/Data.ini,planters,plantcycle2
-	IniWrite,1,Macro Parts/configs/Data.ini,planters,plantcycle3
+	IniWrite,0,Macro Parts/configs/Data.ini,planters,plantcycle1
+	IniWrite,0,Macro Parts/configs/Data.ini,planters,plantcycle2
+	IniWrite,0,Macro Parts/configs/Data.ini,planters,plantcycle3
 	if (tooltip){
 		Tooltip,Successfully reset the cycle data!
 		sleep 2000

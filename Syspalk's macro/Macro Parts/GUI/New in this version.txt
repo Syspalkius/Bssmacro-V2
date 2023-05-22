@@ -1,4 +1,4 @@
-1. Created loading thing.
+1. Made small fixes regarding planters.
 2.
 3.
 4.
