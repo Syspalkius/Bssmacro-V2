@@ -1,4 +1,4 @@
-1. Fixed an issue with the planters, they're now ready for testing.
+1. Added a tooltip on the pattern size slider.
 2.
 3.
 4.
