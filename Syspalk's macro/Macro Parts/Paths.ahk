@@ -1438,3 +1438,66 @@ lootplanter(){
 	zigzag(800,false)
 	zigzag(800,false)
 }
+
+tunnelbear(){
+	Eventlog("Going to kill tunnelbear")
+	r(true)
+	Reset()
+	walktocannon()
+	camrotate(2,"l")
+	Send e
+	Sleep 100
+	SendSpace()
+	sleep 900
+	Send {Shift}
+	SendSpace()
+	sleep 300
+	Send {Shift}
+	sleep 6700
+	walk(2500,"r")
+	walk(3000,"b")
+	walk(3000,"l")
+	SendInput {PGUP}
+	SendInput {PGUP}
+	SendInput {PGUP}
+	SendInput {PGUP}
+	walk(1000,"f")
+	walk(300,"l")
+	walk(500,"b")
+	walk(5000,"l")
+	SendInput {PGDN}
+	SendInput {PGDN}
+	SendInput {PGDN}
+	SendInput {PGDN}
+	camrotate(4,"r")
+	sleep 100
+	zoomout()
+	walk(3100,"b")
+	loop 20{
+		sleep 2000
+		walk(500,"b")
+	}
+}
+
+kingbeetle(){
+	EventLog("Going to kill kingbeetle")
+	bluf(false)
+	walk(3000,"r")
+	walk(6000,"f")
+	camrotate(1,"r")
+	walk(1750,"b")
+	camrotate(1,"r")
+	walk(2500,"f")
+	camrotate(2,"l")
+	walk(2500,"b")
+	zigzag(220,false)
+	zigzag(220,false)
+	if (SearchFunction("keepold.png",20)[1] = 0){
+		Send {Click Left Up}
+		sleep 1000
+		mouseMove,SearchFunction("keepold.png",20)[2],SearchFunction("keepold.png",20)[3]
+		sleep 1000
+		Send {click Left}
+		return
+	}
+}
