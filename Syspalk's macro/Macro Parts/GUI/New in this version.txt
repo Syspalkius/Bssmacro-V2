@@ -1,4 +1,4 @@
-1. Added a tooltip on the pattern size slider.
+1. Changed tunnel bear combat walking speed.
 2.
 3.
 4.
