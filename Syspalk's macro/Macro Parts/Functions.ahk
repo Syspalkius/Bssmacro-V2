@@ -4,10 +4,10 @@
 	loop 3{
 		if (time = plantdelay%A_Index%){
 			safetycheck()
-			y := (4*A_Index - 4)+cycle%A_Index%
+			y := (4*A_Index - 4)+plantcycle%A_Index%
 			field := plantfield%y%
 			loop 3{
-				if (GoField(field,true) != true && cycle != 0){
+				if (GoField(field,true) != true && plantcycle%A_Index% != 0){
 					if (PlantAction("take") = true){
 						break
 					}
@@ -24,14 +24,14 @@
 			if (backs > 5){
 				break
 			}
-			cycle%A_Index% := cycle%A_Index% + 1
-			cyclius := cycle%A_Index%
-			IniWrite,%cyclius%,Macro Parts/configs/Data.ini,plantdata,cycle%A_Index%
-			y := (4*A_Index - 4)+cycle%A_Index%
+			plantcycle%A_Index% := plantcycle%A_Index% + 1
+			cyclius := plantcycle%A_Index%
+			IniWrite,%cyclius%,Macro Parts/configs/Data.ini,plantdata,plantcycle%A_Index%
+			y := (4*A_Index - 4)+plantcycle%A_Index%
 			field := plantfield%y%
 			key := planter%y%
-			if (cycle%A_Index% > 4){
-				cycle%A_Index% := 0
+			if (plantcycle%A_Index% > 4){
+				plantcycle%A_Index% := 0
 				goto,back
 			}
 			if (field = "None"){

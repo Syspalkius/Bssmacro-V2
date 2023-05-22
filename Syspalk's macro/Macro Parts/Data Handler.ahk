@@ -131,9 +131,6 @@ global allowmondo := true
 global currentfield
 global lastvickill := -9999999
 global vicfield
-global cycle1
-global cycle2
-global cycle3
 global mob_5mtimer
 global mob_20mtimer
 global mob_30mtimer
@@ -886,7 +883,7 @@ loadticketfarmer(){
 }
 
 readplantdata(){
-	IniRead,cycle1,Macro Parts/configs/Data.ini,plantdata,cycle1
-	IniRead,cycle2,Macro Parts/configs/Data.ini,plantdata,cycle2
-	IniRead,cycle3,Macro Parts/configs/Data.ini,plantdata,cycle3
+	IniRead,plantcycle1,Macro Parts/configs/Data.ini,planters,plantcycle1
+	IniRead,plantcycle2,Macro Parts/configs/Data.ini,planters,plantcycle2
+	IniRead,plantcycle3,Macro Parts/configs/Data.ini,planters,plantcycle3
 }
