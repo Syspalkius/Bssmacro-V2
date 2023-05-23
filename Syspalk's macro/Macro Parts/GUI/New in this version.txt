@@ -1,15 +1,4 @@
 1. Fixed an issue regarding vicious bee combat.
 2. Fixed an issue with mondo looting (hopefully).
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
+3. Fixed issue with planters not planting.
+4. Fixed issue with planters not being taken properly.

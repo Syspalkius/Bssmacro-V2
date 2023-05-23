@@ -49,6 +49,9 @@ global harviffull3
 global plantdelay1
 global plantdelay2
 global plantdelay3
+global plantcycle1
+global plantcycle2
+global plantcycle3
 global clock
 global gluedisp
 global strawdisp

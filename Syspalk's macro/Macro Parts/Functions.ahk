@@ -24,9 +24,11 @@
 			if (backs > 5){
 				break
 			}
+			readplantdata()
 			plantcycle%A_Index% := plantcycle%A_Index% + 1
 			cyclius := plantcycle%A_Index%
-			IniWrite,%cyclius%,Macro Parts/configs/Data.ini,plantdata,plantcycle%A_Index%
+			IniWrite,%cyclius%,Macro Parts/configs/Data.ini,planters,plantcycle%A_Index%
+			readplantdata()
 			y := (4*A_Index - 4)+plantcycle%A_Index%
 			field := plantfield%y%
 			key := planter%y%
@@ -942,7 +944,7 @@ PlantAction(option,key:=0,harvfull:=0){
 			if (SearchFunction("Harvest_Planter.png",20)[1] = 0){
 				if (harvfull){
 					if (SearchFunction("no.png",20)[1] = 0){
-						mousemove,SearchFunction("no.png",20)[2],SearchFunction("no.png",20)[2]
+						mousemove,SearchFunction("no.png",20)[2],SearchFunction("no.png",20)[3]
 						sleep 100
 						Send {Click Left}
 						lootplanter()
@@ -950,7 +952,7 @@ PlantAction(option,key:=0,harvfull:=0){
 					}
 				}else{
 					if (SearchFunction("Yes.png",20)[1] = 0){
-						mousemove,SearchFunction("Yes.png",20)[2],SearchFunction("Yes.png",20)[2]
+						mousemove,SearchFunction("Yes.png",20)[2],SearchFunction("Yes.png",20)[3]
 						sleep 100
 						Send {Click Left}
 						if (lootplanters){

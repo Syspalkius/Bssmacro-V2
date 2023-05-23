@@ -46,7 +46,3 @@ while(1){
 		pattern()
 	}
 }
-
-f4::
-resettimers(false)
-checktimers()
