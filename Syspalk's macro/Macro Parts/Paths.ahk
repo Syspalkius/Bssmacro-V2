@@ -1269,6 +1269,9 @@ mondo(){
 				Eventlog("Succesfully looted mondo 👍")
 				return
 			}
+			if (A_min > 13){
+				break
+			}
 		}
 		Errorlog("Failed to loot mondo because couldn't find dead mondo image after 10 minutes")
 	}
