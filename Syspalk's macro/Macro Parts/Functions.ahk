@@ -888,18 +888,12 @@ viccheck(changecam){ ;check for nighttime.
 }
 
 fightcheck(){ ;checks if a vicious bee is present.
-	savedata()
-	status := false
+	readgui()
 	sleep 500
 	Send /
 	sleep 500
 	SendInput {Enter}
 	sleep 250
-	if (keyboardtype = "azerty"){
-		Send {Shift}
-		sleep 259
-		camrotate(1,"l")
-	}
 	if (SearchFunction("vicattacking.png",40)[1] = 0 || SearchFunction("vicattacking1.png",40)[1] = 0){
 		status := true
 		starty := A_TickCount
@@ -925,12 +919,12 @@ fightcheck(){ ;checks if a vicious bee is present.
 			if (SearchFunction("deadvic.png",20)[1] = 0){
 				break
 			}
-			if (A_TickCount - starty > fightvictime*1000 || A_TickCount - starty > 300000){
+			if (A_TickCount - starty > maxcombattime*1000 || A_TickCount - starty > 300000){
 				break
 			}
 		}
+		return true
 	}
-	return [status]
 }
 
 PlantAction(option,key:=0,harvfull:=0){
@@ -977,6 +971,7 @@ killmob(mob){
 		GoField("Strawberry",,true)
 		GoField("Mushroom",,true)
 		GoField("Clover",,true)
+		return
 	}else if (mob = "beetle"){
 		Eventlog("killing the rhino beetles")
 		readgui()
@@ -985,24 +980,31 @@ killmob(mob){
 		}
 		GoField("Bamboo",,true)
 		GoField("Pineapple",,true)
+		return
 	}else if (mob = "scorpion"){
 		Eventlog("killing the scorpions")
 		GoField("Rose",,true)
+		return
 	}else if (mob = "mantis"){
 		Eventlog("killing the mantisses")
 		GoField("Pine Tree",,true)
 		GoField("Pineapple",,true)
+		return
 	}else if (mob = "spider"){
 		Eventlog("killing the spider")
 		GoField("Spider",,true)
+		return
 	}else if (mob = "wolf"){
 		Eventlog("killing werewolf")
 		GoField("Pine Tree",,true)
+		return
 	}else if (mob = "kb"){
 		Eventlog("killing the king beetle")
 		kingbeetle()
+		return
 	}else if (mob = "tb"){
 		Eventlog("killing the tunnel bear")
 		tunnelbear()
+		return
 	}
 }

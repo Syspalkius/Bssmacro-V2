@@ -1251,8 +1251,8 @@ mondo(){
 		walk(250,"r")
 		walk(2000,"l")
 		timer := A_TickCount
-		while (1){
-			if (SearchFunction("DeadMondo.png",10)[1] = 0){
+		while (A_TickCount - timer < minutes(10)){
+			if (SearchFunction("DeadMondo.png",30)[1] = 0 || SearchFunction("DeadMondo1.png",30)[1] = 0 || SearchFunction("DeadMondo2.png",30)[1] = 0){
 				walk(2000,"r")
 				walk(3250,"f")
 				loop 5{
@@ -1269,11 +1269,8 @@ mondo(){
 				Eventlog("Succesfully looted mondo 👍")
 				return
 			}
-			if (A_TickCount - timer > 300000){
-				Errorlog("Failed to loot mondo because couldn't find dead mondo image after 5 minutes")
-				return
-			}
 		}
+		Errorlog("Failed to loot mondo because couldn't find dead mondo image after 10 minutes")
 	}
 }
 
@@ -1287,7 +1284,7 @@ stingerrun(){
 	walk(2500,"l")
 	walk(900,"b")
 	walk(1500,"r")
-	if (fightcheck()[1] = true){
+	if (fightcheck() = true){
 		Eventlog("Killed a vicious bee in pepper")
 		return
 	}
@@ -1301,7 +1298,7 @@ stingerrun(){
 	walk(2500,"b")
 	walk(900,"r")
 	walk(2500,"f")
-	if (fightcheck()[1] = true){
+	if (fightcheck() = true){
 		Eventlog("Killed a vicious bee in mountain")
 		return
 	}
@@ -1323,7 +1320,7 @@ stingerrun(){
 	walk(2750,"f")
 	walk(1250,"r")
 	walk(2750,"b")
-	if (fightcheck()[1] = true){
+	if (fightcheck() = true){
 		Eventlog("Killed a vicious bee in rose")
 		return
 	}
@@ -1374,7 +1371,7 @@ stingerrun(){
 	walk(4000,"b")
 	walk(555,"r")
 	walk(1500,"f")
-	if (fightcheck()[1] = true){
+	if (fightcheck() = true){
 		Eventlog("Killed a vicious bee in cactus")
 		return
 	}
@@ -1397,7 +1394,7 @@ stingerrun(){
 	walk(2500,"b")
 	walk(825,"l")
 	walk(1500,"f")
-	if (fightcheck()[1] = true){
+	if (fightcheck() = true){
 		Eventlog("Killed a vicious bee in spider")
 		return
 	}
@@ -1424,7 +1421,7 @@ stingerrun(){
 	walk(2000,"b")
 	walk(1000,"l")
 	walk(2000,"f")
-	if (fightcheck()[1] = true){
+	if (fightcheck() = true){
 		Eventlog("Killed a vicious bee in clover")
 		return
 	}

@@ -1,5 +1,5 @@
-1. Fixed an issue regarding the planter cycles.
-2.
+1. Fixed an issue regarding vicious bee combat.
+2. Fixed an issue with mondo looting (hopefully).
 3.
 4.
 5.
