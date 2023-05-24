@@ -2,4 +2,5 @@
 2. Fixed an issue with mondo looting (hopefully).
 3. Fixed issue with planters not planting.
 4. Fixed issue with planters not being taken properly.
-5. Implemented bugrun&polar
+5. Implemented bugrun&polar.
+6. Changed the maximum amount of hive imagesearch fails needed before reconnecting.

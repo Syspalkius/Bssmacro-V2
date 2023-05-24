@@ -400,14 +400,14 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 		}
 		if (A_TickCount - breaktimer > 10000){
 			ErrorLog("Failed to detect hive image")
-			if (Fails = 1){
+			if (Fails = 4){
 				global Fails := 0
 				ErrorLog("Reconnected (Issue : Hive image wasn't found too many times in a row)")
 				Reconnect()
 				goto,Retryy
 			}
 			else{
-				global Fails := 1
+				Fails++
 				goto,Retryy
 			}
 		}
