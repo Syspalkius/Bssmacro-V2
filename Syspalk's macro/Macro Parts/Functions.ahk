@@ -50,6 +50,9 @@ GoFarm(field){ ;function for farming.
 	readgui()
 	GoField(field)
 	global currentfield := field
+	if (field = "bugrun&polar"){
+		return
+	}
 	if (field = "Pine Tree"){
 		pinetree := true
 	}else{
@@ -470,6 +473,8 @@ GOField(field,nectar := false,lootmob := false){ ;function that takes input and 
 		sunf(nectar)
 	}else if (field = "Clover"){
 		clover(nectar)
+	}else if (field = "bugrun&polar"){
+		bugrun()
 	}
 	if (lootmob){
 		squares(100,false)
@@ -875,7 +880,10 @@ viccheck(changecam){ ;check for nighttime.
 	if (ErrorLevel = 0){
 		global allowconvert := false
 		global lastvickill := A_Tickcount
-		stingerrun()
+		readgui()
+		if (vicious){
+			stingerrun()
+		}
 		global allowconvert := true
 		return true
 	}
@@ -1009,4 +1017,11 @@ killmob(mob){
 		tunnelbear()
 		return
 	}
+}
+
+Clicker(delay){ ;uses the mouse to click.
+	mouseMove,A_ScreenWidth/2,A_ScreenHeight/2
+	Send {Click Left Down}
+	sleep %delay%
+	Send {Click Left Up}
 }

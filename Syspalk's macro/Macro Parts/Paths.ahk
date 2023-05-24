@@ -1501,3 +1501,209 @@ kingbeetle(){
 		return
 	}
 }
+
+bugrun(){
+	Reset()
+	Reset()
+	walk(7000,"r")
+	SendSpace()
+	walk(100,"r")
+	sleep 100
+	walk(1000,"r")
+	walk(5250,"b")
+	SendInput {PGDN}
+	zoomout()
+	if (viccheck(false) = true){
+		return
+	}
+	SendInput {PGUP}
+	SendHotbar(1)
+	Clicker(20000)
+	walk(2500,"r")
+	SendSpace()
+	walk(2000,"r")
+	walk(1000,"f")
+	walk(2750,"b")
+	camrotate(2,"l")
+	zoomout()
+	SendHotbar(1)
+	if (viccheck(false) = true){
+		return
+	}
+	walk(1000,"b")
+	Clicker(10000)
+	squares(85,false)
+	walk(250,"r")
+	walk(1000,"f")
+	loop 30{
+		walk(100,"f")
+		walk(100,"l")
+	}
+	camrotate(3,"l")
+	walk(7000,"f")
+	camrotate(1,"r")
+	walk(7500,"f")
+	walk(200,"b")
+	SendHotbar(1)
+	zoomout()
+	if (viccheck(false) = true){
+		return
+	}
+	Clicker(10000)
+	squares(85,false)
+	walk(5000,"f")
+	walk(11000,"r")
+	walk(8000,"b")
+	walk(2000,"l")
+	walk(150,"f")
+	walk(150,"r")
+	sleep 500
+	loop 2{
+		Send e
+		sleep 2500
+		mouseMove,A_ScreenWidth/2,A_ScreenHeight/1.3
+		loop 30{
+			Send {Click Left}
+			sleep 100
+		}
+	}
+	walk(1000,"f")
+	walk(1000,"l")
+	SendSpace()
+	walk(750,"l")
+	sleep 1500
+	SendInput {PGDN}
+	zoomout()
+	if (viccheck(false) = true){
+		return
+	}
+	SendInput {PGUP}
+	SendHotbar(1)
+	Clicker(10000)
+	loop 40{
+		walk(100,"f")
+		Send {Click Left}
+	}
+	SendHotbar(1)
+	Clicker(10000)
+	walk(4000,"f")
+	walk(4000,"r")
+	walk(4000,"b")
+	walk(500,"l")
+	walk(3000,"b")
+	walk(1000,"l")
+	SendInput {PGDN}
+	camrotate(2,"r")
+	zoomout()
+	if (viccheck(false) = true){
+		return
+	}
+	camrotate(2,"l")
+	SendInput {PGUP}
+	SendHotbar(1)
+	Clicker(10000)
+	squares(85,false)
+	walk(3000,"f")
+	walk(2000,"r")
+	walk(100,"l")
+	sleep 200
+	SendSpace()
+	walk(2500,"r")
+	SendHotbar(1)
+	Clicker(10000)
+	squares(85,false)
+	walk(2000,"f")
+	walk(4000,"r")
+	walk(1000,"b")
+	walk(3500,"r")
+	SendInput {PGDN}
+	camrotate(2,"l")
+	zoomout()
+	if (viccheck(false) = true){
+		return
+	}
+	SendInput {PGUP}
+	camrotate(4,"l")
+	SendHotbar(1)
+	Clicker(10000)
+	squares(85,false)
+	walk(4500,"f")
+	walk(4000,"l")
+	walk(5000,"b")
+	walk(4000,"r")
+	walk(3000,"f")
+	walk(100,"b")
+	sleep 200
+	SendSpace()
+	walk(1500,"f")
+	walk(750,"r")
+	walk(50,"b")
+	sleep 200
+	SendSpace()
+	walk(3000,"f")
+	camrotate(2,"l")
+	walk(8000,"f")
+	zoomout()
+	if (viccheck(false) = true){
+		return
+	}
+	SendHotbar(1)
+	Clicker(10000)
+	squares(85,false)
+	walk(4000,"f")
+	walk(5000,"r")
+	walk(12000,"b")
+	walk(3000,"l")
+	walk(2000,"b")
+	walk(2000,"r")
+	camrotate(4,"l")
+	SendSpace()
+	walk(3000,"f")
+	walk(1000,"l")
+	walk(5000,"f")
+	walk(4500,"r")
+	zoomout()
+	if (viccheck(false) = true){
+		return
+	}
+	SendHotbar(1)
+	Clicker(10000)
+	squares(85,false)
+	walk(3000,"b")
+	camrotate(2,"r")
+	SendHotbar(1)
+	Clicker(10000)
+	squares(85,false)
+	walk(1000,"f")
+	walk(2500,"l")
+	walk(2500,"f")
+	walk(2000,"r")
+	walk(4000,"f")
+	walk(750,"b")
+	walk(500,"l")
+	walk(500,"f")
+	Send {Shift}
+	walk(4000,"l")
+	Send {Shift}
+	SendInput {PGDN}
+	zoomout()
+	if (viccheck(false) = true){
+		return
+	}
+	SendInput {PGUP}
+	SendHotbar(1)
+	Clicker(20000)
+	walk(100,"b")
+	walk(7000,"r")
+	walk(1000,"f")
+	walk(750,"b")
+	walk(500,"l")
+	walk(750,"f")
+	SendSpace()
+	walk(1500,"f")
+	walk(1000,"l")
+	walk(1500,"f")
+	SendHotbar(1)
+	squares(85,false)
+	squares(85,false)
+}
