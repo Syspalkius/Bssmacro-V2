@@ -779,6 +779,7 @@ ButtonResetSettings(reload){
 
 
 loadblue5nectar(reload := 0){
+	ButtonResetCycleData(false)
 	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,planters,plantfield1
 	IniWrite,Pineapple,Macro Parts/configs/Data.ini,planters,plantfield2
 	IniWrite,Coconut,Macro Parts/configs/Data.ini,planters,plantfield3

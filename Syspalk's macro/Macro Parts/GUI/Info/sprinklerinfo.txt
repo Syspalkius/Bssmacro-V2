@@ -1,5 +1,5 @@
-This will move back to the sprinkler every time it is finished doing one cycle of the pattern which should typicall take around 10 seconds.
+This will move back to the sprinkler every time it is finished doing one cycle of the pattern which should typically take around 10 seconds.
 
-This is useful because it will help a lot with drifting off in the field.
+This is useful because it will help a lot with drifting off of the field.
 
 NOTE : With lots of bubbles/balloons in the field it is less reliable and doesn't always work.

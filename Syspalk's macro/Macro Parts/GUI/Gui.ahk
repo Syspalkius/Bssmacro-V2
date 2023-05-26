@@ -33,15 +33,15 @@ Gui,Font,s15 Bold
 Gui,Add,Text, v1tab21 x225 y15 cgreen,New in This version
 Gui,Font,s7
 FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
-Gui,Add,Text, v1tab22 x200 yp+30 w245 h190 cwhite +wrap,%UpdateText%
+Gui,Add,Text, v1tab22 x200 yp+30 w245 h250 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
-Gui,Add,Button, v1tab23 x270 y250,View More
+Gui,Add,Button, v1tab23 x270 y310,View More
 Gui,Font,s15 Bold
-Gui,Add,Text, v1tab24 x285 y280 cwhite,About
+Gui,Add,Text, v1tab24 x285 y340 cwhite,About
 Gui,Font,s9
-Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro started on 04/10/2022,You are allowed to share this macro with other people but you aren't allowed to steal my code and claim it is yours, if you do want to borrow some code you must give proper credits and mention that it was developed by me, The main thing this macro is targeted towards is bee swarm simulator automation specifically for endgame players.`n`nThis macro was almost completely developed by Syspalk, if you do encounter bugs you are able to report them to me on discord [Syspalk#0955].`n`nLicensed with a GNU LGPL v2.1 license.
+Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro began on 4/10/22.  You are allowed to share the macro but prohibited from stealing code.  If you're using any part of the code for your own work please contact me and provide propper credits.  Syspalk macro is targeted towards Bee Swarm Simulator automation with endgame players specifically in mind.`nIf you encounter any bugs you can report them to me through discord [Syspalk#0955].`n`nLicensed with a GNU LGPL v2.1 license.
 Gui,Font,s12 Bold
-Gui,Add,Link, v1tab26 xp yp+240,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
+Gui,Add,Link, v1tab26 xp yp+170,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
 Gui,Add,Link, v1tab27 xp yp+20,<a href="https://github.com/Syspalkius/Bssmacro-V2">Goto Github</a>
 
 
