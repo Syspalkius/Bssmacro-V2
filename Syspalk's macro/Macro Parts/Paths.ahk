@@ -786,6 +786,7 @@ bluebooster(){
 		starttime := A_TickCount
 		while (A_TickCount - starttime < 3000){
 			if (SearchFunction("pine0.png",10)[1] = 0 || SearchFunction("pine1.png",10)[1] = 0){
+				Eventlog("Detected pinetree from the hq")
 				global glitterpine := true
 				global pinereglittime := A_TickCount
 			}
@@ -1434,9 +1435,9 @@ lootplanter(){
 	sleep 2000
 	walk(300,"l")
 	walk(300,"b")
-	zigzag(800,false)
-	zigzag(800,false)
-	zigzag(800,false)
+	zigzag(100,false)
+	zigzag(100,false)
+	zigzag(100,false)
 }
 
 tunnelbear(){

@@ -81,6 +81,7 @@ GoFarm(field){ ;function for farming.
 			}
 			if (reglitter){
 				if (A_Tickcount - pinereglittime < 540000 && glitterpine){
+					Eventlog("Using glitter")
 					global glitterpine := False
 					useitemfrominv("glit.png",true)
 				}

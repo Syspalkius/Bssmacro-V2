@@ -9,3 +9,5 @@
 9. Added some logs for the planter stuff.
 10. Fixed another issue regarding the planters.
 11. Fixed yet another issue with planter taking.
+12. Fixed issue with planter looting.
+13. Added logs for reglitter option.
