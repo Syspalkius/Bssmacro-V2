@@ -4,4 +4,6 @@
 4. Fixed issue with planters not being taken properly.
 5. Implemented bugrun&polar.
 6. Changed the maximum amount of hive imagesearch fails needed before reconnecting.
-7. Fixed issue regarding planter preset
+7. Fixed issue regarding planter preset.
+8. Changed some stuff on the home page.
+9. Added some logs for the planter stuff.

@@ -940,6 +940,7 @@ fightcheck(){ ;checks if a vicious bee is present.
 PlantAction(option,key:=0,harvfull:=0){
 	readgui()
 	if (option = "place"){
+		Eventlog("Placed planter")
 		SendHotbar(key)
 		sleep 1000
 		return
@@ -955,6 +956,7 @@ PlantAction(option,key:=0,harvfull:=0){
 						mousemove,SearchFunction("no.png",20)[2],SearchFunction("no.png",20)[3]
 						sleep 100
 						Send {Click Left}
+						Eventlog("Looting planter")
 						lootplanter()
 						return true
 					}
@@ -964,6 +966,7 @@ PlantAction(option,key:=0,harvfull:=0){
 						sleep 100
 						Send {Click Left}
 						if (lootplanters){
+							Eventlog("Looting planter")
 							lootplanter()
 						}
 						return true
@@ -971,6 +974,7 @@ PlantAction(option,key:=0,harvfull:=0){
 				}
 			}
 		}
+		Errorlog("Failed to take the planter due to not finding the harvest ui after 5 sec")
 		return false
 	}
 }
