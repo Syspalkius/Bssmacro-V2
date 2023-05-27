@@ -1437,7 +1437,6 @@ lootplanter(){
 	walk(300,"b")
 	zigzag(100,false)
 	zigzag(100,false)
-	zigzag(100,false)
 }
 
 tunnelbear(){
