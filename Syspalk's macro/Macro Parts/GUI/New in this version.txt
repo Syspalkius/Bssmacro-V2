@@ -8,3 +8,4 @@
 8. Changed some stuff on the home page.
 9. Added some logs for the planter stuff.
 10. Fixed another issue regarding the planters.
+11. Fixed yet another issue with planter taking.
