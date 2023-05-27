@@ -7,7 +7,7 @@
 			y := (4*A_Index - 4)+plantcycle%A_Index%
 			field := plantfield%y%
 			loop 3{
-				if (GoField(field,true) != true && plantcycle%A_Index% != 0){
+				if (plantcycle%A_Index% != 0 && field != "None"){
 					if (PlantAction("take") = true){
 						break
 					}

@@ -7,3 +7,4 @@
 7. Fixed issue regarding planter preset.
 8. Changed some stuff on the home page.
 9. Added some logs for the planter stuff.
+10. Fixed another issue regarding the planters.
