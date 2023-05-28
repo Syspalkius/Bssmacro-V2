@@ -80,7 +80,7 @@ GoFarm(field){ ;function for farming.
 				movetosat(10)
 			}
 			if (reglitter){
-				if (A_Tickcount - pinereglittime < 540000 && glitterpine){
+				if (A_Tickcount - pinereglittime < minutes(15) && A_Tickcount - pinereglittime > minutes(9)  && glitterpine){
 					Eventlog("Using glitter")
 					global glitterpine := False
 					useitemfrominv("glit.png",true)
@@ -183,11 +183,13 @@ checkmobtimers(){
 checktimers(){
 	checkmobtimers()
 	readtimers()
-	if (A_Min < 13 && A_Min > 00 && allowmondo){
-		mondo()
-		allowmondo := false
+	if (A_Min < 13 && A_Min > 00){
+		if (allowmondo){
+			mondo()
+			global allowmondo := false
+		}
 	}else{
-		allowmondo := true
+		global allowmondo := true
 	}
 	if (A_TickCount - 30mtimer > hours(0.5)){
 		safetycheck()

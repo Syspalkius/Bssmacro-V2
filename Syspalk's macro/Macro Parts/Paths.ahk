@@ -789,6 +789,7 @@ bluebooster(){
 				Eventlog("Detected pinetree from the hq")
 				global glitterpine := true
 				global pinereglittime := A_TickCount
+				return
 			}
 		}
 	}

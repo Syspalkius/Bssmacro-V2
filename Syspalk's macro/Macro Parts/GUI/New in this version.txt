@@ -11,3 +11,5 @@
 11. Fixed yet another issue with planter taking.
 12. Fixed issue with planter looting.
 13. Added logs for reglitter option.
+14. Fixed issue regarding pinetree reglitter.
+15. Fixed issue regarding mondo looting.

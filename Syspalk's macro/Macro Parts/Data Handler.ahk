@@ -129,7 +129,7 @@ global firstrun := true
 global convert := true
 global rejoinclaim := true
 global glitterpine := false
-global pinereglittime
+global pinereglittime := -9999999
 global allowmondo := true
 global currentfield
 global lastvickill := -9999999
