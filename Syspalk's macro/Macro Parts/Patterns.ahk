@@ -31,7 +31,7 @@ zigzagpp(size,pinetree){ ;this thing is the same as zigzag but better for token 
 	sidewayssize := size/5
 	returnsize := sidewayssize*4
 	if (pinetree = true){
-		sidewayssizez := sidewayssize*0.36
+		sidewayssizez := sidewayssize*0.6
 		forwardsize := size*1.1
 	}else{
 		sidewayssizez := sidewayssize*0.8
