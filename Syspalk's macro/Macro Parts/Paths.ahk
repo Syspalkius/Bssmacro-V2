@@ -1,6 +1,5 @@
 ﻿pinetree(nectar){
 	pinetreestart:
-	eventlog("Going to pinetree")
 	if (!pinewalkconv || firstrun){
 		global firstrun := false
 		Reset()
@@ -36,7 +35,6 @@
 
 pineapple(nectar){
 	pineapstart:
-	eventlog("Going to pineapple")
 	reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -64,7 +62,6 @@ pineapple(nectar){
 }
 
 sunf(nectar){
-	eventlog("Going to sunflower")
 	SendInput {Escape}
 	sleep 100
 	SendInput {r}
@@ -91,7 +88,6 @@ sunf(nectar){
 
 pump(nectar){
 	pumpstart:
-	eventlog("Going to pumpkin")
 	reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -128,7 +124,6 @@ pump(nectar){
 
 bluf(nectar){
 	blufstart:
-	eventlog("Going to blue flower")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -163,7 +158,6 @@ bluf(nectar){
 
 straw(nectar){
 	strawstart:
-	eventlog("Going to strawberry")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -194,7 +188,6 @@ straw(nectar){
 
 coco(nectar){
 	cocostart:
-	eventlog("Going to coconut")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -231,7 +224,6 @@ coco(nectar){
 
 dande(nectar){
 	dandstart:
-	eventlog("Going to dandelion")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -269,7 +261,6 @@ dande(nectar){
 
 spider(nectar){
 	spidestart:
-	eventlog("Going to spider")
 	reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -296,7 +287,6 @@ spider(nectar){
 
 rose(nectar){
 	StartRose:
-	eventlog("Going to rose")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -332,7 +322,6 @@ rose(nectar){
 
 mush(nectar){
 	startmush:
-	eventlog("Going to mushroom")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -366,7 +355,6 @@ mush(nectar){
 
 bamboo(nectar){
 	startbamb:
-	eventlog("Going to bamboo")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -407,7 +395,6 @@ bamboo(nectar){
 
 mountain(nectar){
 	startmount:
-	eventlog("Going to mountain")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -423,7 +410,6 @@ mountain(nectar){
 } 
 
 cactus(nectar){
-	eventlog("Going to cactus")
 	if (nectar = true){
 		pump(true)
 		walk(1000,"r")
@@ -439,7 +425,6 @@ cactus(nectar){
 
 stump(nectar){
 	startstump:
-	eventlog("Going to stump")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -481,7 +466,6 @@ stump(nectar){
 
 pep(nectar){
 	startpep:
-	eventlog("Going to pepper")
 	Reset()
 	walktocannon()
 	if (reconnectedcannon){
@@ -550,7 +534,6 @@ pep(nectar){
 }
 
 clover(nectar){
-	eventlog("Going to clover")
 	Reset()
 	walktocannon()
 	camrotate(2,"l")

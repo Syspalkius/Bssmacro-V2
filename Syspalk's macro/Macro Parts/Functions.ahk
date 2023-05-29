@@ -179,7 +179,6 @@ checkmobtimers(){
 	}
 }
 
-
 checktimers(){
 	checkmobtimers()
 	readtimers()
@@ -441,6 +440,8 @@ SearchFunction(image,variation){ ;imagesearch in function so it's nicer to use.
 
 
 GOField(field,nectar := false,lootmob := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
+	message := "Traveling to" . field
+	Eventlog(message)
 	if (field = "None"){
 		return true
 	}else if (field = "Bamboo"){
@@ -587,7 +588,7 @@ EventLog(Event){ ;saves what it does and when it does it in a text file for debu
 		postdata=
 		(
 		{
-		"content": "[EVENT] %Event%"
+		"content": "{%Time%}[EVENT] %Event%"
 		}
 		)
 		WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")
@@ -605,7 +606,7 @@ ErrorLog(ErrorMessage){ ;same thing as eventlog but this time it logs errors in 
 		postdata=
 		(
 		{
-		"content": "[ERROR] %ErrorMessage%"
+		"content": "{%Time%}[ERROR] %ErrorMessage%"
 		}
 		)
 		WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")

@@ -1,15 +1,1 @@
-1. Fixed an issue regarding vicious bee combat.
-2. Fixed an issue with mondo looting (hopefully).
-3. Fixed issue with planters not planting.
-4. Fixed issue with planters not being taken properly.
-5. Implemented bugrun&polar.
-6. Changed the maximum amount of hive imagesearch fails needed before reconnecting.
-7. Fixed issue regarding planter preset.
-8. Changed some stuff on the home page.
-9. Added some logs for the planter stuff.
-10. Fixed another issue regarding the planters.
-11. Fixed yet another issue with planter taking.
-12. Fixed issue with planter looting.
-13. Added logs for reglitter option.
-14. Fixed issue regarding pinetree reglitter.
-15. Fixed issue regarding mondo looting.
+1. Changed the webhook messages.
