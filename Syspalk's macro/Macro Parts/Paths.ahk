@@ -1545,7 +1545,7 @@ bugrun(){
 	loop 2{
 		Send e
 		sleep 2500
-		mouseMove,A_ScreenWidth/2,A_ScreenHeight/1.3
+		mouseMove,SearchFunction("polar.png",10)[2],SearchFunction("polar.png",10)[3]
 		loop 30{
 			Send {Click Left}
 			sleep 100
