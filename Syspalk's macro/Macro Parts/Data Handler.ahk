@@ -84,6 +84,12 @@ global buff4time
 global buff5time
 global buff6time
 global buff7time
+global buff2hive
+global buff3hive
+global buff4hive
+global buff5hive
+global buff6hive
+global buff7hive
 global buff2timer
 global buff3timer
 global buff4timer
@@ -219,6 +225,12 @@ readini(){ ;reads all the data from the ini file
 	IniRead,buff5,Macro Parts/configs/Data.ini,buffs,buff5
 	IniRead,buff6,Macro Parts/configs/Data.ini,buffs,buff6
 	IniRead,buff7,Macro Parts/configs/Data.ini,buffs,buff7
+	IniRead,buff2hive,Macro Parts/configs/Data.ini,buffs,buff2hive
+	IniRead,buff3hive,Macro Parts/configs/Data.ini,buffs,buff3hive
+	IniRead,buff4hive,Macro Parts/configs/Data.ini,buffs,buff4hive
+	IniRead,buff5hive,Macro Parts/configs/Data.ini,buffs,buff5hive
+	IniRead,buff6hive,Macro Parts/configs/Data.ini,buffs,buff6hive
+	IniRead,buff7hive,Macro Parts/configs/Data.ini,buffs,buff7hive
 	IniRead,buff2time,Macro Parts/configs/Data.ini,buffs,buff2time
 	IniRead,buff3time,Macro Parts/configs/Data.ini,buffs,buff3time
 	IniRead,buff4time,Macro Parts/configs/Data.ini,buffs,buff4time
@@ -365,6 +377,24 @@ readini(){ ;reads all the data from the ini file
 	if (buff7){
 		global buff7 := "Checked"
 	}
+	if (buff2hive){
+		global buff2hive := "Checked"
+	}
+	if (buff3hive){
+		global buff3hive := "Checked"
+	}
+	if (buff4hive){
+		global buff4hive := "Checked"
+	}
+	if (buff5hive){
+		global buff5hive := "Checked"
+	}
+	if (buff6hive){
+		global buff6hive := "Checked"
+	}
+	if (buff7hive){
+		global buff7hive := "Checked"
+	}
 	if (joinmain){
 		global joinmain := "Checked"
 	}
@@ -457,6 +487,12 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,buff5time,,5tab12
 	GuiControlget,buff6time,,5tab13
 	GuiControlget,buff7time,,5tab14
+	GuiControlget,buff2hive,,5tab15
+	GuiControlget,buff3hive,,5tab16
+	GuiControlget,buff4hive,,5tab17
+	GuiControlget,buff5hive,,5tab18
+	GuiControlget,buff6hive,,5tab19
+	GuiControlget,buff7hive,,5tab20
 	GuiControlget,speed,,10tab4
 	GuiControlget,joinmain,,10tab17
 	GuiControlget,hookevent,,10tab7
@@ -592,6 +628,12 @@ savedata(){ ;saves all the data
 	IniWrite,%buff5%,Macro Parts/configs/Data.ini,buffs,buff5
 	IniWrite,%buff6%,Macro Parts/configs/Data.ini,buffs,buff6
 	IniWrite,%buff7%,Macro Parts/configs/Data.ini,buffs,buff7
+	IniWrite,%buff2hive%,Macro Parts/configs/Data.ini,buffs,buff2hive
+	IniWrite,%buff3hive%,Macro Parts/configs/Data.ini,buffs,buff3hive
+	IniWrite,%buff4hive%,Macro Parts/configs/Data.ini,buffs,buff4hive
+	IniWrite,%buff5hive%,Macro Parts/configs/Data.ini,buffs,buff5hive
+	IniWrite,%buff6hive%,Macro Parts/configs/Data.ini,buffs,buff6hive
+	IniWrite,%buff7hive%,Macro Parts/configs/Data.ini,buffs,buff7hive
 	IniWrite,%buff2time%,Macro Parts/configs/Data.ini,buffs,buff2time
 	IniWrite,%buff3time%,Macro Parts/configs/Data.ini,buffs,buff3time
 	IniWrite,%buff4time%,Macro Parts/configs/Data.ini,buffs,buff4time
@@ -709,6 +751,12 @@ resetconfig(){
 	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff5
 	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff6
 	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff7
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff2hive
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff3hive
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff4hive
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff5hive
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff6hive
+	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff7hive
 	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff2time
 	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff3time
 	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff4time
