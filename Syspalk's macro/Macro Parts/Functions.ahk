@@ -43,7 +43,7 @@
 			GoField(field,true)
 			PlantAction("place",key,harviffull%A_Index%)
 		}
-	}	
+	}
 }
 
 GoFarm(field){ ;function for farming.
@@ -427,6 +427,7 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 			if (A_TickCount - breaktimer > 360000){
 				break
 			}
+			checkbufftimer(true)
 			safetycheck()
 		}	
 	}
@@ -559,15 +560,19 @@ zoomin(){
 	}
 }
 
-checkbufftimer(){ ;checks the timers for the hotbar buffs.
+checkbufftimer(athive := false){ ;checks the timers for the hotbar buffs.
 	readgui()
 	readtimers()
 	while (A_Index < 8){
-		if (buff%A_Index%){
-			if (A_TickCount - buff%A_Index%timer > buff%A_Index%time*1000){
+		if (A_TickCount - buff%A_Index%timer > buff%A_Index%time*1000 && buff%A_Index%){
+			if (athive){
+				if (buff%A_Index%hive){
+					SendHotbar(A_Index)
+				}
+			}else{
 				SendHotbar(A_Index)
-				IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,buffs,buff%A_Index%timer
 			}
+			IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,buffs,buff%A_Index%timer
 		}
 	}
 }

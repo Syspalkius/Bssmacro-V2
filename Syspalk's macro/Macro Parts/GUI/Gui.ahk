@@ -233,7 +233,7 @@ loop 6{
 	usehive := buff%checkboxtext%hive
 	Gui,Add,Checkbox, v5tab%checkboxnum% x20 yp+30 cwhite %data%,hotbar slot %checkboxtext%
 	Gui,Add,Edit, v5tab%editnum% number xp+120 yp-5 w100 ,%time%
-	Gui,Add,Checkbox, v5tab%athivenum% xp+115 yp+5 cyellow %usehive%,Use at hive
+	Gui,Add,Checkbox, v5tab%athivenum% xp+115 yp+5 cred %usehive%,Use at hive
 }
 
 
