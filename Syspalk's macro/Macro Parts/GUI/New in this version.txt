@@ -3,3 +3,6 @@
 3. Changed polar bear mousemove to look for image.
 4. Added use at hive option for the consumables.
 5. Fixed issue with planters not looping.
+6. move to sprinkler now works on all graphics.
+7. Rewrote move to sprinkler function.
+8. Optimized move to sprinkler function.

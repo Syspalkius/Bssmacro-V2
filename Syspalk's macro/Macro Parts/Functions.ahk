@@ -79,7 +79,7 @@ GoFarm(field){ ;function for farming.
 			pattern(pinetree)
 			zoomout()
 			if (sprinkleralign && patternsize > 10){
-				movetosat(10)
+				movetosat()
 			}
 			if (reglitter){
 				if (A_Tickcount - pinereglittime < minutes(15) && A_Tickcount - pinereglittime > minutes(9)  && glitterpine){
@@ -441,6 +441,10 @@ SearchFunction(image,variation){ ;imagesearch in function so it's nicer to use.
 	return [ErrorLevel,FoundX,FoundY]
 } 
 
+SearchFunctionv2(image,variation,x1,y1,x2,y2){ ;imagesearch in function with coordinate option so it's nicer to use.
+	ImageSearch, FoundX, FoundY, %x1%, %y1%, %x2%, %y2%, *%variation% Macro Parts\images\%image%
+	return [ErrorLevel,FoundX,FoundY]
+}
 
 GOField(field,nectar := false,lootmob := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
 	message := "Traveling to" . field
@@ -496,42 +500,53 @@ bagcheck(){ ;checks if the bag is full I should have done this with a return but
 	}
 }
 
-movetosat(var){
-	winUp := A_ScreenHeight / 2.1
-	winDown := A_ScreenHeight / 1.9
-	winLeft := A_ScreenWidth / 2.1
-	winRight := A_ScreenWidth /1.9
-	
-	if (SearchFunction("sprinkler.png",25)[2] < WinLeft && SearchFunction("sprinkler.png",25)[1] = 0){
-		walk(100,"l")
-		loop %var%{
-			if (SearchFunction("sprinkler.png",25)[2] < WinLeft && SearchFunction("sprinkler.png",25)[1] = 0){
-				walk(100,"l")
+movetosat(){
+	WinGetPos,,,Winwidth,Winheight,Roblox
+	Top := WinHeight / 2.2
+	Bottom := WinHeight / 1.8
+	Leftt := Winwidth / 2.2
+	Rightt := Winwidth / 1.8
+
+	if (SearchFunctionv2("sprinkler.png",10,0,0,Winwidth,Top)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,0,Winwidth,Top)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,0,Winwidth,Top)[1] = 0){
+		walkhold("f","Down")
+		loop 20{
+			if not (SearchFunctionv2("sprinkler.png",10,0,0,Winwidth,Top)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,0,Winwidth,Top)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,0,Winwidth,Top)[1] = 0){
+				break
 			}
+			sleep 100
 		}
-	}else if (SearchFunction("sprinkler.png",25)[2] > WinRight && SearchFunction("sprinkler.png",25)[1] = 0){
-		walk(100,"r")
-		loop %var%{
-			if (SearchFunction("sprinkler.png",25)[2] > WinRight && SearchFunction("sprinkler.png",25)[1] = 0){
-				walk(100,"r")
+		walkhold("f","Up")
+	}
+	else if (SearchFunctionv2("sprinkler.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0){
+		walkhold("b","Down")
+		loop 20{
+			if not (SearchFunctionv2("sprinkler.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0){
+				break
 			}
+			sleep 100
 		}
+		walkhold("b","Up")
 	}
 	
-	if (SearchFunction("sprinkler.png",25)[3] < WinDown && SearchFunction("sprinkler.png",25)[1] = 0){
-		walk(100,"f")
-		loop %var%{
-			if (SearchFunction("sprinkler.png",25)[3] < WinDown && SearchFunction("sprinkler.png",25)[1] = 0){
-				walk(100,"f")
+	if (SearchFunctionv2("sprinkler.png",10,0,0,Leftt,Winheight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,0,Leftt,Winheight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,0,Leftt,Winheight)[1] = 0){
+		walkhold("l","Down")
+		loop 20{
+			if not (SearchFunctionv2("sprinkler.png",10,0,0,Leftt,Winheight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,0,Leftt,Winheight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,0,Leftt,Winheight)[1] = 0){
+				break
 			}
+			sleep 100
 		}
-	}else if (SearchFunction("sprinkler.png",25)[3] > WinUp && SearchFunction("sprinkler.png",25)[1] = 0){
-		walk(100,"b")
-		loop %var%{
-			if (SearchFunction("sprinkler.png",25)[3] > WinUp && SearchFunction("sprinkler.png",25)[1] = 0){
-				walk(100,"b")
+		walkhold("l","Up")
+	}
+	else if (SearchFunctionv2("sprinkler.png",10,Rightt,0,WinWidth,Winheight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,Rightt,0,WinWidth,Winheight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,Rightt,0,WinWidth,Winheight)[1] = 0){
+		walkhold("r","Down")
+		loop 20{
+			if not (SearchFunctionv2("sprinkler.png",10,Rightt,0,WinWidth,Winheight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,Rightt,0,WinWidth,Winheight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,Rightt,0,WinWidth,Winheight)[1] = 0){
+				break
 			}
+			sleep 100
 		}
+		walkhold("r","Up")
 	}
 }
 
