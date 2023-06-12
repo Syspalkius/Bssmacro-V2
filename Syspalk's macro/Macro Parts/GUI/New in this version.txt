@@ -2,3 +2,4 @@
 2. Changed zigzag++ a little bit.
 3. Changed polar bear mousemove to look for image.
 4. Added use at hive option for the consumables.
+5. Fixed issue with planters not looping.

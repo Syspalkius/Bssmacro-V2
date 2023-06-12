@@ -35,6 +35,8 @@
 			key := planter%y%
 			if (plantcycle%A_Index% > 4){
 				plantcycle%A_Index% := 0
+				cyclius := plantcycle%A_Index%
+				IniWrite,%cyclius%,Macro Parts/configs/Data.ini,planters,plantcycle%A_Index%
 				goto,back
 			}
 			if (field = "None"){
