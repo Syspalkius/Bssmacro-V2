@@ -6,3 +6,5 @@
 6. move to sprinkler now works on all graphics.
 7. Rewrote move to sprinkler function.
 8. Optimized move to sprinkler function.
+9. Changed pinetree farming position
+10. Changed timers to fix an issue.

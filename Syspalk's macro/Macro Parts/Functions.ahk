@@ -127,7 +127,7 @@ GoFarm(field){ ;function for farming.
 checkmobtimers(){
 	readtimers()
 	readgui()
-	if (A_TickCount - mob_5mtimer > minutes(6)){
+	if (A_TickCount - mob_5mtimer > minutes(7)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_5mtimer
 		if (lady){
 			killmob("ladybug")
@@ -138,7 +138,7 @@ checkmobtimers(){
 	}
 	readtimers()
 	readgui()
-	if (A_TickCount - mob_20mtimer > minutes(22)){
+	if (A_TickCount - mob_20mtimer > minutes(23)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_20mtimer
 		if (scorpion){
 			killmob("scorpion")
@@ -149,7 +149,7 @@ checkmobtimers(){
 	}
 	readtimers()
 	readgui()
-	if (A_TickCount - mob_30mtimer > minutes(32)){
+	if (A_TickCount - mob_30mtimer > minutes(33)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_30mtimer
 		if (spider){
 			killmob("spider")
@@ -157,7 +157,7 @@ checkmobtimers(){
 	}
 	readtimers()
 	readgui()
-	if (A_TickCount - mob_1htimer > hours(1.05)){
+	if (A_TickCount - mob_1htimer > hours(1.1)){
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_1htimer
 		if (wolf){
 			killmob("wolf")
@@ -199,7 +199,7 @@ checktimers(){
 		planters("30 min")
 	}
 	readtimers()
-	if (A_TickCount - 1htimer > hours(1)){
+	if (A_TickCount - 1htimer > hours(1.05)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
 		checkforpaidant("1 hour")
@@ -221,7 +221,7 @@ checktimers(){
 		}
 	}
 	readtimers()
-	if (A_TickCount - 2htimer > hours(2)){
+	if (A_TickCount - 2htimer > hours(2.1)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
 		checkforpaidant("2 hours")
@@ -234,7 +234,7 @@ checktimers(){
 		}
 	}
 	readtimers()
-	if (A_TickCount - 4htimer > hours(4)){
+	if (A_TickCount - 4htimer > hours(4.1)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
 		checkforpaidant("4 hours")
@@ -244,7 +244,7 @@ checktimers(){
 		}
 	}
 	readtimers()
-	if (A_TickCount - 22htimer > hours(22)){
+	if (A_TickCount - 22htimer > hours(22.1)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,22htimer
 		if (gluedisp){
