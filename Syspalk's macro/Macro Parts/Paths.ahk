@@ -1238,7 +1238,7 @@ mondo(){
 		walk(2000,"l")
 		timer := A_TickCount
 		while (A_TickCount - timer < minutes(10)){
-			if (SearchFunction("DeadMondo.png",30)[1] = 0 || SearchFunction("DeadMondo1.png",30)[1] = 0 || SearchFunction("DeadMondo2.png",30)[1] = 0){
+			if (SearchFunction("DeadMondo.png",30)[1] = 0 || SearchFunction("DeadMondo1.png",30)[1] = 0){
 				walk(2000,"r")
 				walk(3250,"f")
 				loop 5{
