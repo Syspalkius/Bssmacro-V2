@@ -931,6 +931,12 @@ fightcheck(){ ;checks if a vicious bee is present.
 	sleep 500
 	SendInput {Enter}
 	sleep 250
+	if (checkshiftlock() = 0){ ;if shiftlock is enabled
+		camrotate(1,"l")
+		sleep 30
+		Send {Shift}
+	}
+	sleep 250
 	if (SearchFunction("vicattacking.png",40)[1] = 0 || SearchFunction("vicattacking1.png",40)[1] = 0){
 		status := true
 		starty := A_TickCount
@@ -1055,4 +1061,9 @@ Clicker(delay){ ;uses the mouse to click.
 	Send {Click Left Down}
 	sleep %delay%
 	Send {Click Left Up}
+}
+
+checkshiftlock(){
+	WinGetPos,,,Winwidth,Winheight,Roblox
+	return SearchFunctionv2("shiftlock.png",10,0,Winheight-70,70,Winheight-15)[1]
 }

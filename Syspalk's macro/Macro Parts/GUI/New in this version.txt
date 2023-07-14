@@ -8,3 +8,4 @@
 8. Optimized move to sprinkler function.
 9. Changed pinetree farming position
 10. Changed timers to fix an issue.
+11. Fixed shiftlock issue in vicious hunt.
