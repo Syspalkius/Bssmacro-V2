@@ -404,7 +404,6 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 			camrotate(4,"l")
 		}
 		if (A_TickCount - breaktimer > 10000){
-			ErrorLog("Failed to detect hive image")
 			if (Fails = 4){
 				global Fails := 0
 				ErrorLog("Reconnected (Issue : Hive image wasn't found too many times in a row)")
@@ -447,7 +446,7 @@ SearchFunctionv2(image,variation,x1,y1,x2,y2){ ;imagesearch in function with coo
 }
 
 GOField(field,nectar := false,lootmob := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
-	message := "Traveling to" . field
+	message := "Traveling to " . field
 	Eventlog(message)
 	if (field = "None"){
 		return true

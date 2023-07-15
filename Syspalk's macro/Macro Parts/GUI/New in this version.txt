@@ -10,3 +10,4 @@
 10. Changed timers to fix an issue.
 11. Fixed shiftlock issue in vicious hunt.
 12. Removed an image for checking dead mondo which was causing issues.
+13. Removed "Failed to detect hive image" error.

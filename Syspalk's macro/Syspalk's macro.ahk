@@ -28,6 +28,7 @@ savedata()
 ExitApp
 
 start: ;when the start hotkey is pressed it will jump here.
+Eventlog("Started macro")
 tooltip, ;remove potential tooltip
 Gui, -AlwaysOnTop
 WinActivate, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe ;activate roblox window
