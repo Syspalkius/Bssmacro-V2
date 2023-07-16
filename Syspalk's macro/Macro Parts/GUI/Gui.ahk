@@ -328,16 +328,16 @@ Gui,Font,s13
 Gui,Add,Groupbox, v10tab5 x20 yp+35 w410 h145 cwhite,Webhooks
 Gui,Font,s10
 Gui,Add,Text, v10tab6 x230 yp+35 cwhite,Events webhook
-Gui,Add,Edit, v10tab7 w175 h20 x50 yp, %hookevent%
+Gui,Add,Edit, v10tab7 w175 h20 x50 yp gsavedata, %hookevent%
 Gui,Add,Text, v10tab8 x230 yp+35 cwhite,Errors webhook
-Gui,Add,Edit, v10tab9 w175 h20 x50 yp, %hookerror%
+Gui,Add,Edit, v10tab9 w175 h20 x50 yp gsavedata, %hookerror%
 Gui,Add,Button, v10tab10 xp yp+35,Send Test Message
 Gui,Font,s13
 Gui,Add,Groupbox, v10tab12 x20 yp+50 w250 h130 cwhite,Vip Links
 Gui,Font,s10
-Gui,Add,Text, v10tab13 x160 yp+35 cwhite,main viplink
+Gui,Add,Text, v10tab13 x160 yp+35 cwhite gsavedata,main viplink
 Gui,Add,Edit, v10tab14 w120 h20 x35 yp-5 , %main%
-Gui,Add,Text, v10tab15 x160 yp+35 cwhite,backup viplink
+Gui,Add,Text, v10tab15 x160 yp+35 cwhite gsavedata,backup viplink
 Gui,Add,Edit, v10tab16 w120 h20 x35 yp-5, %alt%
 Gui,Add,Checkbox, v10tab17 x30 yp+35 cwhite %joinmain%,Force join main link
 Gui,Font,s13
