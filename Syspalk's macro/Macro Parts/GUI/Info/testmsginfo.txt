@@ -1,0 +1,3 @@
+When pressing this button the macro will send a test message to the webhooks.
+
+This can be used to check if you put in the correct webhook or if there is a connection.

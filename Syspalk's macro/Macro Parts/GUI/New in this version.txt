@@ -11,3 +11,5 @@
 11. Fixed shiftlock issue in vicious hunt.
 12. Removed an image for checking dead mondo which was causing issues.
 13. Removed "Failed to detect hive image" error.
+14. Added "Send Test Message" option to the webhooks to test the connection.
+15. Fixed "Load blue 5 nectar preset" not loading the hotkeys.

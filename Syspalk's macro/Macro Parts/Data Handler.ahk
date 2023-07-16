@@ -840,6 +840,19 @@ loadblue5nectar(reload := 0){
 	IniWrite,Mountain,Macro Parts/configs/Data.ini,planters,plantfield10
 	IniWrite,Pepper,Macro Parts/configs/Data.ini,planters,plantfield11
 	IniWrite,Cactus,Macro Parts/configs/Data.ini,planters,plantfield12
+
+	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter1
+	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter2
+	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter3
+	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter4
+	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter5
+	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter6
+	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter7
+	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter8
+	IniWrite,4,Macro Parts/configs/Data.ini,planters,planter9
+	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter10
+	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter11
+	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter12
 	if (reload){
 		reload
 	}
@@ -859,18 +872,6 @@ loadidealblue(){
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,shiftlock
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,shrine
 	IniWrite,1,Macro Parts/configs/Data.ini,farming,bluebooster
-	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter1
-	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter2
-	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter3
-	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter4
-	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter5
-	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter6
-	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter7
-	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter8
-	IniWrite,4,Macro Parts/configs/Data.ini,planters,planter9
-	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter10
-	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter11
-	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter12
 	IniWrite,0,Macro Parts/configs/Data.ini,planters,lootplanters
 	IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull1
 	IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull2

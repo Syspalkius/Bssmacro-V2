@@ -41,6 +41,10 @@ ButtonApplyChanges(){
 	savedata()
 	reload
 }
+ButtonSendTestMessage(){
+	Eventlog("Test Message")
+	Errorlog("Test Message")
+}
 
 ;------Info buttons------
 farminfo(){
@@ -110,6 +114,10 @@ hookeventinfo(){
 hookerrorinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/hookerrorinfo.txt
 	popup(400,35,12,"Error webhook info",Text)
+}
+testmsginfo(){
+	FileRead, Text, Macro Parts\GUI\Info/testmsginfo.txt
+	popup(400,120,12,"Test message info",Text)
 }
 
 ;------Macro buttons------
