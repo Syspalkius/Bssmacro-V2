@@ -107,7 +107,7 @@ Gui,Add,Text, v2tab43 x340 y570 c53ede5 gpause,%PauseText%
 Gui,Font,s17 Bold
 Gui,Add,Text, v3tab1 x340 y10 cgreen,Planters
 Gui,Font,s13
-Gui,Add,Groupbox, v3tab2 x10 y50 w435 h215 cred,Cycle
+Gui,Add,Groupbox, v3tab2 x10 y50 w430 h215 cred,Cycle
 Gui,Font,s8
 Gui,Add,Text, v3tab3 x15 y80 cwhite,Fields`n`nPlanter`n`n`nFields`n`nPlanter`n`n`nFields`n`nPlanter
 Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4,%plantfield1%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
@@ -155,10 +155,10 @@ loop 11{
 	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,%planter%||1|2|3|4|5|6|7
 }
 Gui,Font,s13
-Gui,Add,GroupBox, v3tab28 x10 yp+40 w260 h140 cred,Plant Looting
+Gui,Add,GroupBox, v3tab28 x10 yp+43 w260 h130 cred,Plant Looting
 Gui,Font,s8
-Gui,Add,CheckBox, v3tab29 xp+10 yp+35 cwhite %lootplanters% , loot planters
-Gui,Add,CheckBox, v3tab30 xp yp+35 cwhite %harviffull1% , harvest plant 1 when fully grown
+Gui,Add,CheckBox, v3tab29 xp+10 yp+30 cwhite %lootplanters% , loot planters
+Gui,Add,CheckBox, v3tab30 xp yp+30 cwhite %harviffull1% , harvest plant 1 when fully grown
 Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2% , harvest plant 2 when fully grown
 Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3% , harvest plant 3 when fully grown
 Gui,Font,s13
@@ -171,13 +171,13 @@ Gui,Add,Text,v3tab37 xp-50 yp+30 cwhite, plant 2
 Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140 ,%plantdelay2%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab39 xp-50 yp+30 cwhite, plant 3
 Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140 ,%plantdelay3%||30 min|1 hour|2 hours|4 hours
-Gui,Add,Button, v3tab41 x10 yp+50,Reset Settings
+Gui,Add,Button, v3tab41 x10 yp+57,Reset Settings
 Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
 Gui,Font,s10
-Gui,Add,Text, v3tab43 x430 y68 w10 h17 c%infocol% gcycleinfo,?
-Gui,Add,Text, v3tab44 x195 y440 w10 h17 c%infocol% gharvtimeinfo,?
-Gui,Add,Text, v3tab45 x110 y560 w10 h17 c%infocol% gresetsettingsinfo,?
-Gui,Add,Text, v3tab46 x255 y560 w10 h17 c%infocol% gresetcycleinfo,?
+Gui,Add,Text, v3tab43 x425 y64 w10 h17 c%infocol% gcycleinfo,?
+Gui,Add,Text, v3tab44 x195 y429 w10 h17 c%infocol% gharvtimeinfo,?
+Gui,Add,Text, v3tab45 x110 y564 w10 h17 c%infocol% gresetsettingsinfo,?
+Gui,Add,Text, v3tab46 x256 y564 w10 h17 c%infocol% gresetcycleinfo,?
 
 
 Gui,Font,s17 Bold
@@ -196,13 +196,13 @@ Gui,Add,Checkbox, v4tab10 xp yp+20 cwhite %freeant% , Use free pass to play ant
 Gui,Add,Checkbox, v4tab11 xp yp+20 cwhite %buyant% , Buy and use ant pass every
 Gui,Add,DropDownlist, v4tab12 xp+215 yp w60 h200 ,%playtimer%||30 min|1 hour|2 hours|4 hours
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab13 x20 yp+35 w300 h75 cwhite,kill vicious
+Gui,Add,Groupbox, v4tab13 x20 yp+40 w300 h75 cwhite,kill vicious
 Gui,Font,s10
 Gui,Add,Checkbox, v4tab14 xp+10 yp+25 cwhite %vicious% ,Kill vicious bee when night is detected
 Gui,Add,Text, v4tab15 x85 yp+25 cwhite,Maximum combat time [Seconds]
 Gui,Add,Edit, v4tab16 number x30 yp-2 w50 ,%maxcombattime%
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab17 x20 yp+35 w180 h185 cwhite,Mobs
+Gui,Add,Groupbox, v4tab17 x20 yp+37 w180 h185 cwhite,Mobs
 Gui,Font,s10
 Gui,Add,Checkbox, v4tab18 x30 yp+20 cwhite %lady% ,Kill ladybugs
 Gui,Add,Checkbox, v4tab19 x30 yp+20 cwhite %rhino% ,Kill rhino beetles
@@ -214,8 +214,8 @@ gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel% ,Kill tunnelbear
 gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% ,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
-Gui,Add,Text, v4tab28 x230 y60 w10 h17 c%infocol% gdispenserinfo,?
-Gui,Add,Text, v4tab29 x180 y330 w10 h17 c%infocol% gmobinfo,?
+Gui,Add,Text, v4tab28 x235 y54 w10 h17 c%infocol% gdispenserinfo,?
+Gui,Add,Text, v4tab29 x185 y334 w10 h17 c%infocol% gmobinfo,?
 
 
 
