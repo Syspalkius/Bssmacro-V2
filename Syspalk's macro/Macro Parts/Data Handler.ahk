@@ -710,7 +710,7 @@ resetconfig(){
 	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield3
 	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield4
 	IniWrite,zigzag++,Macro Parts/configs/Data.ini,farming,farmpattern
-	IniWrite,50,Macro Parts/configs/Data.ini,farming,patternsize
+	IniWrite,75,Macro Parts/configs/Data.ini,farming,patternsize
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,convsetting
 	IniWrite,10,Macro Parts/configs/Data.ini,farming,maxtimeonfield
 	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool

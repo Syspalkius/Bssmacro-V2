@@ -182,8 +182,8 @@ straw(nectar){
 		walk(100,"l")
 	}
 	else{
-		walk(1000,"b")
-		walk(1000,"l")
+		walk(2000,"b")
+		walk(2000,"l")
 	}
 }
 
