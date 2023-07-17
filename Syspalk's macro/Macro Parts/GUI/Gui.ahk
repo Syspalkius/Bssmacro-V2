@@ -54,17 +54,17 @@ Gui,Add,DropDownList, v2tab3 xp+100 yp w95 h200 ,%farmfield2%||None|bugrun&polar
 Gui,Add,DropDownList, v2tab4 xp+100 yp w95 h200 ,%farmfield3%||None|bugrun&polar|Plant 1|Plant 2|Plant 3|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 Gui,Add,DropDownList, v2tab5 xp+100 yp w95 h200 ,%farmfield4%||None|bugrun&polar|Plant 1|Plant 2|Plant 3|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
 Gui,Font,s10
-Gui,Add,Text, v2tab6 xp+105 yp w10 h17 c%infocol% gfarminfo,?
+Gui,Add,Text, v2tab6 xp+105 yp+2 w10 h17 c%infocol% gfarminfo,?
 Gui,Add,Text, v2tab7 x40 y50 cwhite ,Field 1             Field 2             Field 3             Field 4
 Gui,Add,DropDownList, v2tab8 x20 y135 w90 h200,%farmpattern%||None|zigzag|squares|zigzag++
 Gui,Add,Text, v2tab9 xp+15 yp-20 cwhite,Pattern                               Size
 Gui,Add,Slider, v2tab10 Left ToolTip xp+115 yp+25 range0-100,%patternsize%
-Gui,Add,Text, v2tab11 xp+155 yp w10 h17 c%infocol% gpatterninfo,?
-Gui,Add,Edit,  v2tab15 x20 yp+30 number w40
+Gui,Add,Text, v2tab11 xp+150 yp+9 w10 h17 c%infocol% gpatterninfo,?
+Gui,Add,Edit,  v2tab15 x20 yp+21 number w40
 Gui,Add,UpDown, v2tab16 Range0-60,%maxtimeonfield%
 Gui,Add,Text, v2tab17 xp+45  yp+5 cwhite, max time on field (minutes)
-Gui,Add,Text, v2tab18 xp+195 yp w10 h17 c%infocol% gmaxtimeinfo,?
-Gui,Add,Checkbox, v2tab12 x20 yp+30 %convsetting% cWhite,Convert balloon
+Gui,Add,Text, v2tab18 xp+188 yp+2 w10 h17 c%infocol% gmaxtimeinfo,?
+Gui,Add,Checkbox, v2tab12 x20 yp+28 %convsetting% cWhite,Convert balloon
 Gui,Add,Checkbox, v2tab19 x20 yp+25 %swingtool% cWhite,Swing tool while farming
 Gui,Add,CheckBox, v2tab20 x20 yp+25 cwhite %sprinkleralign%,Move to sprinkler
 Gui,Add,Text, v2tab21 xp+145 yp w10 h17 c%infocol% gsprinklerinfo,?
@@ -78,19 +78,19 @@ Gui,Font,s10
 Gui,Add,Checkbox, v2tab27 x25 yp+25 cwhite %shrine%,Donate to the windshrine
 Gui,Add,Edit, v2tab28 number x25 yp+30 w50
 Gui,Add,UpDown, v2tab29 Range1-100 ,%donationamount%
-Gui,Add,Text, v2tab30 xp+60 yp cwhite,Amount of items
-Gui,Add,Text, v2tab31 x130 yp+40 cwhite,Item
-Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp ,%donationitem%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
+Gui,Add,Text, v2tab30 xp+60 yp+4 cwhite,Amount of items
+Gui,Add,Text, v2tab31 x130 yp+38 cwhite,Item
+Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp-4 ,%donationitem%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
 Gui,Font,s13
-Gui,Add,Groupbox, v2tab33 x240 yp-95 w200 h95 cwhite,Boosters
+Gui,Add,Groupbox, v2tab33 x240 yp-95 w190 h98 cwhite,Boosters
 Gui,Font,s10
-Gui,Add,Text, v2tab34 xp+180 yp+20 w10 h17 c%infocol% gboosterinfo,?
-Gui,Add,Checkbox, v2tab35 x250 yp+5 cwhite %bluebooster%,Blue Booster
+Gui,Add,Text, v2tab34 xp+175 yp+14 w10 h17 c%infocol% gboosterinfo,?
+Gui,Add,Checkbox, v2tab35 x250 yp+10 cwhite %bluebooster%,Blue Booster
 Gui,Add,Checkbox, v2tab36 x250 yp+25 cwhite %redbooster%,Red Booster
 Gui,Add,Checkbox, v2tab37 x250 yp+25 cwhite %whitebooster%,White Booster
-Gui,Add,Groupbox, v2tab38 x240 yp+10 w200 h40 cwhite,
-Gui,Add,Checkbox, v2tab39 x250 yp+15 cred %reglitter% ,Re-glitter pinetree
-Gui,Add,Text, v2tab40 xp+170 yp w10 h17 c%infocol% greglitterinfo,?
+Gui,Add,Groupbox, v2tab38 x240 yp+13 w190 h45 cwhite,
+Gui,Add,Checkbox, v2tab39 x250 yp+19 cred %reglitter% ,Re-glitter pinetree
+Gui,Add,Text, v2tab40 xp+165 yp-4 w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
 IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
 IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
