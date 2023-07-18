@@ -494,8 +494,38 @@ GOField(field,nectar := false,lootmob := false){ ;function that takes input and 
 }
 
 bagcheck(){ ;checks if the bag is full I should have done this with a return but at the time I didn't know how that stuff worked but this works too I guess.
-	if (SpecificPixelSearchFunction(0x1700F7,2,0,0,A_ScreenWidth,150)[1] = 0){
+	if (SpecificPixelSearchFunction(0x1700F7,0,0,A_ScreenWidth,150)[1] = 0){
 		return true
+	}
+}
+
+satsearcher(x1,y1,x2,y2){
+	if (SearchFunctionv2("sprinkler1.png",0,x1,y1,x2,y2)[1] = 0){
+		return 0
+	}
+	else if (SearchFunctionv2("sprinkler2.png",0,x1,y1,x2,y2)[1] = 0){
+		return 0
+	}
+	else if (SearchFunctionv2("sprinkler3.png",0,x1,y1,x2,y2)[1] = 0){
+		return 0
+	}
+	else if (SearchFunctionv2("sprinkler4.png",0,x1,y1,x2,y2)[1] = 0){
+		return 0
+	}
+	else if (SearchFunctionv2("sprinkler5.png",0,x1,y1,x2,y2)[1] = 0){
+		return 0
+	}
+	else if (SearchFunctionv2("sprinkler6.png",0,x1,y1,x2,y2)[1] = 0){
+		return 0
+	}
+	else if (SearchFunctionv2("sprinkler7.png",0,x1,y1,x2,y2)[1] = 0){
+		return 0
+	}
+	else if (SearchFunctionv2("sprinkler8.png",0,x1,y1,x2,y2)[1] = 0){
+		return 0
+	}
+	else{
+		return 1
 	}
 }
 
@@ -506,52 +536,56 @@ movetosat(){
 	Leftt := Winwidth / 2.2
 	Rightt := Winwidth / 1.8
 
-	if (SearchFunctionv2("sprinkler.png",10,0,0,Winwidth,Top)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,0,Winwidth,Top)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,0,Winwidth,Top)[1] = 0){
+	if (satsearcher(0,0,Winwidth,Top) = 0){
 		walkhold("f","Down")
-		loop 20{
-			if not (SearchFunctionv2("sprinkler.png",10,0,0,Winwidth,Top)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,0,Winwidth,Top)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,0,Winwidth,Top)[1] = 0){
+		satstarttime := A_TickCount
+		while (A_TickCount - satstarttime < 2000){
+			if not (satsearcher(0,0,Winwidth,Top) = 0){
 				break
 			}
-			sleep 100
+			sleep 50
 		}
 		walkhold("f","Up")
 	}
-	else if (SearchFunctionv2("sprinkler.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0){
+	else if (satsearcher(0,Bottom,Winwidth,WinHeight) = 0){
 		walkhold("b","Down")
-		loop 20{
-			if not (SearchFunctionv2("sprinkler.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,Bottom,Winwidth,WinHeight)[1] = 0){
+		satstarttime := A_TickCount
+		while (A_TickCount - satstarttime < 2000){
+			if not (satsearcher(0,Bottom,Winwidth,WinHeight) = 0){
 				break
 			}
-			sleep 100
+			sleep 50
 		}
 		walkhold("b","Up")
 	}
 	
-	if (SearchFunctionv2("sprinkler.png",10,0,0,Leftt,Winheight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,0,Leftt,Winheight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,0,Leftt,Winheight)[1] = 0){
+	if (satsearcher(0,0,Leftt,Winheight) = 0){
 		walkhold("l","Down")
-		loop 20{
-			if not (SearchFunctionv2("sprinkler.png",10,0,0,Leftt,Winheight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,0,0,Leftt,Winheight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,0,0,Leftt,Winheight)[1] = 0){
+		satstarttime := A_TickCount
+		while (A_TickCount - satstarttime < 2000){
+			if not (satsearcher(0,0,Leftt,Winheight) = 0){
 				break
 			}
-			sleep 100
+			sleep 50
 		}
 		walkhold("l","Up")
 	}
-	else if (SearchFunctionv2("sprinkler.png",10,Rightt,0,WinWidth,Winheight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,Rightt,0,WinWidth,Winheight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,Rightt,0,WinWidth,Winheight)[1] = 0){
+	else if (satsearcher(Rightt,0,WinWidth,Winheight) = 0){
 		walkhold("r","Down")
-		loop 20{
-			if not (SearchFunctionv2("sprinkler.png",10,Rightt,0,WinWidth,Winheight)[1] = 0 || SearchFunctionv2("sprinkler1.png",10,Rightt,0,WinWidth,Winheight)[1] = 0 || SearchFunctionv2("sprinkler2.png",10,Rightt,0,WinWidth,Winheight)[1] = 0){
+		satstarttime := A_TickCount
+		while (A_TickCount - satstarttime < 2000){
+			if not (satsearcher(Rightt,0,WinWidth,Winheight) = 0){
 				break
 			}
-			sleep 100
+			sleep 50
 		}
 		walkhold("r","Up")
 	}
 }
 
-SpecificPixelSearchFunction(color,variation,x1,y1,x2,y2){ ;pixelsearch in a function.
+SpecificPixelSearchFunction(color,x1,y1,x2,y2){ ;pixelsearch in a function.
 	mousemove,A_ScreenWidth/2,A_ScreenHeight/2 ;move mouse to 0,0
-	PixelSearch, FoundX, FoundY,%x1%,%y1%,%x2%,%y2%,%color%, *%variation%,fast
+	PixelSearch, FoundX, FoundY,%x1%,%y1%,%x2%,%y2%,%color%,,fast
 	return [ErrorLevel,FoundX,FoundY]
 }
 

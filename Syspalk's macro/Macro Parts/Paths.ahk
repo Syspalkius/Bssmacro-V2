@@ -17,6 +17,7 @@
 	Send {Shift}
 	SendSpace()
 	sleep 8000
+	readgui()
 	if (nectar = true){
 		camrotate(1,"l")
 		walk(3000,"f")
@@ -27,8 +28,7 @@
 		walk(300,"l") 
 		sleep 1000
 	}
-	readgui()
-	if (pinecentralfarm){
+	else if (pinecentralfarm){
 		walk(5000,"f")
 		walk(3200,"b")
 		camrotate(1,"l")

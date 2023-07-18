@@ -1,9 +1,3 @@
-1. Made the links save the moment you change anything to them instead of when starting/stopping macro.
-2. Changed straw farming position.
-3. Changed gummy bee image to make glue disp collection more reliable.
-4. Made changes to farming tab.
-5. Made changes to planters tab.
-6. Made changes to resources tab.
-7. Made changes to keybinds tab.
-8. Added option for central farming position in pinetree.
-9. Replaced dead vic image as the previous one wasn't working.
+1. Changed sunflower farming camera rotation to fix bug where the portal would be detected as a sprinkler during nighttime.
+2. Rewrote sprinkler alignment in attempt to make it faster and more reliable.
+3. Fixed issue with pinetree planter path.
