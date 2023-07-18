@@ -71,6 +71,7 @@ Gui,Add,Text, v2tab21 xp+145 yp w10 h17 c%infocol% gsprinklerinfo,?
 Gui,Add,Checkbox, v2tab22 x20 yp+25 cwhite %pinewalkconv%,Pinetree walk convert
 Gui,Add,Text, v2tab23 xp+175 yp w10 h17 c%infocol% gwalkpineinfo,?
 Gui,Add,Checkbox, v2tab44 x20 yp+25 cwhite %pinecentralfarm%,Pinetree Central farming position
+Gui,Add,Text, v2tab45 xp+250 yp w10 h17 c%infocol% gcentralinfo,?
 Gui,Add,Checkbox, v2tab24 x20 yp+25 cwhite %waitforpop%,Don't exit the field when pop star is active
 Gui,Add,Checkbox, v2tab25 x20 yp+25 cwhite %shiftlock%,Farm with shiftlock
 Gui,Font,s13

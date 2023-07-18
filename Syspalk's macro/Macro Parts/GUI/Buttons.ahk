@@ -65,7 +65,11 @@ sprinklerinfo(){
 }
 walkpineinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/walkpineinfo.txt
-	popup(400,160,12,"Pinetree walk convert info",Text)
+	popup(400,180,12,"Pinetree walk convert info",Text)
+}
+centralinfo(){
+	FileRead, Text, Macro Parts\GUI\Info/centralinfo.txt
+	popup(400,160,12,"Pinetree central farming info",Text)
 }
 boosterinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/boosterinfo.txt

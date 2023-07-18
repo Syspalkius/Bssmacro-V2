@@ -1,0 +1,3 @@
+When enabling this option the macro will farm in the center of the field as opposed to farming in the corner.
+
+if going for honey is your goal then you should disable this option but if you're going for blueberries then you should enable this option as you farm more fruits when you're in the center of the field.
