@@ -1,15 +1,9 @@
-1. Changed the webhook messages.
-2. Changed zigzag++ a little bit.
-3. Changed polar bear mousemove to look for image.
-4. Added use at hive option for the consumables.
-5. Fixed issue with planters not looping.
-6. move to sprinkler now works on all graphics.
-7. Rewrote move to sprinkler function.
-8. Optimized move to sprinkler function.
-9. Changed pinetree farming position
-10. Changed timers to fix an issue.
-11. Fixed shiftlock issue in vicious hunt.
-12. Removed an image for checking dead mondo which was causing issues.
-13. Removed "Failed to detect hive image" error.
-14. Added "Send Test Message" option to the webhooks to test the connection.
-15. Fixed "Load blue 5 nectar preset" not loading the hotkeys.
+1. Made the links save the moment you change anything to them instead of when starting/stopping macro.
+2. Changed straw farming position.
+3. Changed gummy bee image to make glue disp collection more reliable.
+4. Made changes to farming tab.
+5. Made changes to planters tab.
+6. Made changes to resources tab.
+7. Made changes to keybinds tab.
+8. Added option for central farming position in pinetree.
+9. Replaced dead vic image as the previous one wasn't working.
