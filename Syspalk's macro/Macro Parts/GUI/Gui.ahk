@@ -70,6 +70,7 @@ Gui,Add,CheckBox, v2tab20 x20 yp+25 cwhite %sprinkleralign%,Move to sprinkler
 Gui,Add,Text, v2tab21 xp+145 yp w10 h17 c%infocol% gsprinklerinfo,?
 Gui,Add,Checkbox, v2tab22 x20 yp+25 cwhite %pinewalkconv%,Pinetree walk convert
 Gui,Add,Text, v2tab23 xp+175 yp w10 h17 c%infocol% gwalkpineinfo,?
+Gui,Add,Checkbox, v2tab44 x20 yp+25 cwhite %pinecentralfarm%,Pinetree Central farming position
 Gui,Add,Checkbox, v2tab24 x20 yp+25 cwhite %waitforpop%,Don't exit the field when pop star is active
 Gui,Add,Checkbox, v2tab25 x20 yp+25 cwhite %shiftlock%,Farm with shiftlock
 Gui,Font,s13
@@ -82,15 +83,15 @@ Gui,Add,Text, v2tab30 xp+60 yp+4 cwhite,Amount of items
 Gui,Add,Text, v2tab31 x130 yp+38 cwhite,Item
 Gui,Add,DropDownlist,v2tab32 w100 h200 x25 yp-4 ,%donationitem%||None|Bitter|BlueBerry|BlueExt|Coconut|Enz|Glit|Glue|Gumdrop|Honeysuck|Oil|Pineap|RedExt|Straw|SunSeed|Ticket|Treat|Trop
 Gui,Font,s13
-Gui,Add,Groupbox, v2tab33 x240 yp-95 w190 h98 cwhite,Boosters
+Gui,Add,Groupbox, v2tab33 x240 yp-93 w190 h96 cwhite,Boosters
 Gui,Font,s10
 Gui,Add,Text, v2tab34 xp+175 yp+14 w10 h17 c%infocol% gboosterinfo,?
 Gui,Add,Checkbox, v2tab35 x250 yp+10 cwhite %bluebooster%,Blue Booster
 Gui,Add,Checkbox, v2tab36 x250 yp+25 cwhite %redbooster%,Red Booster
 Gui,Add,Checkbox, v2tab37 x250 yp+25 cwhite %whitebooster%,White Booster
-Gui,Add,Groupbox, v2tab38 x240 yp+13 w190 h45 cwhite,
+Gui,Add,Groupbox, v2tab38 x240 yp+12 w190 h44 cwhite,
 Gui,Add,Checkbox, v2tab39 x250 yp+19 cred %reglitter% ,Re-glitter pinetree
-Gui,Add,Text, v2tab40 xp+165 yp-4 w10 h17 c%infocol% greglitterinfo,?
+Gui,Add,Text, v2tab40 xp+165 yp-7 w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
 IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
 IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
@@ -290,9 +291,9 @@ Gui,Add,Text, v9tab12 xp+20 yp+3 cwhite,Rotate camera to the left
 Gui,Add,Edit, v9tab13 x30 yp+30 h20 w17 limit1 gsavehotkeys,%camright%
 Gui,Add,Text, v9tab14 xp+20 yp+3 cwhite,Rotate camera to the right
 Gui,Font,s13
-Gui,Add,Groupbox, v9tab15 x20 yp+40 w150 h250 cwhite,Hotbar
+Gui,Add,Groupbox, v9tab15 x20 yp+42 w150 h255 cwhite,Hotbar
 Gui,Font,s10
-Gui,Add,Edit, v9tab16 x30 yp+20 h20 w17 limit1 gsavehotkeys,%hotbar1%
+Gui,Add,Edit, v9tab16 x30 yp+25 h20 w17 limit1 gsavehotkeys,%hotbar1%
 Gui,Add,Text, v9tab17 xp+20 yp+3 cwhite,Hotbar slot 1
 Gui,Add,Edit, v9tab18 x30 yp+30 h20 w17 limit1 gsavehotkeys,%hotbar2%
 Gui,Add,Text, v9tab19 xp+20 yp+3 cwhite,Hotbar slot 2
@@ -307,7 +308,7 @@ Gui,Add,Text, v9tab27 xp+20 yp+3 cwhite,Hotbar slot 6
 Gui,Add,Edit, v9tab28 x30 yp+30 h20 w17 limit1 gsavehotkeys,%hotbar7%
 Gui,Add,Text, v9tab29 xp+20 yp+3 cwhite,Hotbar slot 7
 Gui,Font,s13
-Gui,Add,Groupbox, v9tab30 x180 y278 w100 h120 cwhite,Macro
+Gui,Add,Groupbox, v9tab30 x180 y280 w100 h120 cwhite,Macro
 Gui,Font,s10
 Gui,Add,Edit, v9tab31 x190 yp+20 h20 w27 limit2 gsavehotkeys,%Startkey%
 Gui,Add,Text, v9tab32 xp+30 yp+3 cwhite,Start
@@ -315,7 +316,7 @@ Gui,Add,Edit, v9tab33 x190 yp+30 h20 w27 limit2 gsavehotkeys,%Stopkey%
 Gui,Add,Text, v9tab34 xp+30 yp+3 cwhite,Stop
 Gui,Add,Edit, v9tab35 x190 yp+30 h20 w27 limit2 gsavehotkeys,%Pausekey%
 Gui,Add,Text, v9tab36 xp+30 yp+3 cwhite,Pause
-Gui,Add,Button, v9tab37 x20 y550 ,Apply Changes
+Gui,Add,Button, v9tab37 x20 y555 ,Apply Changes
 
 
 Gui,Font,s17 Bold

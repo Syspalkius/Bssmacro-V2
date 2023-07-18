@@ -9,6 +9,7 @@ global maxtimeonfield
 global swingtool
 global sprinkleralign
 global pinewalkconv
+global pinecentralfarm
 global waitforpop
 global shiftlock
 global shrine
@@ -161,6 +162,7 @@ readini(){ ;reads all the data from the ini file
 	IniRead,swingtool,Macro Parts/configs/Data.ini,farming,swingtool
 	IniRead,sprinkleralign,Macro Parts/configs/Data.ini,farming,sprinkleralign
 	IniRead,pinewalkconv,Macro Parts/configs/Data.ini,farming,pinewalkconv
+	IniRead,pinecentralfarm,Macro Parts/configs/Data.ini,farming,pinecentralfarm
 	IniRead,waitforpop,Macro Parts/configs/Data.ini,farming,waitforpop
 	IniRead,shiftlock,Macro Parts/configs/Data.ini,farming,shiftlock
 	IniRead,shrine,Macro Parts/configs/Data.ini,farming,shrine
@@ -274,6 +276,9 @@ readini(){ ;reads all the data from the ini file
 	}
 	if (pinewalkconv){
 		global pinewalkconv := "Checked"
+	}
+	if (pinecentralfarm){
+		global pinecentralfarm := "Checked"
 	}
 	if (waitforpop){
 		global waitforpop := "Checked"
@@ -417,6 +422,7 @@ readgui(){ ;reads all the data from the gui
 	Guicontrolget,swingtool,,2tab19
 	Guicontrolget,sprinkleralign,,2tab20
 	Guicontrolget,pinewalkconv,,2tab22
+	Guicontrolget,pinecentralfarm,,2tab44
 	Guicontrolget,waitforpop,,2tab24
 	Guicontrolget,shiftlock,,2tab25
 	Guicontrolget,shrine,,2tab27
@@ -564,6 +570,7 @@ savedata(){ ;saves all the data
 	IniWrite,%swingtool%,Macro Parts/configs/Data.ini,farming,swingtool
 	IniWrite,%sprinkleralign%,Macro Parts/configs/Data.ini,farming,sprinkleralign
 	IniWrite,%pinewalkconv%,Macro Parts/configs/Data.ini,farming,pinewalkconv
+	IniWrite,%pinecentralfarm%,Macro Parts/configs/Data.ini,farming,pinecentralfarm
 	IniWrite,%waitforpop%,Macro Parts/configs/Data.ini,farming,waitforpop
 	IniWrite,%shiftlock%,Macro Parts/configs/Data.ini,farming,shiftlock
 	IniWrite,%shrine%,Macro Parts/configs/Data.ini,farming,shrine
@@ -716,6 +723,7 @@ resetconfig(){
 	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinewalkconv
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinecentralfarm
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,waitforpop
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,shiftlock
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,shrine
@@ -868,6 +876,7 @@ loadidealblue(){
 	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign
 	IniWrite,1,Macro Parts/configs/Data.ini,farming,pinewalkconv
+	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinecentralfarm
 	IniWrite,1,Macro Parts/configs/Data.ini,farming,waitforpop
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,shiftlock
 	IniWrite,0,Macro Parts/configs/Data.ini,farming,shrine
