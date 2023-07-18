@@ -81,7 +81,7 @@ sunf(nectar){
 	walk(400,"r")
 	sleep 1000
 	walk(2000,"r")
-	walk(5500,"b")
+	walk(4750,"b")
 	if (nectar = true){
 		walk(5000,"r")
 		walk(6000,"f")
@@ -89,7 +89,7 @@ sunf(nectar){
 		walk(175,"l")
 		sleep 200
 	}else{
-		walk(750,"l")
+		camrotate(4,"r")
 	}
 } 
 
@@ -725,7 +725,8 @@ Clock(){
 redbooster(){
 	EventLog("Going to red booster")
 	sunf(false)
-	walk(4000,"r")
+	camrotate(4,"r")
+	walk(3000,"r")
 	walk(5000,"f")
 	SendSpace()
 	walk(4000,"r")
