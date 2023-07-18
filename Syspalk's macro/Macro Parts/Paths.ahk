@@ -27,6 +27,12 @@
 		walk(300,"l") 
 		sleep 1000
 	}
+	readgui()
+	if (pinecentralfarm){
+		walk(5000,"f")
+		walk(3200,"b")
+		camrotate(1,"l")
+	}
 	else{
 		walk(5000,"f")
 		walk(1800,"b")
@@ -586,7 +592,11 @@ pinewalktohive(pinetree){
 	if (pinewalkconv && pinetree){
 		eventlog("Walking back to the hive")
 		sleep 100
-		camrotate(1,"r")
+		if (pinecentralfarm){
+			camrotate(2,"r")
+		}else{
+			camrotate(1,"r")
+		}
 		walkhold("r","Down")
 		walkhold("f","Down")
 		sleep 4000
