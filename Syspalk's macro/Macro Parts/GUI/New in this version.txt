@@ -1,3 +1,4 @@
 1. Changed sunflower farming camera rotation to fix bug where the portal would be detected as a sprinkler during nighttime.
 2. Rewrote sprinkler alignment in attempt to make it faster and more reliable.
 3. Fixed issue with pinetree planter path.
+4. Fixed issue with farming on planters.

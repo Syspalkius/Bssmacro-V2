@@ -448,6 +448,7 @@ SearchFunctionv2(image,variation,x1,y1,x2,y2){ ;imagesearch in function with coo
 GOField(field,nectar := false,lootmob := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
 	message := "Traveling to " . field
 	Eventlog(message)
+	readgui()
 	if (field = "None"){
 		return true
 	}else if (field = "Bamboo"){
@@ -486,6 +487,18 @@ GOField(field,nectar := false,lootmob := false){ ;function that takes input and 
 		clover(nectar)
 	}else if (field = "bugrun&polar"){
 		bugrun()
+	}else if(var = "Plant 1"){
+		y := plantcycle1
+		field := plantfield%y%
+		GoField(field)
+	}else if(var = "Plant 2"){
+		y := plantcycle2 + 4
+		field := plantfield%y%
+		GoField(field)
+	}else if(var = "Plant 3"){
+		y := plantcycle2 + 8
+		field := plantfield%y%
+		GoField(field)
 	}
 	if (lootmob){
 		squares(100,false)
@@ -540,10 +553,10 @@ movetosat(){
 		walkhold("f","Down")
 		satstarttime := A_TickCount
 		while (A_TickCount - satstarttime < 2000){
-			if not (satsearcher(0,0,Winwidth,Top) = 0){
+			if (satsearcher(0,0,Winwidth,Top) = 1){
 				break
 			}
-			sleep 50
+			sleep 10
 		}
 		walkhold("f","Up")
 	}
@@ -551,10 +564,10 @@ movetosat(){
 		walkhold("b","Down")
 		satstarttime := A_TickCount
 		while (A_TickCount - satstarttime < 2000){
-			if not (satsearcher(0,Bottom,Winwidth,WinHeight) = 0){
+			if (satsearcher(0,Bottom,Winwidth,WinHeight) = 1){
 				break
 			}
-			sleep 50
+			sleep 10
 		}
 		walkhold("b","Up")
 	}
@@ -563,10 +576,10 @@ movetosat(){
 		walkhold("l","Down")
 		satstarttime := A_TickCount
 		while (A_TickCount - satstarttime < 2000){
-			if not (satsearcher(0,0,Leftt,Winheight) = 0){
+			if (satsearcher(0,0,Leftt,Winheight) = 1){
 				break
 			}
-			sleep 50
+			sleep 10
 		}
 		walkhold("l","Up")
 	}
@@ -574,10 +587,10 @@ movetosat(){
 		walkhold("r","Down")
 		satstarttime := A_TickCount
 		while (A_TickCount - satstarttime < 2000){
-			if not (satsearcher(Rightt,0,WinWidth,Winheight) = 0){
+			if (satsearcher(Rightt,0,WinWidth,Winheight) = 1){
 				break
 			}
-			sleep 50
+			sleep 10
 		}
 		walkhold("r","Up")
 	}
