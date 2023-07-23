@@ -449,6 +449,7 @@ GOField(field,nectar := false,lootmob := false){ ;function that takes input and 
 	message := "Traveling to " . field
 	Eventlog(message)
 	readgui()
+	readplantdata()
 	if (field = "None"){
 		return true
 	}else if (field = "Bamboo"){
@@ -487,15 +488,15 @@ GOField(field,nectar := false,lootmob := false){ ;function that takes input and 
 		clover(nectar)
 	}else if (field = "bugrun&polar"){
 		bugrun()
-	}else if(var = "Plant 1"){
+	}else if(field = "Plant 1"){
 		y := plantcycle1
 		field := plantfield%y%
 		GoField(field)
-	}else if(var = "Plant 2"){
+	}else if(field = "Plant 2"){
 		y := plantcycle2 + 4
 		field := plantfield%y%
 		GoField(field)
-	}else if(var = "Plant 3"){
+	}else if(field = "Plant 3"){
 		y := plantcycle2 + 8
 		field := plantfield%y%
 		GoField(field)

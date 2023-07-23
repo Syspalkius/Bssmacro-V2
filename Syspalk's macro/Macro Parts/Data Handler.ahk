@@ -711,6 +711,7 @@ resetconfig(){
 	resettimers(false)
 	ButtonResetCycleData(false)
 	ButtonResetSettings(false)
+	ButtonResetKeys(false)
 	
 	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield1
 	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield2
@@ -772,24 +773,6 @@ resetconfig(){
 	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff6time
 	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff7time
 	
-	koma := ","
-	IniWrite,w,Macro Parts/configs/Data.ini,keybinds,forward
-	IniWrite,a,Macro Parts/configs/Data.ini,keybinds,left
-	IniWrite,d,Macro Parts/configs/Data.ini,keybinds,right
-	IniWrite,s,Macro Parts/configs/Data.ini,keybinds,backwards
-	IniWrite,%koma%,Macro Parts/configs/Data.ini,keybinds,camleft
-	IniWrite,.,Macro Parts/configs/Data.ini,keybinds,camright
-	IniWrite,1,Macro Parts/configs/Data.ini,keybinds,hotbar1
-	IniWrite,2,Macro Parts/configs/Data.ini,keybinds,hotbar2
-	IniWrite,3,Macro Parts/configs/Data.ini,keybinds,hotbar3
-	IniWrite,4,Macro Parts/configs/Data.ini,keybinds,hotbar4
-	IniWrite,5,Macro Parts/configs/Data.ini,keybinds,hotbar5
-	IniWrite,6,Macro Parts/configs/Data.ini,keybinds,hotbar6
-	IniWrite,7,Macro Parts/configs/Data.ini,keybinds,hotbar7
-	IniWrite,F1,Macro Parts/configs/Data.ini,keybinds,Startkey
-	IniWrite,F2,Macro Parts/configs/Data.ini,keybinds,Stopkey
-	IniWrite,F3,Macro Parts/configs/Data.ini,keybinds,Pausekey
-	
 	IniWrite,28,Macro Parts/configs/Data.ini,settings,speed
 	IniWrite,0,Macro Parts/configs/Data.ini,settings,joinmain
 	IniWrite,Insert Link,Macro Parts/configs/Links.ini,webhooks,hookevent
@@ -812,6 +795,30 @@ ButtonResetCycleData(tooltip := 1){
 	}
 }
 
+
+
+ButtonResetKeys(reload := 1){
+	koma := ","
+	IniWrite,w,Macro Parts/configs/Data.ini,keybinds,forward
+	IniWrite,a,Macro Parts/configs/Data.ini,keybinds,left
+	IniWrite,d,Macro Parts/configs/Data.ini,keybinds,right
+	IniWrite,s,Macro Parts/configs/Data.ini,keybinds,backwards
+	IniWrite,%koma%,Macro Parts/configs/Data.ini,keybinds,camleft
+	IniWrite,.,Macro Parts/configs/Data.ini,keybinds,camright
+	IniWrite,1,Macro Parts/configs/Data.ini,keybinds,hotbar1
+	IniWrite,2,Macro Parts/configs/Data.ini,keybinds,hotbar2
+	IniWrite,3,Macro Parts/configs/Data.ini,keybinds,hotbar3
+	IniWrite,4,Macro Parts/configs/Data.ini,keybinds,hotbar4
+	IniWrite,5,Macro Parts/configs/Data.ini,keybinds,hotbar5
+	IniWrite,6,Macro Parts/configs/Data.ini,keybinds,hotbar6
+	IniWrite,7,Macro Parts/configs/Data.ini,keybinds,hotbar7
+	IniWrite,F1,Macro Parts/configs/Data.ini,keybinds,Startkey
+	IniWrite,F2,Macro Parts/configs/Data.ini,keybinds,Stopkey
+	IniWrite,F3,Macro Parts/configs/Data.ini,keybinds,Pausekey
+	if (reload){
+		reload
+	}
+}
 
 
 ButtonResetSettings(reload){
