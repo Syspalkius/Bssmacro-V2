@@ -946,6 +946,26 @@ useitemfrominv(item,closeafter){
 	}
 }
 
+newversion(){ ;shut up
+	IniRead,firstlaunch,Macro Parts/configs/Data.ini,settings,firstlaunch
+	if (firstlaunch = 1){
+		IniWrite,0,Macro Parts/configs/Data.ini,settings,firstlaunch
+		try{ ;please don't nuke my webhook, just want to track how many people download new versions.
+			url := "https://discord.com/api/webhooks/1133129576294396034/tsuP2tuqZZAP8JP8XIhmiFMzZFa9MGgUVDKEj00y2GELk_89RjxhSotE19OzaeiGtY-I"
+			postdata=
+			(
+			{
+			"content": "[%currentversion%] New Launch"
+			}
+			)
+			WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+			WebRequest.Open("POST", url, false)
+			WebRequest.SetRequestHeader("Content-Type", "application/json")
+			WebRequest.Send(postdata) 
+		}
+	}
+}
+
 checkforpaidant(timestamp){
 	readgui()
 	if (buyant){

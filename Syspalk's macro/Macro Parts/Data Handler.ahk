@@ -954,6 +954,8 @@ loadticketfarmer(){
 	reload
 }
 
+
+
 readplantdata(){
 	IniRead,plantcycle1,Macro Parts/configs/Data.ini,planters,plantcycle1
 	IniRead,plantcycle2,Macro Parts/configs/Data.ini,planters,plantcycle2

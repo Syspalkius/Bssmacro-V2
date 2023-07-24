@@ -1,4 +1,11 @@
-﻿Gui, loading:add,Progress, w200 h20 cgreen vprogress -smooth, 0
+﻿#SingleInstance ignore
+try{
+	Run *RunAs "%A_ScriptFullPath%"
+}catch{
+	MsgBox,16,ERROR,This macro requires admin privileges to function as intended.
+	exitapp
+}
+Gui, loading:add,Progress, w200 h20 cgreen vprogress -smooth, 0
 Gui, loading:color,0x2A2F32
 Gui, loading:show, w220 h50,Loading...
 SetBatchLines, -1
@@ -18,7 +25,8 @@ GuiControl,loading:,progress, 80
 GuiControl,loading:,progress, 90
 #Include Macro Parts\GUI\GUI.ahk
 GuiControl,loading:,progress, 100
-startmacrokeys() ;activates the start/stop/pause keys
+startmacrokeys() ;activates the start/stop/pause keys.
+newversion() ;checks if this is a new version.
 sleep 500
 Gui, loading:destroy
 return

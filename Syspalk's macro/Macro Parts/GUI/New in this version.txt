@@ -1,1 +1,2 @@
 1. Rewrote planters (new version is most likely unstable as it's in testing so go to the previous version if you do not want to risk it breaking.)
+2. Made macro ask for admin priveleges.
