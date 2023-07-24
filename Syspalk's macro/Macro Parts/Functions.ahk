@@ -9,7 +9,7 @@
 			loop 3{
 				if (plantcycle%A_Index% != 0 && field != "None"){
 					GoField(field,true)
-					if (PlantAction("take") = true){
+					if (PlantAction("take",,harviffull%A_Index%) = true){
 						break
 					}
 				}
@@ -43,8 +43,77 @@
 				goto,back
 			}
 			GoField(field,true)
-			PlantAction("place",key,harviffull%A_Index%)
+			PlantAction("place",key)
 		}
+	}
+}
+
+planters2(time){
+	readgui()
+	readplantdata()
+	;if pstatus is true then it means that the plant wasn't harvested because it wasn't fully grown yet.
+	pstatus1 := takeplant(1,time)
+	pstatus2 := takeplant(2,time)
+	pstatus3 := takeplant(3,time)
+	if (pstatus1 != true){
+		placeplant(1,time)
+	}
+	if (pstatus2 != true){
+		placeplant(2,time)
+	}
+	if (pstatus2 != true){
+		placeplant(3,time)
+	}
+}
+
+takeplant(which,time){
+	if (time = plantdelay%which%){
+		y := (4*which - 4)+plantcycle%which%
+		field := plantfield%y%
+		loop 3{ ;3 tries before fail
+			if (plantcycle%which% != 0 && field != "None"){
+				GoField(field,true)
+				status := PlantAction("take",,harviffull%which%)
+				if (status = 1){ ;plant was successfully harvested
+					return false
+				}
+				if (status = 2){ ;plant wasn't harvested because not fully grown
+					return true
+				}
+			}
+		}
+		return false
+	}
+}
+
+placeplant(which,time){
+	if (time = plantdelay%which%){
+		backs := 0
+		back1:
+		safetycheck()
+		backs++
+		if (backs > 5){
+			return
+		}
+		readplantdata()
+		plantcycle%which% := plantcycle%which% + 1
+		cyclius := plantcycle%which%
+		IniWrite,%cyclius%,Macro Parts/configs/Data.ini,planters,plantcycle%A_Index%
+		readplantdata()
+		y := (4*which - 4)+plantcycle%which%
+		field := plantfield%y%
+		key := planter%y%
+		if (plantcycle%which% > 4){
+			plantcycle%which% := 0
+			cyclius := plantcycle%which%
+			IniWrite,%cyclius%,Macro Parts/configs/Data.ini,planters,plantcycle%A_Index%
+			goto,back1
+		}
+		if (field = "None"){
+			goto,back1
+		}
+		GoField(field,true)
+		PlantAction("place",key)
 	}
 }
 
@@ -196,14 +265,14 @@ checktimers(){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer
 		checkforpaidant("30 min")
-		planters("30 min")
+		planters2("30 min")
 	}
 	readtimers()
 	if (A_TickCount - 1htimer > hours(1.05)){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
 		checkforpaidant("1 hour")
-		planters("1 hour")
+		planters2("1 hour")
 		if (clock){
 			Clock()
 		}
@@ -225,7 +294,7 @@ checktimers(){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
 		checkforpaidant("2 hours")
-		planters("2 hours")
+		planters2("2 hours")
 		if (ant){
 			ant()
 			if (freeant){
@@ -238,7 +307,7 @@ checktimers(){
 		safetycheck()
 		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
 		checkforpaidant("4 hours")
-		planters("4 hours")
+		planters2("4 hours")
 		if (cocodisp){
 			cocodisp()
 		}
@@ -1036,9 +1105,11 @@ PlantAction(option,key:=0,harvfull:=0){
 						mousemove,SearchFunction("no.png",20)[2],SearchFunction("no.png",20)[3]
 						sleep 100
 						Send {Click Left}
+						return 2
+					}else{
 						Eventlog("Looting planter")
 						lootplanter()
-						return true
+						return 1
 					}
 				}else{
 					if (SearchFunction("Yes.png",20)[1] = 0){
@@ -1049,13 +1120,13 @@ PlantAction(option,key:=0,harvfull:=0){
 							Eventlog("Looting planter")
 							lootplanter()
 						}
-						return true
+						return 1
 					}
 				}
 			}
 		}
 		Errorlog("Failed to take the planter due to not finding the harvest ui after 5 sec")
-		return false
+		return 0
 	}
 }
 

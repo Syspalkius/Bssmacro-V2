@@ -147,6 +147,9 @@ global mob_30mtimer
 global mob_1htimer
 global mob_24htimer
 global mob_48htimer
+global pstatus1
+global pstatus2
+global pstatus3
 
 
 
