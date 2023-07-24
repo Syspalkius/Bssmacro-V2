@@ -595,18 +595,6 @@ satsearcher(x1,y1,x2,y2){
 	else if (SearchFunctionv2("sprinkler4.png",0,x1,y1,x2,y2)[1] = 0){
 		return 0
 	}
-	else if (SearchFunctionv2("sprinkler5.png",0,x1,y1,x2,y2)[1] = 0){
-		return 0
-	}
-	else if (SearchFunctionv2("sprinkler6.png",0,x1,y1,x2,y2)[1] = 0){
-		return 0
-	}
-	else if (SearchFunctionv2("sprinkler7.png",0,x1,y1,x2,y2)[1] = 0){
-		return 0
-	}
-	else if (SearchFunctionv2("sprinkler8.png",0,x1,y1,x2,y2)[1] = 0){
-		return 0
-	}
 	else{
 		return 1
 	}
