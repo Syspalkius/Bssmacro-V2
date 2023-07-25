@@ -49,8 +49,6 @@
 }
 
 planters2(time){
-	readgui()
-	readplantdata()
 	;if pstatus is true then it means that the plant wasn't harvested because it wasn't fully grown yet.
 	pstatus1 := takeplant(1,time)
 	pstatus2 := takeplant(2,time)
@@ -67,6 +65,8 @@ planters2(time){
 }
 
 takeplant(which,time){
+	readgui()
+	readplantdata()
 	if (time = plantdelay%which%){
 		y := (4*which - 4)+plantcycle%which%
 		field := plantfield%y%

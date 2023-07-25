@@ -27,6 +27,7 @@ GuiControl,loading:,progress, 90
 GuiControl,loading:,progress, 100
 startmacrokeys() ;activates the start/stop/pause keys.
 newversion() ;checks if this is a new version.
+timersafetycheck() ;resets timers if they're corrupted after restarting device.
 sleep 500
 Gui, loading:destroy
 return

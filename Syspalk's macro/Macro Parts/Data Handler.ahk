@@ -1,4 +1,14 @@
-﻿global farmfield1
+﻿global datapath := "C:/ProgramData/Syspalkmacro/Data.ini"
+global linkpath := "C:/ProgramData/Syspalkmacro/Links.ini"
+global timerpath := "C:/ProgramData/Syspalkmacro/Timers.ini"
+
+;create folder if not already there
+FileCreateDir, C:/ProgramData/Syspalkmacro
+FileAppend,,%datapath%
+FileAppend,,%linkpath%
+FileAppend,,%timerpath%
+
+global farmfield1
 global farmfield2
 global farmfield3
 global farmfield4
@@ -705,6 +715,21 @@ resettimers(tooltip := 1){
 		Tooltip,The timers have been reset!
 		sleep 2000
 		Tooltip,
+	}
+}
+
+
+
+timersafetycheck(){
+	readtimers()
+	if (mob_5mtimer > A_TickCount || mob_20mtimer > A_TickCount || mob_30mtimer > A_TickCount || mob_1htimer > A_TickCount || mob_24htimer > A_TickCount || mob_24htimer  > A_TickCount){
+		resettimers()
+	}
+	if (30mtimer > A_TickCount || 1htimer > A_TickCount || 2htimer > A_TickCount || 4htimer > A_TickCount || 22htimer > A_TickCount || 24htimer > A_TickCount){
+		resettimers()
+	}
+	if (buff2timer > A_TickCount || buff3timer > A_TickCount || buff4timer > A_TickCount || buff5timer > A_TickCount || buff6timer > A_TickCount || buff7timer > A_TickCount){
+		resettimers()
 	}
 }
 
