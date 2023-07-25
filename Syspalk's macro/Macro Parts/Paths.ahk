@@ -1703,3 +1703,27 @@ bugrun(){
 	squares(85,false)
 	squares(85,false)
 }
+
+robopass(){
+	Eventlog("going to claim the robo pass")
+	r(true)
+	mountain(true)
+	camrotate(4,"r")
+	walk(3000,"f")
+	walk(2500,"l")
+	walk(250,"r")
+	walk(2150,"f")
+	camrotate(2,"l")
+	Sendspace()
+	walk(1250,"f")
+	walk(500,"l")
+	walkhold("f","Down")
+	starttimerobo := A_TickCount
+	while (A_TickCount - starttimerobo < 4000){
+		if (Searchfunction("e.png",10)[1] = 0){
+			Send e
+			break
+		}
+	}
+	walkhold("f","Up")
+}

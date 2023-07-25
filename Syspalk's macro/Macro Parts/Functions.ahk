@@ -313,11 +313,18 @@ checktimers(){
 		}
 	}
 	readtimers()
-	if (A_TickCount - 22htimer > hours(22.1)){
+	if (A_TickCount - 22htimer > hours(22.2)){
 		safetycheck()
 		IniWrite,%A_TickCount%,%timerpath%,timers,22htimer
 		if (gluedisp){
 			gluedisp()
+		}
+	}
+	if (A_TickCount - 24htimer > hours(24.3)){
+		safetycheck()
+		IniWrite,%A_TickCount%,%timerpath%,timers,24htimer
+		if (robopass){
+			robopass()
 		}
 	}
 }

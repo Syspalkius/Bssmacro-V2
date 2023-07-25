@@ -1,4 +1,4 @@
-﻿#SingleInstance Ignore
+﻿#SingleInstance Force
 /*
 if (A_IsAdmin = 0){
 	try{

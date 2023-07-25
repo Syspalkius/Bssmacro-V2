@@ -190,7 +190,7 @@ Gui,Font,s10
 gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock% ,Use wealthclock
 gui,Add,Checkbox, v4tab4 x30 yp+20 cwhite %gluedisp% ,Use glue dispenser
 gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp% ,Use coconut dispenser
-Gui,Add,Checkbox, v4tab30 x30 yp+20 cred %robopass% ,Collect the robo pass
+Gui,Add,Checkbox, v4tab30 x30 yp+20 cwhite %robopass% ,Collect the robo pass
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab8 x20 yp+35 w300 h90 cwhite,Ant challenge
 Gui,Font,s10
@@ -217,7 +217,15 @@ gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel% ,Kill tunnelbear
 gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% ,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
-Gui,Add,Picture, v4tab31 yp-203 x220 w210 h185 cred, Macro Parts\GUI\Images/beesmas stuff.png
+Gui,Add,Picture, v4tab31 yp-203 x220 w210 h185 , Macro Parts\GUI\Images/beesmas stuff.png
+Gui,Font,s10 Bold
+Gui,Add,Checkbox, v4tab32 x230 yp+36 cwhite,Use honeyday candles
+Gui,Add,Checkbox, v4tab33 x230 yp+20 cwhite,Use samovar
+Gui,Add,Checkbox, v4tab34 x230 yp+20 cwhite,Use stockings
+Gui,Add,Checkbox, v4tab35 x230 yp+20 cwhite,Use beesmas feast
+Gui,Add,Checkbox, v4tab36 x230 yp+20 cwhite,Use Onett's lid art
+Gui,Add,Checkbox, v4tab37 x230 yp+20 cwhite,Use gingerbread house
+Gui,Add,Checkbox, v4tab38 x230 yp+20 cwhite,Use honey wreath
 Gui,Add,Text, v4tab28 x235 y54 w10 h17 c%infocol% gdispenserinfo,?
 Gui,Add,Text, v4tab29 x185 y354 w10 h17 c%infocol% gmobinfo,?
 
