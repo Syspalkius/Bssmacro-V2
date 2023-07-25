@@ -1,4 +1,5 @@
 1. Rewrote planters (new version is most likely unstable as it's in testing so go to the previous version if you do not want to risk it breaking.)
 2. Made macro ask for admin priveleges.
 3. Added safety for corrupted timers after restarting device.
-4. Made data save permanently in C:/ProgramData
+4. Made data save permanently in C:/ProgramData.
+5. Saving data in documents instead of programdata to fix issues with rbc and admin privileges.

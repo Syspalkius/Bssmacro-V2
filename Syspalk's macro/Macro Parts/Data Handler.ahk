@@ -1,9 +1,11 @@
-﻿global datapath := "C:/ProgramData/Syspalkmacro/Data.ini"
-global linkpath := "C:/ProgramData/Syspalkmacro/Links.ini"
-global timerpath := "C:/ProgramData/Syspalkmacro/Timers.ini"
+﻿global datapath := A_MyDocuments . "/Syspalkmacro/Data.ini"
+global linkpath := A_MyDocuments . "/Syspalkmacro/Links.ini"
+global timerpath := A_MyDocuments . "/Syspalkmacro/Timers.ini"
+global folderpath := A_MyDocuments . "/Syspalkmacro"
+
 
 ;create folder if not already there
-FileCreateDir, C:/ProgramData/Syspalkmacro
+FileCreateDir, %folderpath%
 FileAppend,,%datapath%
 FileAppend,,%linkpath%
 FileAppend,,%timerpath%
@@ -1001,7 +1003,7 @@ newuser(){
 	try{ ;Please don't nuke my webhook, I just want to track how many people download the macro.
 		global currentversion
 		Fileread,currentversion,Macro Parts\GUI\version.txt
-		url := "https://discord.com/api/webhooks/1133129576294396034/tsuP2tuqZZAP8JP8XIhmiFMzZFa9MGgUVDKEj00y2GELk_89RjxhSotE19OzaeiGtY-I"
+		url := "https://discord.com/api/webhooks/1133401631564763166/dn86NaFB2Fdbc5xFV3skuInG9n9R5kJCUQOK4OkRxxiNCvCCnW6L8pr2r9SVhXPW8n8V"
 		postdata=
 		(
 		{

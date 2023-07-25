@@ -1,4 +1,14 @@
-﻿#SingleInstance Force
+﻿#SingleInstance Ignore
+/*
+if (A_IsAdmin = 0){
+	try{
+		Run *RunAs "%A_ScriptFullPath%"
+	}catch{
+		MsgBox,16,ERROR,This macro requires admin privileges to function as intended.
+		exitapp
+	}
+}
+*/
 Gui, loading:add,Progress, w200 h20 cgreen vprogress -smooth, 0
 Gui, loading:color,0x2A2F32
 Gui, loading:show, w220 h50,Loading...
