@@ -127,9 +127,9 @@ testmsginfo(){
 ;------Macro buttons------
 
 startmacrokeys(){
-	IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
-	IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
-	IniRead,Pausekey,Macro Parts/configs/Data.ini,keybinds,Pausekey
+	IniRead,Startkey,%datapath%,keybinds,Startkey
+	IniRead,Stopkey,%datapath%,keybinds,Stopkey
+	IniRead,Pausekey,%datapath%,keybinds,Pausekey
 	Hotkey,%Startkey%,start
 	Hotkey,%Stopkey%,stop
 	Hotkey,%Pausekey%,Pause

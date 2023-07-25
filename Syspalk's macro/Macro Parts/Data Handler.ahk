@@ -8,6 +8,14 @@ FileAppend,,%datapath%
 FileAppend,,%linkpath%
 FileAppend,,%timerpath%
 
+;check if file is empty, if so then fill in the files with default data.
+IniRead,val,%datapath%,launchedbefore,launchedbefore
+if (val = "ERROR"){
+	newuser() ;logs each time a new person downloads the macro so I can keep track of the amount of users.
+	IniWrite,1,%datapath%,launchedbefore,launchedbefore
+	resetconfig()
+}
+
 global farmfield1
 global farmfield2
 global farmfield3
@@ -164,119 +172,119 @@ global pstatus3
 
 
 readini(){ ;reads all the data from the ini file
-	IniRead,farmfield1,Macro Parts/configs/Data.ini,farming,farmfield1
-	IniRead,farmfield2,Macro Parts/configs/Data.ini,farming,farmfield2
-	IniRead,farmfield3,Macro Parts/configs/Data.ini,farming,farmfield3
-	IniRead,farmfield4,Macro Parts/configs/Data.ini,farming,farmfield4
-	IniRead,farmpattern,Macro Parts/configs/Data.ini,farming,farmpattern
-	IniRead,patternsize,Macro Parts/configs/Data.ini,farming,patternsize
-	IniRead,convsetting,Macro Parts/configs/Data.ini,farming,convsetting
-	IniRead,maxtimeonfield,Macro Parts/configs/Data.ini,farming,maxtimeonfield
-	IniRead,swingtool,Macro Parts/configs/Data.ini,farming,swingtool
-	IniRead,sprinkleralign,Macro Parts/configs/Data.ini,farming,sprinkleralign
-	IniRead,pinewalkconv,Macro Parts/configs/Data.ini,farming,pinewalkconv
-	IniRead,pinecentralfarm,Macro Parts/configs/Data.ini,farming,pinecentralfarm
-	IniRead,waitforpop,Macro Parts/configs/Data.ini,farming,waitforpop
-	IniRead,shiftlock,Macro Parts/configs/Data.ini,farming,shiftlock
-	IniRead,shrine,Macro Parts/configs/Data.ini,farming,shrine
-	IniRead,donationamount,Macro Parts/configs/Data.ini,farming,donationamount
-	IniRead,donationitem,Macro Parts/configs/Data.ini,farming,donationitem
-	IniRead,bluebooster,Macro Parts/configs/Data.ini,farming,bluebooster
-	IniRead,redbooster,Macro Parts/configs/Data.ini,farming,redbooster
-	IniRead,whitebooster,Macro Parts/configs/Data.ini,farming,whitebooster
-	IniRead,reglitter,Macro Parts/configs/Data.ini,farming,reglitter
-	IniRead,plantfield1,Macro Parts/configs/Data.ini,planters,plantfield1
-	IniRead,plantfield2,Macro Parts/configs/Data.ini,planters,plantfield2
-	IniRead,plantfield3,Macro Parts/configs/Data.ini,planters,plantfield3
-	IniRead,plantfield4,Macro Parts/configs/Data.ini,planters,plantfield4
-	IniRead,plantfield5,Macro Parts/configs/Data.ini,planters,plantfield5
-	IniRead,plantfield6,Macro Parts/configs/Data.ini,planters,plantfield6
-	IniRead,plantfield7,Macro Parts/configs/Data.ini,planters,plantfield7
-	IniRead,plantfield8,Macro Parts/configs/Data.ini,planters,plantfield8
-	IniRead,plantfield9,Macro Parts/configs/Data.ini,planters,plantfield9
-	IniRead,plantfield10,Macro Parts/configs/Data.ini,planters,plantfield10
-	IniRead,plantfield11,Macro Parts/configs/Data.ini,planters,plantfield11
-	IniRead,plantfield12,Macro Parts/configs/Data.ini,planters,plantfield12
-	IniRead,planter1,Macro Parts/configs/Data.ini,planters,planter1
-	IniRead,planter2,Macro Parts/configs/Data.ini,planters,planter2
-	IniRead,planter3,Macro Parts/configs/Data.ini,planters,planter3
-	IniRead,planter4,Macro Parts/configs/Data.ini,planters,planter4
-	IniRead,planter5,Macro Parts/configs/Data.ini,planters,planter5
-	IniRead,planter6,Macro Parts/configs/Data.ini,planters,planter6
-	IniRead,planter7,Macro Parts/configs/Data.ini,planters,planter7
-	IniRead,planter8,Macro Parts/configs/Data.ini,planters,planter8
-	IniRead,planter9,Macro Parts/configs/Data.ini,planters,planter9
-	IniRead,planter10,Macro Parts/configs/Data.ini,planters,planter10
-	IniRead,planter11,Macro Parts/configs/Data.ini,planters,planter11
-	IniRead,planter12,Macro Parts/configs/Data.ini,planters,planter12
-	IniRead,lootplanters,Macro Parts/configs/Data.ini,planters,lootplanters
-	IniRead,harviffull1,Macro Parts/configs/Data.ini,planters,harviffull1
-	IniRead,harviffull2,Macro Parts/configs/Data.ini,planters,harviffull2
-	IniRead,harviffull3,Macro Parts/configs/Data.ini,planters,harviffull3
-	IniRead,plantdelay1,Macro Parts/configs/Data.ini,planters,plantdelay1
-	IniRead,plantdelay2,Macro Parts/configs/Data.ini,planters,plantdelay2
-	IniRead,plantdelay3,Macro Parts/configs/Data.ini,planters,plantdelay3
-	IniRead,clock,Macro Parts/configs/Data.ini,resources,clock
-	IniRead,gluedisp,Macro Parts/configs/Data.ini,resources,gluedisp
-	IniRead,cocodisp,Macro Parts/configs/Data.ini,resources,cocodisp
-	IniRead,tunnel,Macro Parts/configs/Data.ini,resources,tunnel
-	IniRead,kingbeetle,Macro Parts/configs/Data.ini,resources,kingbeetle
-	IniRead,ant,Macro Parts/configs/Data.ini,resources,ant
-	IniRead,freeant,Macro Parts/configs/Data.ini,resources,freeant
-	IniRead,buyant,Macro Parts/configs/Data.ini,resources,buyant
-	IniRead,playtimer,Macro Parts/configs/Data.ini,resources,playtimer
-	IniRead,vicious,Macro Parts/configs/Data.ini,resources,vicious
-	IniRead,maxcombattime,Macro Parts/configs/Data.ini,resources,maxcombattime
-	IniRead,lady,Macro Parts/configs/Data.ini,resources,lady
-	IniRead,rhino,Macro Parts/configs/Data.ini,resources,rhino
-	IniRead,spider,Macro Parts/configs/Data.ini,resources,spider
-	IniRead,scorpion,Macro Parts/configs/Data.ini,resources,scorpion
-	IniRead,mantis,Macro Parts/configs/Data.ini,resources,mantis
-	IniRead,wolf,Macro Parts/configs/Data.ini,resources,wolf
-	IniRead,mondo,Macro Parts/configs/Data.ini,resources,mondo
-	IniRead,buff2,Macro Parts/configs/Data.ini,buffs,buff2
-	IniRead,buff3,Macro Parts/configs/Data.ini,buffs,buff3
-	IniRead,buff4,Macro Parts/configs/Data.ini,buffs,buff4
-	IniRead,buff5,Macro Parts/configs/Data.ini,buffs,buff5
-	IniRead,buff6,Macro Parts/configs/Data.ini,buffs,buff6
-	IniRead,buff7,Macro Parts/configs/Data.ini,buffs,buff7
-	IniRead,buff2hive,Macro Parts/configs/Data.ini,buffs,buff2hive
-	IniRead,buff3hive,Macro Parts/configs/Data.ini,buffs,buff3hive
-	IniRead,buff4hive,Macro Parts/configs/Data.ini,buffs,buff4hive
-	IniRead,buff5hive,Macro Parts/configs/Data.ini,buffs,buff5hive
-	IniRead,buff6hive,Macro Parts/configs/Data.ini,buffs,buff6hive
-	IniRead,buff7hive,Macro Parts/configs/Data.ini,buffs,buff7hive
-	IniRead,buff2time,Macro Parts/configs/Data.ini,buffs,buff2time
-	IniRead,buff3time,Macro Parts/configs/Data.ini,buffs,buff3time
-	IniRead,buff4time,Macro Parts/configs/Data.ini,buffs,buff4time
-	IniRead,buff5time,Macro Parts/configs/Data.ini,buffs,buff5time
-	IniRead,buff6time,Macro Parts/configs/Data.ini,buffs,buff6time
-	IniRead,buff7time,Macro Parts/configs/Data.ini,buffs,buff7time
-	IniRead,forward,Macro Parts/configs/Data.ini,keybinds,forward
-	IniRead,left,Macro Parts/configs/Data.ini,keybinds,left
-	IniRead,right,Macro Parts/configs/Data.ini,keybinds,right
-	IniRead,backwards,Macro Parts/configs/Data.ini,keybinds,backwards
-	IniRead,camleft,Macro Parts/configs/Data.ini,keybinds,camleft
-	IniRead,camright,Macro Parts/configs/Data.ini,keybinds,camright
-	IniRead,hotbar1,Macro Parts/configs/Data.ini,keybinds,hotbar1
-	IniRead,hotbar2,Macro Parts/configs/Data.ini,keybinds,hotbar2
-	IniRead,hotbar3,Macro Parts/configs/Data.ini,keybinds,hotbar3
-	IniRead,hotbar4,Macro Parts/configs/Data.ini,keybinds,hotbar4
-	IniRead,hotbar5,Macro Parts/configs/Data.ini,keybinds,hotbar5
-	IniRead,hotbar6,Macro Parts/configs/Data.ini,keybinds,hotbar6
-	IniRead,hotbar7,Macro Parts/configs/Data.ini,keybinds,hotbar7
-	IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
-	IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
-	IniRead,Pausekey,Macro Parts/configs/Data.ini,keybinds,Pausekey
-	IniRead,speed,Macro Parts/configs/Data.ini,settings,speed
-	IniRead,joinmain,Macro Parts/configs/Data.ini,settings,joinmain
-	IniRead,rebootserver,Macro Parts/configs/Data.ini,settings,rebootserver
-	IniRead,reboottime,Macro Parts/configs/Data.ini,settings,reboottime
-	IniRead,hookevent,Macro Parts/configs/Links.ini,webhooks,hookevent
-	IniRead,hookerror,Macro Parts/configs/Links.ini,webhooks,hookerror
-	IniRead,hookballoon,Macro Parts/configs/Links.ini,webhooks,hookballoon
-	IniRead,main,Macro Parts/configs/Links.ini,private servers,main
-	IniRead,alt,Macro Parts/configs/Links.ini,private servers,alt
+	IniRead,farmfield1,%datapath%,farming,farmfield1
+	IniRead,farmfield2,%datapath%,farming,farmfield2
+	IniRead,farmfield3,%datapath%,farming,farmfield3
+	IniRead,farmfield4,%datapath%,farming,farmfield4
+	IniRead,farmpattern,%datapath%,farming,farmpattern
+	IniRead,patternsize,%datapath%,farming,patternsize
+	IniRead,convsetting,%datapath%,farming,convsetting
+	IniRead,maxtimeonfield,%datapath%,farming,maxtimeonfield
+	IniRead,swingtool,%datapath%,farming,swingtool
+	IniRead,sprinkleralign,%datapath%,farming,sprinkleralign
+	IniRead,pinewalkconv,%datapath%,farming,pinewalkconv
+	IniRead,pinecentralfarm,%datapath%,farming,pinecentralfarm
+	IniRead,waitforpop,%datapath%,farming,waitforpop
+	IniRead,shiftlock,%datapath%,farming,shiftlock
+	IniRead,shrine,%datapath%,farming,shrine
+	IniRead,donationamount,%datapath%,farming,donationamount
+	IniRead,donationitem,%datapath%,farming,donationitem
+	IniRead,bluebooster,%datapath%,farming,bluebooster
+	IniRead,redbooster,%datapath%,farming,redbooster
+	IniRead,whitebooster,%datapath%,farming,whitebooster
+	IniRead,reglitter,%datapath%,farming,reglitter
+	IniRead,plantfield1,%datapath%,planters,plantfield1
+	IniRead,plantfield2,%datapath%,planters,plantfield2
+	IniRead,plantfield3,%datapath%,planters,plantfield3
+	IniRead,plantfield4,%datapath%,planters,plantfield4
+	IniRead,plantfield5,%datapath%,planters,plantfield5
+	IniRead,plantfield6,%datapath%,planters,plantfield6
+	IniRead,plantfield7,%datapath%,planters,plantfield7
+	IniRead,plantfield8,%datapath%,planters,plantfield8
+	IniRead,plantfield9,%datapath%,planters,plantfield9
+	IniRead,plantfield10,%datapath%,planters,plantfield10
+	IniRead,plantfield11,%datapath%,planters,plantfield11
+	IniRead,plantfield12,%datapath%,planters,plantfield12
+	IniRead,planter1,%datapath%,planters,planter1
+	IniRead,planter2,%datapath%,planters,planter2
+	IniRead,planter3,%datapath%,planters,planter3
+	IniRead,planter4,%datapath%,planters,planter4
+	IniRead,planter5,%datapath%,planters,planter5
+	IniRead,planter6,%datapath%,planters,planter6
+	IniRead,planter7,%datapath%,planters,planter7
+	IniRead,planter8,%datapath%,planters,planter8
+	IniRead,planter9,%datapath%,planters,planter9
+	IniRead,planter10,%datapath%,planters,planter10
+	IniRead,planter11,%datapath%,planters,planter11
+	IniRead,planter12,%datapath%,planters,planter12
+	IniRead,lootplanters,%datapath%,planters,lootplanters
+	IniRead,harviffull1,%datapath%,planters,harviffull1
+	IniRead,harviffull2,%datapath%,planters,harviffull2
+	IniRead,harviffull3,%datapath%,planters,harviffull3
+	IniRead,plantdelay1,%datapath%,planters,plantdelay1
+	IniRead,plantdelay2,%datapath%,planters,plantdelay2
+	IniRead,plantdelay3,%datapath%,planters,plantdelay3
+	IniRead,clock,%datapath%,resources,clock
+	IniRead,gluedisp,%datapath%,resources,gluedisp
+	IniRead,cocodisp,%datapath%,resources,cocodisp
+	IniRead,tunnel,%datapath%,resources,tunnel
+	IniRead,kingbeetle,%datapath%,resources,kingbeetle
+	IniRead,ant,%datapath%,resources,ant
+	IniRead,freeant,%datapath%,resources,freeant
+	IniRead,buyant,%datapath%,resources,buyant
+	IniRead,playtimer,%datapath%,resources,playtimer
+	IniRead,vicious,%datapath%,resources,vicious
+	IniRead,maxcombattime,%datapath%,resources,maxcombattime
+	IniRead,lady,%datapath%,resources,lady
+	IniRead,rhino,%datapath%,resources,rhino
+	IniRead,spider,%datapath%,resources,spider
+	IniRead,scorpion,%datapath%,resources,scorpion
+	IniRead,mantis,%datapath%,resources,mantis
+	IniRead,wolf,%datapath%,resources,wolf
+	IniRead,mondo,%datapath%,resources,mondo
+	IniRead,buff2,%datapath%,buffs,buff2
+	IniRead,buff3,%datapath%,buffs,buff3
+	IniRead,buff4,%datapath%,buffs,buff4
+	IniRead,buff5,%datapath%,buffs,buff5
+	IniRead,buff6,%datapath%,buffs,buff6
+	IniRead,buff7,%datapath%,buffs,buff7
+	IniRead,buff2hive,%datapath%,buffs,buff2hive
+	IniRead,buff3hive,%datapath%,buffs,buff3hive
+	IniRead,buff4hive,%datapath%,buffs,buff4hive
+	IniRead,buff5hive,%datapath%,buffs,buff5hive
+	IniRead,buff6hive,%datapath%,buffs,buff6hive
+	IniRead,buff7hive,%datapath%,buffs,buff7hive
+	IniRead,buff2time,%datapath%,buffs,buff2time
+	IniRead,buff3time,%datapath%,buffs,buff3time
+	IniRead,buff4time,%datapath%,buffs,buff4time
+	IniRead,buff5time,%datapath%,buffs,buff5time
+	IniRead,buff6time,%datapath%,buffs,buff6time
+	IniRead,buff7time,%datapath%,buffs,buff7time
+	IniRead,forward,%datapath%,keybinds,forward
+	IniRead,left,%datapath%,keybinds,left
+	IniRead,right,%datapath%,keybinds,right
+	IniRead,backwards,%datapath%,keybinds,backwards
+	IniRead,camleft,%datapath%,keybinds,camleft
+	IniRead,camright,%datapath%,keybinds,camright
+	IniRead,hotbar1,%datapath%,keybinds,hotbar1
+	IniRead,hotbar2,%datapath%,keybinds,hotbar2
+	IniRead,hotbar3,%datapath%,keybinds,hotbar3
+	IniRead,hotbar4,%datapath%,keybinds,hotbar4
+	IniRead,hotbar5,%datapath%,keybinds,hotbar5
+	IniRead,hotbar6,%datapath%,keybinds,hotbar6
+	IniRead,hotbar7,%datapath%,keybinds,hotbar7
+	IniRead,Startkey,%datapath%,keybinds,Startkey
+	IniRead,Stopkey,%datapath%,keybinds,Stopkey
+	IniRead,Pausekey,%datapath%,keybinds,Pausekey
+	IniRead,speed,%datapath%,settings,speed
+	IniRead,joinmain,%datapath%,settings,joinmain
+	IniRead,rebootserver,%datapath%,settings,rebootserver
+	IniRead,reboottime,%datapath%,settings,reboottime
+	IniRead,hookevent,%linkpath%,webhooks,hookevent
+	IniRead,hookerror,%linkpath%,webhooks,hookerror
+	IniRead,hookballoon,%linkpath%,webhooks,hookballoon
+	IniRead,main,%linkpath%,private servers,main
+	IniRead,alt,%linkpath%,private servers,alt
 	
 	if (convsetting){
 		global convsetting := "Checked"
@@ -545,26 +553,26 @@ getkeyinfo(){
 
 
 readtimers(){
-	IniRead,mob_5mtimer,Macro Parts/configs/Timers.ini,mobs,mob_5mtimer
-	IniRead,mob_20mtimer,Macro Parts/configs/Timers.ini,mobs,mob_20mtimer
-	IniRead,mob_30mtimer,Macro Parts/configs/Timers.ini,mobs,mob_30mtimer
-	IniRead,mob_1htimer,Macro Parts/configs/Timers.ini,mobs,mob_1htimer
-	IniRead,mob_24htimer,Macro Parts/configs/Timers.ini,mobs,mob_24htimer
-	IniRead,mob_48htimer,Macro Parts/configs/Timers.ini,mobs,mob_48htimer
+	IniRead,mob_5mtimer,%timerpath%,mobs,mob_5mtimer
+	IniRead,mob_20mtimer,%timerpath%,mobs,mob_20mtimer
+	IniRead,mob_30mtimer,%timerpath%,mobs,mob_30mtimer
+	IniRead,mob_1htimer,%timerpath%,mobs,mob_1htimer
+	IniRead,mob_24htimer,%timerpath%,mobs,mob_24htimer
+	IniRead,mob_48htimer,%timerpath%,mobs,mob_48htimer
 
-	IniRead,30mtimer,Macro Parts/configs/Timers.ini,timers,30mtimer
-	IniRead,1htimer,Macro Parts/configs/Timers.ini,timers,1htimer
-	IniRead,2htimer,Macro Parts/configs/Timers.ini,timers,2htimer
-	IniRead,4htimer,Macro Parts/configs/Timers.ini,timers,4htimer
-	IniRead,22htimer,Macro Parts/configs/Timers.ini,timers,22htimer
-	IniRead,24htimer,Macro Parts/configs/Timers.ini,timers,24htimer
+	IniRead,30mtimer,%timerpath%,timers,30mtimer
+	IniRead,1htimer,%timerpath%,timers,1htimer
+	IniRead,2htimer,%timerpath%,timers,2htimer
+	IniRead,4htimer,%timerpath%,timers,4htimer
+	IniRead,22htimer,%timerpath%,timers,22htimer
+	IniRead,24htimer,%timerpath%,timers,24htimer
 
-	IniRead,buff2timer,Macro Parts/configs/Timers.ini,buffs,buff2timer
-	IniRead,buff3timer,Macro Parts/configs/Timers.ini,buffs,buff3timer
-	IniRead,buff4timer,Macro Parts/configs/Timers.ini,buffs,buff4timer
-	IniRead,buff5timer,Macro Parts/configs/Timers.ini,buffs,buff5timer
-	IniRead,buff6timer,Macro Parts/configs/Timers.ini,buffs,buff6timer
-	IniRead,buff7timer,Macro Parts/configs/Timers.ini,buffs,buff7timer
+	IniRead,buff2timer,%timerpath%,buffs,buff2timer
+	IniRead,buff3timer,%timerpath%,buffs,buff3timer
+	IniRead,buff4timer,%timerpath%,buffs,buff4timer
+	IniRead,buff5timer,%timerpath%,buffs,buff5timer
+	IniRead,buff6timer,%timerpath%,buffs,buff6timer
+	IniRead,buff7timer,%timerpath%,buffs,buff7timer
 }
 
 
@@ -572,145 +580,145 @@ readtimers(){
 savedata(){ ;saves all the data
 	readgui()
 	savehotkeys()
-	IniWrite,%farmfield1%,Macro Parts/configs/Data.ini,farming,farmfield1
-	IniWrite,%farmfield2%,Macro Parts/configs/Data.ini,farming,farmfield2
-	IniWrite,%farmfield3%,Macro Parts/configs/Data.ini,farming,farmfield3
-	IniWrite,%farmfield4%,Macro Parts/configs/Data.ini,farming,farmfield4
-	IniWrite,%farmpattern%,Macro Parts/configs/Data.ini,farming,farmpattern
-	IniWrite,%patternsize%,Macro Parts/configs/Data.ini,farming,patternsize
-	IniWrite,%convsetting%,Macro Parts/configs/Data.ini,farming,convsetting
-	IniWrite,%maxtimeonfield%,Macro Parts/configs/Data.ini,farming,maxtimeonfield
-	IniWrite,%swingtool%,Macro Parts/configs/Data.ini,farming,swingtool
-	IniWrite,%sprinkleralign%,Macro Parts/configs/Data.ini,farming,sprinkleralign
-	IniWrite,%pinewalkconv%,Macro Parts/configs/Data.ini,farming,pinewalkconv
-	IniWrite,%pinecentralfarm%,Macro Parts/configs/Data.ini,farming,pinecentralfarm
-	IniWrite,%waitforpop%,Macro Parts/configs/Data.ini,farming,waitforpop
-	IniWrite,%shiftlock%,Macro Parts/configs/Data.ini,farming,shiftlock
-	IniWrite,%shrine%,Macro Parts/configs/Data.ini,farming,shrine
-	IniWrite,%donationamount%,Macro Parts/configs/Data.ini,farming,donationamount
-	IniWrite,%donationitem%,Macro Parts/configs/Data.ini,farming,donationitem
-	IniWrite,%bluebooster%,Macro Parts/configs/Data.ini,farming,bluebooster
-	IniWrite,%redbooster%,Macro Parts/configs/Data.ini,farming,redbooster
-	IniWrite,%whitebooster%,Macro Parts/configs/Data.ini,farming,whitebooster
-	IniWrite,%reglitter%,Macro Parts/configs/Data.ini,farming,reglitter
-	IniWrite,%plantfield1%,Macro Parts/configs/Data.ini,planters,plantfield1
-	IniWrite,%plantfield2%,Macro Parts/configs/Data.ini,planters,plantfield2
-	IniWrite,%plantfield3%,Macro Parts/configs/Data.ini,planters,plantfield3
-	IniWrite,%plantfield4%,Macro Parts/configs/Data.ini,planters,plantfield4
-	IniWrite,%plantfield5%,Macro Parts/configs/Data.ini,planters,plantfield5
-	IniWrite,%plantfield6%,Macro Parts/configs/Data.ini,planters,plantfield6
-	IniWrite,%plantfield7%,Macro Parts/configs/Data.ini,planters,plantfield7
-	IniWrite,%plantfield8%,Macro Parts/configs/Data.ini,planters,plantfield8
-	IniWrite,%plantfield9%,Macro Parts/configs/Data.ini,planters,plantfield9
-	IniWrite,%plantfield10%,Macro Parts/configs/Data.ini,planters,plantfield10
-	IniWrite,%plantfield11%,Macro Parts/configs/Data.ini,planters,plantfield11
-	IniWrite,%plantfield12%,Macro Parts/configs/Data.ini,planters,plantfield12
-	IniWrite,%planter1%,Macro Parts/configs/Data.ini,planters,planter1
-	IniWrite,%planter2%,Macro Parts/configs/Data.ini,planters,planter2
-	IniWrite,%planter3%,Macro Parts/configs/Data.ini,planters,planter3
-	IniWrite,%planter4%,Macro Parts/configs/Data.ini,planters,planter4
-	IniWrite,%planter5%,Macro Parts/configs/Data.ini,planters,planter5
-	IniWrite,%planter6%,Macro Parts/configs/Data.ini,planters,planter6
-	IniWrite,%planter7%,Macro Parts/configs/Data.ini,planters,planter7
-	IniWrite,%planter8%,Macro Parts/configs/Data.ini,planters,planter8
-	IniWrite,%planter9%,Macro Parts/configs/Data.ini,planters,planter9
-	IniWrite,%planter10%,Macro Parts/configs/Data.ini,planters,planter10
-	IniWrite,%planter11%,Macro Parts/configs/Data.ini,planters,planter11
-	IniWrite,%planter12%,Macro Parts/configs/Data.ini,planters,planter12
-	IniWrite,%lootplanters%,Macro Parts/configs/Data.ini,planters,lootplanters
-	IniWrite,%harviffull1%,Macro Parts/configs/Data.ini,planters,harviffull1
-	IniWrite,%harviffull2%,Macro Parts/configs/Data.ini,planters,harviffull2
-	IniWrite,%harviffull3%,Macro Parts/configs/Data.ini,planters,harviffull3
-	IniWrite,%plantdelay1%,Macro Parts/configs/Data.ini,planters,plantdelay1
-	IniWrite,%plantdelay2%,Macro Parts/configs/Data.ini,planters,plantdelay2
-	IniWrite,%plantdelay3%,Macro Parts/configs/Data.ini,planters,plantdelay3
-	IniWrite,%clock%,Macro Parts/configs/Data.ini,resources,clock
-	IniWrite,%gluedisp%,Macro Parts/configs/Data.ini,resources,gluedisp
-	IniWrite,%cocodisp%,Macro Parts/configs/Data.ini,resources,cocodisp
-	IniWrite,%tunnel%,Macro Parts/configs/Data.ini,resources,tunnel
-	IniWrite,%kingbeetle%,Macro Parts/configs/Data.ini,resources,kingbeetle
-	IniWrite,%ant%,Macro Parts/configs/Data.ini,resources,ant
-	IniWrite,%freeant%,Macro Parts/configs/Data.ini,resources,freeant
-	IniWrite,%buyant%,Macro Parts/configs/Data.ini,resources,buyant
-	IniWrite,%playtimer%,Macro Parts/configs/Data.ini,resources,playtimer
-	IniWrite,%vicious%,Macro Parts/configs/Data.ini,resources,vicious
-	IniWrite,%maxcombattime%,Macro Parts/configs/Data.ini,resources,maxcombattime
-	IniWrite,%lady%,Macro Parts/configs/Data.ini,resources,lady
-	IniWrite,%rhino%,Macro Parts/configs/Data.ini,resources,rhino
-	IniWrite,%spider%,Macro Parts/configs/Data.ini,resources,spider
-	IniWrite,%scorpion%,Macro Parts/configs/Data.ini,resources,scorpion
-	IniWrite,%mantis%,Macro Parts/configs/Data.ini,resources,mantis
-	IniWrite,%wolf%,Macro Parts/configs/Data.ini,resources,wolf
-	IniWrite,%mondo%,Macro Parts/configs/Data.ini,resources,mondo
-	IniWrite,%buff2%,Macro Parts/configs/Data.ini,buffs,buff2
-	IniWrite,%buff3%,Macro Parts/configs/Data.ini,buffs,buff3
-	IniWrite,%buff4%,Macro Parts/configs/Data.ini,buffs,buff4
-	IniWrite,%buff5%,Macro Parts/configs/Data.ini,buffs,buff5
-	IniWrite,%buff6%,Macro Parts/configs/Data.ini,buffs,buff6
-	IniWrite,%buff7%,Macro Parts/configs/Data.ini,buffs,buff7
-	IniWrite,%buff2hive%,Macro Parts/configs/Data.ini,buffs,buff2hive
-	IniWrite,%buff3hive%,Macro Parts/configs/Data.ini,buffs,buff3hive
-	IniWrite,%buff4hive%,Macro Parts/configs/Data.ini,buffs,buff4hive
-	IniWrite,%buff5hive%,Macro Parts/configs/Data.ini,buffs,buff5hive
-	IniWrite,%buff6hive%,Macro Parts/configs/Data.ini,buffs,buff6hive
-	IniWrite,%buff7hive%,Macro Parts/configs/Data.ini,buffs,buff7hive
-	IniWrite,%buff2time%,Macro Parts/configs/Data.ini,buffs,buff2time
-	IniWrite,%buff3time%,Macro Parts/configs/Data.ini,buffs,buff3time
-	IniWrite,%buff4time%,Macro Parts/configs/Data.ini,buffs,buff4time
-	IniWrite,%buff5time%,Macro Parts/configs/Data.ini,buffs,buff5time
-	IniWrite,%buff6time%,Macro Parts/configs/Data.ini,buffs,buff6time
-	IniWrite,%buff7time%,Macro Parts/configs/Data.ini,buffs,buff7time
-	IniWrite,%speed%,Macro Parts/configs/Data.ini,settings,speed
-	IniWrite,%joinmain%,Macro Parts/configs/Data.ini,settings,joinmain
-	IniWrite,%hookevent%,Macro Parts/configs/Links.ini,webhooks,hookevent
-	IniWrite,%hookerror%,Macro Parts/configs/Links.ini,webhooks,hookerror
-	IniWrite,%main%,Macro Parts/configs/Links.ini,private servers,main
-	IniWrite,%alt%,Macro Parts/configs/Links.ini,private servers,alt
+	IniWrite,%farmfield1%,%datapath%,farming,farmfield1
+	IniWrite,%farmfield2%,%datapath%,farming,farmfield2
+	IniWrite,%farmfield3%,%datapath%,farming,farmfield3
+	IniWrite,%farmfield4%,%datapath%,farming,farmfield4
+	IniWrite,%farmpattern%,%datapath%,farming,farmpattern
+	IniWrite,%patternsize%,%datapath%,farming,patternsize
+	IniWrite,%convsetting%,%datapath%,farming,convsetting
+	IniWrite,%maxtimeonfield%,%datapath%,farming,maxtimeonfield
+	IniWrite,%swingtool%,%datapath%,farming,swingtool
+	IniWrite,%sprinkleralign%,%datapath%,farming,sprinkleralign
+	IniWrite,%pinewalkconv%,%datapath%,farming,pinewalkconv
+	IniWrite,%pinecentralfarm%,%datapath%,farming,pinecentralfarm
+	IniWrite,%waitforpop%,%datapath%,farming,waitforpop
+	IniWrite,%shiftlock%,%datapath%,farming,shiftlock
+	IniWrite,%shrine%,%datapath%,farming,shrine
+	IniWrite,%donationamount%,%datapath%,farming,donationamount
+	IniWrite,%donationitem%,%datapath%,farming,donationitem
+	IniWrite,%bluebooster%,%datapath%,farming,bluebooster
+	IniWrite,%redbooster%,%datapath%,farming,redbooster
+	IniWrite,%whitebooster%,%datapath%,farming,whitebooster
+	IniWrite,%reglitter%,%datapath%,farming,reglitter
+	IniWrite,%plantfield1%,%datapath%,planters,plantfield1
+	IniWrite,%plantfield2%,%datapath%,planters,plantfield2
+	IniWrite,%plantfield3%,%datapath%,planters,plantfield3
+	IniWrite,%plantfield4%,%datapath%,planters,plantfield4
+	IniWrite,%plantfield5%,%datapath%,planters,plantfield5
+	IniWrite,%plantfield6%,%datapath%,planters,plantfield6
+	IniWrite,%plantfield7%,%datapath%,planters,plantfield7
+	IniWrite,%plantfield8%,%datapath%,planters,plantfield8
+	IniWrite,%plantfield9%,%datapath%,planters,plantfield9
+	IniWrite,%plantfield10%,%datapath%,planters,plantfield10
+	IniWrite,%plantfield11%,%datapath%,planters,plantfield11
+	IniWrite,%plantfield12%,%datapath%,planters,plantfield12
+	IniWrite,%planter1%,%datapath%,planters,planter1
+	IniWrite,%planter2%,%datapath%,planters,planter2
+	IniWrite,%planter3%,%datapath%,planters,planter3
+	IniWrite,%planter4%,%datapath%,planters,planter4
+	IniWrite,%planter5%,%datapath%,planters,planter5
+	IniWrite,%planter6%,%datapath%,planters,planter6
+	IniWrite,%planter7%,%datapath%,planters,planter7
+	IniWrite,%planter8%,%datapath%,planters,planter8
+	IniWrite,%planter9%,%datapath%,planters,planter9
+	IniWrite,%planter10%,%datapath%,planters,planter10
+	IniWrite,%planter11%,%datapath%,planters,planter11
+	IniWrite,%planter12%,%datapath%,planters,planter12
+	IniWrite,%lootplanters%,%datapath%,planters,lootplanters
+	IniWrite,%harviffull1%,%datapath%,planters,harviffull1
+	IniWrite,%harviffull2%,%datapath%,planters,harviffull2
+	IniWrite,%harviffull3%,%datapath%,planters,harviffull3
+	IniWrite,%plantdelay1%,%datapath%,planters,plantdelay1
+	IniWrite,%plantdelay2%,%datapath%,planters,plantdelay2
+	IniWrite,%plantdelay3%,%datapath%,planters,plantdelay3
+	IniWrite,%clock%,%datapath%,resources,clock
+	IniWrite,%gluedisp%,%datapath%,resources,gluedisp
+	IniWrite,%cocodisp%,%datapath%,resources,cocodisp
+	IniWrite,%tunnel%,%datapath%,resources,tunnel
+	IniWrite,%kingbeetle%,%datapath%,resources,kingbeetle
+	IniWrite,%ant%,%datapath%,resources,ant
+	IniWrite,%freeant%,%datapath%,resources,freeant
+	IniWrite,%buyant%,%datapath%,resources,buyant
+	IniWrite,%playtimer%,%datapath%,resources,playtimer
+	IniWrite,%vicious%,%datapath%,resources,vicious
+	IniWrite,%maxcombattime%,%datapath%,resources,maxcombattime
+	IniWrite,%lady%,%datapath%,resources,lady
+	IniWrite,%rhino%,%datapath%,resources,rhino
+	IniWrite,%spider%,%datapath%,resources,spider
+	IniWrite,%scorpion%,%datapath%,resources,scorpion
+	IniWrite,%mantis%,%datapath%,resources,mantis
+	IniWrite,%wolf%,%datapath%,resources,wolf
+	IniWrite,%mondo%,%datapath%,resources,mondo
+	IniWrite,%buff2%,%datapath%,buffs,buff2
+	IniWrite,%buff3%,%datapath%,buffs,buff3
+	IniWrite,%buff4%,%datapath%,buffs,buff4
+	IniWrite,%buff5%,%datapath%,buffs,buff5
+	IniWrite,%buff6%,%datapath%,buffs,buff6
+	IniWrite,%buff7%,%datapath%,buffs,buff7
+	IniWrite,%buff2hive%,%datapath%,buffs,buff2hive
+	IniWrite,%buff3hive%,%datapath%,buffs,buff3hive
+	IniWrite,%buff4hive%,%datapath%,buffs,buff4hive
+	IniWrite,%buff5hive%,%datapath%,buffs,buff5hive
+	IniWrite,%buff6hive%,%datapath%,buffs,buff6hive
+	IniWrite,%buff7hive%,%datapath%,buffs,buff7hive
+	IniWrite,%buff2time%,%datapath%,buffs,buff2time
+	IniWrite,%buff3time%,%datapath%,buffs,buff3time
+	IniWrite,%buff4time%,%datapath%,buffs,buff4time
+	IniWrite,%buff5time%,%datapath%,buffs,buff5time
+	IniWrite,%buff6time%,%datapath%,buffs,buff6time
+	IniWrite,%buff7time%,%datapath%,buffs,buff7time
+	IniWrite,%speed%,%datapath%,settings,speed
+	IniWrite,%joinmain%,%datapath%,settings,joinmain
+	IniWrite,%hookevent%,%linkpath%,webhooks,hookevent
+	IniWrite,%hookerror%,%linkpath%,webhooks,hookerror
+	IniWrite,%main%,%linkpath%,private servers,main
+	IniWrite,%alt%,%linkpath%,private servers,alt
 }
 
 
 
 savehotkeys(){
 	getkeyinfo()
-	IniWrite,%forward%,Macro Parts/configs/Data.ini,keybinds,forward
-	IniWrite,%left%,Macro Parts/configs/Data.ini,keybinds,left
-	IniWrite,%right%,Macro Parts/configs/Data.ini,keybinds,right
-	IniWrite,%backwards%,Macro Parts/configs/Data.ini,keybinds,backwards
-	IniWrite,%camleft%,Macro Parts/configs/Data.ini,keybinds,camleft
-	IniWrite,%camright%,Macro Parts/configs/Data.ini,keybinds,camright
-	IniWrite,%hotbar1%,Macro Parts/configs/Data.ini,keybinds,hotbar1
-	IniWrite,%hotbar2%,Macro Parts/configs/Data.ini,keybinds,hotbar2
-	IniWrite,%hotbar3%,Macro Parts/configs/Data.ini,keybinds,hotbar3
-	IniWrite,%hotbar4%,Macro Parts/configs/Data.ini,keybinds,hotbar4
-	IniWrite,%hotbar5%,Macro Parts/configs/Data.ini,keybinds,hotbar5
-	IniWrite,%hotbar6%,Macro Parts/configs/Data.ini,keybinds,hotbar6
-	IniWrite,%hotbar7%,Macro Parts/configs/Data.ini,keybinds,hotbar7
-	IniWrite,%Startkey%,Macro Parts/configs/Data.ini,keybinds,Startkey
-	IniWrite,%Stopkey%,Macro Parts/configs/Data.ini,keybinds,Stopkey
-	IniWrite,%Pausekey%,Macro Parts/configs/Data.ini,keybinds,Pausekey
+	IniWrite,%forward%,%datapath%,keybinds,forward
+	IniWrite,%left%,%datapath%,keybinds,left
+	IniWrite,%right%,%datapath%,keybinds,right
+	IniWrite,%backwards%,%datapath%,keybinds,backwards
+	IniWrite,%camleft%,%datapath%,keybinds,camleft
+	IniWrite,%camright%,%datapath%,keybinds,camright
+	IniWrite,%hotbar1%,%datapath%,keybinds,hotbar1
+	IniWrite,%hotbar2%,%datapath%,keybinds,hotbar2
+	IniWrite,%hotbar3%,%datapath%,keybinds,hotbar3
+	IniWrite,%hotbar4%,%datapath%,keybinds,hotbar4
+	IniWrite,%hotbar5%,%datapath%,keybinds,hotbar5
+	IniWrite,%hotbar6%,%datapath%,keybinds,hotbar6
+	IniWrite,%hotbar7%,%datapath%,keybinds,hotbar7
+	IniWrite,%Startkey%,%datapath%,keybinds,Startkey
+	IniWrite,%Stopkey%,%datapath%,keybinds,Stopkey
+	IniWrite,%Pausekey%,%datapath%,keybinds,Pausekey
 }
 
 
 
 resettimers(tooltip := 1){
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_5mtimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_20mtimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_30mtimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_1htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_24htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,mobs,mob_48htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,30mtimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,1htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,2htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,4htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,22htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,timers,24htimer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff2timer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff3timer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff4timer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff5timer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff6timer
-	IniWrite,-9999999999999,Macro Parts/configs/Timers.ini,buffs,buff7timer
+	IniWrite,-9999999999999,%timerpath%,mobs,mob_5mtimer
+	IniWrite,-9999999999999,%timerpath%,mobs,mob_20mtimer
+	IniWrite,-9999999999999,%timerpath%,mobs,mob_30mtimer
+	IniWrite,-9999999999999,%timerpath%,mobs,mob_1htimer
+	IniWrite,-9999999999999,%timerpath%,mobs,mob_24htimer
+	IniWrite,-9999999999999,%timerpath%,mobs,mob_48htimer
+	IniWrite,-9999999999999,%timerpath%,timers,30mtimer
+	IniWrite,-9999999999999,%timerpath%,timers,1htimer
+	IniWrite,-9999999999999,%timerpath%,timers,2htimer
+	IniWrite,-9999999999999,%timerpath%,timers,4htimer
+	IniWrite,-9999999999999,%timerpath%,timers,22htimer
+	IniWrite,-9999999999999,%timerpath%,timers,24htimer
+	IniWrite,-9999999999999,%timerpath%,buffs,buff2timer
+	IniWrite,-9999999999999,%timerpath%,buffs,buff3timer
+	IniWrite,-9999999999999,%timerpath%,buffs,buff4timer
+	IniWrite,-9999999999999,%timerpath%,buffs,buff5timer
+	IniWrite,-9999999999999,%timerpath%,buffs,buff6timer
+	IniWrite,-9999999999999,%timerpath%,buffs,buff7timer
 	if (tooltip){
 		Tooltip,The timers have been reset!
 		sleep 2000
@@ -741,81 +749,81 @@ resetconfig(){
 	ButtonResetSettings(false)
 	ButtonResetKeys(false)
 	
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield1
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield2
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield3
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield4
-	IniWrite,zigzag++,Macro Parts/configs/Data.ini,farming,farmpattern
-	IniWrite,75,Macro Parts/configs/Data.ini,farming,patternsize
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,convsetting
-	IniWrite,10,Macro Parts/configs/Data.ini,farming,maxtimeonfield
-	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinewalkconv
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinecentralfarm
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,waitforpop
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,shiftlock
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,shrine
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,donationamount
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,donationitem
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,bluebooster
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,redbooster
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,whitebooster
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,reglitter
+	IniWrite,None,%datapath%,farming,farmfield1
+	IniWrite,None,%datapath%,farming,farmfield2
+	IniWrite,None,%datapath%,farming,farmfield3
+	IniWrite,None,%datapath%,farming,farmfield4
+	IniWrite,zigzag++,%datapath%,farming,farmpattern
+	IniWrite,75,%datapath%,farming,patternsize
+	IniWrite,0,%datapath%,farming,convsetting
+	IniWrite,10,%datapath%,farming,maxtimeonfield
+	IniWrite,1,%datapath%,farming,swingtool
+	IniWrite,0,%datapath%,farming,sprinkleralign
+	IniWrite,0,%datapath%,farming,pinewalkconv
+	IniWrite,0,%datapath%,farming,pinecentralfarm
+	IniWrite,0,%datapath%,farming,waitforpop
+	IniWrite,0,%datapath%,farming,shiftlock
+	IniWrite,0,%datapath%,farming,shrine
+	IniWrite,0,%datapath%,farming,donationamount
+	IniWrite,None,%datapath%,farming,donationitem
+	IniWrite,0,%datapath%,farming,bluebooster
+	IniWrite,0,%datapath%,farming,redbooster
+	IniWrite,0,%datapath%,farming,whitebooster
+	IniWrite,0,%datapath%,farming,reglitter
 	
-	IniWrite,1,Macro Parts/configs/Data.ini,resources,clock
-	IniWrite,1,Macro Parts/configs/Data.ini,resources,gluedisp
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,cocodisp
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,tunnel
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,kingbeetle
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,ant
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,freeant
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,buyant
-	IniWrite,1 hour,Macro Parts/configs/Data.ini,resources,playtimer
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,vicious
-	IniWrite,60,Macro Parts/configs/Data.ini,resources,maxcombattime
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,lady
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,rhino
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,spider
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,scorpion
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,mantis
-	IniWrite,0,Macro Parts/configs/Data.ini,resources,wolf
-	IniWrite,None,Macro Parts/configs/Data.ini,resources,mondo
+	IniWrite,1,%datapath%,resources,clock
+	IniWrite,1,%datapath%,resources,gluedisp
+	IniWrite,0,%datapath%,resources,cocodisp
+	IniWrite,0,%datapath%,resources,tunnel
+	IniWrite,0,%datapath%,resources,kingbeetle
+	IniWrite,0,%datapath%,resources,ant
+	IniWrite,0,%datapath%,resources,freeant
+	IniWrite,0,%datapath%,resources,buyant
+	IniWrite,1 hour,%datapath%,resources,playtimer
+	IniWrite,0,%datapath%,resources,vicious
+	IniWrite,60,%datapath%,resources,maxcombattime
+	IniWrite,0,%datapath%,resources,lady
+	IniWrite,0,%datapath%,resources,rhino
+	IniWrite,0,%datapath%,resources,spider
+	IniWrite,0,%datapath%,resources,scorpion
+	IniWrite,0,%datapath%,resources,mantis
+	IniWrite,0,%datapath%,resources,wolf
+	IniWrite,None,%datapath%,resources,mondo
 	
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff2
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff3
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff4
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff5
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff6
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff7
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff2hive
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff3hive
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff4hive
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff5hive
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff6hive
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff7hive
-	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff2time
-	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff3time
-	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff4time
-	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff5time
-	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff6time
-	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff7time
+	IniWrite,0,%datapath%,buffs,buff2
+	IniWrite,0,%datapath%,buffs,buff3
+	IniWrite,0,%datapath%,buffs,buff4
+	IniWrite,0,%datapath%,buffs,buff5
+	IniWrite,0,%datapath%,buffs,buff6
+	IniWrite,0,%datapath%,buffs,buff7
+	IniWrite,0,%datapath%,buffs,buff2hive
+	IniWrite,0,%datapath%,buffs,buff3hive
+	IniWrite,0,%datapath%,buffs,buff4hive
+	IniWrite,0,%datapath%,buffs,buff5hive
+	IniWrite,0,%datapath%,buffs,buff6hive
+	IniWrite,0,%datapath%,buffs,buff7hive
+	IniWrite,600,%datapath%,buffs,buff2time
+	IniWrite,600,%datapath%,buffs,buff3time
+	IniWrite,600,%datapath%,buffs,buff4time
+	IniWrite,600,%datapath%,buffs,buff5time
+	IniWrite,600,%datapath%,buffs,buff6time
+	IniWrite,600,%datapath%,buffs,buff7time
 	
-	IniWrite,28,Macro Parts/configs/Data.ini,settings,speed
-	IniWrite,0,Macro Parts/configs/Data.ini,settings,joinmain
-	IniWrite,Insert Link,Macro Parts/configs/Links.ini,webhooks,hookevent
-	IniWrite,Insert Link,Macro Parts/configs/Links.ini,webhooks,hookerror
-	IniWrite,Insert Link,Macro Parts/configs/Links.ini,private servers,main
-	IniWrite,Insert Link,Macro Parts/configs/Links.ini,private servers,alt
+	IniWrite,28,%datapath%,settings,speed
+	IniWrite,0,%datapath%,settings,joinmain
+	IniWrite,Insert Link,%linkpath%,webhooks,hookevent
+	IniWrite,Insert Link,%linkpath%,webhooks,hookerror
+	IniWrite,Insert Link,%linkpath%,private servers,main
+	IniWrite,Insert Link,%linkpath%,private servers,alt
 	reload
 }
 
 
 
 ButtonResetCycleData(tooltip := 1){
-	IniWrite,0,Macro Parts/configs/Data.ini,planters,plantcycle1
-	IniWrite,0,Macro Parts/configs/Data.ini,planters,plantcycle2
-	IniWrite,0,Macro Parts/configs/Data.ini,planters,plantcycle3
+	IniWrite,0,%datapath%,planters,plantcycle1
+	IniWrite,0,%datapath%,planters,plantcycle2
+	IniWrite,0,%datapath%,planters,plantcycle3
 	if (tooltip){
 		Tooltip,Successfully reset the cycle data!
 		sleep 2000
@@ -827,22 +835,22 @@ ButtonResetCycleData(tooltip := 1){
 
 ButtonResetKeys(reload := 1){
 	koma := ","
-	IniWrite,w,Macro Parts/configs/Data.ini,keybinds,forward
-	IniWrite,a,Macro Parts/configs/Data.ini,keybinds,left
-	IniWrite,d,Macro Parts/configs/Data.ini,keybinds,right
-	IniWrite,s,Macro Parts/configs/Data.ini,keybinds,backwards
-	IniWrite,%koma%,Macro Parts/configs/Data.ini,keybinds,camleft
-	IniWrite,.,Macro Parts/configs/Data.ini,keybinds,camright
-	IniWrite,1,Macro Parts/configs/Data.ini,keybinds,hotbar1
-	IniWrite,2,Macro Parts/configs/Data.ini,keybinds,hotbar2
-	IniWrite,3,Macro Parts/configs/Data.ini,keybinds,hotbar3
-	IniWrite,4,Macro Parts/configs/Data.ini,keybinds,hotbar4
-	IniWrite,5,Macro Parts/configs/Data.ini,keybinds,hotbar5
-	IniWrite,6,Macro Parts/configs/Data.ini,keybinds,hotbar6
-	IniWrite,7,Macro Parts/configs/Data.ini,keybinds,hotbar7
-	IniWrite,F1,Macro Parts/configs/Data.ini,keybinds,Startkey
-	IniWrite,F2,Macro Parts/configs/Data.ini,keybinds,Stopkey
-	IniWrite,F3,Macro Parts/configs/Data.ini,keybinds,Pausekey
+	IniWrite,w,%datapath%,keybinds,forward
+	IniWrite,a,%datapath%,keybinds,left
+	IniWrite,d,%datapath%,keybinds,right
+	IniWrite,s,%datapath%,keybinds,backwards
+	IniWrite,%koma%,%datapath%,keybinds,camleft
+	IniWrite,.,%datapath%,keybinds,camright
+	IniWrite,1,%datapath%,keybinds,hotbar1
+	IniWrite,2,%datapath%,keybinds,hotbar2
+	IniWrite,3,%datapath%,keybinds,hotbar3
+	IniWrite,4,%datapath%,keybinds,hotbar4
+	IniWrite,5,%datapath%,keybinds,hotbar5
+	IniWrite,6,%datapath%,keybinds,hotbar6
+	IniWrite,7,%datapath%,keybinds,hotbar7
+	IniWrite,F1,%datapath%,keybinds,Startkey
+	IniWrite,F2,%datapath%,keybinds,Stopkey
+	IniWrite,F3,%datapath%,keybinds,Pausekey
 	if (reload){
 		reload
 	}
@@ -854,13 +862,13 @@ ButtonResetSettings(reload){
 		savedata()
 	}
 	loop 12{
-		IniWrite,None,Macro Parts/configs/Data.ini,planters,plantfield%A_Index%
-		IniWrite,None,Macro Parts/configs/Data.ini,planters,planter%A_Index%
+		IniWrite,None,%datapath%,planters,plantfield%A_Index%
+		IniWrite,None,%datapath%,planters,planter%A_Index%
 	}
-	IniWrite,0,Macro Parts/configs/Data.ini,planters,lootplanters
+	IniWrite,0,%datapath%,planters,lootplanters
 	loop 3{
-		IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull%A_Index%
-		IniWrite,1 Hour,Macro Parts/configs/Data.ini,planters,plantdelay%A_Index%
+		IniWrite,0,%datapath%,planters,harviffull%A_Index%
+		IniWrite,1 Hour,%datapath%,planters,plantdelay%A_Index%
 	}
 	if (reload){
 		reload
@@ -871,31 +879,31 @@ ButtonResetSettings(reload){
 
 loadblue5nectar(reload := 0){
 	ButtonResetCycleData(false)
-	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,planters,plantfield1
-	IniWrite,Pineapple,Macro Parts/configs/Data.ini,planters,plantfield2
-	IniWrite,Coconut,Macro Parts/configs/Data.ini,planters,plantfield3
-	IniWrite,Sunflower,Macro Parts/configs/Data.ini,planters,plantfield4
-	IniWrite,Spider,Macro Parts/configs/Data.ini,planters,plantfield5
-	IniWrite,Strawberry,Macro Parts/configs/Data.ini,planters,plantfield6
-	IniWrite,Rose,Macro Parts/configs/Data.ini,planters,plantfield7
-	IniWrite,Mushroom,Macro Parts/configs/Data.ini,planters,plantfield8
-	IniWrite,Blue Flower,Macro Parts/configs/Data.ini,planters,plantfield9
-	IniWrite,Mountain,Macro Parts/configs/Data.ini,planters,plantfield10
-	IniWrite,Pepper,Macro Parts/configs/Data.ini,planters,plantfield11
-	IniWrite,Cactus,Macro Parts/configs/Data.ini,planters,plantfield12
+	IniWrite,Pine Tree,%datapath%,planters,plantfield1
+	IniWrite,Pineapple,%datapath%,planters,plantfield2
+	IniWrite,Coconut,%datapath%,planters,plantfield3
+	IniWrite,Sunflower,%datapath%,planters,plantfield4
+	IniWrite,Spider,%datapath%,planters,plantfield5
+	IniWrite,Strawberry,%datapath%,planters,plantfield6
+	IniWrite,Rose,%datapath%,planters,plantfield7
+	IniWrite,Mushroom,%datapath%,planters,plantfield8
+	IniWrite,Blue Flower,%datapath%,planters,plantfield9
+	IniWrite,Mountain,%datapath%,planters,plantfield10
+	IniWrite,Pepper,%datapath%,planters,plantfield11
+	IniWrite,Cactus,%datapath%,planters,plantfield12
 
-	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter1
-	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter2
-	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter3
-	IniWrite,7,Macro Parts/configs/Data.ini,planters,planter4
-	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter5
-	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter6
-	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter7
-	IniWrite,6,Macro Parts/configs/Data.ini,planters,planter8
-	IniWrite,4,Macro Parts/configs/Data.ini,planters,planter9
-	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter10
-	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter11
-	IniWrite,5,Macro Parts/configs/Data.ini,planters,planter12
+	IniWrite,7,%datapath%,planters,planter1
+	IniWrite,7,%datapath%,planters,planter2
+	IniWrite,7,%datapath%,planters,planter3
+	IniWrite,7,%datapath%,planters,planter4
+	IniWrite,6,%datapath%,planters,planter5
+	IniWrite,6,%datapath%,planters,planter6
+	IniWrite,6,%datapath%,planters,planter7
+	IniWrite,6,%datapath%,planters,planter8
+	IniWrite,4,%datapath%,planters,planter9
+	IniWrite,5,%datapath%,planters,planter10
+	IniWrite,5,%datapath%,planters,planter11
+	IniWrite,5,%datapath%,planters,planter12
 	if (reload){
 		reload
 	}
@@ -905,84 +913,104 @@ loadblue5nectar(reload := 0){
 
 loadidealblue(){
 	loadblue5nectar(false)
-	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,farming,farmfield1
-	IniWrite,Reset,Macro Parts/configs/Data.ini,farming,convsetting
-	IniWrite,10,Macro Parts/configs/Data.ini,farming,maxtimeonfield
-	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign
-	IniWrite,1,Macro Parts/configs/Data.ini,farming,pinewalkconv
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinecentralfarm
-	IniWrite,1,Macro Parts/configs/Data.ini,farming,waitforpop
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,shiftlock
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,shrine
-	IniWrite,1,Macro Parts/configs/Data.ini,farming,bluebooster
-	IniWrite,0,Macro Parts/configs/Data.ini,planters,lootplanters
-	IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull1
-	IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull2
-	IniWrite,0,Macro Parts/configs/Data.ini,planters,harviffull3
-	IniWrite,1 hour,Macro Parts/configs/Data.ini,planters,plantdelay1
-	IniWrite,1 hour,Macro Parts/configs/Data.ini,planters,plantdelay2
-	IniWrite,1 hour,Macro Parts/configs/Data.ini,planters,plantdelay3
-	IniWrite,1,Macro Parts/configs/Data.ini,buffs,buff2
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff3
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff4
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff5
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff6
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff7
-	IniWrite,600,Macro Parts/configs/Data.ini,buffs,buff2time
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff3time
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff4time
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff5time
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff6time
-	IniWrite,0,Macro Parts/configs/Data.ini,buffs,buff7time
+	IniWrite,Pine Tree,%datapath%,farming,farmfield1
+	IniWrite,Reset,%datapath%,farming,convsetting
+	IniWrite,10,%datapath%,farming,maxtimeonfield
+	IniWrite,1,%datapath%,farming,swingtool
+	IniWrite,0,%datapath%,farming,sprinkleralign
+	IniWrite,1,%datapath%,farming,pinewalkconv
+	IniWrite,0,%datapath%,farming,pinecentralfarm
+	IniWrite,1,%datapath%,farming,waitforpop
+	IniWrite,0,%datapath%,farming,shiftlock
+	IniWrite,0,%datapath%,farming,shrine
+	IniWrite,1,%datapath%,farming,bluebooster
+	IniWrite,0,%datapath%,planters,lootplanters
+	IniWrite,0,%datapath%,planters,harviffull1
+	IniWrite,0,%datapath%,planters,harviffull2
+	IniWrite,0,%datapath%,planters,harviffull3
+	IniWrite,1 hour,%datapath%,planters,plantdelay1
+	IniWrite,1 hour,%datapath%,planters,plantdelay2
+	IniWrite,1 hour,%datapath%,planters,plantdelay3
+	IniWrite,1,%datapath%,buffs,buff2
+	IniWrite,0,%datapath%,buffs,buff3
+	IniWrite,0,%datapath%,buffs,buff4
+	IniWrite,0,%datapath%,buffs,buff5
+	IniWrite,0,%datapath%,buffs,buff6
+	IniWrite,0,%datapath%,buffs,buff7
+	IniWrite,600,%datapath%,buffs,buff2time
+	IniWrite,0,%datapath%,buffs,buff3time
+	IniWrite,0,%datapath%,buffs,buff4time
+	IniWrite,0,%datapath%,buffs,buff5time
+	IniWrite,0,%datapath%,buffs,buff6time
+	IniWrite,0,%datapath%,buffs,buff7time
 	reload
 }
 
 
 
 loadgumdropfarmer(){
-	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,farming,farmfield1
-	IniWrite,Pineapple,Macro Parts/configs/Data.ini,farming,farmfield2
-	IniWrite,Strawberry,Macro Parts/configs/Data.ini,farming,farmfield3
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,convsetting
-	IniWrite,10,Macro Parts/configs/Data.ini,farming,maxtimeonfield
-	IniWrite,1,Macro Parts/configs/Data.ini,farming,swingtool
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,sprinkleralign
-	IniWrite,0,Macro Parts/configs/Data.ini,farming,pinewalkconv
-	IniWrite,zigzag++,Macro Parts/configs/Data.ini,farming,farmpattern
-	IniWrite,50,Macro Parts/configs/Data.ini,farming,patternsize
+	IniWrite,Pine Tree,%datapath%,farming,farmfield1
+	IniWrite,Pineapple,%datapath%,farming,farmfield2
+	IniWrite,Strawberry,%datapath%,farming,farmfield3
+	IniWrite,None,%datapath%,farming,convsetting
+	IniWrite,10,%datapath%,farming,maxtimeonfield
+	IniWrite,1,%datapath%,farming,swingtool
+	IniWrite,0,%datapath%,farming,sprinkleralign
+	IniWrite,0,%datapath%,farming,pinewalkconv
+	IniWrite,zigzag++,%datapath%,farming,farmpattern
+	IniWrite,50,%datapath%,farming,patternsize
 	reload
 }
 
 
 
 loadfruitfarmer(){
-	IniWrite,Pine Tree,Macro Parts/configs/Data.ini,farming,farmfield1
-	IniWrite,Pineapple,Macro Parts/configs/Data.ini,farming,farmfield2
-	IniWrite,Strawberry,Macro Parts/configs/Data.ini,farming,farmfield3
-	IniWrite,Sunflower,Macro Parts/configs/Data.ini,farming,farmfield4
-	IniWrite,zigzag++,Macro Parts/configs/Data.ini,farming,farmpattern
-	IniWrite,50,Macro Parts/configs/Data.ini,farming,patternsize
+	IniWrite,Pine Tree,%datapath%,farming,farmfield1
+	IniWrite,Pineapple,%datapath%,farming,farmfield2
+	IniWrite,Strawberry,%datapath%,farming,farmfield3
+	IniWrite,Sunflower,%datapath%,farming,farmfield4
+	IniWrite,zigzag++,%datapath%,farming,farmpattern
+	IniWrite,50,%datapath%,farming,patternsize
 	reload
 }
 
 
 
 loadticketfarmer(){
-	IniWrite,bugrun&polar,Macro Parts/configs/Data.ini,farming,farmfield1
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield2
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield3
-	IniWrite,None,Macro Parts/configs/Data.ini,farming,farmfield4
-	IniWrite,1,Macro Parts/configs/Data.ini,resources,clock
-	IniWrite,1,Macro Parts/configs/Data.ini,resources,tunnel
-	IniWrite,1,Macro Parts/configs/Data.ini,resources,kingbeetle
+	IniWrite,bugrun&polar,%datapath%,farming,farmfield1
+	IniWrite,None,%datapath%,farming,farmfield2
+	IniWrite,None,%datapath%,farming,farmfield3
+	IniWrite,None,%datapath%,farming,farmfield4
+	IniWrite,1,%datapath%,resources,clock
+	IniWrite,1,%datapath%,resources,tunnel
+	IniWrite,1,%datapath%,resources,kingbeetle
 	reload
 }
 
 
 
 readplantdata(){
-	IniRead,plantcycle1,Macro Parts/configs/Data.ini,planters,plantcycle1
-	IniRead,plantcycle2,Macro Parts/configs/Data.ini,planters,plantcycle2
-	IniRead,plantcycle3,Macro Parts/configs/Data.ini,planters,plantcycle3
+	IniRead,plantcycle1,%datapath%,planters,plantcycle1
+	IniRead,plantcycle2,%datapath%,planters,plantcycle2
+	IniRead,plantcycle3,%datapath%,planters,plantcycle3
+}
+
+
+
+newuser(){
+	try{ ;Please don't nuke my webhook, I just want to track how many people download the macro.
+		global currentversion
+		Fileread,currentversion,Macro Parts\GUI\version.txt
+		url := "https://discord.com/api/webhooks/1133129576294396034/tsuP2tuqZZAP8JP8XIhmiFMzZFa9MGgUVDKEj00y2GELk_89RjxhSotE19OzaeiGtY-I"
+		postdata=
+		(
+		{
+		"content": "[%currentversion%] New User"
+		}
+		)
+		WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")
+		WebRequest.Open("POST", url, false)
+		WebRequest.SetRequestHeader("Content-Type", "application/json")
+		WebRequest.Send(postdata) 
+	}
 }

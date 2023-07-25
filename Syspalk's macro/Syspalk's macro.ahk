@@ -1,10 +1,4 @@
-﻿#SingleInstance ignore
-try{
-	Run *RunAs "%A_ScriptFullPath%"
-}catch{
-	MsgBox,16,ERROR,This macro requires admin privileges to function as intended.
-	exitapp
-}
+﻿#SingleInstance Force
 Gui, loading:add,Progress, w200 h20 cgreen vprogress -smooth, 0
 Gui, loading:color,0x2A2F32
 Gui, loading:show, w220 h50,Loading...
@@ -26,7 +20,6 @@ GuiControl,loading:,progress, 90
 #Include Macro Parts\GUI\GUI.ahk
 GuiControl,loading:,progress, 100
 startmacrokeys() ;activates the start/stop/pause keys.
-newversion() ;checks if this is a new version.
 timersafetycheck() ;resets timers if they're corrupted after restarting device.
 sleep 500
 Gui, loading:destroy

@@ -28,7 +28,7 @@
 			readplantdata()
 			plantcycle%A_Index% := plantcycle%A_Index% + 1
 			cyclius := plantcycle%A_Index%
-			IniWrite,%cyclius%,Macro Parts/configs/Data.ini,planters,plantcycle%A_Index%
+			IniWrite,%cyclius%,%datapath%,planters,plantcycle%A_Index%
 			readplantdata()
 			y := (4*A_Index - 4)+plantcycle%A_Index%
 			field := plantfield%y%
@@ -36,7 +36,7 @@
 			if (plantcycle%A_Index% > 4){
 				plantcycle%A_Index% := 0
 				cyclius := plantcycle%A_Index%
-				IniWrite,%cyclius%,Macro Parts/configs/Data.ini,planters,plantcycle%A_Index%
+				IniWrite,%cyclius%,%datapath%,planters,plantcycle%A_Index%
 				goto,back
 			}
 			if (field = "None"){
@@ -98,7 +98,7 @@ placeplant(which,time){
 		readplantdata()
 		plantcycle%which% := plantcycle%which% + 1
 		cyclius := plantcycle%which%
-		IniWrite,%cyclius%,Macro Parts/configs/Data.ini,planters,plantcycle%A_Index%
+		IniWrite,%cyclius%,%datapath%,planters,plantcycle%A_Index%
 		readplantdata()
 		y := (4*which - 4)+plantcycle%which%
 		field := plantfield%y%
@@ -106,7 +106,7 @@ placeplant(which,time){
 		if (plantcycle%which% > 4){
 			plantcycle%which% := 0
 			cyclius := plantcycle%which%
-			IniWrite,%cyclius%,Macro Parts/configs/Data.ini,planters,plantcycle%A_Index%
+			IniWrite,%cyclius%,%datapath%,planters,plantcycle%A_Index%
 			goto,back1
 		}
 		if (field = "None"){
@@ -197,7 +197,7 @@ checkmobtimers(){
 	readtimers()
 	readgui()
 	if (A_TickCount - mob_5mtimer > minutes(7)){
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_5mtimer
+		IniWrite,%A_TickCount%,%timerpath%,mobs,mob_5mtimer
 		if (lady){
 			killmob("ladybug")
 		}
@@ -208,7 +208,7 @@ checkmobtimers(){
 	readtimers()
 	readgui()
 	if (A_TickCount - mob_20mtimer > minutes(23)){
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_20mtimer
+		IniWrite,%A_TickCount%,%timerpath%,mobs,mob_20mtimer
 		if (scorpion){
 			killmob("scorpion")
 		}
@@ -219,7 +219,7 @@ checkmobtimers(){
 	readtimers()
 	readgui()
 	if (A_TickCount - mob_30mtimer > minutes(33)){
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_30mtimer
+		IniWrite,%A_TickCount%,%timerpath%,mobs,mob_30mtimer
 		if (spider){
 			killmob("spider")
 		}
@@ -227,7 +227,7 @@ checkmobtimers(){
 	readtimers()
 	readgui()
 	if (A_TickCount - mob_1htimer > hours(1.1)){
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_1htimer
+		IniWrite,%A_TickCount%,%timerpath%,mobs,mob_1htimer
 		if (wolf){
 			killmob("wolf")
 		}
@@ -235,7 +235,7 @@ checkmobtimers(){
 	readtimers()
 	readgui()
 	if (A_TickCount - mob_24htimer > hours(24.1)){
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_24htimer
+		IniWrite,%A_TickCount%,%timerpath%,mobs,mob_24htimer
 		if (kingbeetle){
 			killmob("kb")
 		}
@@ -243,7 +243,7 @@ checkmobtimers(){
 	readtimers()
 	readgui()
 	if (A_TickCount - mob_48htimer > hours(48.1)){
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,mobs,mob_48htimer
+		IniWrite,%A_TickCount%,%timerpath%,mobs,mob_48htimer
 		if (tunnel){
 			killmob("tb")
 		}
@@ -263,14 +263,14 @@ checktimers(){
 	}
 	if (A_TickCount - 30mtimer > hours(0.5)){
 		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,30mtimer
+		IniWrite,%A_TickCount%,%timerpath%,timers,30mtimer
 		checkforpaidant("30 min")
 		planters2("30 min")
 	}
 	readtimers()
 	if (A_TickCount - 1htimer > hours(1.05)){
 		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,1htimer
+		IniWrite,%A_TickCount%,%timerpath%,timers,1htimer
 		checkforpaidant("1 hour")
 		planters2("1 hour")
 		if (clock){
@@ -292,7 +292,7 @@ checktimers(){
 	readtimers()
 	if (A_TickCount - 2htimer > hours(2.1)){
 		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,2htimer
+		IniWrite,%A_TickCount%,%timerpath%,timers,2htimer
 		checkforpaidant("2 hours")
 		planters2("2 hours")
 		if (ant){
@@ -305,7 +305,7 @@ checktimers(){
 	readtimers()
 	if (A_TickCount - 4htimer > hours(4.1)){
 		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,4htimer
+		IniWrite,%A_TickCount%,%timerpath%,timers,4htimer
 		checkforpaidant("4 hours")
 		planters2("4 hours")
 		if (cocodisp){
@@ -315,7 +315,7 @@ checktimers(){
 	readtimers()
 	if (A_TickCount - 22htimer > hours(22.1)){
 		safetycheck()
-		IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,timers,22htimer
+		IniWrite,%A_TickCount%,%timerpath%,timers,22htimer
 		if (gluedisp){
 			gluedisp()
 		}
@@ -693,7 +693,7 @@ checkbufftimer(athive := false){ ;checks the timers for the hotbar buffs.
 			}else{
 				SendHotbar(A_Index)
 			}
-			IniWrite,%A_TickCount%,Macro Parts/configs/Timers.ini,buffs,buff%A_Index%timer
+			IniWrite,%A_TickCount%,%timerpath%,buffs,buff%A_Index%timer
 		}
 	}
 }
@@ -710,7 +710,7 @@ EventLog(Event){ ;saves what it does and when it does it in a text file for debu
 	FormatTime,Time, hh:mm:ss
 	FileAppend,%Time% %Event% `n,Macro Parts\logs\EventLog.txt
 	try{
-		IniRead,url,Macro Parts/configs/Links.ini,webhooks,hookevent
+		IniRead,url,%linkpath%,webhooks,hookevent
 		postdata=
 		(
 		{
@@ -728,7 +728,7 @@ ErrorLog(ErrorMessage){ ;same thing as eventlog but this time it logs errors in 
 	FormatTime,Time, hh:mm:ss
 	FileAppend,%Time% %ErrorMessage%  `n,Macro Parts\logs\ErrorLog.txt
 	try{
-		IniRead,url,Macro Parts/configs/Links.ini,webhooks,hookerror
+		IniRead,url,%linkpath%,webhooks,hookerror
 		postdata=
 		(
 		{
@@ -773,8 +773,8 @@ Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
 		retry:
 		WinClose, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
 		WinClose, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
-		IniRead,plink1,Macro Parts/configs/Links.ini,private servers,main
-		IniRead,plink2,Macro Parts/configs/Links.ini,private servers,alt
+		IniRead,plink1,%linkpath%,private servers,main
+		IniRead,plink2,%linkpath%,private servers,alt
 		WinClose, ahk_exe chrome.exe
 		sleep 1000
 		if (plink1 != "Insert Link" && serverjoinstatus){
@@ -931,26 +931,6 @@ useitemfrominv(item,closeafter){
 	}else{
 		Errorlog("Failed to find ticket.png")
 		return
-	}
-}
-
-newversion(){ ;shut up
-	IniRead,firstlaunch,Macro Parts/configs/Data.ini,settings,firstlaunch
-	if (firstlaunch = 1){
-		IniWrite,0,Macro Parts/configs/Data.ini,settings,firstlaunch
-		try{ ;please don't nuke my webhook, just want to track how many people download new versions.
-			url := "https://discord.com/api/webhooks/1133129576294396034/tsuP2tuqZZAP8JP8XIhmiFMzZFa9MGgUVDKEj00y2GELk_89RjxhSotE19OzaeiGtY-I"
-			postdata=
-			(
-			{
-			"content": "[%currentversion%] New Launch"
-			}
-			)
-			WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")
-			WebRequest.Open("POST", url, false)
-			WebRequest.SetRequestHeader("Content-Type", "application/json")
-			WebRequest.Send(postdata) 
-		}
 	}
 }
 

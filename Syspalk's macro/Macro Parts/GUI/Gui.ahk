@@ -94,9 +94,9 @@ Gui,Add,Groupbox, v2tab38 x240 yp+12 w190 h44 cwhite,
 Gui,Add,Checkbox, v2tab39 x250 yp+19 cred %reglitter% ,Re-glitter pinetree
 Gui,Add,Text, v2tab40 xp+165 yp-7 w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
-IniRead,Startkey,Macro Parts/configs/Data.ini,keybinds,Startkey
-IniRead,Stopkey,Macro Parts/configs/Data.ini,keybinds,Stopkey
-IniRead,Pausekey,Macro Parts/configs/Data.ini,keybinds,Pausekey
+IniRead,Startkey,%datapath%,keybinds,Startkey
+IniRead,Stopkey,%datapath%,keybinds,Stopkey
+IniRead,Pausekey,%datapath%,keybinds,Pausekey
 StartText := "Start [" . Startkey . "]"
 StopText := "Stop [" . Stopkey . "]"
 PauseText := "Pause [" . Pausekey . "]"
