@@ -185,11 +185,12 @@ Gui,Add,Text, v3tab46 x256 y564 w10 h17 c%infocol% gresetcycleinfo,?
 Gui,Font,s17 Bold
 Gui,Add,Text, v4tab1 x320 y10 cgreen,Resources
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab2 x20 y40 w230 h85 cwhite,Dispensers
+Gui,Add,Groupbox, v4tab2 x20 y40 w230 h105 cwhite,Dispensers
 Gui,Font,s10
 gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock% ,Use wealthclock
 gui,Add,Checkbox, v4tab4 x30 yp+20 cwhite %gluedisp% ,Use glue dispenser
 gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp% ,Use coconut dispenser
+Gui,Add,Checkbox, v4tab30 x30 yp+20 cred %robopass% ,Collect the robo pass
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab8 x20 yp+35 w300 h90 cwhite,Ant challenge
 Gui,Font,s10
@@ -217,7 +218,7 @@ gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% ,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
 Gui,Add,Text, v4tab28 x235 y54 w10 h17 c%infocol% gdispenserinfo,?
-Gui,Add,Text, v4tab29 x185 y334 w10 h17 c%infocol% gmobinfo,?
+Gui,Add,Text, v4tab29 x185 y354 w10 h17 c%infocol% gmobinfo,?
 
 
 

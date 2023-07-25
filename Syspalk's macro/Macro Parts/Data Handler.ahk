@@ -75,6 +75,7 @@ global plantcycle2
 global plantcycle3
 global clock
 global gluedisp
+global robopass
 global strawdisp
 global bluebdisp
 global cocodisp
@@ -229,6 +230,7 @@ readini(){ ;reads all the data from the ini file
 	IniRead,clock,%datapath%,resources,clock
 	IniRead,gluedisp,%datapath%,resources,gluedisp
 	IniRead,cocodisp,%datapath%,resources,cocodisp
+	IniRead,robopass,%datapath%,resources,robopass
 	IniRead,tunnel,%datapath%,resources,tunnel
 	IniRead,kingbeetle,%datapath%,resources,kingbeetle
 	IniRead,ant,%datapath%,resources,ant
@@ -341,6 +343,9 @@ readini(){ ;reads all the data from the ini file
 	}
 	if (gluedisp){
 		global gluedisp := "Checked"
+	}
+	if (robopass){
+		global robopass := "Checked"
 	}
 	if (strawdisp){
 		global strawdisp := "Checked"
@@ -489,6 +494,7 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,clock,,4tab3
 	GuiControlget,gluedisp,,4tab4
 	GuiControlget,cocodisp,,4tab7
+	GuiControlget,robopass,,4tab30
 	GuiControlget,tunnel,,4tab24
 	GuiControlget,kingbeetle,,4tab25
 	GuiControlget,ant,,4tab9
@@ -637,6 +643,7 @@ savedata(){ ;saves all the data
 	IniWrite,%clock%,%datapath%,resources,clock
 	IniWrite,%gluedisp%,%datapath%,resources,gluedisp
 	IniWrite,%cocodisp%,%datapath%,resources,cocodisp
+	IniWrite,%robopass%,%datapath%,resources,robopass
 	IniWrite,%tunnel%,%datapath%,resources,tunnel
 	IniWrite,%kingbeetle%,%datapath%,resources,kingbeetle
 	IniWrite,%ant%,%datapath%,resources,ant
@@ -776,6 +783,7 @@ resetconfig(){
 	IniWrite,1,%datapath%,resources,clock
 	IniWrite,1,%datapath%,resources,gluedisp
 	IniWrite,0,%datapath%,resources,cocodisp
+	IniWrite,1,%datapath%,resources,robopass
 	IniWrite,0,%datapath%,resources,tunnel
 	IniWrite,0,%datapath%,resources,kingbeetle
 	IniWrite,0,%datapath%,resources,ant
