@@ -217,6 +217,7 @@ gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel% ,Kill tunnelbear
 gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% ,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
+Gui,Add,Picture, v4tab31 yp-203 x220 w210 h185 cred, Macro Parts\GUI\Images/beesmas stuff.png
 Gui,Add,Text, v4tab28 x235 y54 w10 h17 c%infocol% gdispenserinfo,?
 Gui,Add,Text, v4tab29 x185 y354 w10 h17 c%infocol% gmobinfo,?
 
