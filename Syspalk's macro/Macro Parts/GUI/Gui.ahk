@@ -164,7 +164,7 @@ Gui,Add,CheckBox, v3tab30 xp yp+30 cwhite %harviffull1% , harvest plant 1 when f
 Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2% , harvest plant 2 when fully grown
 Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3% , harvest plant 3 when fully grown
 Gui,Font,s13
-Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h120 cred,Plant Timers
+Gui,Add,GroupBox, v3tab33 x10 yp+40 w200 h120 cwhite,Plant Timers
 Gui,Font,s8
 gui,Add,Text,v3tab34 xp+70 yp+20 cwhite,harvest time
 Gui,Add,Text,v3tab35 xp-60 yp+23 cwhite, plant 1

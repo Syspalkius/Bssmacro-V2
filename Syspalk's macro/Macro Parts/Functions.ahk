@@ -98,7 +98,7 @@ placeplant(which,time){
 		readplantdata()
 		plantcycle%which% := plantcycle%which% + 1
 		cyclius := plantcycle%which%
-		IniWrite,%cyclius%,%datapath%,planters,plantcycle%A_Index%
+		IniWrite,%cyclius%,%datapath%,planters,plantcycle%which%
 		readplantdata()
 		y := (4*which - 4)+plantcycle%which%
 		field := plantfield%y%
@@ -106,7 +106,7 @@ placeplant(which,time){
 		if (plantcycle%which% > 4){
 			plantcycle%which% := 0
 			cyclius := plantcycle%which%
-			IniWrite,%cyclius%,%datapath%,planters,plantcycle%A_Index%
+			IniWrite,%cyclius%,%datapath%,planters,plantcycle%which%
 			goto,back1
 		}
 		if (field = "None"){
@@ -114,6 +114,52 @@ placeplant(which,time){
 		}
 		GoField(field,true)
 		PlantAction("place",key)
+	}
+}
+
+PlantAction(option,key:=0,harvfull:=0){
+	readgui()
+	if (option = "place"){
+		Eventlog("Placed planter")
+		SendHotbar(key)
+		sleep 1000
+		return
+	}
+	if (option = "take"){
+		sleep 500
+		Send e
+		starttime := A_TickCount
+		while (A_TickCount - starttime < 2500){
+			if (SearchFunction("Harvest_Planter.png",20)[1] = 0){
+				if (harvfull){
+					if (SearchFunction("no.png",20)[1] = 0){
+						mousemove,SearchFunction("no.png",20)[2],SearchFunction("no.png",20)[3]
+						sleep 100
+						Send {Click Left}
+						return 2
+					}
+				}
+				else if (SearchFunction("Yes.png",20)[1] = 0){
+					mousemove,SearchFunction("Yes.png",20)[2],SearchFunction("Yes.png",20)[3]
+					sleep 100
+					Send {Click Left}
+					if (lootplanters){
+						Eventlog("Looting planter")
+						lootplanter()
+					}
+					return 1
+				}
+			}
+		}
+		if (harvfull){
+			Eventlog("Looting fully harvested planter")
+			lootplanter()
+			return 1
+		}
+		else{
+			Errorlog("Failed to take the planter due to not finding the harvest ui after 2.5 sec")
+			return 0
+		}
 	}
 }
 
@@ -1078,50 +1124,6 @@ fightcheck(){ ;checks if a vicious bee is present.
 			}
 		}
 		return true
-	}
-}
-
-PlantAction(option,key:=0,harvfull:=0){
-	readgui()
-	if (option = "place"){
-		Eventlog("Placed planter")
-		SendHotbar(key)
-		sleep 1000
-		return
-	}
-	if (option = "take"){
-		sleep 500
-		Send e
-		starttime := A_TickCount
-		while (A_TickCount - starttime < 5000){
-			if (SearchFunction("Harvest_Planter.png",20)[1] = 0){
-				if (harvfull){
-					if (SearchFunction("no.png",20)[1] = 0){
-						mousemove,SearchFunction("no.png",20)[2],SearchFunction("no.png",20)[3]
-						sleep 100
-						Send {Click Left}
-						return 2
-					}else{
-						Eventlog("Looting planter")
-						lootplanter()
-						return 1
-					}
-				}else{
-					if (SearchFunction("Yes.png",20)[1] = 0){
-						mousemove,SearchFunction("Yes.png",20)[2],SearchFunction("Yes.png",20)[3]
-						sleep 100
-						Send {Click Left}
-						if (lootplanters){
-							Eventlog("Looting planter")
-							lootplanter()
-						}
-						return 1
-					}
-				}
-			}
-		}
-		Errorlog("Failed to take the planter due to not finding the harvest ui after 5 sec")
-		return 0
 	}
 }
 
