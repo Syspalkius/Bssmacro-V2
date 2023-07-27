@@ -356,7 +356,8 @@ mush(nectar){
 		walk(100,"b")
 	}
 	else{
-		walk(3000,"f")
+		walk(2500,"f")
+		walk(250,"l")
 	}
 }
 

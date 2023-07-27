@@ -171,7 +171,7 @@ GoFarm(field){ ;function for farming.
 	if (field = "bugrun&polar"){
 		return
 	}
-	if (field = "Pine Tree"){
+	if (field = "Pine Tree" || field = "Plant 1" || field = "Plant 2" || field = "Plant 3"){
 		pinetree := true
 	}else{
 		pinetree := false
@@ -180,8 +180,17 @@ GoFarm(field){ ;function for farming.
 	maxfieldtime := maxtimeonfield * 60000
 	zoomout()
 	Sendhotbar(1)
+	sleep 1000
 	if (SearchFunction("nosprinkler.png",20)[1] = 0){
 		return
+	}
+	if (glitchsprinkler = 1){
+		loop 3{
+			SendSpace()
+			sleep 250
+			Sendhotbar(1)
+			sleep 1000
+		}
 	}
 	checkbufftimer()
 	toggleshiftlock()
@@ -567,9 +576,11 @@ SearchFunctionv2(image,variation,x1,y1,x2,y2){ ;imagesearch in function with coo
 	return [ErrorLevel,FoundX,FoundY]
 }
 
-GOField(field,nectar := false,lootmob := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
+GOField(field,nectar := false,lootmob := false,fromplant := false){ ;function that takes input and turns it in to an output that lets you go to the field and stuff like that.
 	message := "Traveling to " . field
-	Eventlog(message)
+	if not (fromplant || field = "Plant 1" || field = "Plant 2" || field = "Plant 3"){
+		eventlog(message)
+	}
 	readgui()
 	readplantdata()
 	if (field = "None"){
@@ -613,15 +624,21 @@ GOField(field,nectar := false,lootmob := false){ ;function that takes input and 
 	}else if(field = "Plant 1"){
 		y := plantcycle1
 		field := plantfield%y%
-		GoField(field)
+		message := "Traveling to Plant 1 (" . field ")"
+		eventlog(message)
+		GoField(field,,,1)
 	}else if(field = "Plant 2"){
 		y := plantcycle2 + 4
 		field := plantfield%y%
-		GoField(field)
+		message := "Traveling to Plant 2 (" . field ")"
+		eventlog(message)
+		GoField(field,,,1)
 	}else if(field = "Plant 3"){
 		y := plantcycle2 + 8
 		field := plantfield%y%
-		GoField(field)
+		message := "Traveling to Plant 3 (" . field ")"
+		eventlog(message)
+		GoField(field,,,1)
 	}
 	if (lootmob){
 		squares(100,false)
@@ -760,7 +777,7 @@ minutes(time){
 }
 
 EventLog(Event){ ;saves what it does and when it does it in a text file for debugging
-	FormatTime,Time, hh:mm:ss
+	FormatTime,Time,, (MM/dd/yyyy) hh:mm:ss
 	FileAppend,%Time% %Event% `n,Macro Parts\logs\EventLog.txt
 	try{
 		IniRead,url,%linkpath%,webhooks,hookevent
@@ -778,7 +795,7 @@ EventLog(Event){ ;saves what it does and when it does it in a text file for debu
 }
 
 ErrorLog(ErrorMessage){ ;same thing as eventlog but this time it logs errors in a seperate file xd
-	FormatTime,Time, hh:mm:ss
+	FormatTime,Time,, (MM/dd/yyyy) hh:mm:ss
 	FileAppend,%Time% %ErrorMessage%  `n,Macro Parts\logs\ErrorLog.txt
 	try{
 		IniRead,url,%linkpath%,webhooks,hookerror

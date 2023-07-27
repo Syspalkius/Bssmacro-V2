@@ -171,6 +171,7 @@ global mob_48htimer
 global pstatus1
 global pstatus2
 global pstatus3
+global glitchsprinkler
 
 
 
@@ -281,6 +282,7 @@ readini(){ ;reads all the data from the ini file
 	IniRead,Stopkey,%datapath%,keybinds,Stopkey
 	IniRead,Pausekey,%datapath%,keybinds,Pausekey
 	IniRead,speed,%datapath%,settings,speed
+	IniRead,glitchsprinkler,%datapath%,settings,glitchsprinkler
 	IniRead,joinmain,%datapath%,settings,joinmain
 	IniRead,rebootserver,%datapath%,settings,rebootserver
 	IniRead,reboottime,%datapath%,settings,reboottime
@@ -428,6 +430,9 @@ readini(){ ;reads all the data from the ini file
 	if (buff7hive){
 		global buff7hive := "Checked"
 	}
+	if (glitchsprinkler){
+		global glitchsprinkler := "Checked"
+	}
 	if (joinmain){
 		global joinmain := "Checked"
 	}
@@ -529,6 +534,7 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,buff6hive,,5tab19
 	GuiControlget,buff7hive,,5tab20
 	GuiControlget,speed,,10tab4
+	GuiControlget,glitchsprinkler,,10tab30
 	GuiControlget,joinmain,,10tab17
 	GuiControlget,hookevent,,10tab7
 	GuiControlget,hookerror,,10tab9
@@ -678,6 +684,7 @@ savedata(){ ;saves all the data
 	IniWrite,%buff6time%,%datapath%,buffs,buff6time
 	IniWrite,%buff7time%,%datapath%,buffs,buff7time
 	IniWrite,%speed%,%datapath%,settings,speed
+	IniWrite,%glitchsprinkler%,%datapath%,settings,glitchsprinkler
 	IniWrite,%joinmain%,%datapath%,settings,joinmain
 	IniWrite,%hookevent%,%linkpath%,webhooks,hookevent
 	IniWrite,%hookerror%,%linkpath%,webhooks,hookerror
@@ -820,6 +827,7 @@ resetconfig(){
 	IniWrite,600,%datapath%,buffs,buff7time
 	
 	IniWrite,28,%datapath%,settings,speed
+	IniWrite,0,%datapath%,settings,glitchsprinkler
 	IniWrite,0,%datapath%,settings,joinmain
 	IniWrite,Insert Link,%linkpath%,webhooks,hookevent
 	IniWrite,Insert Link,%linkpath%,webhooks,hookerror
