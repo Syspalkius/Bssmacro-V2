@@ -364,6 +364,7 @@ Gui,Add,Text, v10tab26 x200 y52 w10 h17 c%infocol% gmovespeedinfo,?
 Gui,Add,Text, v10tab27 x35 y147 w10 h17 c%infocol% ghookeventinfo,?
 Gui,Add,Text, v10tab28 x35 y182 w10 h17 c%infocol% ghookerrorinfo,?
 Gui,Add,Text, v10tab29 x35 yp+40 w10 h17 c%infocol% gtestmsginfo,?
+Gui,Add,Text, v10tab31 x180 y87 w10 h17 c%infocol% gglitchspringinfo,?
 
 
 var := 0

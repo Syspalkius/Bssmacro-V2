@@ -468,11 +468,12 @@ walktocannon(){ ;makes the character walk to the cannon.
 	sleep 100
 	walk(1000,"f") 
 	walkhold("r","Down")
-	loop 55{
-		if (SearchFunction("cannon.png",50)[1] = 0){
+	starttimecannon := A_TickCount
+	while (A_TickCount - starttimecannon < 5500){
+		if (SearchFunction("cannon.png",50)[1] = 0 || SearchFunction("cannon1.png",50)[1] = 0 || SearchFunction("cannon2.png",50)[1] = 0){
 			break
 		}
-		sleep 100
+		sleep 50
 	}
 	sleep 750
 	sendSpace()

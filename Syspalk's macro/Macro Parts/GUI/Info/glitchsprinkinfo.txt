@@ -1,0 +1,3 @@
+When enabling this feature the macro will place multiple planters inside of eachother utilizing a glitch in the game.
+
+This is mainly useful for players that have the golden or diamond sprinkler.

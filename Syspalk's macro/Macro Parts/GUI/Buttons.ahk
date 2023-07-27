@@ -123,6 +123,10 @@ testmsginfo(){
 	FileRead, Text, Macro Parts\GUI\Info/testmsginfo.txt
 	popup(400,120,12,"Test message info",Text)
 }
+glitchspringinfo(){
+	FileRead, Text, Macro Parts\GUI\Info/glitchsprinkinfo.txt
+	popup(400,140,12,"Glitch sprinkler info",Text)
+}
 
 ;------Macro buttons------
 
