@@ -292,151 +292,151 @@ readini(){ ;reads all the data from the ini file
 	IniRead,main,%linkpath%,private servers,main
 	IniRead,alt,%linkpath%,private servers,alt
 	
-	if (convsetting = 1){
+	if (convsetting){
 		global convsetting := "Checked"
 	}
-	if (swingtool = 1){
+	if (swingtool){
 		global swingtool := "Checked"
 	}
-	if (sprinkleralign = 1){
+	if (sprinkleralign){
 		global sprinkleralign := "Checked"
 	}
-	if (pinewalkconv = 1){
+	if (pinewalkconv){
 		global pinewalkconv := "Checked"
 	}
-	if (pinecentralfarm = 1){
+	if (pinecentralfarm){
 		global pinecentralfarm := "Checked"
 	}
-	if (waitforpop = 1){
+	if (waitforpop){
 		global waitforpop := "Checked"
 	}
-	if (shiftlock = 1){
+	if (shiftlock){
 		global shiftlock := "Checked"
 	}
-	if (shrine = 1){
+	if (shrine){
 		global shrine := "Checked"
 	}
-	if (bluebooster = 1){
+	if (bluebooster){
 		global bluebooster := "Checked"
 	}
-	if (redbooster = 1){
+	if (redbooster){
 		global redbooster := "Checked"
 	}
-	if (whitebooster = 1){
+	if (whitebooster){
 		global whitebooster := "Checked"
 	}
-	if (reglitter = 1){
+	if (reglitter){
 		global reglitter := "Checked"
 	}
-	if (lootplanters = 1){
+	if (lootplanters){
 		global lootplanters := "Checked"
 	}
-	if (harviffull1 = 1){
+	if (harviffull1){
 		global harviffull1 := "Checked"
 	}
-	if (harviffull2 = 1){
+	if (harviffull2){
 		global harviffull2 := "Checked"
 	}
-	if (harviffull3 = 1){
+	if (harviffull3){
 		global harviffull3 := "Checked"
 	}
-	if (clock = 1){
+	if (clock){
 		global clock := "Checked"
 	}
-	if (gluedisp = 1){
+	if (gluedisp){
 		global gluedisp := "Checked"
 	}
-	if (robopass = 1){
+	if (robopass){
 		global robopass := "Checked"
 	}
-	if (strawdisp = 1){
+	if (strawdisp){
 		global strawdisp := "Checked"
 	}
-	if (bluebdisp = 1){
+	if (bluebdisp){
 		global bluebdisp := "Checked"
 	}
-	if (cocodisp = 1){
+	if (cocodisp){
 		global cocodisp := "Checked"
 	}
-	if (tunnel = 1){
+	if (tunnel){
 		global tunnel := "Checked"
 	}
-	if (kingbeetle = 1){
+	if (kingbeetle){
 		global kingbeetle := "Checked"
 	}
-	if (ant = 1){
+	if (ant){
 		global ant := "Checked"
 	}
-	if (freeant = 1){
+	if (freeant){
 		global freeant := "Checked"
 	}
-	if (buyant = 1){
+	if (buyant){
 		global buyant := "Checked"
 	}
-	if (vicious = 1){
+	if (vicious){
 		global vicious := "Checked"
 	}
-	if (lady = 1){
+	if (lady){
 		global lady := "Checked"
 	}
-	if (rhino = 1){
+	if (rhino){
 		global rhino := "Checked"
 	}
-	if (spider = 1){
+	if (spider){
 		global spider := "Checked"
 	}
-	if (mantis = 1){
+	if (mantis){
 		global mantis := "Checked"
 	}
-	if (scorpion = 1){
+	if (scorpion){
 		global scorpion := "Checked"
 	}
-	if (wolf = 1){
+	if (wolf){
 		global wolf := "Checked"
 	}
-	if (buff2 = 1){
+	if (buff2){
 		global buff2 := "Checked"
 	}
-	if (buff3 = 1){
+	if (buff3){
 		global buff3 := "Checked"
 	}
-	if (buff4 = 1){
+	if (buff4){
 		global buff4 := "Checked"
 	}
-	if (buff5 = 1){
+	if (buff5){
 		global buff5 := "Checked"
 	}
-	if (buff6 = 1){
+	if (buff6){
 		global buff6 := "Checked"
 	}
-	if (buff7 = 1){
+	if (buff7){
 		global buff7 := "Checked"
 	}
-	if (buff2hive = 1){
+	if (buff2hive){
 		global buff2hive := "Checked"
 	}
-	if (buff3hive = 1){
+	if (buff3hive){
 		global buff3hive := "Checked"
 	}
-	if (buff4hive = 1){
+	if (buff4hive){
 		global buff4hive := "Checked"
 	}
-	if (buff5hive = 1){
+	if (buff5hive){
 		global buff5hive := "Checked"
 	}
-	if (buff6hive = 1){
+	if (buff6hive){
 		global buff6hive := "Checked"
 	}
-	if (buff7hive = 1){
+	if (buff7hive){
 		global buff7hive := "Checked"
 	}
-	if (glitchsprinkler = 1){
+	if (glitchsprinkler){
 		global glitchsprinkler := "Checked"
 	}
-	if (joinmain = 1){
+	if (joinmain){
 		global joinmain := "Checked"
 	}
-	if (rebootserver = 1){
+	if (rebootserver){
 		global rebootserver := "Checked"
 	}
 }
