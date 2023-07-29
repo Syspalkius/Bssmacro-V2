@@ -621,18 +621,27 @@ GOField(field,nectar := false,lootmob := false,fromplant := false){ ;function th
 	}else if (field = "bugrun&polar"){
 		bugrun()
 	}else if(field = "Plant 1"){
+		if (doublereset){
+			r(true)
+		}
 		y := plantcycle1
 		field := plantfield%y%
 		message := "Traveling to Plant 1 (" . field ")"
 		eventlog(message)
 		GoField(field,,,1)
 	}else if(field = "Plant 2"){
+		if (doublereset){
+			r(true)
+		}
 		y := plantcycle2 + 4
 		field := plantfield%y%
 		message := "Traveling to Plant 2 (" . field ")"
 		eventlog(message)
 		GoField(field,,,1)
 	}else if(field = "Plant 3"){
+		if (doublereset){
+			r(true)
+		}
 		y := plantcycle2 + 8
 		field := plantfield%y%
 		message := "Traveling to Plant 3 (" . field ")"

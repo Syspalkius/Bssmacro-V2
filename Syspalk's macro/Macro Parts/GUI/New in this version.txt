@@ -1,6 +1,3 @@
-1. Changed the time formatting for logs.
-2. Made changes to logs when traveling to farm on a planter.
-3. Fixed an issue regarding farming on a planter that's in pinetree.
-4. Changed stuff in data handler to solve visual issue with checkboxes with a fresh file.
-5. Added images for cannon so macro detects it more often.
-6. Added an option to glitch the sprinkler.
+1. Fixed issue with farming with Shiftlock enabled.
+2. Removed cannon searcher.
+3. Added double reset for planter farming.
