@@ -203,22 +203,26 @@ GoFarm(field){ ;function for farming.
 			pattern(pinetree)
 			zoomout()
 			if (sprinkleralign && patternsize > 10){
+				toggleshiftlock()
 				movetosat()
+				toggleshiftlock()
 			}
 			if (reglitter){
 				if (A_Tickcount - pinereglittime < minutes(15) && A_Tickcount - pinereglittime > minutes(9)  && glitterpine){
 					Eventlog("Using glitter")
 					global glitterpine := False
+					toggleshiftlock()
 					useitemfrominv("glit.png",true)
+					toggleshiftlock()
 				}
 			}
-			toggleshiftlock()
-			if (checkforvic() = true){
+			if (vicious){
 				toggleshiftlock()
-				pinewalktohive(pinetree)
-				return
+				if (checkforvic() = true){
+					return
+				}
+				toggleshiftlock()
 			}
-			toggleshiftlock()
 			if (A_TickCount - breaktimer > maxfieldtime){
 				if (SearchFunction("pop.png",10)[1] = 1 && A_TickCount - poptimer < 45000 && waitforpop){
 					if (firstpop){
@@ -231,7 +235,6 @@ GoFarm(field){ ;function for farming.
 					return
 				}
 			}
-			
 			if (bagcheck() = 1){
 				toggleshiftlock()
 				pinewalktohive(pinetree)
@@ -566,8 +569,10 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 	}
 }
 
-SearchFunction(image,variation){ ;imagesearch in function so it's nicer to use.
-	mousemove,A_ScreenWidth/2,A_ScreenHeight/2
+SearchFunction(image,variation,movecenter := false){ ;imagesearch in function so it's nicer to use.
+	if (movecenter){
+		mousemove,A_ScreenWidth/2,A_ScreenHeight/2
+	}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *%variation% Macro Parts\images\%image%
 	return [ErrorLevel,FoundX,FoundY]
 } 
@@ -726,7 +731,6 @@ movetosat(){
 }
 
 SpecificPixelSearchFunction(color,x1,y1,x2,y2){ ;pixelsearch in a function.
-	mousemove,A_ScreenWidth/2,A_ScreenHeight/2 ;move mouse to 0,0
 	PixelSearch, FoundX, FoundY,%x1%,%y1%,%x2%,%y2%,%color%,,fast
 	return [ErrorLevel,FoundX,FoundY]
 }

@@ -78,7 +78,6 @@ squares(size,pinetree){ ;idk why anyone would use this but look it's coded prett
 
 pattern(pinetree := false){ ;function that calls a function yes i know i went too far with the function spamming
 	readgui()
-	mouseMove,A_ScreenWidth/2,A_ScreenHeight/2
 	if (swingtool){
 		Send {Click Left Down}
 	}

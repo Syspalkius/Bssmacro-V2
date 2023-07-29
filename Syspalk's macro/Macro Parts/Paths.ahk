@@ -900,11 +900,11 @@ shrine(){
 	maxshrinetrytime := A_TickCount
 	while (1){
 		sleep 500
-		if (SearchFunction(item,10)[1] = 0){
+		if (SearchFunction(item,10,1)[1] = 0){
 			sleep 1000
-			if (SearchFunction(item,10)[1] = 0){
+			if (SearchFunction(item,10,1)[1] = 0){
 				sleep 500
-				mousemove,SearchFunction("ShrineAdd.png",10)[2],SearchFunction("ShrineAdd.png",10)[3]
+				mousemove,SearchFunction("ShrineAdd.png",10,1)[2],SearchFunction("ShrineAdd.png",10,1)[3]
 				sleep 250
 				loop %clicks%{
 					Send {Click Left}
@@ -913,7 +913,7 @@ shrine(){
 				break
 			}
 		}else{
-			mousemove,SearchFunction("ShrineArrow.png",10)[2],SearchFunction("ShrineArrow.png",10)[3]
+			mousemove,SearchFunction("ShrineArrow.png",10,1)[2],SearchFunction("ShrineArrow.png",10,1)[3]
 			sleep 250
 			Send {Click Left}
 		}
@@ -926,8 +926,8 @@ shrine(){
 	}
 	maxdonatebuttonsearchtime := A_TickCount
 	while (1){
-		if (SearchFunction("ShrineDonate.png",10)[1] = 0){
-			mousemove,SearchFunction("ShrineDonate.png",10)[2],SearchFunction("ShrineDonate.png",10)[3]
+		if (SearchFunction("ShrineDonate.png",10,1)[1] = 0){
+			mousemove,SearchFunction("ShrineDonate.png",10,1)[2],SearchFunction("ShrineDonate.png",10,1)[3]
 			sleep 250
 			Send {Click Left}
 			break
