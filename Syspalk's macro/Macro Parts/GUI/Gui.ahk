@@ -157,9 +157,10 @@ loop 11{
 	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,%planter%||1|2|3|4|5|6|7
 }
 Gui,Font,s13
-Gui,Add,GroupBox, v3tab28 x10 yp+43 w260 h130 cred,Plant Looting
+Gui,Add,GroupBox, v3tab28 x10 yp+43 w260 h150 cred,Plant Looting
 Gui,Font,s8
-Gui,Add,CheckBox, v3tab29 xp+10 yp+30 cwhite %lootplanters% , loot planters
+Gui,Add,Checkbox, v3tab47 xp+10 yp+30 cwhite %doublereset%, double reset
+Gui,Add,CheckBox, v3tab29 xp yp+20 cwhite %lootplanters% , loot planters
 Gui,Add,CheckBox, v3tab30 xp yp+30 cwhite %harviffull1% , harvest plant 1 when fully grown
 Gui,Add,CheckBox, v3tab31 xp yp+20 cwhite %harviffull2% , harvest plant 2 when fully grown
 Gui,Add,CheckBox, v3tab32 xp yp+20 cwhite %harviffull3% , harvest plant 3 when fully grown
@@ -173,13 +174,14 @@ Gui,Add,Text,v3tab37 xp-50 yp+30 cwhite, plant 2
 Gui,Add,DropDownList,v3tab38 xp+50 yp-5 w90 h140 ,%plantdelay2%||30 min|1 hour|2 hours|4 hours
 Gui,Add,Text,v3tab39 xp-50 yp+30 cwhite, plant 3
 Gui,Add,DropDownList,v3tab40 xp+50 yp-5 w90 h140 ,%plantdelay3%||30 min|1 hour|2 hours|4 hours
-Gui,Add,Button, v3tab41 x10 yp+57,Reset Settings
+Gui,Add,Button, v3tab41 x10 yp+42,Reset Settings
 Gui,Add,Button, v3tab42 xp+130 yp,Reset Cycle Data
 Gui,Font,s10
 Gui,Add,Text, v3tab43 x425 y64 w10 h17 c%infocol% gcycleinfo,?
-Gui,Add,Text, v3tab44 x195 y429 w10 h17 c%infocol% gharvtimeinfo,?
-Gui,Add,Text, v3tab45 x110 y564 w10 h17 c%infocol% gresetsettingsinfo,?
-Gui,Add,Text, v3tab46 x256 y564 w10 h17 c%infocol% gresetcycleinfo,?
+Gui,Add,Text, v3tab44 x195 y449 w10 h17 c%infocol% gharvtimeinfo,?
+Gui,Add,Text, v3tab45 x110 y569 w10 h17 c%infocol% gresetsettingsinfo,?
+Gui,Add,Text, v3tab46 x256 y569 w10 h17 c%infocol% gresetcycleinfo,?
+Gui,Add,Text, v3tab48 x120 y305 w10 h17 c%infocol% gdoubleresetinfo,?
 
 
 Gui,Font,s17 Bold
@@ -371,7 +373,7 @@ var := 0
 loop 11{
 	var++
 	if not (tab = A_Index){
-		loop 46{
+		loop 50{
 			GuiControl,Hide,%var%tab%A_Index%
 		}
 	}
@@ -395,11 +397,11 @@ changetab(tab){
 	Tooltip,Loading tab...
 	;time1 := A_TickCount ;save start time before loading
 	if not (prevtab = tab){
-		loop 46{
+		loop 50{
 			GuiControl,Hide,%prevtab%tab%A_Index%
 		}
 	}
-	loop 46{
+	loop 50{
 		GuiControl,Show,%tab%tab%A_Index%
 	}
 	passedtime := A_TickCount-time1

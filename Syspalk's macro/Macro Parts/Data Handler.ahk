@@ -172,6 +172,7 @@ global pstatus1
 global pstatus2
 global pstatus3
 global glitchsprinkler
+global doublereset
 
 
 
@@ -222,6 +223,7 @@ readini(){ ;reads all the data from the ini file
 	IniRead,planter11,%datapath%,planters,planter11
 	IniRead,planter12,%datapath%,planters,planter12
 	IniRead,lootplanters,%datapath%,planters,lootplanters
+	IniRead,doublereset,%datapath%,planters,doublereset
 	IniRead,harviffull1,%datapath%,planters,harviffull1
 	IniRead,harviffull2,%datapath%,planters,harviffull2
 	IniRead,harviffull3,%datapath%,planters,harviffull3
@@ -330,6 +332,9 @@ readini(){ ;reads all the data from the ini file
 	}
 	if (lootplanters){
 		global lootplanters := "Checked"
+	}
+	if (doublereset){
+		global doublereset := "Checked"
 	}
 	if (harviffull1){
 		global harviffull1 := "Checked"
@@ -489,6 +494,7 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,planter10,,3tab25
 	GuiControlget,planter11,,3tab26
 	GuiControlget,planter12,,3tab27
+	GuiControlget,doublereset,,3tab47
 	GuiControlget,lootplanters,,3tab29
 	GuiControlget,harviffull1,,3tab30
 	GuiControlget,harviffull2,,3tab31
@@ -639,6 +645,7 @@ savedata(){ ;saves all the data
 	IniWrite,%planter10%,%datapath%,planters,planter10
 	IniWrite,%planter11%,%datapath%,planters,planter11
 	IniWrite,%planter12%,%datapath%,planters,planter12
+	IniWrite,%doublereset%,%datapath%,planters,doublereset
 	IniWrite,%lootplanters%,%datapath%,planters,lootplanters
 	IniWrite,%harviffull1%,%datapath%,planters,harviffull1
 	IniWrite,%harviffull2%,%datapath%,planters,harviffull2
@@ -883,6 +890,7 @@ ButtonResetSettings(reload){
 		IniWrite,None,%datapath%,planters,plantfield%A_Index%
 		IniWrite,None,%datapath%,planters,planter%A_Index%
 	}
+	IniWrite,0,%datapath%,planters,doublereset
 	IniWrite,0,%datapath%,planters,lootplanters
 	loop 3{
 		IniWrite,0,%datapath%,planters,harviffull%A_Index%

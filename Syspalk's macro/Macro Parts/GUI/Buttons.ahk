@@ -95,6 +95,10 @@ resetcycleinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/resetcycleinfo.txt
 	popup(400,75,12,"Reset cycle info",Text)
 }
+doubleresetinfo(){
+	FileRead, Text, Macro Parts\GUI\Info/doubleresetinfo.txt
+	popup(400,160,12,"Double reset info",Text)
+}
 dispenserinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/dispenserinfo.txt
 	popup(400,35,12,"Dispenser info",Text)

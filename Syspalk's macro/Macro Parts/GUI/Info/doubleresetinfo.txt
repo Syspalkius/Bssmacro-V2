@@ -1,0 +1,3 @@
+When this feature is enabled the macro will make your character double reset when the macro is farming on top of a planter.
+
+This significantly increases the rate at which your planters grow because your bees will frequently regenerate their energy.
