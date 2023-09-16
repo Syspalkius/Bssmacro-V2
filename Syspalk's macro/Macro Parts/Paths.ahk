@@ -1430,10 +1430,10 @@ stingerrun(){
 
 lootplanter(){
 	sleep 2000
-	walk(300,"l")
-	walk(300,"b")
-	zigzag(100,false)
-	zigzag(100,false)
+	walk(600,"l")
+	walk(600,"b")
+	zigzag(120,false)
+	zigzag(120,false)
 }
 
 tunnelbear(){

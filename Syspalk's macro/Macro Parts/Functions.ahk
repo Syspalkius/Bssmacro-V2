@@ -450,11 +450,11 @@ SendHotbar(var){ ;sends key to the hotbar.
 
 r(wait){ ;kills your character
 	SendInput {Escape}
-	sleep 250
+	sleep 500
 	SendInput {r}
-	sleep 250
+	sleep 500
 	SendInput {Enter}
-	sleep 250
+	sleep 500
 	if(wait){
 		sleep 8000
 	}
@@ -499,7 +499,7 @@ walktocannon(){ ;makes the character walk to the cannon.
 			}
 		}
 	}
-} 
+}
 
 Reset(){ ;this will make your character commit suicide and also has some crapy anti bear glitch protection which only works half of the time but it's better than other macros which will let your character fling all the way to the onett house instead of going to pepper
 	Retryy:

@@ -1,3 +1,4 @@
 1. Fixed issue with farming with Shiftlock enabled.
 2. Removed cannon searcher.
 3. Added double reset for planter farming.
+4. Adjusted plant looting pattern.

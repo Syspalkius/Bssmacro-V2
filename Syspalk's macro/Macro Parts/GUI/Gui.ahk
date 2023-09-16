@@ -91,7 +91,7 @@ Gui,Add,Checkbox, v2tab35 x250 yp+10 cwhite %bluebooster%,Blue Booster
 Gui,Add,Checkbox, v2tab36 x250 yp+25 cwhite %redbooster%,Red Booster
 Gui,Add,Checkbox, v2tab37 x250 yp+25 cwhite %whitebooster%,White Booster
 Gui,Add,Groupbox, v2tab38 x240 yp+12 w190 h44 cwhite,
-Gui,Add,Checkbox, v2tab39 x250 yp+19 cred %reglitter% ,Re-glitter pinetree
+Gui,Add,Checkbox, v2tab39 x250 yp+19 cwhite %reglitter% ,Re-glitter pinetree
 Gui,Add,Text, v2tab40 xp+165 yp-7 w10 h17 c%infocol% greglitterinfo,?
 Gui,Font,S12
 IniRead,Startkey,%datapath%,keybinds,Startkey
@@ -109,7 +109,7 @@ Gui,Add,Text, v2tab43 x340 y570 c53ede5 gpause,%PauseText%
 Gui,Font,s17 Bold
 Gui,Add,Text, v3tab1 x340 y10 cgreen,Planters
 Gui,Font,s13
-Gui,Add,Groupbox, v3tab2 x10 y50 w430 h215 cred,Cycle
+Gui,Add,Groupbox, v3tab2 x10 y50 w430 h215 cwhite,Cycle
 Gui,Font,s8
 Gui,Add,Text, v3tab3 x15 y80 cwhite,Fields`n`nPlanter`n`n`nFields`n`nPlanter`n`n`nFields`n`nPlanter
 Gui,Add,DropDownList, x65 y80 w80 h200 v3tab4,%plantfield1%||None|Bamboo|Blue Flower|Cactus|Clover|Coconut|Dandelion|Mountain|Mushroom|Pepper|Pine Tree|Pineapple|Pumpkin|Rose|Spider|Strawberry|Stump|Sunflower
@@ -157,7 +157,7 @@ loop 11{
 	Gui,Add,DropDownList, x%xposition% y%yposition% w80 h200 v3tab%planternumber%,%planter%||1|2|3|4|5|6|7
 }
 Gui,Font,s13
-Gui,Add,GroupBox, v3tab28 x10 yp+43 w260 h150 cred,Plant Looting
+Gui,Add,GroupBox, v3tab28 x10 yp+43 w260 h150 cwhite,Plant Looting
 Gui,Font,s8
 Gui,Add,Checkbox, v3tab47 xp+10 yp+30 cwhite %doublereset%, double reset
 Gui,Add,CheckBox, v3tab29 xp yp+20 cwhite %lootplanters% , loot planters
