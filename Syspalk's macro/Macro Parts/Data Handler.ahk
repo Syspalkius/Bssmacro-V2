@@ -13,7 +13,10 @@ FileAppend,,%timerpath%
 ;check if file is empty, if so then fill in the files with default data.
 IniRead,val,%datapath%,launchedbefore,launchedbefore
 if (val = "ERROR"){
-	newuser() ;logs each time a new person downloads the macro so I can keep track of the amount of users.
+	newuser() ;logs each time a new person downloads the macro.
+	try{
+		run, https://discord.gg/t572FnTqfs ;launch discord invite.
+	}
 	IniWrite,1,%datapath%,launchedbefore,launchedbefore
 	resetconfig()
 }

@@ -39,7 +39,7 @@ Gui,Add,Button, v1tab23 x270 y310,View More
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab24 x285 y340 cwhite,About
 Gui,Font,s9
-Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro began on 4/10/22.  You are allowed to share the macro but prohibited from stealing code.  If you're using any part of the code for your own work please contact me and provide propper credits.  Syspalk macro is targeted towards Bee Swarm Simulator automation with endgame players specifically in mind.`nIf you encounter any bugs you can report them to me through discord [Syspalk#0955].`n`nLicensed with a GNU LGPL v2.1 license.
+Gui,Add,Text, v1tab25 xp-95 yp+30 w250 cwhite +wrap,The development of this macro began on 4/10/22.  You are allowed to share the macro but prohibited from stealing code.  If you're using any part of the code for your own work please contact me and provide propper credits.  Syspalk macro is targeted towards Bee Swarm Simulator automation with endgame players specifically in mind.`nIf you encounter any bugs you can report them to me through discord [Syspalk].`n`nLicensed with a GNU LGPL v2.1 license.
 Gui,Font,s12 Bold
 Gui,Add,Link, v1tab26 xp yp+170,<a href="https://discord.gg/t572FnTqfs">Join Discord</a>
 Gui,Add,Link, v1tab27 xp yp+20,<a href="https://github.com/Syspalkius/Bssmacro-V2">Goto Github</a>
