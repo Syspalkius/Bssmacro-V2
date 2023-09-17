@@ -130,19 +130,22 @@ PlantAction(option,key:=0,harvfull:=0){
 		Send e
 		starttime := A_TickCount
 		while (A_TickCount - starttime < 2500){
+			WinGetPos,,,Winwidth,Winheight,Roblox
+			mousemove,Winwidth/2,Winheight/2
 			if (SearchFunction("Harvest_Planter.png",20)[1] = 0){
 				if (harvfull){
-					if (SearchFunction("no.png",20)[1] = 0){
+					if (SearchFunction("no.png",20,true)[1] = 0){
 						mousemove,SearchFunction("no.png",20)[2],SearchFunction("no.png",20)[3]
 						sleep 100
 						Send {Click Left}
 						return 2
 					}
 				}
-				else if (SearchFunction("Yes.png",20)[1] = 0){
+				else if (SearchFunction("Yes.png",20,true)[1] = 0){
 					mousemove,SearchFunction("Yes.png",20)[2],SearchFunction("Yes.png",20)[3]
 					sleep 100
 					Send {Click Left}
+					Eventlog("Took planter")
 					if (lootplanters){
 						Eventlog("Looting planter")
 						lootplanter()
@@ -152,7 +155,8 @@ PlantAction(option,key:=0,harvfull:=0){
 			}
 		}
 		if (harvfull){
-			Eventlog("Looting fully harvested planter")
+			Eventlog("Took planter")
+			Eventlog("Looting fully grown planter")
 			lootplanter()
 			return 1
 		}
@@ -563,8 +567,9 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 }
 
 SearchFunction(image,variation,movecenter := false){ ;imagesearch in function so it's nicer to use.
-	if (movecenter){
-		mousemove,A_ScreenWidth/2,A_ScreenHeight/2
+	if (movecenter = true){
+		WinGetPos,,,Winwidth,Winheight,Roblox
+		mousemove,Winwidth/2,Winheight/2
 	}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *%variation% Macro Parts\images\%image%
 	return [ErrorLevel,FoundX,FoundY]

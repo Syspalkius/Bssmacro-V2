@@ -724,6 +724,7 @@ savehotkeys(){
 
 
 resettimers(tooltip := 1){
+	Eventlog("The timers have been reset.")
 	IniWrite,-9999999999999,%timerpath%,mobs,mob_5mtimer
 	IniWrite,-9999999999999,%timerpath%,mobs,mob_20mtimer
 	IniWrite,-9999999999999,%timerpath%,mobs,mob_30mtimer
@@ -771,6 +772,7 @@ resetconfig(){
 	ButtonResetCycleData(false)
 	ButtonResetSettings(false)
 	ButtonResetKeys(false)
+	Eventlog("The config has been wiped.")
 	
 	IniWrite,None,%datapath%,farming,farmfield1
 	IniWrite,None,%datapath%,farming,farmfield2
@@ -846,6 +848,7 @@ resetconfig(){
 
 
 ButtonResetCycleData(tooltip := 1){
+	Eventlog("The cycle data has been reset.")
 	IniWrite,0,%datapath%,planters,plantcycle1
 	IniWrite,0,%datapath%,planters,plantcycle2
 	IniWrite,0,%datapath%,planters,plantcycle3
@@ -859,6 +862,7 @@ ButtonResetCycleData(tooltip := 1){
 
 
 ButtonResetKeys(reload := 1){
+	Eventlog("The keybinds have been reset to default.")
 	koma := ","
 	IniWrite,w,%datapath%,keybinds,forward
 	IniWrite,a,%datapath%,keybinds,left
@@ -883,6 +887,7 @@ ButtonResetKeys(reload := 1){
 
 
 ButtonResetSettings(reload){
+	Eventlog("The planter settings have been wiped")
 	if (reload){
 		savedata()
 	}
@@ -905,6 +910,7 @@ ButtonResetSettings(reload){
 
 loadblue5nectar(reload := 0){
 	ButtonResetCycleData(false)
+	Eventlog("The blue 5 nectar preset has been loaded.")
 	IniWrite,Pine Tree,%datapath%,planters,plantfield1
 	IniWrite,Pineapple,%datapath%,planters,plantfield2
 	IniWrite,Coconut,%datapath%,planters,plantfield3
@@ -939,6 +945,7 @@ loadblue5nectar(reload := 0){
 
 loadidealblue(){
 	loadblue5nectar(false)
+	Eventlog("The ideal blue settings have been loaded.")
 	IniWrite,Pine Tree,%datapath%,farming,farmfield1
 	IniWrite,Reset,%datapath%,farming,convsetting
 	IniWrite,10,%datapath%,farming,maxtimeonfield
@@ -975,6 +982,7 @@ loadidealblue(){
 
 
 loadgumdropfarmer(){
+	Eventlog("The gumdrop farming preset has been loaded.")
 	IniWrite,Pine Tree,%datapath%,farming,farmfield1
 	IniWrite,Pineapple,%datapath%,farming,farmfield2
 	IniWrite,Strawberry,%datapath%,farming,farmfield3
@@ -991,6 +999,7 @@ loadgumdropfarmer(){
 
 
 loadfruitfarmer(){
+	Eventlog("The fruit farmer settings have been loaded.")
 	IniWrite,Pine Tree,%datapath%,farming,farmfield1
 	IniWrite,Pineapple,%datapath%,farming,farmfield2
 	IniWrite,Strawberry,%datapath%,farming,farmfield3
@@ -1003,6 +1012,7 @@ loadfruitfarmer(){
 
 
 loadticketfarmer(){
+	Eventlog("The ticket farmer settings have been loaded.")
 	IniWrite,bugrun&polar,%datapath%,farming,farmfield1
 	IniWrite,None,%datapath%,farming,farmfield2
 	IniWrite,None,%datapath%,farming,farmfield3
