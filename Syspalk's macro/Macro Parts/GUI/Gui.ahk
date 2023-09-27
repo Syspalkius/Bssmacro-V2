@@ -221,13 +221,13 @@ Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
 Gui,Add,Picture, v4tab31 yp-203 x220 w210 h185 , Macro Parts\GUI\Images/beesmas stuff.png
 Gui,Font,s10 Bold
-Gui,Add,Checkbox, v4tab32 x230 yp+36 cwhite,Use honeyday candles
-Gui,Add,Checkbox, v4tab33 x230 yp+20 cwhite,Use samovar
-Gui,Add,Checkbox, v4tab34 x230 yp+20 cwhite,Use stockings
-Gui,Add,Checkbox, v4tab35 x230 yp+20 cwhite,Use beesmas feast
-Gui,Add,Checkbox, v4tab36 x230 yp+20 cwhite,Use Onett's lid art
-Gui,Add,Checkbox, v4tab37 x230 yp+20 cwhite,Use gingerbread house
-Gui,Add,Checkbox, v4tab38 x230 yp+20 cwhite,Use honey wreath
+Gui,Add,Checkbox, v4tab32 x230 yp+36 cwhite %candles%,Use honeyday candles
+Gui,Add,Checkbox, v4tab33 x230 yp+20 cwhite %samovar%,Use samovar
+Gui,Add,Checkbox, v4tab34 x230 yp+20 cred %stockings%,Use stockings
+Gui,Add,Checkbox, v4tab35 x230 yp+20 cwhite %feast%,Use beesmas feast
+Gui,Add,Checkbox, v4tab36 x230 yp+20 cwhite %lidart%,Use Onett's lid art
+Gui,Add,Checkbox, v4tab37 x230 yp+20 cwhite %ginger%,Use gingerbread house
+Gui,Add,Checkbox, v4tab38 x230 yp+20 cred %wreath%,Use honey wreath
 Gui,Add,Text, v4tab28 x235 y54 w10 h17 c%infocol% gdispenserinfo,?
 Gui,Add,Text, v4tab29 x185 y354 w10 h17 c%infocol% gmobinfo,?
 
@@ -247,7 +247,7 @@ loop 6{
 	usehive := buff%checkboxtext%hive
 	Gui,Add,Checkbox, v5tab%checkboxnum% x20 yp+30 cwhite %data%,hotbar slot %checkboxtext%
 	Gui,Add,Edit, v5tab%editnum% number xp+120 yp-5 w100 ,%time%
-	Gui,Add,Checkbox, v5tab%athivenum% xp+115 yp+5 cred %usehive%,Use at hive
+	Gui,Add,Checkbox, v5tab%athivenum% xp+115 yp+5 cwhite %usehive%,Use at hive
 }
 
 

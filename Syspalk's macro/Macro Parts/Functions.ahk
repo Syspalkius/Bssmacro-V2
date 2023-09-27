@@ -169,6 +169,7 @@ PlantAction(option,key:=0,harvfull:=0){
 
 GoFarm(field){ ;function for farming.
 	checktimers()
+	beesmastimerchecks()
 	readgui()
 	GoField(field)
 	global currentfield := field
@@ -312,7 +313,49 @@ checkmobtimers(){
 	}
 }
 
+beesmastimerchecks(){ ;separate function to check all the timers that have anything to do with beesmas
+	readgui()
+	readtimers()
+
+	if (A_Tickcount - feasttimer  > 5400000){
+		IniWrite,%A_TickCount%,%timerpath%,timers,feasttimer
+		if (feast){
+			feast()
+			safetycheck()
+		}
+	}
+	if (A_TickCount - gingertimer > 7200000){
+		IniWrite,%A_TickCount%,%timerpath%,timers,gingertimer
+		if (ginger){
+			gingerhouse()
+			safetycheck()
+		}
+	}
+	if (A_Tickcount - candletimer > 14400000){
+		IniWrite,%A_TickCount%,%timerpath%,timers,candletimer
+		if (candles){
+			candles()
+			safetycheck()
+		}
+	}
+	if (A_Tickcount - samovartimer > 21600000){
+		IniWrite,%A_TickCount%,%timerpath%,timers,samovartimer
+		if (samovar){
+			samovar()
+			safetycheck()
+		}
+	}
+	if (A_Tickcount - lidtimer > 28800000){
+		IniWrite,%A_TickCount%,%timerpath%,timers,lidtimer
+		if (lidart){
+			lidart()
+			safetycheck()
+		}
+	}
+}
+
 checktimers(){
+	beesmastimerchecks()
 	checkmobtimers()
 	readtimers()
 	if (A_Min < 13 && A_Min > 00){

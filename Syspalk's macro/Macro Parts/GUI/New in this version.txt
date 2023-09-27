@@ -4,3 +4,4 @@
 4. Adjusted plant looting pattern.
 5. Fixed issue regarding mouse not moving in plant taking ui.
 6. Added some more logs.
+7. Made beesmas features functional.

@@ -1,4 +1,5 @@
 ﻿#SingleInstance Force
+#Requires AutoHotkey v1.1.36.01+
 Gui, loading:add,Progress, w200 h20 cgreen vprogress -smooth, 0
 Gui, loading:color,0x2A2F32
 Gui, loading:show, w220 h50,Loading...

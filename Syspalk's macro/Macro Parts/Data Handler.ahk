@@ -171,11 +171,23 @@ global mob_30mtimer
 global mob_1htimer
 global mob_24htimer
 global mob_48htimer
+global feasttimer
+global gingertimer
+global candletimer
+global samovartimer
+global lidtimer
 global pstatus1
 global pstatus2
 global pstatus3
 global glitchsprinkler
 global doublereset
+global candles
+global samovar
+global stockings
+global feast
+global lidart
+global ginger
+global wreath
 
 
 
@@ -251,6 +263,13 @@ readini(){ ;reads all the data from the ini file
 	IniRead,scorpion,%datapath%,resources,scorpion
 	IniRead,mantis,%datapath%,resources,mantis
 	IniRead,wolf,%datapath%,resources,wolf
+	IniRead,candles,%datapath%,resources,candles
+	IniRead,samovar,%datapath%,resources,samovar
+	IniRead,stockings,%datapath%,resources,stockings
+	IniRead,feast,%datapath%,resources,feast
+	IniRead,lidart,%datapath%,resources,lidart
+	IniRead,ginger,%datapath%,resources,ginger
+	IniRead,wreath,%datapath%,resources,wreath
 	IniRead,mondo,%datapath%,resources,mondo
 	IniRead,buff2,%datapath%,buffs,buff2
 	IniRead,buff3,%datapath%,buffs,buff3
@@ -402,6 +421,27 @@ readini(){ ;reads all the data from the ini file
 	if (wolf){
 		global wolf := "Checked"
 	}
+	if (candles){
+		global candles := "Checked"
+	}
+	if (samovar){
+		global samovar := "Checked"
+	}
+	if (stockings){
+		global stockings := "Checked"
+	}
+	if (feast){
+		global feast := "Checked"
+	}
+	if (lidart){
+		global lidart := "Checked"
+	}
+	if (ginger){
+		global ginger := "Checked"
+	}
+	if (wreath){
+		global wreath := "Checked"
+	}
 	if (buff2){
 		global buff2 := "Checked"
 	}
@@ -524,6 +564,13 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,scorpion,,4tab21
 	GuiControlget,mantis,,4tab22
 	GuiControlget,wolf,,4tab23
+	GuiControlget,candles,,4tab32
+	GuiControlget,samovar,,4tab33
+	GuiControlget,stockings,,4tab34
+	GuiControlget,feast,,4tab35
+	GuiControlget,lidart,,4tab36
+	GuiControlget,ginger,,4tab37
+	GuiControlget,wreath,,4tab38
 	GuiControlget,buff2,,5tab3
 	GuiControlget,buff3,,5tab4
 	GuiControlget,buff4,,5tab5
@@ -596,6 +643,12 @@ readtimers(){
 	IniRead,buff5timer,%timerpath%,buffs,buff5timer
 	IniRead,buff6timer,%timerpath%,buffs,buff6timer
 	IniRead,buff7timer,%timerpath%,buffs,buff7timer
+	
+	IniRead,feasttimer,%timerpath%,beesmas,feasttimer
+	IniRead,gingertimer,%timerpath%,beesmas,gingertimer
+	IniRead,candletimer,%timerpath%,beesmas,candletimer
+	IniRead,samovartimer,%timerpath%,beesmas,samovartimer
+	IniRead,lidtimer,%timerpath%,beesmas,lidtimer
 }
 
 
@@ -675,6 +728,13 @@ savedata(){ ;saves all the data
 	IniWrite,%mantis%,%datapath%,resources,mantis
 	IniWrite,%wolf%,%datapath%,resources,wolf
 	IniWrite,%mondo%,%datapath%,resources,mondo
+	IniWrite,%candles%,%datapath%,resources,candles
+	IniWrite,%samovar%,%datapath%,resources,samovar
+	IniWrite,%stockings%,%datapath%,resources,stockings
+	IniWrite,%feast%,%datapath%,resources,feast
+	IniWrite,%lidart%,%datapath%,resources,lidart
+	IniWrite,%ginger%,%datapath%,resources,ginger
+	IniWrite,%wreath%,%datapath%,resources,wreath
 	IniWrite,%buff2%,%datapath%,buffs,buff2
 	IniWrite,%buff3%,%datapath%,buffs,buff3
 	IniWrite,%buff4%,%datapath%,buffs,buff4
@@ -746,6 +806,11 @@ resettimers(tooltip := 1){
 	IniWrite,-9999999999999,%timerpath%,buffs,buff5timer
 	IniWrite,-9999999999999,%timerpath%,buffs,buff6timer
 	IniWrite,-9999999999999,%timerpath%,buffs,buff7timer
+	IniWrite,-9999999999999,%timerpath%,beesmas,feasttimer
+	IniWrite,-9999999999999,%timerpath%,beesmas,gingertimer
+	IniWrite,-9999999999999,%timerpath%,beesmas,candletimer
+	IniWrite,-9999999999999,%timerpath%,beesmas,samovartimer
+	IniWrite,-9999999999999,%timerpath%,beesmas,lidtimer
 	if (tooltip){
 		Tooltip,The timers have been reset!
 		sleep 2000
@@ -818,7 +883,14 @@ resetconfig(){
 	IniWrite,0,%datapath%,resources,mantis
 	IniWrite,0,%datapath%,resources,wolf
 	IniWrite,None,%datapath%,resources,mondo
-	
+	IniWrite,0,%datapath%,resources,candles
+	IniWrite,0,%datapath%,resources,samovar
+	IniWrite,0,%datapath%,resources,stockings
+	IniWrite,0,%datapath%,resources,feast
+	IniWrite,0,%datapath%,resources,lidart
+	IniWrite,0,%datapath%,resources,ginger
+	IniWrite,0,%datapath%,resources,wreath
+
 	IniWrite,0,%datapath%,buffs,buff2
 	IniWrite,0,%datapath%,buffs,buff3
 	IniWrite,0,%datapath%,buffs,buff4

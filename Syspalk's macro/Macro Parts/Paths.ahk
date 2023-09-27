@@ -1723,8 +1723,216 @@ robopass(){
 	while (A_TickCount - starttimerobo < 4000){
 		if (Searchfunction("e.png",10)[1] = 0){
 			Send e
+			Eventlog("Claimed the robo pass")
 			break
 		}
 	}
 	walkhold("f","Up")
+}
+
+samovar(){
+	Reset()
+	walktocannon()
+	EventLog("Traveling to the samovar")
+	camrotate(2,"l")
+	send e
+	sleep 1800
+	send {Shift}
+	sendSpace()
+	sendSpace()
+	sleep 200
+	send {Shift}
+	sleep 4800
+	sendSpace()
+	camrotate(2,"l")
+	walkhold("f","Down")
+	sleep 7000
+	sendSpace()
+	sleep 5000
+	sendSpace()
+	sleep 800
+	walkhold("f","Up")
+	camrotate(1,"r")
+	sendSpace()
+	walk(700,"f")
+	breaktimer := A_TickCount
+	while (1){
+		If (SearchFunction("e.png",10)[1] = 0){
+			EventLog("Succesfully collected the samovar")
+			send e
+			sleep 5000
+			walk(500,"f")
+			walk(600,"l")
+			loop 3{
+				walk(125,"b")
+				walk(750,"r")
+				walk(125,"b")
+				walk(750,"l")
+			}
+			break
+		}
+		if (A_TickCount - breaktimer > 10000){
+			ErrorLog("Failed to collect the samovar")
+			break
+		}
+	}
+}
+
+candles(){
+	r(true)
+	Reset()
+	walktocannon()
+	EventLog("Traveling to the candles")
+	camrotate(1,"r")
+	send e
+	sleep 1000
+	send {Shift}
+	sendSpace()
+	sendSpace()
+	sleep 300
+	send {Shift}
+	sleep 5000
+	sendSpace()
+	camrotate(1,"r")
+	sleep 2000
+	walk(2200,"f")
+	camrotate(1,"l")
+	walk(5000,"f")
+	breaktimer := A_TickCount
+	while (1){
+		walk(100,"b")
+		If (SearchFunction("e.png",10)[1] = 0){
+			EventLog("Succesfully claimed the candles")
+			send e
+			sleep 5000
+			camrotate(1,"r")
+			walk(250,"f")
+			walk(750,"l")
+			walk(1500,"r")
+			break
+		}
+		if (A_TickCount - breaktimer > 4000){
+			ErrorLog("Failed to collect the candles")
+			break
+		}
+	}
+}
+
+feast(){
+	r(true)
+	reset()
+	walktocannon()
+	EventLog("Traveling to the feast")
+	camrotate(4,"r")
+	send e
+	send {Shift}
+	sendSpace()
+	sleep 1100
+	sendSpace()
+	sleep 2000
+	sendSpace()
+	sleep 1000
+	walk(500,"b")
+	walk(1000,"f")
+	walk(4000,"l")
+	walk(1000,"f")
+	walk(200,"r")
+	SendSpace()
+	walk(600,"f")
+	send {Shift}
+	breaktimer := A_TickCount
+	while (1) {
+		If (SearchFunction("e.png",10)[1] = 0){
+			send e
+			sleep 5000
+			EventLog("Succesfully looted the feast")
+			camrotate(1,"r")
+			walk(100,"b")
+			walk(300,"r")
+			walk(400,"f")
+			walk(600,"l")
+			walk(500,"b")
+			walk(300,"r")
+			break
+		}if (A_TickCount - breaktimer > 10000){
+			ErrorLog("Failed to detect the feast button")
+			break
+		}
+	}
+}
+
+stocking(){
+	Eventlog("Going to the stockings")
+	Send {Shift}
+	walk(2500,"b")
+	walk(1350,"r")
+	Send {Space Down}
+	walk(3000,"f")
+	Send {Space up}
+	sleep 500
+	walk(1500,"l")
+	Send {Shift}
+	walk(1400,"b")
+	breaktimer := A_TickCount
+	while (A_TickCount - breaktimer < 5000){
+		walk(100,"b")
+		if (SearchFunction("e.png",10)[1] = 0){
+			Send {Shift}
+			Send e
+			walk(125,"r")
+			Send {Space Down}
+			walk(2500,"f")
+			Send {Space up}
+			sleep 500
+			walk(1000,"r")
+			walk(50,"l")
+			walk(3500,"b")
+			Send {Shift}
+			Eventlog("Collected stockings")
+		}
+	}
+}
+
+gingerhouse(){
+	sunf(false)
+	walk(4000,"b")
+	walk(100,"r")
+	loop 40{
+		walk(30,"f")
+		Send e
+	}
+	Eventlog("Collected the gingerbread house")
+}
+
+lidart(){
+	Eventlog("Traveling to lidart")
+	r(true)
+	mountain(true)
+	camrotate(4,"r")
+	walk(3000,"f")
+	walk(2500,"l")
+	walk(650,"r")
+	walk(7000,"f")
+	Sendspace()
+	walk(5000,"f")
+	SendSpace()
+	breaktimer := A_TickCount
+	while(A_TickCount - breaktimer < 3000){
+		walk(100,"f")
+		if (SearchFunction("e.png",10)[1] = 0){
+			Eventlog("collected lidart")
+			send e
+			sleep 5000
+			walk(500,"f")
+			walk(250,"l")
+			loop 5{
+				walk(150,"b")
+				walk(750,"r")
+				walk(150,"b")
+				walk(750,"l")
+			}
+			Eventlog("Collected the lid art")
+			break
+		}
+	}
 }
