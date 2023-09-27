@@ -1185,8 +1185,17 @@ fightcheck(){ ;checks if a vicious bee is present.
 		}
 		while(1){
 			walk(1000,"f")
+			if (SearchFunction("deadvic.png",20)[1] = 0){
+				break
+			}
 			walk(1000,"l")
+			if (SearchFunction("deadvic.png",20)[1] = 0){
+				break
+			}
 			walk(1000,"b")
+			if (SearchFunction("deadvic.png",20)[1] = 0){
+				break
+			}
 			walk(1000,"r")
 			if (SearchFunction("deadvic.png",20)[1] = 0){
 				break

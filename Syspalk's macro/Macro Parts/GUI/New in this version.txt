@@ -5,3 +5,4 @@
 5. Fixed issue regarding mouse not moving in plant taking ui.
 6. Added some more logs.
 7. Made beesmas features functional.
+8. Fixed issue with checking if vicious is dead.
