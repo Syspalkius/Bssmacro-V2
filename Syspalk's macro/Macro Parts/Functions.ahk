@@ -876,14 +876,18 @@ cub(searchfor){
 	mousemove,250,125
 	sleep 50
 	Send {Click}
-	sleep 500
+	sleep 1000
 	if (SearchFunction("cub.png",10)[1] = 0){
 		mousemove,SearchFunction("cub.png",10)[2],SearchFunction("cub.png",10)[3]
+		sleep 100
+		MouseMove, 20, 5 , 10, Relative
 		sleep 200
 		Send {Click}
 		sleep 500
 		if (SearchFunction(searchfor,10)[1] = 0){
 			mousemove,SearchFunction(searchfor,10)[2],SearchFunction(searchfor,10)[3]
+			sleep 100
+			MouseMove, 10, 5 , 10, Relative
 			sleep 200
 			Send {Click}
 			sleep 500
