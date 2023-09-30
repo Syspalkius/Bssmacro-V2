@@ -626,6 +626,8 @@ pinewalktohive(pinetree){
 		WinGetPos , windowX, windowY, windowWidth, windowY, Roblox
 		WindowY := windowY/3
 		while (1){
+			walk(20,"l")
+			sleep 5
 			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*10 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("l","Up")
@@ -641,6 +643,7 @@ pinewalktohive(pinetree){
 						if (A_TickCount - loopbreak > 360000){
 							break
 						}
+						checkbufftimer(true)
 						safetycheck()
 					}	
 				}
@@ -655,6 +658,8 @@ pinewalktohive(pinetree){
 		starttimer := A_TickCount
 		walkhold("r","Down")
 		while (1){
+			walk(20,"r")
+			sleep 5
 			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*10 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("r","Up")
@@ -670,8 +675,9 @@ pinewalktohive(pinetree){
 						if (A_TickCount - loopbreak > 360000){
 							break
 						}
+						checkbufftimer(true)
 						safetycheck()
-					}	
+					}
 				}
 				walk(750,"f")
 				walkhold("r","Up")

@@ -605,7 +605,7 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 			}
 			checkbufftimer(true)
 			safetycheck()
-		}	
+		}
 	}
 }
 

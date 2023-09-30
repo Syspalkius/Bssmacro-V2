@@ -6,3 +6,4 @@
 6. Added some more logs.
 7. Made beesmas features functional.
 8. Fixed issue with checking if vicious is dead.
+9. Changed walk convert.
