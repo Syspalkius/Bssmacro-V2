@@ -626,8 +626,7 @@ pinewalktohive(pinetree){
 		WinGetPos , windowX, windowY, windowWidth, windowY, Roblox
 		WindowY := windowY/3
 		while (1){
-			walk(20,"l")
-			sleep 5
+			walk(25,"l")
 			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*10 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("l","Up")
@@ -650,7 +649,7 @@ pinewalktohive(pinetree){
 				walk(750,"f")
 				walkhold("l","Up")
 				return
-			}else if (A_TickCount - starttimer > 1000){
+			}else if (A_TickCount - starttimer > 2000){
 				walkhold("l","Up")
 				break
 			}
@@ -658,8 +657,7 @@ pinewalktohive(pinetree){
 		starttimer := A_TickCount
 		walkhold("r","Down")
 		while (1){
-			walk(20,"r")
-			sleep 5
+			walk(25,"r")
 			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*10 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("r","Up")
@@ -682,7 +680,7 @@ pinewalktohive(pinetree){
 				walk(750,"f")
 				walkhold("r","Up")
 				return
-			}else if (A_TickCount - starttimer > 4000){
+			}else if (A_TickCount - starttimer > 7000){
 				walkhold("r","Up")
 				Errorlog("Couldn't find E button to convert at hive")
 				Reset()
