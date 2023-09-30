@@ -871,10 +871,10 @@ cub(searchfor){
 	loop 2{
 		mousemove,140,125
 		Send {click}
-		sleep 10
+		sleep 30
 	}
 	mousemove,250,125
-	sleep 10
+	sleep 50
 	Send {Click}
 	sleep 500
 	if (SearchFunction("cub.png",10)[1] = 0){
