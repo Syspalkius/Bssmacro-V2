@@ -931,13 +931,13 @@ Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
 		}
 		gloobgloobtime := A_TickCount
 		while (1){
-			WinActivate, Roblox ahk_class MAINDIALOG ahk_exe RobloxPlayerLauncher.exe
-			IfWinActive, Roblox ahk_class MAINDIALOG ahk_exe RobloxPlayerLauncher.exe
+			WinActivate, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
+			IfWinActive, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
 			{
 				Break
 			}
-			WinActivate, Roblox ahk_class MAINDIALOG ahk_exe RobloxPlayerLauncher.exe
-			if (A_TickCount - gloobgloobtime > 15000){
+			WinActivate, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
+			if (A_TickCount - gloobgloobtime > 45000){
 				WinClose, ahk_exe chrome.exe
 				Send w
 				SendInput {Enter}

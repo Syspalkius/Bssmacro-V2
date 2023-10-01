@@ -8,3 +8,4 @@
 8. Fixed issue with checking if vicious is dead.
 9. Changed walk convert.
 10. Changed cub buddy in order to fix bug with fps lower than 40.
+11. Fixed a bug regarding the reconnect.
