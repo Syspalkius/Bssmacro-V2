@@ -546,6 +546,8 @@ walktocannon(){ ;makes the character walk to the cannon.
 			}
 		}
 	}
+	WinGetPos,,,Winwidth,Winheight,Roblox
+	mousemove,Winwidth/2,Winheight/2
 }
 
 Reset(){ ;this will make your character commit suicide and also has some crapy anti bear glitch protection which only works half of the time but it's better than other macros which will let your character fling all the way to the onett house instead of going to pepper
@@ -943,7 +945,6 @@ Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
 				SendInput {Enter}
 				goto,retry
 			}
-			
 		}
 		looptime := A_TickCount
 		while(1){ ;search for the loading screen if loading screen found wait for loading screen to go away and then claim the hive, if the loading screen is there for longer than 60 seconds something must have gone wrong and it will exit the loop

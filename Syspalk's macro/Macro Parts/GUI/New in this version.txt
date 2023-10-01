@@ -9,3 +9,4 @@
 9. Changed walk convert.
 10. Changed cub buddy in order to fix bug with fps lower than 40.
 11. Fixed a bug regarding the reconnect.
+12. Fixed issue regarding mouse breaking in rdp when the rdp window is the active window.
