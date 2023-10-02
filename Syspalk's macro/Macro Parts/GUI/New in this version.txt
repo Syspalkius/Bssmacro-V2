@@ -1,3 +1,4 @@
 1. Changed pineapple path to fix dying to mobs.
 2. Changed gumdrop dispenser image to fix an issue there.
 3. Added a feature to avoid death by mobs.
+4. Fixed issue regarding faulthy data file throwing an error instead of auto fixing.
