@@ -131,6 +131,10 @@ glitchspringinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/glitchsprinkinfo.txt
 	popup(400,140,12,"Glitch sprinkler info",Text)
 }
+avoiddeathinfo(){
+	FileRead, Text, Macro Parts\GUI\Info/avoiddeathinfo.txt
+	popup(400,220,12,"Avoid death info",Text)
+}
 
 ;------Macro buttons------
 

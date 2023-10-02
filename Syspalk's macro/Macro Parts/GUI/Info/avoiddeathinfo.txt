@@ -1,0 +1,5 @@
+When enabling this feature It'll prevent you from dying to mobs when ariving at the field.
+
+It accomplishes this by utilizing a bug in the game that while you're jumping the mobs won't attack you, when arriving at the field your character will jump for 10 seconds making it prevent death in almost all cases.
+
+NOTE : This is only useful on accounts that are extremely weak and cannot kill mobs in time.

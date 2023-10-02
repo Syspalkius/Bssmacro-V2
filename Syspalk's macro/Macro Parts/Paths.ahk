@@ -51,19 +51,20 @@ pineapple(nectar){
 	Send e
 	camrotate(2,"l")
 	Send {shift}
-	sleep 1900
+	sleep 1800
 	Sendspace()
 	Sendspace()
 	Send {shift}
-	sleep 2650
+	sleep 2550
 	camrotate(2,"l")
-	Send {Shift}
-	sleep 500
-	Send {Shift}
 	SendSpace()
 	sleep 2000
+	if (nectar = false){
+		sleep 10000
+		walk(2000,"f")
+	}
 	if (nectar = true){
-		walk(4000,"f")
+		walk(6000,"f")
 		walk(4000,"l")
 	}
 }

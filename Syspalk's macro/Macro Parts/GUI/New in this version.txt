@@ -1,12 +1,3 @@
-1. Fixed issue with farming with Shiftlock enabled.
-2. Removed cannon searcher.
-3. Added double reset for planter farming.
-4. Adjusted plant looting pattern.
-5. Fixed issue regarding mouse not moving in plant taking ui.
-6. Added some more logs.
-7. Made beesmas features functional.
-8. Fixed issue with checking if vicious is dead.
-9. Changed walk convert.
-10. Changed cub buddy in order to fix bug with fps lower than 40.
-11. Fixed a bug regarding the reconnect.
-12. Fixed issue regarding mouse breaking in rdp when the rdp window is the active window.
+1. Changed pineapple path to fix dying to mobs.
+2. Changed gumdrop dispenser image to fix an issue there.
+3. Added a feature to avoid death by mobs.

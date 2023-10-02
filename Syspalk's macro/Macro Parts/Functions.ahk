@@ -181,6 +181,12 @@ GoFarm(field){ ;function for farming.
 	}else{
 		pinetree := false
 	}
+	if (avoiddeath){
+		Send {Space Down}
+		sleep 10000
+		Send {Space Up}
+		sleep 500
+	}
 	breaktimer := A_TickCount
 	maxfieldtime := maxtimeonfield * 60000
 	zoomout()

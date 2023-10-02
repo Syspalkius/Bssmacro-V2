@@ -340,6 +340,7 @@ Gui,Add,Text, v10tab2 x75 y50 cWhite,character speed
 Gui,Add,Edit, v10tab3 x20 yp number w50
 Gui,Add,UpDown, v10tab4 Range10-50, %speed%
 Gui,Add,Checkbox, v10tab30 x20 yp+35 cwhite %glitchsprinkler%,Glitch the sprinkler
+Gui,Add,Checkbox, v10tab32 x20 yp+20 cwhite %avoiddeath%,Avoid death by mobs
 Gui,Font,s13
 Gui,Add,Groupbox, v10tab5 x20 yp+25 w410 h145 cwhite,Webhooks
 Gui,Font,s10
@@ -363,10 +364,11 @@ Gui,Add,Text, v10tab24 x20 yp+25 c53ede5 gresettimers,Reset Timers
 Gui,Font,s10 Bold
 Gui,Add,Button,v10tab25 x380 y560,credits
 Gui,Add,Text, v10tab26 x200 y52 w10 h17 c%infocol% gmovespeedinfo,?
-Gui,Add,Text, v10tab27 x35 y147 w10 h17 c%infocol% ghookeventinfo,?
-Gui,Add,Text, v10tab28 x35 y182 w10 h17 c%infocol% ghookerrorinfo,?
+Gui,Add,Text, v10tab27 x35 y167 w10 h17 c%infocol% ghookeventinfo,?
+Gui,Add,Text, v10tab28 x35 y202 w10 h17 c%infocol% ghookerrorinfo,?
 Gui,Add,Text, v10tab29 x35 yp+40 w10 h17 c%infocol% gtestmsginfo,?
 Gui,Add,Text, v10tab31 x180 y87 w10 h17 c%infocol% gglitchspringinfo,?
+Gui,Add,Text, v10tab33 x197 y107 w10 h17 c%infocol% gavoiddeathinfo,?
 
 
 var := 0

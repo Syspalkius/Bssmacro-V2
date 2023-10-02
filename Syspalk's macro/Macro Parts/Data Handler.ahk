@@ -188,6 +188,7 @@ global feast
 global lidart
 global ginger
 global wreath
+global avoiddeath
 
 
 
@@ -307,6 +308,7 @@ readini(){ ;reads all the data from the ini file
 	IniRead,Pausekey,%datapath%,keybinds,Pausekey
 	IniRead,speed,%datapath%,settings,speed
 	IniRead,glitchsprinkler,%datapath%,settings,glitchsprinkler
+	IniRead,avoiddeath,%datapath%,settings,avoiddeath
 	IniRead,joinmain,%datapath%,settings,joinmain
 	IniRead,rebootserver,%datapath%,settings,rebootserver
 	IniRead,reboottime,%datapath%,settings,reboottime
@@ -316,175 +318,178 @@ readini(){ ;reads all the data from the ini file
 	IniRead,main,%linkpath%,private servers,main
 	IniRead,alt,%linkpath%,private servers,alt
 	
-	if (convsetting){
+	if (convsetting = true){
 		global convsetting := "Checked"
 	}
-	if (swingtool){
+	if (swingtool = true){
 		global swingtool := "Checked"
 	}
-	if (sprinkleralign){
+	if (sprinkleralign = true){
 		global sprinkleralign := "Checked"
 	}
-	if (pinewalkconv){
+	if (pinewalkconv = true){
 		global pinewalkconv := "Checked"
 	}
-	if (pinecentralfarm){
+	if (pinecentralfarm = true){
 		global pinecentralfarm := "Checked"
 	}
-	if (waitforpop){
+	if (waitforpop = true){
 		global waitforpop := "Checked"
 	}
-	if (shiftlock){
+	if (shiftlock = true){
 		global shiftlock := "Checked"
 	}
-	if (shrine){
+	if (shrine = true){
 		global shrine := "Checked"
 	}
-	if (bluebooster){
+	if (bluebooster = true){
 		global bluebooster := "Checked"
 	}
-	if (redbooster){
+	if (redbooster = true){
 		global redbooster := "Checked"
 	}
-	if (whitebooster){
+	if (whitebooster = true){
 		global whitebooster := "Checked"
 	}
-	if (reglitter){
+	if (reglitter = true){
 		global reglitter := "Checked"
 	}
-	if (lootplanters){
+	if (lootplanters = true){
 		global lootplanters := "Checked"
 	}
-	if (doublereset){
+	if (doublereset = true){
 		global doublereset := "Checked"
 	}
-	if (harviffull1){
+	if (harviffull1 = true){
 		global harviffull1 := "Checked"
 	}
-	if (harviffull2){
+	if (harviffull2 = true){
 		global harviffull2 := "Checked"
 	}
-	if (harviffull3){
+	if (harviffull3 = true){
 		global harviffull3 := "Checked"
 	}
-	if (clock){
+	if (clock = true){
 		global clock := "Checked"
 	}
-	if (gluedisp){
+	if (gluedisp = true){
 		global gluedisp := "Checked"
 	}
-	if (robopass){
+	if (robopass = true){
 		global robopass := "Checked"
 	}
-	if (strawdisp){
+	if (strawdisp = true){
 		global strawdisp := "Checked"
 	}
-	if (bluebdisp){
+	if (bluebdisp = true){
 		global bluebdisp := "Checked"
 	}
-	if (cocodisp){
+	if (cocodisp = true){
 		global cocodisp := "Checked"
 	}
-	if (tunnel){
+	if (tunnel = true){
 		global tunnel := "Checked"
 	}
-	if (kingbeetle){
+	if (kingbeetle = true){
 		global kingbeetle := "Checked"
 	}
-	if (ant){
+	if (ant = true){
 		global ant := "Checked"
 	}
-	if (freeant){
+	if (freeant = true){
 		global freeant := "Checked"
 	}
-	if (buyant){
+	if (buyant = true){
 		global buyant := "Checked"
 	}
-	if (vicious){
+	if (vicious = true){
 		global vicious := "Checked"
 	}
-	if (lady){
+	if (lady = true){
 		global lady := "Checked"
 	}
-	if (rhino){
+	if (rhino = true){
 		global rhino := "Checked"
 	}
-	if (spider){
+	if (spider = true){
 		global spider := "Checked"
 	}
-	if (mantis){
+	if (mantis = true){
 		global mantis := "Checked"
 	}
-	if (scorpion){
+	if (scorpion = true){
 		global scorpion := "Checked"
 	}
-	if (wolf){
+	if (wolf = true){
 		global wolf := "Checked"
 	}
-	if (candles){
+	if (candles = true){
 		global candles := "Checked"
 	}
-	if (samovar){
+	if (samovar = true){
 		global samovar := "Checked"
 	}
-	if (stockings){
+	if (stockings = true){
 		global stockings := "Checked"
 	}
-	if (feast){
+	if (feast = true){
 		global feast := "Checked"
 	}
-	if (lidart){
+	if (lidart = true){
 		global lidart := "Checked"
 	}
-	if (ginger){
+	if (ginger = true){
 		global ginger := "Checked"
 	}
-	if (wreath){
+	if (wreath = true){
 		global wreath := "Checked"
 	}
-	if (buff2){
+	if (buff2 = true){
 		global buff2 := "Checked"
 	}
-	if (buff3){
+	if (buff3 = true){
 		global buff3 := "Checked"
 	}
-	if (buff4){
+	if (buff4 = true){
 		global buff4 := "Checked"
 	}
-	if (buff5){
+	if (buff5 = true){
 		global buff5 := "Checked"
 	}
-	if (buff6){
+	if (buff6 = true){
 		global buff6 := "Checked"
 	}
-	if (buff7){
+	if (buff7 = true){
 		global buff7 := "Checked"
 	}
-	if (buff2hive){
+	if (buff2hive = true){
 		global buff2hive := "Checked"
 	}
-	if (buff3hive){
+	if (buff3hive = true){
 		global buff3hive := "Checked"
 	}
-	if (buff4hive){
+	if (buff4hive = true){
 		global buff4hive := "Checked"
 	}
-	if (buff5hive){
+	if (buff5hive = true){
 		global buff5hive := "Checked"
 	}
-	if (buff6hive){
+	if (buff6hive = true){
 		global buff6hive := "Checked"
 	}
-	if (buff7hive){
+	if (buff7hive = true){
 		global buff7hive := "Checked"
 	}
-	if (glitchsprinkler){
+	if (glitchsprinkler = true){
 		global glitchsprinkler := "Checked"
 	}
-	if (joinmain){
+	if (avoiddeath = true){
+		global avoiddeath := "Checked"
+	}
+	if (joinmain = true){
 		global joinmain := "Checked"
 	}
-	if (rebootserver){
+	if (rebootserver = true){
 		global rebootserver := "Checked"
 	}
 }
@@ -591,6 +596,7 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,buff7hive,,5tab20
 	GuiControlget,speed,,10tab4
 	GuiControlget,glitchsprinkler,,10tab30
+	GuiControlget,avoiddeath,,10tab32
 	GuiControlget,joinmain,,10tab17
 	GuiControlget,hookevent,,10tab7
 	GuiControlget,hookerror,,10tab9
@@ -755,6 +761,7 @@ savedata(){ ;saves all the data
 	IniWrite,%buff7time%,%datapath%,buffs,buff7time
 	IniWrite,%speed%,%datapath%,settings,speed
 	IniWrite,%glitchsprinkler%,%datapath%,settings,glitchsprinkler
+	IniWrite,%avoiddeath%,%datapath%,settings,avoiddeath
 	IniWrite,%joinmain%,%datapath%,settings,joinmain
 	IniWrite,%hookevent%,%linkpath%,webhooks,hookevent
 	IniWrite,%hookerror%,%linkpath%,webhooks,hookerror
@@ -912,6 +919,7 @@ resetconfig(){
 	
 	IniWrite,28,%datapath%,settings,speed
 	IniWrite,0,%datapath%,settings,glitchsprinkler
+	IniWrite,0,%datapath%,settings,avoiddeath
 	IniWrite,0,%datapath%,settings,joinmain
 	IniWrite,Insert Link,%linkpath%,webhooks,hookevent
 	IniWrite,Insert Link,%linkpath%,webhooks,hookerror
