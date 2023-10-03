@@ -636,7 +636,9 @@ pinewalktohive(pinetree){
 				if (convert = true){
 					Send e
 					while (1){
-						if (SearchFunction("e.png",40)[1] = 1){
+						sleep 1000
+						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png
+						if (errorlevel = 1){
 							sleep 5000
 							break
 						}
@@ -667,7 +669,9 @@ pinewalktohive(pinetree){
 				if (convert = true){
 					Send e
 					while (1){
-						if (SearchFunction("e.png",40)[1] = 1){
+						sleep 1000
+						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png
+						if (errorlevel = 1){
 							sleep 5000
 							break
 						}

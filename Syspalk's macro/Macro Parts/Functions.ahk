@@ -534,7 +534,7 @@ walktocannon(){ ;makes the character walk to the cannon.
 	sleep 300
 	walkhold("r","Down")
 	loop{
-		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png 
+		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png
 		if (errorlevel = 0){
 			walkhold("r","Up")
 			break
@@ -563,9 +563,11 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 	sleep 2000
 	breaktimer := A_TickCount
 	resetagain := false
+	WinGetPos,,,Winwidth,Winheight,Roblox
+	Winheight := Winheight/4
 	while (1){ ;search for bear
-		sleep 100
-		if (SearchFunction("BrownBear.png",20)[1] = 0 || SearchFunction("BlackBear.png",20)[1] = 0 || SearchFunction("MotherBear.png",20)[1] = 0 || SearchFunction("PandaBear.png",20)[1] = 0 || SearchFunction("PolarBear.png",20)[1] = 0 || SearchFunction("Sciencebear.png",20)[1] = 0 ){
+		sleep 250
+		if (SearchFunctionv2("BrownBear.png",20,0,0,Winwidth,Winheight)[1] = 0 || SearchFunctionv2("BlackBear.png",20,0,0,Winwidth,Winheight)[1] = 0 || SearchFunctionv2("MotherBear.png",20,0,0,Winwidth,Winheight)[1] = 0 || SearchFunctionv2("PandaBear.png",20,0,0,Winwidth,Winheight)[1] = 0 || SearchFunctionv2("PolarBear.png",20,0,0,Winwidth,Winheight)[1] = 0 || SearchFunctionv2("Sciencebear.png",20,0,0,Winwidth,Winheight)[1] = 0 ){
 			resetagain := true ;if bear detected set to true
 		}
 		if (A_TickCount - breaktimer > 6500){
@@ -605,7 +607,9 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 	if (convsetting && allowconvert && SearchFunction("e.png",10)[1] = 0){ ;convert balloon if reset convert is sellected
 		Send e
 		while (1){
-			if (SearchFunction("e.png",40)[1] != 0){
+			sleep 1000
+			ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png
+			if (errorlevel = 1){
 				sleep 5000
 				break
 			}

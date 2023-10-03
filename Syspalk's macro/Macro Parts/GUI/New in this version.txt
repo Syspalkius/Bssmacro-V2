@@ -2,3 +2,4 @@
 2. Changed gumdrop dispenser image to fix an issue there.
 3. Added a feature to avoid death by mobs.
 4. Fixed issue regarding faulthy data file throwing an error instead of auto fixing.
+5. Did some optimizations.
