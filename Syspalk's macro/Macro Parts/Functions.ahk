@@ -923,17 +923,17 @@ Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
 			try{
 				run, %plink1%
 			}
-			attempt := 2
-		}else if (plink1 != "Insert Link" && attempt = 1){
+			attempt := attempt + 1
+		}else if (plink1 != "Insert Link" && attempt < 3){
 			try{
 				run, %plink1%
 			}
-			attempt := 2
-		}else if (plink2 != "Insert Link" && serverjoinstatus != true && attempt = 2){
+			attempt := attempt + 1
+		}else if (plink2 != "Insert Link" && serverjoinstatus != true && attempt = 3){
 			try{
 				run, %plink2%
 			}
-			attempt := 3
+			attempt := 4
 		}else if (serverjoinstatus != true){
 			run, https://www.roblox.com/games/2000343487?privateServerLinkCode=67181684702561561812873405717919
 			if (plink1){
