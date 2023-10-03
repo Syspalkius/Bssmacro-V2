@@ -35,7 +35,7 @@ Gui,Font,s7
 FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
 Gui,Add,Text, v1tab22 x200 yp+30 w245 h250 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
-Gui,Add,Button, v1tab23 x270 y310,View More
+Gui,Add,Button, v1tab23 x282 y310,Expand
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab24 x285 y340 cwhite,About
 Gui,Font,s9

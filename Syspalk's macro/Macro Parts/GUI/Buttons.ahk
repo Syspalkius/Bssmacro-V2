@@ -29,13 +29,13 @@ keybindbutton(){
 Settingsbutton(){
 	changetab(10)
 }
-Buttonviewmore(){
+Buttonexpand(){
 	FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
 	popup(500,285,10,"New in this version",UpdateText)
 }
 Buttoncredits(){
 	FileRead, CreditText, Macro Parts\GUI\Info/Credits.txt
-	popup(200,140,12,"Credits",CreditText)
+	popup(200,180,12,"Credits",CreditText)
 }
 ButtonApplyChanges(){
 	savedata()

@@ -564,7 +564,8 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 	breaktimer := A_TickCount
 	resetagain := false
 	while (1){ ;search for bear
-		if (SearchFunction("BrownBear.png",40)[1] = 0 || SearchFunction("BlackBear.png",40)[1] = 0 || SearchFunction("MotherBear.png",40)[1] = 0 || SearchFunction("PandaBear.png",40)[1] = 0 || SearchFunction("PolarBear.png",40)[1] = 0 || SearchFunction("Sciencebear.png",40)[1] = 0 || ){
+		sleep 100
+		if (SearchFunction("BrownBear.png",20)[1] = 0 || SearchFunction("BlackBear.png",20)[1] = 0 || SearchFunction("MotherBear.png",20)[1] = 0 || SearchFunction("PandaBear.png",20)[1] = 0 || SearchFunction("PolarBear.png",20)[1] = 0 || SearchFunction("Sciencebear.png",20)[1] = 0 ){
 			resetagain := true ;if bear detected set to true
 		}
 		if (A_TickCount - breaktimer > 6500){
