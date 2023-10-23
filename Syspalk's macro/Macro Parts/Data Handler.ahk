@@ -931,15 +931,25 @@ resetconfig(){
 
 
 ButtonResetCycleData(tooltip := 1){
-	Eventlog("The cycle data has been reset.")
+	if (tooltip){
+		MsgBox,52,WARNING,Are you sure you want to reset the cycle data of the planters?
+		IfMsgBox, yes
+		{
+			Eventlog("The cycle data has been reset.")
+			IniWrite,0,%datapath%,planters,plantcycle1
+			IniWrite,0,%datapath%,planters,plantcycle2
+			IniWrite,0,%datapath%,planters,plantcycle3
+			if (tooltip){
+				Tooltip,Successfully reset the cycle data!
+				sleep 2000
+				Tooltip,
+			}
+		}
+		return
+	}
 	IniWrite,0,%datapath%,planters,plantcycle1
 	IniWrite,0,%datapath%,planters,plantcycle2
 	IniWrite,0,%datapath%,planters,plantcycle3
-	if (tooltip){
-		Tooltip,Successfully reset the cycle data!
-		sleep 2000
-		Tooltip,
-	}
 }
 
 
