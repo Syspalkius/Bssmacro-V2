@@ -249,6 +249,7 @@ loop 6{
 	Gui,Add,Edit, v5tab%editnum% number xp+120 yp-5 w100 ,%time%
 	Gui,Add,Checkbox, v5tab%athivenum% xp+115 yp+5 cwhite %usehive%,Use at hive
 }
+Gui,Add,Text, v5tab29 x360 y72 w10 h17 c%infocol% gusehiveinfo,?
 
 
 

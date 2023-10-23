@@ -135,6 +135,10 @@ avoiddeathinfo(){
 	FileRead, Text, Macro Parts\GUI\Info/avoiddeathinfo.txt
 	popup(400,220,12,"Avoid death info",Text)
 }
+usehiveinfo(){
+	FileRead, Text, Macro Parts\GUI\Info/usehiveinfo.txt
+	popup(400,75,12,"Use at hive info",Text)
+}
 
 ;------Macro buttons------
 

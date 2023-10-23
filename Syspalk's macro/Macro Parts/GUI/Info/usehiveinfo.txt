@@ -1,0 +1,1 @@
+When enabling this feature the macro will also be able to use buffs while converting at the hive instead of only on the field.
