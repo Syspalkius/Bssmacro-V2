@@ -1,5 +1,9 @@
-1. Changed pineapple path to fix dying to mobs.
-2. Changed gumdrop dispenser image to fix an issue there.
-3. Added a feature to avoid death by mobs.
-4. Fixed issue regarding faulthy data file throwing an error instead of auto fixing.
-5. Did some optimizations.
+------MAJOR CHANGES------
+1. Completely reworked the GUI.
+2. Added a tab for keybinds for people with different keyboard setups.
+3. Added a wind shrine donation option
+4. Data stays even when reinstalling/updating the macro.
+5. Added some presets for optimally farming certains things in the game.
+6. Made lots of bug fixes and stability changes.
+7. Completely rewrote the planters.
+8. Added a bunch of minor features.

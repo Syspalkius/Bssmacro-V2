@@ -973,6 +973,22 @@ ButtonResetSettings(reload){
 	Eventlog("The planter settings have been wiped")
 	if (reload){
 		savedata()
+		MsgBox,52,WARNING,Are you sure you want to reset your planter settings?
+		IfMsgBox, yes
+		{
+			loop 12{
+				IniWrite,None,%datapath%,planters,plantfield%A_Index%
+				IniWrite,None,%datapath%,planters,planter%A_Index%
+			}
+			IniWrite,0,%datapath%,planters,doublereset
+			IniWrite,0,%datapath%,planters,lootplanters
+			loop 3{
+				IniWrite,0,%datapath%,planters,harviffull%A_Index%
+				IniWrite,1 Hour,%datapath%,planters,plantdelay%A_Index%
+			}
+			reload
+		}
+		return
 	}
 	loop 12{
 		IniWrite,None,%datapath%,planters,plantfield%A_Index%
@@ -983,9 +999,6 @@ ButtonResetSettings(reload){
 	loop 3{
 		IniWrite,0,%datapath%,planters,harviffull%A_Index%
 		IniWrite,1 Hour,%datapath%,planters,plantdelay%A_Index%
-	}
-	if (reload){
-		reload
 	}
 }
 
