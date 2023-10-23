@@ -35,7 +35,7 @@ Buttonexpand(){
 }
 Buttoncredits(){
 	FileRead, CreditText, Macro Parts\GUI\Info/Credits.txt
-	popup(200,180,12,"Credits",CreditText)
+	popup(210,180,12,"Credits",CreditText)
 }
 ButtonApplyChanges(){
 	savedata()
