@@ -1060,7 +1060,7 @@ loadidealblue(){
 	loadblue5nectar(false)
 	Eventlog("The ideal blue settings have been loaded.")
 	IniWrite,Pine Tree,%datapath%,farming,farmfield1
-	IniWrite,Reset,%datapath%,farming,convsetting
+	IniWrite,1,%datapath%,farming,convsetting
 	IniWrite,10,%datapath%,farming,maxtimeonfield
 	IniWrite,1,%datapath%,farming,swingtool
 	IniWrite,0,%datapath%,farming,sprinkleralign
@@ -1099,7 +1099,7 @@ loadgumdropfarmer(){
 	IniWrite,Pine Tree,%datapath%,farming,farmfield1
 	IniWrite,Pineapple,%datapath%,farming,farmfield2
 	IniWrite,Strawberry,%datapath%,farming,farmfield3
-	IniWrite,None,%datapath%,farming,convsetting
+	IniWrite,0,%datapath%,farming,convsetting
 	IniWrite,10,%datapath%,farming,maxtimeonfield
 	IniWrite,1,%datapath%,farming,swingtool
 	IniWrite,0,%datapath%,farming,sprinkleralign

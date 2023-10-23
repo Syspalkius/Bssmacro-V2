@@ -628,7 +628,7 @@ pinewalktohive(pinetree){
 		WindowY := windowY/3
 		while (1){
 			walk(25,"l")
-			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*10 Macro Parts/images/e.png 
+			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("l","Up")
 				zoomout()
@@ -637,7 +637,7 @@ pinewalktohive(pinetree){
 					Send e
 					while (1){
 						sleep 1000
-						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png
+						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*30 Macro Parts/images/e.png
 						if (errorlevel = 1){
 							sleep 5000
 							break
@@ -661,7 +661,7 @@ pinewalktohive(pinetree){
 		walkhold("r","Down")
 		while (1){
 			walk(25,"r")
-			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*10 Macro Parts/images/e.png 
+			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("r","Up")
 				zoomout()
@@ -670,7 +670,7 @@ pinewalktohive(pinetree){
 					Send e
 					while (1){
 						sleep 1000
-						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png
+						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*30 Macro Parts/images/e.png
 						if (errorlevel = 1){
 							sleep 5000
 							break

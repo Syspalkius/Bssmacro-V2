@@ -361,6 +361,7 @@ beesmastimerchecks(){ ;separate function to check all the timers that have anyth
 }
 
 checktimers(){
+	allowconvert := false
 	beesmastimerchecks()
 	checkmobtimers()
 	readtimers()
@@ -438,6 +439,7 @@ checktimers(){
 			robopass()
 		}
 	}
+	allowconvert := true
 }
 
 
@@ -604,12 +606,11 @@ Reset(){ ;this will make your character commit suicide and also has some crapy a
 	}
 	zoomout()
 	breaktimer := A_TickCount
-	if (convsetting && allowconvert && SearchFunction("e.png",10)[1] = 0){ ;convert balloon if reset convert is sellected
+	if (convsetting && allowconvert && SearchFunction("e.png",10)[1] = 0){ ;convert balloon if balloon convert
 		Send e
 		while (1){
 			sleep 1000
-			ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png
-			if (errorlevel = 1){
+			if (SearchFunction("e.png",30)[1] = 1){
 				sleep 5000
 				break
 			}
