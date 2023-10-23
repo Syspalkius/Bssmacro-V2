@@ -18,7 +18,7 @@ if (val = "ERROR"){
 		run, https://discord.gg/t572FnTqfs ;launch discord invite.
 	}
 	IniWrite,1,%datapath%,launchedbefore,launchedbefore
-	resetconfig()
+	resetconfig(false)
 }
 
 global farmfield1
@@ -842,7 +842,14 @@ timersafetycheck(){
 
 
 
-resetconfig(){
+resetconfig(popup := true){
+	if (popup){
+		MsgBox, 52, WARNING, Are you sure that you want to reset your config?`nThis will set all the settings back to default!
+		ifmsgbox, no
+		{
+			return
+		}
+	}
 	resettimers(false)
 	ButtonResetCycleData(false)
 	ButtonResetSettings(false)
