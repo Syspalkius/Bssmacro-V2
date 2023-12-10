@@ -628,6 +628,7 @@ pinewalktohive(pinetree){
 		WindowY := windowY/3
 		while (1){
 			walk(25,"l")
+			sleep 10
 			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("l","Up")
@@ -652,7 +653,7 @@ pinewalktohive(pinetree){
 				walk(750,"f")
 				walkhold("l","Up")
 				return
-			}else if (A_TickCount - starttimer > 2000){
+			}else if (A_TickCount - starttimer > 3500){
 				walkhold("l","Up")
 				break
 			}
@@ -661,6 +662,7 @@ pinewalktohive(pinetree){
 		walkhold("r","Down")
 		while (1){
 			walk(25,"r")
+			sleep 10
 			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("r","Up")
