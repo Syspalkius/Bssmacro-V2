@@ -1,5 +1,8 @@
 ﻿#SingleInstance Force
 #Requires AutoHotkey v1.1.36.01+
+if (A_ScreenDPI != 96){
+	MsgBox,48,WARNING,Warning: Your display scaling is not set to 100, the macro might not function properly.`n`nFix: Settings → Display → Scale and layout → 100
+}
 menu,tray,icon,Macro Parts\GUI\Images/logo.ico
 Gui, loading:add,Progress, w200 h20 cgreen vprogress -smooth, 0
 Gui, loading:color,0x2A2F32
