@@ -1,0 +1,27 @@
+(12/10/2023) 10:03:48 The timers have been reset. 
+(12/10/2023) 10:03:48 The planter settings have been wiped 
+(12/10/2023) 10:03:48 The keybinds have been reset to default. 
+(12/10/2023) 10:03:49 The config has been wiped. 
+(12/10/2023) 10:20:12 Started macro 
+(12/10/2023) 10:20:33 Going to wealthclock 
+(12/10/2023) 10:21:30 Started macro 
+(12/10/2023) 10:21:31 Traveling to Pine Tree 
+(12/10/2023) 10:22:13 Started macro 
+(12/10/2023) 10:22:14 Traveling to Pine Tree 
+(12/10/2023) 10:23:08 Walking back to the hive 
+(12/10/2023) 10:25:21 Started macro 
+(12/10/2023) 10:25:22 Traveling to Pine Tree 
+(12/10/2023) 10:26:19 Walking back to the hive 
+(12/10/2023) 10:32:13 Started macro 
+(12/10/2023) 10:32:14 Traveling to Pine Tree 
+(12/10/2023) 10:33:11 Walking back to the hive 
+(12/10/2023) 10:37:03 Started macro 
+(12/10/2023) 10:37:03 Traveling to Pine Tree 
+(12/10/2023) 10:38:01 Walking back to the hive 
+(12/10/2023) 10:40:24 Started macro 
+(12/10/2023) 10:40:24 Traveling to Pine Tree 
+(12/10/2023) 10:41:31 Walking back to the hive 
+(12/21/2023) 04:55:21 The timers have been reset. 
+(12/21/2023) 04:55:23 The timers have been reset. 
+(12/23/2023) 01:30:44 Started macro 
+(12/23/2023) 01:30:45 Traveling to Pine Tree 

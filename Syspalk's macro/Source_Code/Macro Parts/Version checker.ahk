@@ -1,5 +1,5 @@
 ﻿global currentversion
-Fileread,currentversion,Macro Parts\GUI\version.txt
+Fileread,currentversion,Source_Code\Macro Parts\GUI\version.txt
 try{
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 	whr.Open("GET", "https://raw.githubusercontent.com/Syspalkius/Bssmacro-V2/main/Syspalk's%20macro/Macro%20Parts/GUI/Version.txt", true)

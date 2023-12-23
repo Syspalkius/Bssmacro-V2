@@ -1149,7 +1149,7 @@ readplantdata(){
 newuser(){
 	try{ ;Please don't nuke my webhook, I just want to track how many people download the macro.
 		global currentversion
-		Fileread,currentversion,Macro Parts\GUI\version.txt
+		Fileread,currentversion,Source_Code\Macro Parts\GUI\version.txt
 		url := "https://discord.com/api/webhooks/1133401631564763166/dn86NaFB2Fdbc5xFV3skuInG9n9R5kJCUQOK4OkRxxiNCvCCnW6L8pr2r9SVhXPW8n8V"
 		postdata=
 		(

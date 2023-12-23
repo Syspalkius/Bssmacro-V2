@@ -629,7 +629,7 @@ pinewalktohive(pinetree){
 		while (1){
 			walk(25,"l")
 			sleep 10
-			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Macro Parts/images/e.png 
+			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Source_Code\Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("l","Up")
 				zoomout()
@@ -638,7 +638,7 @@ pinewalktohive(pinetree){
 					Send e
 					while (1){
 						sleep 1000
-						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*30 Macro Parts/images/e.png
+						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*30 Source_Code\Macro Parts/images/e.png
 						if (errorlevel = 1){
 							sleep 5000
 							break
@@ -663,7 +663,7 @@ pinewalktohive(pinetree){
 		while (1){
 			walk(25,"r")
 			sleep 10
-			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Macro Parts/images/e.png 
+			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Source_Code\Macro Parts/images/e.png 
 			if (errorlevel = 0){
 				walkhold("r","Up")
 				zoomout()
@@ -672,7 +672,7 @@ pinewalktohive(pinetree){
 					Send e
 					while (1){
 						sleep 1000
-						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*30 Macro Parts/images/e.png
+						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*30 Source_Code\Macro Parts/images/e.png
 						if (errorlevel = 1){
 							sleep 5000
 							break
@@ -1130,7 +1130,7 @@ GoDoAnt(){
 	starttime := A_TickCount
 	walkhold("r","Down")
 	while (A_Tickcount - starttime < 2000){
-		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*20 Macro parts/images/e.png 
+		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*20 Source_Code\Macro Parts/images/e.png 
 		if (errorlevel = 0){
 			walkhold("r","Up")
 			EventLog("succesfully did ant")

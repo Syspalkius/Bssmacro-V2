@@ -1,38 +1,38 @@
-﻿#Include Macro Parts\GUI\Buttons.ahk
-menu,tray,icon,Macro Parts\GUI\Images/logo.ico
+﻿#Include Source_Code\Macro Parts\GUI\Buttons.ahk
+menu,tray,icon,Source_Code\Macro Parts\GUI\Images\logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
 global infocol := "53ede5"
 
-Gui,Add,Picture, x10 y10 gmenubar, Macro Parts\GUI\Images/menu.png
+Gui,Add,Picture, x10 y10 gmenubar, Source_Code\Macro Parts\GUI\Images/menu.png
 Gui,Add,Text, xp+40 yp-5 gmenubar cwhite, Home
 ;Gui,Add,Groupbox,x0 y-14 w450 h615    ;outline for the gui
 
 Gui,Add,Groupbox, v1tab1 x0 y-14 w180 h615
 Gui,Add,Text, gFarmingbutton v1tab2 x40 yp+50 cf5c88e,Farming
-Gui,Add,Picture, gFarmingbutton v1tab3 x5 yp-5, Macro Parts\GUI\Images/honey.png
+Gui,Add,Picture, gFarmingbutton v1tab3 x5 yp-5, Source_Code\Macro Parts\GUI\Images/honey.png
 Gui,Add,Text, gPlanterbutton v1tab4 x40 yp+45 cf5c88e,Planters
-Gui,Add,Picture, gPlanterbutton v1tab5 x5 yp-5, Macro Parts\GUI\Images/planter.png
+Gui,Add,Picture, gPlanterbutton v1tab5 x5 yp-5, Source_Code\Macro Parts\GUI\Images/planter.png
 Gui,Add,Text, gResourcesbutton v1tab6 x40 yp+45 cf5c88e,Resources
-Gui,Add,Picture, gResourcesbutton v1tab7 x5 yp-5, Macro Parts\GUI\Images/resources.png
+Gui,Add,Picture, gResourcesbutton v1tab7 x5 yp-5, Source_Code\Macro Parts\GUI\Images/resources.png
 Gui,Add,Text, gBuffsbutton v1tab8 x40 yp+45 cf5c88e,Buffs
-Gui,Add,Picture, gBuffsbutton v1tab9 x5 yp-5, Macro Parts\GUI\Images/extract.png
+Gui,Add,Picture, gBuffsbutton v1tab9 x5 yp-5, Source_Code\Macro Parts\GUI\Images/extract.png
 /* ;QUESTS TAB
 	Gui,Add,Text, gQuestbutton v1tab10 x40 yp+45 cf5c88e,Quests
-	Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Macro Parts\GUI\Images/quests.png
+	Gui,Add,Picture, gQuestbutton v1tab11 x7 yp-5, Source_Code\Macro Parts\GUI\Images/quests.png
 */
 Gui,Add,Text, gmemorybutton w120 v1tab12 x40 yp+37 cf5c88e +wrap,Memory - Match
-Gui,Add,Picture, gmemorybutton v1tab13 x7 yp+3, Macro Parts\GUI\Images/memory.png
+Gui,Add,Picture, gmemorybutton v1tab13 x7 yp+3, Source_Code\Macro Parts\GUI\Images/memory.png
 Gui,Add,Text, gpresetbutton v1tab14 x40 yp+65 cf5c88e,Presets
-Gui,Add,Picture, gpresetbutton v1tab15 x5 yp+3, Macro Parts\GUI\Images/robopass.png
+Gui,Add,Picture, gpresetbutton v1tab15 x5 yp+3, Source_Code\Macro Parts\GUI\Images/robopass.png
 Gui,Add,Text, gkeybindbutton v1tab16 x40 yp+37 cf5c88e,Keybinds
-Gui,Add,Picture, gkeybindbutton v1tab17 x7 yp+3, Macro Parts\GUI\Images/keyboard.png
+Gui,Add,Picture, gkeybindbutton v1tab17 x7 yp+3, Source_Code\Macro Parts\GUI\Images/keyboard.png
 Gui,Add,Text, gSettingsbutton v1tab18 x40 yp+40 cf5c88e,Settings
-Gui,Add,Picture, gSettingsbutton v1tab19 x5 yp-5, Macro Parts\GUI\Images/cog.png
+Gui,Add,Picture, gSettingsbutton v1tab19 x5 yp-5, Source_Code\Macro Parts\GUI\Images/cog.png
 Gui,Font,s15 Bold
 Gui,Add,Text, v1tab21 x225 y15 cgreen,New in This version
 Gui,Font,s7
-FileRead, UpdateText, Macro Parts\GUI\New in this version.txt
+FileRead, UpdateText, Source_Code\Macro Parts\GUI\New in this version.txt
 Gui,Add,Text, v1tab22 x200 yp+30 w245 h250 cwhite +wrap,%UpdateText%
 Gui,Font,s10 Bold
 Gui,Add,Button, v1tab23 x282 y310,Expand
@@ -219,7 +219,7 @@ gui,Add,Checkbox, v4tab24 x30 yp+20 cwhite %tunnel% ,Kill tunnelbear
 gui,Add,Checkbox, v4tab25 x30 yp+20 cwhite %kingbeetle% ,Kill kingbeetle
 Gui,Add,Text, v4tab26 x115 yp+45 cwhite,mondo kill type
 Gui,Add,DropDownlist, v4tab27 x20 yp-2  w90 h200 ,%mondo%||None|Blessing|Loot
-Gui,Add,Picture, v4tab31 yp-203 x220 w210 h185 , Macro Parts\GUI\Images/beesmas stuff.png
+Gui,Add,Picture, v4tab31 yp-203 x220 w210 h185 , Source_Code\Macro Parts\GUI\Images/beesmas stuff.png
 Gui,Font,s10 Bold
 Gui,Add,Checkbox, v4tab32 x230 yp+36 cwhite %candles%,Use honeyday candles
 Gui,Add,Checkbox, v4tab33 x230 yp+20 cwhite %samovar%,Use samovar
@@ -256,31 +256,31 @@ Gui,Add,Text, v5tab29 x360 y72 w10 h17 c%infocol% gusehiveinfo,?
 Gui,Font,s17 Bold
 Gui,Add,Text, v6tab1 x360 y10 cgreen,Quests
 Gui,Font,s10
-Gui,Add,Picture, v6tab2 x10 y200,Macro Parts\GUI\Images/comingsoon.png
+Gui,Add,Picture, v6tab2 x10 y200,Source_Code\Macro Parts\GUI\Images/comingsoon.png
 
 
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v7tab1 x270 y10 cgreen,Memory match
 Gui,Font,s10
-Gui,Add,Picture, v7tab2 x10 y200,Macro Parts\GUI\Images/comingsoon.png
+Gui,Add,Picture, v7tab2 x10 y200,Source_Code\Macro Parts\GUI\Images/comingsoon.png
 
 
 
 Gui,Font,s17 Bold
 Gui,Add,Text, v8tab1 x350 y10 cgreen,Presets
 Gui,Font,s15
-Gui,Add,Picture, v8tab2 x10 y50 gloadblue5nectar,Macro Parts\GUI\Images/nectar.png
+Gui,Add,Picture, v8tab2 x10 y50 gloadblue5nectar,Source_Code\Macro Parts\GUI\Images/nectar.png
 Gui,Add,Text, v8tab3 xp+30 y53 c53ede5 gloadblue5nectar,Load blue 5 nectar preset
-Gui,Add,Picture, v8tab4 xp yp+30 gloadblue5nectar,Macro Parts\GUI\Images/blue5nect.png
-Gui,Add,Picture, v8tab5 x7 yp+55 gloadidealblue,Macro Parts\GUI\Images/honey.png
+Gui,Add,Picture, v8tab4 xp yp+30 gloadblue5nectar,Source_Code\Macro Parts\GUI\Images/blue5nect.png
+Gui,Add,Picture, v8tab5 x7 yp+55 gloadidealblue,Source_Code\Macro Parts\GUI\Images/honey.png
 Gui,Add,Text, v8tab6 xp+34 yp+5 c53ede5 gloadidealblue,Load Ideal blue honeymaker preset
-Gui,Add,Picture, v8tab7 xp yp+30 gloadidealblue,Macro Parts\GUI\Images/idealhotbar.png
-Gui,Add,Picture, v8tab8 x10 yp+55 gloadgumdropfarmer,Macro Parts\GUI\Images/gumdrop.png
+Gui,Add,Picture, v8tab7 xp yp+30 gloadidealblue,Source_Code\Macro Parts\GUI\Images/idealhotbar.png
+Gui,Add,Picture, v8tab8 x10 yp+55 gloadgumdropfarmer,Source_Code\Macro Parts\GUI\Images/gumdrop.png
 Gui,Add,Text, v8tab9 xp+33 yp+2 c53ede5 gloadgumdropfarmer,Load gumdrop farmer
-Gui,Add,Picture, v8tab13 x10 yp+55 gloadfruitfarmer,Macro Parts\GUI\Images/strawberry.png
+Gui,Add,Picture, v8tab13 x10 yp+55 gloadfruitfarmer,Source_Code\Macro Parts\GUI\Images/strawberry.png
 Gui,Add,Text, v8tab14 xp+33 yp+2 c53ede5 gloadfruitfarmer,Load full fruit farmer
-Gui,Add,Picture, v8tab15 x10 yp+55 gloadticketfarmer,Macro Parts\GUI\Images/ticket.png
+Gui,Add,Picture, v8tab15 x10 yp+55 gloadticketfarmer,Source_Code\Macro Parts\GUI\Images/ticket.png
 Gui,Add,Text, v8tab16 xp+33 yp-3 c53ede5 gloadticketfarmer,Load ticket farmer
 Gui,Font,s10
 Gui,Add,Text, v8tab17 x335 y17 w10 h17 c%infocol% gpresetinfo,?
@@ -382,7 +382,7 @@ loop 11{
 	}
 }
 changetab(1)
-Fileread,version,Macro Parts\GUI\version.txt
+Fileread,version,Source_Code\Macro Parts\GUI\version.txt
 Gui,show,w450 h600 ,Syspalk's macro %version%
 ;------Functions------
 popup(SizeX,SizeY,FontSize,Title,Text){

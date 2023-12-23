@@ -536,7 +536,7 @@ walktocannon(){ ;makes the character walk to the cannon.
 	sleep 300
 	walkhold("r","Down")
 	loop{
-		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Macro Parts/images/e.png
+		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Source_Code\Macro Parts/images/e.png
 		if (errorlevel = 0){
 			walkhold("r","Up")
 			break
@@ -628,12 +628,12 @@ SearchFunction(image,variation,movecenter := false){ ;imagesearch in function so
 		WinGetPos,,,Winwidth,Winheight,Roblox
 		mousemove,Winwidth/2,Winheight/2
 	}
-	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *%variation% Macro Parts\images\%image%
+	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *%variation% Source_Code\Macro Parts\images\%image%
 	return [ErrorLevel,FoundX,FoundY]
 } 
 
 SearchFunctionv2(image,variation,x1,y1,x2,y2){ ;imagesearch in function with coordinate option so it's nicer to use.
-	ImageSearch, FoundX, FoundY, %x1%, %y1%, %x2%, %y2%, *%variation% Macro Parts\images\%image%
+	ImageSearch, FoundX, FoundY, %x1%, %y1%, %x2%, %y2%, *%variation% Source_Code\Macro Parts\images\%image%
 	return [ErrorLevel,FoundX,FoundY]
 }
 
@@ -847,7 +847,7 @@ minutes(time){
 
 EventLog(Event){ ;saves what it does and when it does it in a text file for debugging
 	FormatTime,Time,, (MM/dd/yyyy) hh:mm:ss
-	FileAppend,%Time% %Event% `n,Macro Parts\logs\EventLog.txt
+	FileAppend,%Time% %Event% `n,Source_Code\Macro Parts\logs\EventLog.txt
 	try{
 		IniRead,url,%linkpath%,webhooks,hookevent
 		postdata=
@@ -865,7 +865,7 @@ EventLog(Event){ ;saves what it does and when it does it in a text file for debu
 
 ErrorLog(ErrorMessage){ ;same thing as eventlog but this time it logs errors in a seperate file xd
 	FormatTime,Time,, (MM/dd/yyyy) hh:mm:ss
-	FileAppend,%Time% %ErrorMessage%  `n,Macro Parts\logs\ErrorLog.txt
+	FileAppend,%Time% %ErrorMessage%  `n,Source_Code\Macro Parts\logs\ErrorLog.txt
 	try{
 		IniRead,url,%linkpath%,webhooks,hookerror
 		postdata=
@@ -1007,7 +1007,7 @@ Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
 }
 
 safetycheck(){ ;this will make sure that you stay in the game
-	ImageSearch,founx,foundy,A_ScreenWidth/4,A_ScreenHeight/4,A_ScreenWidth/1.5,A_ScreenHeight/1.5,*10 Macro Parts/Images/Disconnected.PNG
+	ImageSearch,founx,foundy,A_ScreenWidth/4,A_ScreenHeight/4,A_ScreenWidth/1.5,A_ScreenHeight/1.5,*10 Source_Code\Macro Parts/Images/Disconnected.PNG
 	if (errorlevel = 0){
 		global reconnected := true
 		ErrorLog("Reconnected (Issue : Disconnected.png was found)")
@@ -1149,7 +1149,7 @@ viccheck(changecam){ ;check for nighttime.
 		}
 		sleep 100
 	}
-	ImageSearch,Ox,OY,0,0,A_ScreenWidth,150, Macro Parts\images\night.png
+	ImageSearch,Ox,OY,0,0,A_ScreenWidth,150, Source_Code\Macro Parts\images\night.png
 	if (ErrorLevel = 0){
 		global allowconvert := false
 		global lastvickill := A_Tickcount
