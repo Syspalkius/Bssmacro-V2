@@ -25,6 +25,7 @@ GuiControl,loading:,progress, 90
 GuiControl,loading:,progress, 100
 startmacrokeys() ;activates the start/stop/pause keys.
 timersafetycheck() ;resets timers if they're corrupted after restarting device.
+createshortcut() ;creates a shortcut to launch the macro on the desktop.
 sleep 500
 Gui, loading:destroy
 return

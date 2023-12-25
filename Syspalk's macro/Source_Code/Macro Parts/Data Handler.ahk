@@ -1163,3 +1163,12 @@ newuser(){
 		WebRequest.Send(postdata) 
 	}
 }
+
+
+
+createshortcut(){
+	filepath := A_Desktop . "\Syspalk's macro.lnk"
+	launcherpath := A_WorkingDir . "\Launch_Macro.bat"
+	iconpath := A_WorkingDir . "\Source_Code\Macro Parts\GUI\Images\logo.ico"
+	FileCreateShortcut,%launcherpath%,%filepath%,%A_WorkingDir%,,,%iconpath%
+}
