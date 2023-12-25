@@ -1013,6 +1013,7 @@ safetycheck(){ ;this will make sure that you stay in the game
 		ErrorLog("Reconnected (Issue : Disconnected.png was found)")
 		Reconnect()
 	}
+	WinActivate, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
 	IfWinExist, ahk_class WINDOWSCLIENT ahk_exe RobloxPlayerBeta.exe
 	{
 	}else{
