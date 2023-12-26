@@ -623,13 +623,11 @@ pinewalktohive(pinetree){
 		walk(2000,"f")
 		walk(390,"b")
 		starttimer := A_TickCount
-		walkhold("l","Down")
 		WinGetPos , windowX, windowY, windowWidth, windowY, Roblox
 		WindowY := windowY/3
 		while (1){
 			walk(25,"l")
-			sleep 10
-			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Source_Code\Macro Parts/images/e.png 
+			ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 *TransBlack Source_Code\Macro Parts\images\convert.png
 			if (errorlevel = 0){
 				walkhold("l","Up")
 				zoomout()
@@ -638,7 +636,7 @@ pinewalktohive(pinetree){
 					Send e
 					while (1){
 						sleep 1000
-						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*30 Source_Code\Macro Parts/images/e.png
+						ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 *TransBlack Source_Code\Macro Parts\images\convert.png
 						if (errorlevel = 1){
 							sleep 5000
 							break
@@ -653,7 +651,7 @@ pinewalktohive(pinetree){
 				walk(750,"f")
 				walkhold("l","Up")
 				return
-			}else if (A_TickCount - starttimer > 3500){
+			}else if (A_TickCount - starttimer > 3000){
 				walkhold("l","Up")
 				break
 			}
@@ -662,8 +660,7 @@ pinewalktohive(pinetree){
 		walkhold("r","Down")
 		while (1){
 			walk(25,"r")
-			sleep 10
-			ImageSearch,FoundX,FoundY,0,0,A_ScreenWidth,WindowY,*30 Source_Code\Macro Parts/images/e.png 
+			ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 *TransBlack Source_Code\Macro Parts\images\convert.png
 			if (errorlevel = 0){
 				walkhold("r","Up")
 				zoomout()
@@ -672,7 +669,7 @@ pinewalktohive(pinetree){
 					Send e
 					while (1){
 						sleep 1000
-						ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*30 Source_Code\Macro Parts/images/e.png
+						ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 *TransBlack Source_Code\Macro Parts\images\convert.png
 						if (errorlevel = 1){
 							sleep 5000
 							break
