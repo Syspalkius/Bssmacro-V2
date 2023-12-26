@@ -1166,18 +1166,16 @@ ant(){
 	Send e
 	Send {Shift}
 	SendSpace()
-	sleep 800
+	sleep 400
 	Send {Shift}
 	sleep 600
 	SendSpace()
-	sleep 6850
-	SendSpace()
-	sleep 3000
-	walk(2000,"f")
-	walk(7000,"l")
-	walk(1000,"b")
-	walk(750,"r")
-	sleep 1000
+	walk(8500,"f")
+	Send {Shift}
+	walk(8000,"l")
+	Send {shift}
+	camrotate(2,"l")
+	walk(750,"b")
 	if (SearchFunction("e.png",10)[1] = 1){
 		ErrorLog("Failed to grab ant pass")
 	}
@@ -1193,23 +1191,23 @@ buyplayant(){
 	Send e
 	Send {Shift}
 	SendSpace()
-	sleep 200
+	sleep 400
 	Send {Shift}
-	sleep 1200
+	sleep 600
 	SendSpace()
-	sleep 6850
-	SendSpace()
-	sleep 3000
-	walk(2000,"f")
-	walk(7000,"l")
-	walk(500,"f")
-	sleep 1000
+	walk(8500,"f")
+	Send {Shift}
+	walk(8000,"l")
+	camrotate(2,"l")
+	walk(750,"r")
+	Send {shift}
 	if (SearchFunction("e.png",10)[1] = 1){
 		ErrorLog("Failed to purchase ant pass")
 	}
 	sleep 1000
 	Send e
 	sleep 1000
+	camrotate(2,"r")
 	GoDoAnt()
 }
 
