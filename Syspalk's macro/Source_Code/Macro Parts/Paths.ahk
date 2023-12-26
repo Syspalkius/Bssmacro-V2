@@ -60,7 +60,7 @@ pineapple(nectar){
 	SendSpace()
 	sleep 2000
 	if (nectar = false){
-		sleep 10000
+		sleep 5000
 		walk(2000,"f")
 	}
 	if (nectar = true){
