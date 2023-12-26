@@ -1039,10 +1039,10 @@ useitemfrominv(item,closeafter){
 		Send {WheelUp}
 		sleep 20
 	}
-	sleep 500
+	sleep 250
 	if (SearchFunction("ticket.png",10)[1] = 0){
 		loop 30{
-			if (SearchFunction(item,20)[1] = 0){
+			if (SearchFunction(item,20,true)[1] = 0){
 				sleep 500
 				mousemove,SearchFUnction(item,20)[2],SearchFUnction(item,20)[3]
 				sleep 250
