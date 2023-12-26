@@ -974,47 +974,32 @@ gluedisp(){
 	counter := 0
 	Startgluedisp:
 	counter++
-	if (counter < 4){
+	if (counter < 3){
 		Reset()
 		walktocannon()
 		Eventlog("Going to Glue dispensor")
 		Send e
 		Send {Shift}
 		SendSpace()
-		sleep 800
+		sleep 400
 		Send {Shift}
 		sleep 600
 		SendSpace()
-		sleep 7000
-		SendSpace()
-		sleep 3000
+		walk(10000,"f")
+		walk(1250,"l")
+		walk(1000,"r")
+		camrotate(4,"l")
 		walk(2000,"f")
-		walk(7000,"l")
-		walk(1000,"b")
-		walk(750,"r")
-		walk(2500,"f")
-		Send {Shift}
-		sleep 100
-		Send {Shift}
-		walk(2500,"l")
-		Send {Shift}
-		sleep 100
-		Send {Shift}
-		walk(5000,"f")
-		Send {Shift}
-		sleep 100
-		Send {Shift}
-		walk(7000,"r")
-		Send {Shift}
-		sleep 100
-		Send {Shift}
-		walk(400,"l")
-		walk(3000,"b")
-		
+
 		mousemove,40,200
 		loop 40{
 			Send {WheelUp}
 			sleep 5
+		}
+		if (SearchFunction("CloseStickerBox.png","10")[1] = 0){
+			mousemove,SearchFunction("CloseStickerBox.png","10")[2],SearchFunction("CloseStickerBox.png","10")[3]
+			sleep 100
+			Send {Click Left}
 		}
 		sleep 500
 		if not (SearchFunction("ticket.png","10")[1] = 0){
@@ -1047,10 +1032,15 @@ gluedisp(){
 		exitloooop:
 		
 		Send {Space Down}
+		walkhold("r","Down")
+		walkhold("f","Down")
 		timer := A_TickCount
 		while (1){
 			if (SearchFunction("gummybee.png",20)[1] = 0){
-				
+				Send {Space Up}
+				walkhold("r","Up")
+				walkhold("f","Up")
+
 				mousemove,SearchFUnction("gumdrop.png","10")[2],SearchFUnction("gumdrop.png","10")[3]
 				sleep 250
 				Send {Click Left Down}
@@ -1060,19 +1050,19 @@ gluedisp(){
 				mousemove,40,125
 				sleep 100
 				Send {Click Left}
-				
-				Send {Space Up}
 				break
 			}
 			if (A_TickCount - timer > 15000){
 				Errorlog("Failed to find gummy bee")
 				Send {Space Up}
+				walkhold("r","Up")
+				walkhold("f","Up")
 				Reconnect()
 				goto,Startgluedisp
 			}
-			walk(100,"b")
 		}
 		sleep 1500
+		camrotate(4,"l")
 		walk(2000,"f")
 		walk(150,"b")
 		sleep 500
