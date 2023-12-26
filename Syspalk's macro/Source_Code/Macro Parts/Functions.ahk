@@ -534,6 +534,7 @@ walktocannon(){ ;makes the character walk to the cannon.
 	WindowY := windowY/3
 	btimer := A_Tickcount
 	sleep 300
+	walk(75,"f")
 	walkhold("r","Down")
 	loop{
 		ImageSearch,foundx,foundy,0,0,A_ScreenWidth,windowY,*10 Source_Code\Macro Parts/images/e.png
