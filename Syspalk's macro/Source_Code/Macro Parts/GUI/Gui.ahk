@@ -59,8 +59,8 @@ Gui,Add,Text, v2tab7 x40 y50 cwhite ,Field 1             Field 2             Fie
 Gui,Add,DropDownList, v2tab8 x20 y135 w90 h200,%farmpattern%||None|zigzag|squares|zigzag++
 Gui,Add,Text, v2tab9 xp+15 yp-20 cwhite,Pattern                               Size
 Gui,Add,Slider, v2tab10 Left ToolTip xp+115 yp+15 range0-100,%patternsize%
-Gui,Add,Text, v2tab11 xp+150 yp+19 w10 h17 c%infocol% gpatterninfo,?
-Gui,Add,Edit,  v2tab15 x20 yp+21 number w40
+Gui,Add,Text, v2tab11 xp+160 yp+9 w10 h17 c%infocol% gpatterninfo,?
+Gui,Add,Edit,  v2tab15 x20 yp+31 number w40
 Gui,Add,UpDown, v2tab16 Range0-60,%maxtimeonfield%
 Gui,Add,Text, v2tab17 xp+45  yp+5 cwhite, max time on field (minutes)
 Gui,Add,Text, v2tab18 xp+188 yp+2 w10 h17 c%infocol% gmaxtimeinfo,?
