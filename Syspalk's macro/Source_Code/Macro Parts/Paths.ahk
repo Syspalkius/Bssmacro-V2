@@ -651,7 +651,7 @@ pinewalktohive(pinetree){
 				walk(750,"f")
 				walkhold("l","Up")
 				return
-			}else if (A_TickCount - starttimer > 3000){
+			}else if (A_TickCount - starttimer > 5000){
 				walkhold("l","Up")
 				break
 			}
@@ -684,7 +684,7 @@ pinewalktohive(pinetree){
 				walk(750,"f")
 				walkhold("r","Up")
 				return
-			}else if (A_TickCount - starttimer > 7000){
+			}else if (A_TickCount - starttimer > 12000){
 				walkhold("r","Up")
 				Errorlog("Couldn't find E button to convert at hive")
 				Reset()
