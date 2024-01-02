@@ -636,7 +636,7 @@ pinewalktohive(pinetree){
 					Send e
 					while (1){
 						sleep 1000
-						ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 *TransBlack Source_Code\Macro Parts\images\convert.png
+						ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 Source_Code\Macro Parts\images\e.png
 						if (errorlevel = 1){
 							sleep 5000
 							break
@@ -669,7 +669,7 @@ pinewalktohive(pinetree){
 					Send e
 					while (1){
 						sleep 1000
-						ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 *TransBlack Source_Code\Macro Parts\images\convert.png
+						ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 Source_Code\Macro Parts\images\e.png
 						if (errorlevel = 1){
 							sleep 5000
 							break
