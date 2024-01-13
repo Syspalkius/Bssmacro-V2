@@ -911,6 +911,7 @@ cub(searchfor){
 }
 
 Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
+	startreconnect:
 	savedata()
 	while (1){
 		attempt := 1
@@ -997,13 +998,25 @@ Reconnect(){ ;this code is disgusting but it works and I don't want to fix it.
 		walk(650,"b")
 		walkhold("l","Down")
 		loopbreak := A_TickCount
+		WinGetPos , windowX, windowY, windowWidth, windowY, Roblox
+		WindowY := windowY/3
 		while (1){
-			Send e
+			ImageSearch, OutputVarX, OutputVarY, 0, 0, A_ScreenWidth, WindowY, *10 *TransBlack Source_Code\Macro Parts\images\claim.png
+			if (errorlevel = 0){
+				Send e
+				break
+			}
 			if (A_TickCount - loopbreak > 8000){
+				bloobiebloobkoop := true
 				break
 			}
 		}
 		walkhold("l","Up")
+		if (bloobiebloobkoop)
+		{
+			bloobiebloobkoop := false
+			goto,startreconnect
+		}
 	}
 }
 
