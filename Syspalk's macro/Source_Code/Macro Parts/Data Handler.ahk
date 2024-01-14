@@ -1060,6 +1060,9 @@ loadidealblue(){
 	loadblue5nectar(false)
 	Eventlog("The ideal blue settings have been loaded.")
 	IniWrite,Pine Tree,%datapath%,farming,farmfield1
+	IniWrite,None,%datapath%,farming,farmfield2
+	IniWrite,None,%datapath%,farming,farmfield3
+	IniWrite,None,%datapath%,farming,farmfield4
 	IniWrite,1,%datapath%,farming,convsetting
 	IniWrite,10,%datapath%,farming,maxtimeonfield
 	IniWrite,1,%datapath%,farming,swingtool

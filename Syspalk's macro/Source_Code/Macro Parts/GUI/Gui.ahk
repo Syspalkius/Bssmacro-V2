@@ -1,5 +1,4 @@
 ﻿#Include Source_Code\Macro Parts\GUI\Buttons.ahk
-menu,tray,icon,Source_Code\Macro Parts\GUI\Images\logo.ico
 Gui,Font,s17 Bold
 Gui,color,0x2A2F32
 global infocol := "53ede5"
