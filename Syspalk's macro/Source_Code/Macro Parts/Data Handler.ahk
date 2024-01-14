@@ -13,7 +13,6 @@ FileAppend,,%timerpath%
 ;check if file is empty, if so then fill in the files with default data.
 IniRead,val,%datapath%,launchedbefore,launchedbefore
 if (val = "ERROR"){
-	newuser() ;logs each time a new person downloads the macro.
 	try{
 		run, https://discord.gg/t572FnTqfs ;launch discord invite.
 	}
@@ -1177,26 +1176,6 @@ loadblue4nectar(){
 	IniWrite,None,%datapath%,planters,planter12
 	reload
 }
-
-newuser(){
-	try{ ;Please don't nuke my webhook, I just want to track how many people download the macro.
-		global currentversion
-		Fileread,currentversion,Source_Code\Macro Parts\GUI\version.txt
-		url := "https://discord.com/api/webhooks/1133401631564763166/dn86NaFB2Fdbc5xFV3skuInG9n9R5kJCUQOK4OkRxxiNCvCCnW6L8pr2r9SVhXPW8n8V"
-		postdata=
-		(
-		{
-		"content": "[%currentversion%] New User"
-		}
-		)
-		WebRequest := ComObjCreate("WinHttp.WinHttpRequest.5.1")
-		WebRequest.Open("POST", url, false)
-		WebRequest.SetRequestHeader("Content-Type", "application/json")
-		WebRequest.Send(postdata) 
-	}
-}
-
-
 
 createshortcut(){
 	filepath := A_Desktop . "\Syspalk's macro.lnk"
