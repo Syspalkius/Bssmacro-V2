@@ -281,8 +281,11 @@ Gui,Add,Picture, v8tab13 x10 yp+55 gloadfruitfarmer,Source_Code\Macro Parts\GUI\
 Gui,Add,Text, v8tab14 xp+33 yp+2 c53ede5 gloadfruitfarmer,Load full fruit farmer
 Gui,Add,Picture, v8tab15 x10 yp+55 gloadticketfarmer,Source_Code\Macro Parts\GUI\Images/ticket.png
 Gui,Add,Text, v8tab16 xp+33 yp-3 c53ede5 gloadticketfarmer,Load ticket farmer
+Gui,Add,Picture, v8tab17 x10 yp+50 gloadblue5nectar,Source_Code\Macro Parts\GUI\Images/nectar.png
+Gui,Add,Text, v8tab18 xp+30 yp+3 c53ede5 gloadblue4nectar,Load blue 4 nectar preset
+Gui,Add,Picture, v8tab19 xp yp+30 gloadblue5nectar,Source_Code\Macro Parts\GUI\Images/blue4nect.png
 Gui,Font,s10
-Gui,Add,Text, v8tab17 x335 y17 w10 h17 c%infocol% gpresetinfo,?
+Gui,Add,Text, v8tab20 x335 y17 w10 h17 c%infocol% gpresetinfo,?
 
 
 

@@ -1147,7 +1147,36 @@ readplantdata(){
 	IniRead,plantcycle3,%datapath%,planters,plantcycle3
 }
 
+loadblue4nectar(){
+	ButtonResetCycleData(false)
+	Eventlog("The blue 5 nectar preset has been loaded.")
+	IniWrite,Pine Tree,%datapath%,planters,plantfield1
+	IniWrite,Blue Flower,%datapath%,planters,plantfield2
+	IniWrite,Bamboo,%datapath%,planters,plantfield3
+	IniWrite,Coconut,%datapath%,planters,plantfield4
+	IniWrite,Strawberry,%datapath%,planters,plantfield5
+	IniWrite,Spider,%datapath%,planters,plantfield6
+	IniWrite,Rose,%datapath%,planters,plantfield7
+	IniWrite,Mushroom,%datapath%,planters,plantfield8
+	IniWrite,Pumpkin,%datapath%,planters,plantfield9
+	IniWrite,Sunflower,%datapath%,planters,plantfield10
+	IniWrite,Pineapple,%datapath%,planters,plantfield11
+	IniWrite,None,%datapath%,planters,plantfield12
 
+	IniWrite,5,%datapath%,planters,planter1
+	IniWrite,5,%datapath%,planters,planter2
+	IniWrite,5,%datapath%,planters,planter3
+	IniWrite,5,%datapath%,planters,planter4
+	IniWrite,6,%datapath%,planters,planter5
+	IniWrite,6,%datapath%,planters,planter6
+	IniWrite,6,%datapath%,planters,planter7
+	IniWrite,6,%datapath%,planters,planter8
+	IniWrite,7,%datapath%,planters,planter9
+	IniWrite,7,%datapath%,planters,planter10
+	IniWrite,7,%datapath%,planters,planter11
+	IniWrite,None,%datapath%,planters,planter12
+	reload
+}
 
 newuser(){
 	try{ ;Please don't nuke my webhook, I just want to track how many people download the macro.
