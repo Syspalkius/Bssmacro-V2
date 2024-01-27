@@ -400,6 +400,9 @@ checktimers(){
 		if (bluebooster){
 			bluebooster()
 		}
+		if (donatesticker){
+			donatesticker()
+		}
 	}
 	readtimers()
 	if (A_TickCount - 2htimer > hours(2.1)){
