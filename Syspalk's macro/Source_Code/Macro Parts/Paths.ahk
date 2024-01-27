@@ -1933,3 +1933,75 @@ lidart(){
 		}
 	}
 }
+
+donatesticker(){
+	Reset()
+	walktocannon()
+	camrotate(3,"r")
+	send e
+	Send {Shift}
+	sleep 800
+	SendSpace()
+	Send {Shift}
+	SendSpace()
+	sleep 8000
+	camrotate(1,"l")
+	walk(1000,"f")
+	walk(5250,"l")
+	loop 20{
+		walk(50,"f")
+		walk(50,"r")
+	}
+	SendSpace()
+	walk(200,"f")
+	sleep 600
+	SendSpace()
+	walk(500,"r")
+	walk(150,"b")
+	walk(4000,"r")
+	Send {Space Down}
+	walk(3000,"f")
+	Send {Space Up}
+	sleep 250
+	walk(2000,"l")
+	walk(250,"b")
+	camrotate(3,"l")
+	loopystarty := A_TickCount
+	SendSpace()
+	walk(200,"f")
+	sleep 500
+	walkhold("f","Down")
+	while (1){
+		if (SearchFunction("e.png",10)[1] = 0){
+			walkhold("f","Up")
+			Send e
+			sleep 750
+			if (SearchFunction("sticker.png",0)[1] = 0){
+				mousemove,SearchFunction("sticker.png",0)[2],SearchFunction("sticker.png",0)[3]
+				sleep 250
+				Send {Click Left}
+				sleep 250
+				if (SearchFunction("yes.png",10)[1] = 0){
+					mousemove,SearchFunction("yes.png",10)[2],SearchFunction("yes.png",10)[3]
+					sleep 250
+					loop 10{
+						Send {Click Left}
+						sleep 10
+					}
+					break
+				}
+				else{
+					Reconnect()
+					break
+				}
+			}
+			mousemove,100,100
+			sleep 100
+			Send {Click Left}
+			break
+		}
+		if (A_TickCount - loopystarty > 5000){
+			break
+		}
+	}
+}
