@@ -186,12 +186,13 @@ Gui,Add,Text, v3tab48 x120 y305 w10 h17 c%infocol% gdoubleresetinfo,?
 Gui,Font,s17 Bold
 Gui,Add,Text, v4tab1 x320 y10 cgreen,Resources
 Gui,Font,s13
-Gui,Add,Groupbox, v4tab2 x20 y40 w230 h105 cwhite,Dispensers
+Gui,Add,Groupbox, v4tab2 x20 y40 w300 h125 cwhite,Dispensers
 Gui,Font,s10
 gui,Add,Checkbox, v4tab3 x30 yp+20 cwhite %clock% ,Use wealthclock
 gui,Add,Checkbox, v4tab4 x30 yp+20 cwhite %gluedisp% ,Use glue dispenser
 gui,Add,Checkbox, v4tab7 x30 yp+20 cwhite %cocodisp% ,Use coconut dispenser
 Gui,Add,Checkbox, v4tab30 x30 yp+20 cwhite %robopass% ,Collect the robo pass
+Gui,Add,Checkbox, v4tab39 x30 yp+20 cwhite %donatesticker%,Donate stickers to the sticker stacker
 Gui,Font,s13
 Gui,Add,Groupbox, v4tab8 x20 yp+35 w300 h90 cwhite,Ant challenge
 Gui,Font,s10
@@ -227,8 +228,8 @@ Gui,Add,Checkbox, v4tab35 x230 yp+20 cwhite %feast%,Use beesmas feast
 Gui,Add,Checkbox, v4tab36 x230 yp+20 cwhite %lidart%,Use Onett's lid art
 Gui,Add,Checkbox, v4tab37 x230 yp+20 cwhite %ginger%,Use gingerbread house
 Gui,Add,Checkbox, v4tab38 x230 yp+20 cred %wreath%,Use honey wreath
-Gui,Add,Text, v4tab28 x235 y54 w10 h17 c%infocol% gdispenserinfo,?
-Gui,Add,Text, v4tab29 x185 y354 w10 h17 c%infocol% gmobinfo,?
+Gui,Add,Text, v4tab28 x215 y74 w10 h17 c%infocol% gdispenserinfo,?
+Gui,Add,Text, v4tab29 x185 y374 w10 h17 c%infocol% gmobinfo,?
 
 
 

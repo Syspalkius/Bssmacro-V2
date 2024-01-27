@@ -188,6 +188,7 @@ global lidart
 global ginger
 global wreath
 global avoiddeath
+global donatesticker
 
 
 
@@ -249,6 +250,7 @@ readini(){ ;reads all the data from the ini file
 	IniRead,gluedisp,%datapath%,resources,gluedisp,0
 	IniRead,cocodisp,%datapath%,resources,cocodisp,0
 	IniRead,robopass,%datapath%,resources,robopass,0
+	IniRead,donatesticker,%datapath%,resources,donatesticker,0
 	IniRead,tunnel,%datapath%,resources,tunnel,0
 	IniRead,kingbeetle,%datapath%,resources,kingbeetle,0
 	IniRead,ant,%datapath%,resources,ant,0
@@ -376,6 +378,9 @@ readini(){ ;reads all the data from the ini file
 	}
 	if (robopass){
 		global robopass := "Checked"
+	}
+	if (donatesticker){
+		global donatesticker := "Checked"
 	}
 	if (strawdisp){
 		global strawdisp := "Checked"
@@ -553,6 +558,7 @@ readgui(){ ;reads all the data from the gui
 	GuiControlget,gluedisp,,4tab4
 	GuiControlget,cocodisp,,4tab7
 	GuiControlget,robopass,,4tab30
+	GuiControlget,donatesticker,,4tab39
 	GuiControlget,tunnel,,4tab24
 	GuiControlget,kingbeetle,,4tab25
 	GuiControlget,ant,,4tab9
@@ -718,6 +724,7 @@ savedata(){ ;saves all the data
 	IniWrite,%gluedisp%,%datapath%,resources,gluedisp
 	IniWrite,%cocodisp%,%datapath%,resources,cocodisp
 	IniWrite,%robopass%,%datapath%,resources,robopass
+	IniWrite,%donatesticker%,%datapath%,resources,donatesticker
 	IniWrite,%tunnel%,%datapath%,resources,tunnel
 	IniWrite,%kingbeetle%,%datapath%,resources,kingbeetle
 	IniWrite,%ant%,%datapath%,resources,ant
@@ -881,6 +888,7 @@ resetconfig(popup := true){
 	IniWrite,1,%datapath%,resources,gluedisp
 	IniWrite,0,%datapath%,resources,cocodisp
 	IniWrite,1,%datapath%,resources,robopass
+	IniWrite,0,%datapath%,resources,donatesticker
 	IniWrite,0,%datapath%,resources,tunnel
 	IniWrite,0,%datapath%,resources,kingbeetle
 	IniWrite,0,%datapath%,resources,ant
