@@ -1935,6 +1935,7 @@ lidart(){
 }
 
 donatesticker(){
+	Eventlog("Moving to the sticker stacker.")
 	Reset()
 	walktocannon()
 	camrotate(3,"r")
@@ -1988,9 +1989,11 @@ donatesticker(){
 						Send {Click Left}
 						sleep 10
 					}
+					Eventlog("Donated a sticker to the sticker stacker.")
 					break
 				}
 				else{
+					Errorlog("Failed to donate a sticker (Issue: the yes button was not detected)")
 					Reconnect()
 					break
 				}
@@ -1998,9 +2001,11 @@ donatesticker(){
 			mousemove,100,100
 			sleep 100
 			Send {Click Left}
+			Errorlog("Failed to donate a sticker (Issue: there were no stickers found in your inventory)")
 			break
 		}
 		if (A_TickCount - loopystarty > 5000){
+			Errorlog("Failed to donate a sticker (Issue: couldn't find e button for sticker stacker)")
 			break
 		}
 	}
