@@ -1949,7 +1949,7 @@ donatesticker(){
 	camrotate(1,"l")
 	walk(1000,"f")
 	walk(5250,"l")
-	loop 20{
+	loop 30{
 		walk(50,"f")
 		walk(50,"r")
 	}
@@ -1958,13 +1958,13 @@ donatesticker(){
 	sleep 600
 	SendSpace()
 	walk(500,"r")
-	walk(150,"b")
-	walk(4000,"r")
+	walk(200,"b")
+	walk(4500,"r")
 	Send {Space Down}
 	walk(3000,"f")
 	Send {Space Up}
-	sleep 250
-	walk(2000,"l")
+	sleep 500
+	walk(2250,"l")
 	walk(250,"b")
 	camrotate(3,"l")
 	loopystarty := A_TickCount
