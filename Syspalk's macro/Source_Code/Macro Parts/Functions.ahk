@@ -634,7 +634,7 @@ SearchFunction(image,variation,movecenter := false){ ;imagesearch in function so
 	}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *%variation% Source_Code\Macro Parts\images\%image%
 	return [ErrorLevel,FoundX,FoundY]
-} 
+}
 
 SearchFunctionv2(image,variation,x1,y1,x2,y2){ ;imagesearch in function with coordinate option so it's nicer to use.
 	ImageSearch, FoundX, FoundY, %x1%, %y1%, %x2%, %y2%, *%variation% Source_Code\Macro Parts\images\%image%
