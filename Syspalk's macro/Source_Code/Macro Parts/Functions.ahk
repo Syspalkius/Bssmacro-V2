@@ -143,8 +143,9 @@ PlantAction(option,key:=0,harvfull:=0){
 				}
 				else if (SearchFunction("Yes.png",20,true)[1] = 0){
 					mousemove,SearchFunction("Yes.png",20)[2],SearchFunction("Yes.png",20)[3]
-					sleep 100
+					sleep 200
 					Send {Click Left}
+					sleep 100
 					Eventlog("Took planter")
 					if (lootplanters){
 						Eventlog("Looting planter")

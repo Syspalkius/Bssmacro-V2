@@ -59,3 +59,22 @@ while(1){
 		pattern()
 	}
 }
+
+/* F4::
+loop{
+	foundharvestui := false
+	foundyes := False
+	foundno := false
+	if (SearchFunction("Harvest_Planter.png",20)[1] = 0) {
+		foundharvestui := true
+	}
+	if (SearchFunction("Yes.png",20)[1] = 0) {
+		foundyes := true
+	}
+	if (SearchFunction("no.png",20)[1] = 0) {
+		foundno := true
+	}
+
+	tooltip, Harvest_Planter: %foundharvestui%`nYes.png: %foundyes%`nno.png: %foundno%
+	sleep 100
+} */
